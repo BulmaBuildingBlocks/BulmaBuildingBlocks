@@ -1,0 +1,53 @@
+{
+  "/": {
+    "title": "Buefy: lightweight UI components for Vue.js based on Bulma",
+    "subtitle": "Buefy is a lightweight library of responsive UI components for Vue.js based on Bulma framework and design.",
+    "breadTitle": "Home",
+    "path": "/"
+  },
+  "notfound": {
+    "title": "Page not found",
+    "subtitle": "Sorry, we couldn’t find the page you were looking for",
+    "path": "/notfound"
+  },
+  "documentation": {
+    "title": "Documentation",
+    "subtitle": "Learn everything you need to start using Buefy",
+    "path": "/documentation",
+    "githubPath": "pages/Documentation.vue",
+    "menu": "documentation",
+    "breadcrumb": ["/", "documentation"]
+  },
+  "documentation/start": {
+    "title": "Start",
+    "subtitle": "<strong>Three ways</strong> to install and use Buefy",
+    "path": "/documentation/start",
+    "githubPath": "pages/installation/Start.vue",
+    "menu": "documentation",
+    "breadcrumb": ["/", "documentation", "documentation/start"]
+  },
+  "documentation/layout": {
+    "title": "Layout & elements",
+    "subtitle": "Buefy has the entire Bulma's core <b>built in</b>. You can use any feature from Bulma, plus all the components Buefy offers",
+    "path": "/documentation/layout",
+    "githubPath": "pages/Layout.vue",
+    "menu": "documentation",
+    "breadcrumb": ["/", "documentation", "documentation/layout"]
+  },
+  "documentation/headers": {
+    "title": "Headers",
+    "subtitle": "Selection of all Header",
+    "path": "/design-blocks/headers",
+    "githubPath": "html-snippets",
+    "menu": "documentation",
+    "breadcrumb": ["/", "documentation", "documentation/headers"]
+  },
+  "documentation/feature": {
+    "title": "Feature",
+    "subtitle": "Selection of all features",
+    "path": "/design-blocks/features",
+    "githubPath": "html-snippets",
+    "menu": "documentation",
+    "breadcrumb": ["/", "documentation", "documentation/features"]
+  }
+}

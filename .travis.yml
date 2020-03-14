@@ -1,0 +1,20 @@
+dist: trusty
+sudo: false
+language: node_js
+codecov: true
+env:
+  - CODECOV_TOKEN=a050f8b9-7ebf-47f1-ae89-2bf23637e4ae
+notifications:
+  email: false
+cache:
+  directories:
+  - "~/.npm"
+  - "~/.cache"
+node_js:
+- 8.11.1
+install:
+- npm install
+script:
+- npm run ci
+after_success:
+  - codecov

@@ -1,0 +1,23 @@
+{
+  "Home.Header.Subtitle": "Take control of your donations from one place.",
+  "Home.Header.Title": "Bulma Donations",
+  "Home.Intro.Title": "Welcome To Bulma",
+  "Home.Intro.Text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget lacus tempor, sollicitudin lacus vel, consequat justo. Integer sodales sodales velit nec auctor. Praesent eget laoreet ex. Phasellus odio justo, consectetur quis molestie sit amet, porta in augue. Mauris in nisl sodales, tincidunt neque nec, cursus tellus. Phasellus aliquam laoreet placerat. Donec id porta ipsum. Ut auctor ex id mollis accumsan. Sed quis neque id urna sodales ultricies. Aenean fringilla nunc vel venenatis sagittis. Suspendisse posuere justo massa, eu porta erat aliquet eget. Quis",
+  "Home.DonationArea.Text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis odio ut efficitur cursus. Nullam ornare ut odio quis vehicula.",
+  "Home.DonationArea.Button1": "One Off Donation",
+  "Home.DonationArea.Button2": "Regular Donation",
+  "Home.Process.Column1": "Sign Up",
+  "Home.Process.Column2": "Choose Your Charities",
+  "Home.Process.Column3": "Pick A Donation Type",
+  "Home.Process.Column4": "Manage Your Donations",
+  "Contact.Header.Title": "Contact Us",
+  "Contact.Header.Subtitle": "We'd love to hear from you!",
+  "Contact.Intro.Text1": "For general enquiries, please contact us on ",
+  "Contact.Intro.Text2": ". You can also check our ",
+  "Contact.Intro.Text3": "frequently asked questions",
+  "Contact.Intro.Text4": " for any help you may need.",
+  "Contact.Branches.Title1": "Corporate Partnerships",
+  "Contact.Branches.Title2": "Fundraising With Us",
+  "Contact.Branches.Title3": "Festivals",
+  "Contact.Branches.Title4": "Supplier Enquiries"
+}
