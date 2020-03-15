@@ -3,8 +3,8 @@
 }
 
 @each $name, $pair in $colors {
-  $color:  nth($pair, 1);
-  $color-invert:  findColorInvert($color);
+  $color: nth($pair, 1);
+  $color-invert: findColorInvert($color);
 
   .has-text-#{$name}-invert {
     color: $color-invert !important;

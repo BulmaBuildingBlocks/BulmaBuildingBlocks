@@ -1,12 +1,10 @@
 <template>
   <div id="page-headers" class="section">
-    <div class="container">
-      <Example title="Navbar with Logo Left" :component="ExSimpleLogoLeft" color="white" />
-      <Example title="Navbar with Logo Center" :component="ExSimpleLogoMiddle" color="white" />
-      <Example title="Navbar with Simple Nav" :component="ExSimple" color="white" />
-      <Example title="Navbar without hover" :component="ExSimpleTransparent" color="white" />
-      <Example title="Navbar Centered" :component="ExMenuCenter" color="white" />
-    </div>
+    <Example title="Navbar with Logo Left" :component="ExSimpleLogoLeft" color="white" container-toggle />
+    <Example title="Navbar with Logo Center" :component="ExSimpleLogoMiddle" color="white" container-toggle />
+    <Example title="Navbar with Simple Nav" :component="ExSimple" color="white" container-toggle />
+    <Example title="Navbar without hover" :component="ExSimpleTransparent" color="white" container-toggle />
+    <Example title="Navbar Centered" :component="ExMenuCenter" color="white" container-toggle />
   </div>
 </template>
 

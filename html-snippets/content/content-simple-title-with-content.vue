@@ -1,6 +1,6 @@
 <template>
-  <div class="container" :class="color ? `has-background-${color}` : ''">
-    <div class="section is-large">
+  <div class="section is-large" :class="color ? `has-background-${color}` : ''">
+    <div class="container">
       <h2 class="title is-spaced" :class="color ? `has-text-${color}-invert` : ''">Bulma Building Blocks</h2>
       <div class="content" :class="color ? `has-text-${color}-invert` : ''">
         <p>
@@ -22,10 +22,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator';
+import { Component, mixins } from 'nuxt-property-decorator';
+import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class Index extends Vue {
-  @Prop(String) color!: string;
-}
+export default class Index extends mixins(HtmlSnippetMixin) {}
 </script>

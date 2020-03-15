@@ -1,15 +1,13 @@
 <template>
-  <div id="page-headers" class="section">
-    <div class="container">
-      <Example title="Title" :component="SimpleTitle" color="white" />
-      <Example title="Subtitle" :component="SimpleSubtitle" color="white" />
-      <Example title="Title and Subtitle" :component="SimpleTitleSubtitle" color="white" />
-      <Example title="Subtitle Left" :component="SimpleSubtitleLeft" color="white" />
-      <Example title="Subtitle Right" :component="SimpleSubtitleRight" color="white" />
-      <Example title="Title with Content" :component="SimpleTitleSubtitleFull" color="white" />
-      <Example title="Title Two Columns" :component="SimpleTitleTwoColumn" color="white" />
-      <Example title="Single Image" :component="SingleImage" color="white" />
-    </div>
+  <div id="page-contents" class="section">
+    <Example title="Title" :component="SimpleTitle" color="white" />
+    <Example title="Subtitle" :component="SimpleSubtitle" color="white" />
+    <Example title="Title and Subtitle" :component="SimpleTitleSubtitle" color="white" />
+    <Example title="Subtitle Left" :component="SimpleSubtitleLeft" color="white" />
+    <Example title="Subtitle Right" :component="SimpleSubtitleRight" color="white" />
+    <Example title="Title with Content" :component="SimpleTitleSubtitleFull" color="white" />
+    <Example title="Title Two Columns" :component="SimpleTitleTwoColumn" color="white" />
+    <Example title="Single Image" :component="SingleImage" color="white" />
   </div>
 </template>
 

@@ -1,4 +1,4 @@
-$example-border-color: rgba($warning, 0.8);
+$example-border-color: rgba($dark, 0.1);
 
 .example-section {
   .field-label .label {
@@ -58,7 +58,7 @@ $example-border-color: rgba($warning, 0.8);
 
   .example-component {
     background: $light;
-    //    padding: 0.5rem;
+    padding: 0.25rem;
   }
 
   .codeview {
