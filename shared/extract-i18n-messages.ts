@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
-import { I18N } from '~/shared/config';
+import { I18N } from '../shared/config';
 import { getTranslationObject, getTranslationsFromString } from './Utils';
 
 const basePath: string = path.resolve(process.cwd());

@@ -1,14 +1,14 @@
 {
-  "name": "mycharity-client",
+  "name": "bulmabuildingblocks",
   "version": "0.4.0",
   "description": "A website to provide the ability to donate to multiple charities at once",
-  "homepage": "https://github.com/JosephAnson/mycharityapp",
+  "homepage": "https://github.com/JosephAnson/BulmaBuildingBlocks",
   "bugs": {
-    "url": "https://github.com/JosephAnson/mycharityapp/issues"
+    "url": "https://github.com/JosephAnson/BulmaBuildingBlocks/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JosephAnson/mycharityapp.git"
+    "url": "https://github.com/JosephAnson/BulmaBuildingBlocks.git"
   },
   "engines": {
     "node": "10.16.1"

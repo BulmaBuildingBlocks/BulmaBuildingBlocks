@@ -2,8 +2,6 @@ import en from '../lang/en.json';
 import fr from '../lang/fr.json';
 import es from '../lang/es.json';
 
-export const COOKIE_TOKEN_KEY = 'token';
-
 export const I18N = {
   locales: [
     {

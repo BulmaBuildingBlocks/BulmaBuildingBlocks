@@ -1,23 +1,5 @@
 {
-  "Home.Header.Subtitle": "Toma el control de tus donaciones desde un solo lugar.",
-  "Home.Header.Title": "Dons Bulma",
-  "Home.Intro.Title": "Bienvenido a Bulma",
-  "Home.Intro.Text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget lacus tempor, sollicitudin lacus vel, consequat justo. Integer sodales sodales velit nec auctor. Praesent eget laoreet ex. Phasellus odio justo, consectetur quis molestie sit amet, porta in augue. Mauris in nisl sodales, tincidunt neque nec, cursus tellus. Phasellus aliquam laoreet placerat. Donec id porta ipsum. Ut auctor ex id mollis accumsan. Sed quis neque id urna sodales ultricies. Aenean fringilla nunc vel venenatis sagittis. Suspendisse posuere justo massa, eu porta erat aliquet eget. Quis",
-  "Home.DonationArea.Text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis odio ut efficitur cursus. Nullam ornare ut odio quis vehicula.",
-  "Home.DonationArea.Button1": "Donación Única",
-  "Home.DonationArea.Button2": "Donación Regular",
-  "Home.Process.Column1": "Regístrate",
-  "Home.Process.Column2": "Elige Tus Organizaciones Benéficas",
-  "Home.Process.Column3": "Elige Un Tipo De Donación",
-  "Home.Process.Column4": "Administra Tus Donaciones",
-  "Contact.Header.Title": "Contacta Con Nosotros",
-  "Contact.Header.Subtitle": "Nos encantaría saber de ti!",
-  "Contact.Intro.Text1": "Para consultas generales, contáctenos en ",
-  "Contact.Intro.Text2": ". También puedes consultar nuestro ",
-  "Contact.Intro.Text3": "preguntas frecuentes",
-  "Contact.Intro.Text4": " para cualquier ayuda que pueda necesitar.",
-  "Contact.Branches.Title1": "Asociaciones Corporativas",
-  "Contact.Branches.Title2": "Recaudación de fondos con nosotros",
-  "Contact.Branches.Title3": "Festivales",
-  "Contact.Branches.Title4": "Consultas de Proveedores"
+  "DesignBlocks.Header.Title": "Design Blocks",
+  "Home.Header.Subtitle": "Snippets that can be used to create your site",
+  "Home.Header.Title": "Bulma Building Blocks"
 }

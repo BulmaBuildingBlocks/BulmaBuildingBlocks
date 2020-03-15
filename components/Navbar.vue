@@ -34,7 +34,7 @@
             Home
           </nuxt-link>
 
-          <nuxt-link to="/documentation" class="navbar-item">
+          <nuxt-link to="/design-blocks" class="navbar-item">
             Documentation
           </nuxt-link>
 
