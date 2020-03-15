@@ -8,7 +8,7 @@
           {{ !isExpanded ? 'Show' : 'Hide' }}
         </button>
       </div>
-      <pre v-highlight><code :class="lang">{{ code }}</code></pre>
+      <pre v-highlightjs="code"><code :class="lang"/></pre>
       <button v-if="!isExpanded && !expanded" class="codeview-showcode" @click="isExpanded = true">
         <b-icon icon="code-tags" size="is-small" custom-class="mdi-18px" />
         <span>Show code</span>

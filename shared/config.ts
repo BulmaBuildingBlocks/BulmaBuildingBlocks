@@ -33,3 +33,5 @@ export const I18N = {
     messages: { en, fr, es }
   }
 };
+
+export const statusColors = ['white', 'black', 'primary', 'info', 'success', 'warning', 'danger', 'light', 'dark'];
