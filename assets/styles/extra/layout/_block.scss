@@ -1,0 +1,31 @@
+$general-spacing-extra-small: 0.5rem;
+$general-spacing-small: 0.75rem;
+$general-spacing: 2rem;
+$general-spacing-medium: 3rem;
+$general-spacing-large: 6rem;
+
+@mixin block-spacing($size) {
+  &:not(:last-child) {
+    margin-bottom: $size;
+  }
+}
+
+.block {
+  @include block-spacing($general-spacing);
+
+  &.is-extra-small {
+    @include block-spacing($general-spacing-extra-small);
+  }
+
+  &.is-small {
+    @include block-spacing($general-spacing-small);
+  }
+
+  &.is-medium {
+    @include block-spacing($general-spacing-medium);
+  }
+
+  &.is-large {
+    @include block-spacing($general-spacing-large);
+  }
+}

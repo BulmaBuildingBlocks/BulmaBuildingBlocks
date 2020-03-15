@@ -102,11 +102,9 @@ const nuxtConfig: Configuration = {
    */
   build: {
     babel: {
-      cacheDirectory: false,
       plugins: [
         ['@babel/plugin-proposal-decorators', { legacy: true }],
-        ['@babel/plugin-proposal-class-properties', { loose: true }],
-        ['wildcard', { exts: ['ts', 'html', 'vue'] }]
+        ['@babel/plugin-proposal-class-properties', { loose: true }]
       ]
     },
     extend(config: any) {

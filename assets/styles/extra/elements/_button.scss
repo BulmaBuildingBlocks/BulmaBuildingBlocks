@@ -1,0 +1,24 @@
+$button-horizontal-spacing: 1rem;
+
+.buttons {
+  .button {
+    &:not(:last-child):not(.is-fullwidth) {
+      margin-right: $button-horizontal-spacing;
+    }
+  }
+
+  &.is-centered {
+    &:not(.has-addons) {
+      .button:not(.is-fullwidth) {
+        margin-left: $button-horizontal-spacing / 2;
+        margin-right: $button-horizontal-spacing / 2;
+      }
+    }
+  }
+}
+
+.button {
+  &.is-text {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,19 @@
+.is-fullwidth {
+  width: 100%;
+}
+
+@each $name, $pair in $colors {
+  $color:  nth($pair, 1);
+  $color-invert:  findColorInvert($color);
+
+  .has-text-#{$name}-invert {
+    color: $color-invert !important;
+  }
+
+  a.has-text-#{$name}-invert {
+    &:hover,
+    &:focus {
+      color: darken($color-invert, 10%) !important;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.image {
+  &.is-covered {
+    img {
+      @include overlay;
+
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &.is-contained {
+    img {
+      @include overlay;
+
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}

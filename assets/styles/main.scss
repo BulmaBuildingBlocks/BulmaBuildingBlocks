@@ -1,16 +1,18 @@
 // Bulma
+@import 'extra/utilities/initial-variables';
+
 @import '~bulma/bulma';
 
 // Highlight.js
-@import "~highlight.js/styles/atelier-cave-light";
+@import '~highlight.js/styles/atelier-cave-light';
 
 // FontAwesome 5
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 
 // Doc css
-@import "docs/manifest";
-@import "extra/manifest";
+@import 'docs/manifest';
+@import 'extra/manifest';

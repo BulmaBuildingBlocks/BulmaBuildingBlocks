@@ -15,7 +15,7 @@
   .highlight {
     position: relative;
     text-align: left !important;
-    height: 3.25rem;
+    height: 1.2rem;
 
     .button-container {
       position: absolute;
@@ -52,10 +52,12 @@
       border: none;
       color: $grey;
       cursor: pointer;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
+      text-transform: uppercase;
       justify-content: center;
       width: 100%;
       font-weight: $weight-semibold;
+      letter-spacing: 0.1em;
 
       &:hover {
         background-color: rgba($warning, 0.8);

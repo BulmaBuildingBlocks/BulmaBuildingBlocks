@@ -43,11 +43,11 @@
     "breadcrumb": ["/", "documentation", "documentation/headers"]
   },
   "documentation/feature": {
-    "title": "Feature",
-    "subtitle": "Selection of all features",
-    "path": "/design-blocks/features",
-    "githubPath": "html-snippets",
+    "title": "Content",
+    "subtitle": "Selection of all Content Blocks",
+    "path": "/design-blocks/contents",
+    "githubPath": "html-snippets/content",
     "menu": "documentation",
-    "breadcrumb": ["/", "documentation", "documentation/features"]
+    "breadcrumb": ["/", "documentation", "documentation/content"]
   }
 }

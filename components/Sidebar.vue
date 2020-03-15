@@ -1,11 +1,8 @@
 <template>
-  <nav class="navbar is-light is-spaced" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-light is-spaced is-medium" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-menu">
         <template v-for="(items, i) in data">
-          <p :key="items.category" class="navbar-item">
-            {{ items.category }}
-          </p>
           <ul :key="i" class="navbar-start">
             <li v-for="item in normalizedData(items.pages)" :key="item.title">
               <nuxt-link v-if="item.title" class="navbar-item" :to="item.path">

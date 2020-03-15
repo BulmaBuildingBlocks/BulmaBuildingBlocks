@@ -1,12 +1,27 @@
+$example-border-color: rgba($warning, 0.8);
+
+.example-section {
+  .field-label .label {
+    white-space: nowrap;
+  }
+}
+
 .example {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid $warning;
-  border-top-right-radius: $radius;
-  border-bottom-right-radius: $radius;
-  border-bottom-left-radius: $radius;
-  color: rgba(0, 0, 0, 0.7);
+
+  .example__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $example-border-color;
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+    color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+  }
 
   .button-container {
     position: absolute;
@@ -14,10 +29,8 @@
     background: $warning;
     border-radius: $radius $radius 0 0;
     bottom: 100%;
-    right: -1px;
     padding: 0 0 0 8px;
     vertical-align: top;
-
   }
 
   &:not(:first-child) {
@@ -34,10 +47,10 @@
     bottom: 100%;
     content: 'Example';
     display: inline-block;
-    font-size: 8px;
+    font-size: 0.5rem;
     font-weight: bold;
-    left: -1px;
-    padding: 4px 8px;
+    letter-spacing: 0.05em;
+    padding: 0.5em 1em;
     position: absolute;
     text-transform: uppercase;
     vertical-align: top;
@@ -45,11 +58,11 @@
 
   .example-component {
     background: $light;
-    padding: 0.5rem;
+    //    padding: 0.5rem;
   }
 
   .codeview {
-    border-top: 1px solid $warning;
+    border-top: 1px solid $example-border-color;
   }
 
   &.is-vertical {
@@ -63,7 +76,7 @@
         display: flex;
         flex-direction: column;
         border-top: 0;
-        border-left: 1px solid $warning;
+        border-left: 1px solid $example-border-color;
       }
       .codeview,
       .highlight,
