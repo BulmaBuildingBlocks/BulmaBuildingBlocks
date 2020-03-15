@@ -1,7 +1,5 @@
 import { Configuration } from '@nuxt/types';
 
-import { I18N } from './shared/config';
-
 const port = process.env.PORT || '3000';
 const host = process.env.HOST || 'localhost';
 
@@ -32,9 +30,7 @@ const nuxtConfig: Configuration = {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
@@ -69,8 +65,6 @@ const nuxtConfig: Configuration = {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    // Doc: https://github.com/nuxt-community/nuxt-i18n
-    ['nuxt-i18n', I18N],
     // Doc: https://github.com/webcore-it/nuxt-clipboard2
     'nuxt-clipboard2'
   ],

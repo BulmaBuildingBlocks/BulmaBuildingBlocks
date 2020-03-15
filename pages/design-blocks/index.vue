@@ -6,14 +6,10 @@
           <div class="column is-one-quarter is-offset-2">
             <div class="section is-medium">
               <h1 class="title">
-                {{ $t('DesignBlocks.Header.Title' /* Design Blocks */) }}
+                Design Blocks
               </h1>
               <h2 class="subtitle">
-                {{
-                  $t(
-                    'DesignBlocks.Header.Subtitle' /* Selection of building blocks that can be used to power your site */
-                  )
-                }}
+                Selection of building blocks that can be used to power your site
               </h2>
             </div>
           </div>

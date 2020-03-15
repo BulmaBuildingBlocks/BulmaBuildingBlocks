@@ -6,10 +6,10 @@
           <div class="column is-one-quarter is-offset-2">
             <div class="section is-medium">
               <h1 class="title">
-                {{ $t('Home.Header.Title' /* Bulma Building Blocks */) }}
+                Bulma Building Blocks
               </h1>
               <h2 class="subtitle">
-                {{ $t('Home.Header.Subtitle' /* Snippets that can be used to create your site */) }}
+                Snippets that can be used to create your site
               </h2>
             </div>
           </div>

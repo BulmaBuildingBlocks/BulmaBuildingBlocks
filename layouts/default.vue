@@ -22,17 +22,6 @@ import VSidebar from '~/components/Sidebar.vue';
 import menuData from '~/data/menu.json';
 
 @Component({
-  head() {
-    const i18nSeo = this.$nuxtI18nSeo();
-
-    return {
-      htmlAttrs: {
-        ...i18nSeo.htmlAttrs
-      },
-      meta: i18nSeo.meta,
-      link: i18nSeo.link
-    };
-  },
   components: {
     VNavbar,
     VFooter,
