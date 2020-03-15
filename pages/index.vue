@@ -1,14 +1,14 @@
 <template>
   <div>
-    <header class="has-background-warning homepage-banner">
-      <div class="container is-fluid is-gapless-tablet is-clipped">
+    <header class="section is-large has-background-info homepage-banner">
+      <div class="container">
         <div class="columns">
-          <div class="column is-one-quarter is-offset-2">
+          <div class="column">
             <div class="section is-medium">
-              <h1 class="title">
+              <h1 class="title has-text-white">
                 Bulma Building Blocks
               </h1>
-              <h2 class="subtitle">
+              <h2 class="subtitle has-text-white">
                 Snippets that can be used to create your site
               </h2>
             </div>

@@ -1,8 +1,16 @@
 $example-border-color: rgba($dark, 0.1);
 
 .example-section {
-  .field-label .label {
-    white-space: nowrap;
+  .field-label {
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    .label {
+      white-space: nowrap;
+      padding: 0;
+      margin: 0;
+    }
   }
 }
 

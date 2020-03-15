@@ -42,11 +42,19 @@
     "menu": "documentation",
     "breadcrumb": ["/", "documentation", "documentation/headers"]
   },
-  "documentation/feature": {
+  "documentation/contents": {
     "title": "Content",
     "subtitle": "Selection of all Content Blocks",
     "path": "/design-blocks/contents",
     "githubPath": "html-snippets/content",
+    "menu": "documentation",
+    "breadcrumb": ["/", "documentation", "documentation/content"]
+  },
+  "documentation/features": {
+    "title": "Feature",
+    "subtitle": "Selection of all Feature Blocks",
+    "path": "/design-blocks/features",
+    "githubPath": "html-snippets/features",
     "menu": "documentation",
     "breadcrumb": ["/", "documentation", "documentation/content"]
   }

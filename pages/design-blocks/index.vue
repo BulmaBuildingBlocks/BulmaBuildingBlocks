@@ -1,9 +1,9 @@
 <template>
   <div>
-    <header class="has-background-warning homepage-banner">
-      <div class="container is-fluid is-gapless-tablet is-clipped">
+    <header class="homepage-banner section">
+      <div class="container is-fluid">
         <div class="columns">
-          <div class="column is-one-quarter is-offset-2">
+          <div class="column">
             <div class="section is-medium">
               <h1 class="title">
                 Design Blocks

@@ -1,7 +1,7 @@
 {
   "name": "bulmabuildingblocks",
   "version": "0.4.0",
-  "description": "A website to provide the ability to donate to multiple charities at once",
+  "description": "A website to provide the ability to generate websites using html building blocks",
   "homepage": "https://github.com/JosephAnson/BulmaBuildingBlocks",
   "bugs": {
     "url": "https://github.com/JosephAnson/BulmaBuildingBlocks/issues"
