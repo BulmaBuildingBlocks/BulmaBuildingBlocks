@@ -1,6 +1,6 @@
 {
   "name": "bulmabuildingblocks",
-  "version": "0.4.0",
+  "version": "0.1.0",
   "description": "A website to provide the ability to generate websites using html building blocks",
   "homepage": "https://github.com/JosephAnson/BulmaBuildingBlocks",
   "bugs": {
@@ -40,9 +40,9 @@
     "postci": "codecov",
     "precommit": "concurrently \"yarn run lint\"",
     "predev": "yarn run clean",
-    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && yarn version major",
-    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && yarn version minor",
-    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && yarn version patch",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version major",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version minor",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version patch",
     "start": "nuxt-ts start",
     "stylelint": "npx stylelint ./assets/styles/**/*.scss --fix",
     "test": "cross-env NODE_ENV=test jest",
