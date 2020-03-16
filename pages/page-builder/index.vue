@@ -85,7 +85,7 @@ export default class HomePage extends Vue {
 
   updateRefs() {
     this.$nextTick(() => {
-      this.code = prettier.format(this.$refs.componenthtml.$el.outerHTML, {
+      this.code = prettier.format(this.$refs.componenthtml.$el.innerHTML, {
         parser: 'html',
         semi: true,
         arrowParens: 'always',
