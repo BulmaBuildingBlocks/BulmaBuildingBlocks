@@ -15,30 +15,17 @@
               </small>
             </p>
 
-            <b-field>
-              <p class="control">
-                <a class="button" href="https://github.com/JosephAnson/BulmaDesignBlocks" target="_blank">
-                  <b-icon icon="github-circle" />
-                  <span>GitHub</span>
-                </a>
-              </p>
-              <!--<p class="control">
+            <div class="buttons">
+              <a class="button" href="https://github.com/JosephAnson/BulmaDesignBlocks" target="_blank">
+                <b-icon icon="github-circle" />
+                <span>GitHub</span>
+              </a>
+              <!--
                 <a class="button is-patreon" href="https://www.patreon.com/" target="_blank">
                   <b-icon icon="patreon" />
                   <span>Patreon</span>
-                </a>
-              </p>-->
-            </b-field>
-          </div>
-
-          <div class="column">
-            <nuxt-link to="/" exact class="navbar-item has-text-weight-semibold">
-              Home
-            </nuxt-link>
-
-            <nuxt-link to="/documentation" class="navbar-item has-text-weight-semibold">
-              Documentation
-            </nuxt-link>
+                </a>-->
+            </div>
           </div>
         </div>
       </div>

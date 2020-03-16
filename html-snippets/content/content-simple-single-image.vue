@@ -8,7 +8,7 @@
         Helping to create
       </h3>
       <div class="buttons is-centered">
-        <a href="#" class="button is-text">
+        <a href="#" class="button is-white">
           About
         </a>
         <a href="#" class="button is-primary">

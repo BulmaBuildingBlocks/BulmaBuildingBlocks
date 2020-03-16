@@ -17,3 +17,8 @@
     }
   }
 }
+
+.has-radius {
+  overflow: hidden;
+  border-radius: $radius;
+}

@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation" :class="color ? `is-${color}` : ''">
-    <div :class="container ? 'container' : 'navbar-menu'">
+    <div :class="container ? 'container' : 'navbar-row'">
       <div class="section is-small is-fullwidth">
         <div class="level">
           <div class="level-item has-text-centered">

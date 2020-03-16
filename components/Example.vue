@@ -1,7 +1,7 @@
 <template>
   <section class="example-section">
     <div class="container">
-      <div class="example-section__info">
+      <div class="example-section__info section">
         <div class="level">
           <div class="level-left">
             <p :id="`${slugifiedTitle}`" class="title is-4">
@@ -12,11 +12,11 @@
           <div class="level-right">
             <div v-if="containerToggle" class="level-item">
               <b-field label="Container Applied" custom-class="is-small" horizontal>
-                <b-switch v-model="container"></b-switch>
+                <b-switch v-model="container" @input="updateRefs"></b-switch>
               </b-field>
             </div>
             <div v-if="newColor" class="level-item">
-              <b-field label="Status Color" custom-class="is-small" horizontal>
+              <b-field label="Background Color" custom-class="is-small" horizontal>
                 <b-select v-model="newColor" size="is-small" placeholder="Select a color" @input="updateRefs">
                   <option v-for="option in statuses" :key="option" :value="option">
                     {{ option }}
@@ -30,24 +30,25 @@
           </div>
         </div>
 
-        <div class="content">
+        <div v-if="this.$slots.default" class="content">
           <slot />
         </div>
       </div>
-
-      <div v-if="component" class="example" :class="{ 'is-vertical': vertical }">
-        <div class="button-container">
-          <!--  <CodepenEdit :code="code" :title="title"/>-->
+    </div>
+    <div v-if="component" class="example" :class="{ 'is-vertical': vertical }">
+      <div class="button-container">
+        <!--  <CodepenEdit :code="code" :title="title"/>-->
+      </div>
+      <div class="example__container">
+        <div ref="componenthtml" class="example-component" :class="{ 'is-paddingless': paddingless }">
+          <component :is="component" ref="foo" :color="newColor" :container="container" />
         </div>
-        <div class="example__container">
-          <div ref="componenthtml" class="example-component" :class="{ 'is-paddingless': paddingless }">
-            <component :is="component" ref="foo" :color="newColor" :container="container" />
-          </div>
+        <div class="container is-fullwidth">
           <CodeView :code.sync="code" bordered codepen />
         </div>
       </div>
-      <hr class="is-medium" />
     </div>
+    <hr class="is-medium" />
   </section>
 </template>
 

@@ -12,6 +12,26 @@ $example-border-color: rgba($dark, 0.1);
       margin: 0;
     }
   }
+
+  .example-section__info {
+    position: relative;
+    padding: 3rem 0;
+
+    &:before {
+      background: $warning;
+      border-radius: $radius $radius 0 0;
+      bottom: 0;
+      content: 'Example';
+      display: inline-block;
+      font-size: 0.5rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      padding: 0.5em 1em;
+      position: absolute;
+      text-transform: uppercase;
+      vertical-align: top;
+    }
+  }
 }
 
 .example {
@@ -23,10 +43,6 @@ $example-border-color: rgba($dark, 0.1);
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid $example-border-color;
-    border-top-right-radius: $radius;
-    border-bottom-right-radius: $radius;
-    border-bottom-left-radius: $radius;
     color: rgba(0, 0, 0, 0.7);
     overflow: hidden;
   }
@@ -35,32 +51,8 @@ $example-border-color: rgba($dark, 0.1);
     position: absolute;
     display: inline-flex;
     background: $warning;
-    border-radius: $radius $radius 0 0;
     bottom: 100%;
     padding: 0 0 0 8px;
-    vertical-align: top;
-  }
-
-  &:not(:first-child) {
-    margin-top: 2rem;
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 1.5rem;
-  }
-
-  &:before {
-    background: $warning;
-    border-radius: $radius $radius 0 0;
-    bottom: 100%;
-    content: 'Example';
-    display: inline-block;
-    font-size: 0.5rem;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    padding: 0.5em 1em;
-    position: absolute;
-    text-transform: uppercase;
     vertical-align: top;
   }
 
@@ -70,7 +62,8 @@ $example-border-color: rgba($dark, 0.1);
   }
 
   .codeview {
-    border-top: 1px solid $example-border-color;
+    border: 1px solid $example-border-color;
+    border-radius: 0 0 $radius $radius;
   }
 
   &.is-vertical {

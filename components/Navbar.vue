@@ -34,17 +34,15 @@
             Home
           </nuxt-link>
 
-          <nuxt-link to="/design-blocks" class="navbar-item">
-            Documentation
-          </nuxt-link>
-
           <div class="navbar-item has-dropdown is-hoverable">
             <div class="navbar-link">Info</div>
 
             <div class="navbar-dropdown is-boxed">
               <strong class="navbar-item is-version">
-                <span class="has-text-bulma">Bulma version</span>
-                <span class="has-text-grey">{{ bulmaVersion }}</span>
+                <div class="tags has-addons">
+                  <span class="tag">Bulma</span>
+                  <span class="tag is-primary">{{ bulmaVersion }}</span>
+                </div>
               </strong>
 
               <hr class="navbar-divider" />

@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar is-spaced" role="navigation" aria-label="main navigation" :class="color ? `is-${color}` : ''">
-    <div :class="container ? 'container' : 'navbar-menu'">
+    <div :class="container ? 'container' : 'navbar-row'">
       <div class="level is-fullwidth">
         <div class="level-item has-text-centered">
           <a class="navbar-item" :class="color ? `has-text-${color}-invert` : ''">Home</a>
