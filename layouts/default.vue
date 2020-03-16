@@ -3,8 +3,6 @@
     <v-navbar />
 
     <section class="documentation">
-      <v-sidebar :data="menu" />
-
       <div class="docs-main">
         <nuxt />
       </div>
@@ -18,17 +16,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 import VNavbar from '~/components/Navbar.vue';
 import VFooter from '~/components/Footer.vue';
-import VSidebar from '~/components/Sidebar.vue';
-import menuData from '~/data/menu.json';
 
 @Component({
   components: {
     VNavbar,
-    VFooter,
-    VSidebar
+    VFooter
   }
 })
-export default class Default extends Vue {
-  menu = menuData;
-}
+export default class Default extends Vue {}
 </script>

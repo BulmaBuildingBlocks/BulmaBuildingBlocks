@@ -34,6 +34,14 @@
             Home
           </nuxt-link>
 
+          <nuxt-link to="/html-blocks/headers" exact class="navbar-item">
+            Html Blocks
+          </nuxt-link>
+
+          <nuxt-link to="/page-builder" exact class="navbar-item">
+            Page Builder
+          </nuxt-link>
+
           <div class="navbar-item has-dropdown is-hoverable">
             <div class="navbar-link">Info</div>
 

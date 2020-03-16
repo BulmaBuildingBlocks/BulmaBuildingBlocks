@@ -11,33 +11,17 @@
     "path": "/notfound"
   },
   "documentation": {
-    "title": "Documentation",
-    "subtitle": "Learn everything you need to start using Buefy",
-    "path": "/documentation",
-    "githubPath": "pages/Documentation.vue",
+    "title": "Page Builder",
+    "subtitle": "User the Page builder to craft your site",
+    "path": "/page-builder",
+    "githubPath": "pages/page-builder/index.vue",
     "menu": "documentation",
-    "breadcrumb": ["/", "documentation"]
-  },
-  "documentation/start": {
-    "title": "Start",
-    "subtitle": "<strong>Three ways</strong> to install and use Buefy",
-    "path": "/documentation/start",
-    "githubPath": "pages/installation/Start.vue",
-    "menu": "documentation",
-    "breadcrumb": ["/", "documentation", "documentation/start"]
-  },
-  "documentation/layout": {
-    "title": "Layout & elements",
-    "subtitle": "Buefy has the entire Bulma's core <b>built in</b>. You can use any feature from Bulma, plus all the components Buefy offers",
-    "path": "/documentation/layout",
-    "githubPath": "pages/Layout.vue",
-    "menu": "documentation",
-    "breadcrumb": ["/", "documentation", "documentation/layout"]
+    "breadcrumb": ["/", "page builder"]
   },
   "documentation/headers": {
     "title": "Headers",
     "subtitle": "Selection of all Header",
-    "path": "/design-blocks/headers",
+    "path": "/html-blocks/headers",
     "githubPath": "html-snippets",
     "menu": "documentation",
     "breadcrumb": ["/", "documentation", "documentation/headers"]
@@ -45,7 +29,7 @@
   "documentation/contents": {
     "title": "Content",
     "subtitle": "Selection of all Content Blocks",
-    "path": "/design-blocks/contents",
+    "path": "/html-blocks/contents",
     "githubPath": "html-snippets/content",
     "menu": "documentation",
     "breadcrumb": ["/", "documentation", "documentation/content"]
@@ -53,7 +37,7 @@
   "documentation/features": {
     "title": "Feature",
     "subtitle": "Selection of all Feature Blocks",
-    "path": "/design-blocks/features",
+    "path": "/html-blocks/features",
     "githubPath": "html-snippets/features",
     "menu": "documentation",
     "breadcrumb": ["/", "documentation", "documentation/content"]

@@ -40,8 +40,8 @@
         <!--  <CodepenEdit :code="code" :title="title"/>-->
       </div>
       <div class="example__container">
-        <div ref="componenthtml" class="example-component" :class="{ 'is-paddingless': paddingless }">
-          <component :is="component" ref="foo" :color="newColor" :container="container" />
+        <div class="example-component" :class="{ 'is-paddingless': paddingless }">
+          <component :is="component" ref="componenthtml" :color="newColor" :container="container" />
         </div>
         <div class="container is-fullwidth">
           <CodeView :code.sync="code" bordered codepen />
@@ -84,7 +84,7 @@ export default class Example extends Vue {
 
   updateRefs() {
     this.$nextTick(() => {
-      this.code = prettier.format(this.$refs.foo.$el.outerHTML, {
+      this.code = prettier.format(this.$refs.componenthtml.$el.outerHTML, {
         parser: 'html',
         semi: true,
         arrowParens: 'always',
