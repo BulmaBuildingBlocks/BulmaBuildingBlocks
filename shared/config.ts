@@ -1,3 +1,5 @@
+import { Options } from 'prettier';
+import parserHtml from 'prettier/parser-html';
 import en from '../lang/en.json';
 import fr from '../lang/fr.json';
 import es from '../lang/es.json';
@@ -33,3 +35,16 @@ export const I18N = {
 };
 
 export const statusColors = ['white', 'black', 'primary', 'info', 'success', 'warning', 'danger', 'light', 'dark'];
+
+export const prettierConf: Options = {
+  parser: 'html',
+  semi: true,
+  arrowParens: 'always',
+  singleQuote: true,
+  endOfLine: 'auto',
+  printWidth: 120,
+  useTabs: true,
+  htmlWhitespaceSensitivity: 'ignore',
+  plugins: [parserHtml],
+  jsxBracketSameLine: true
+};

@@ -1,4 +1,4 @@
-import { Module, Mutation, VuexModule, getModule } from 'vuex-module-decorators';
+import { Module, VuexModule, getModule } from 'vuex-module-decorators';
 import { store } from '~/store/index';
 
 @Module({
@@ -6,13 +6,6 @@ import { store } from '~/store/index';
   dynamic: true,
   store
 })
-export class App extends VuexModule {
-  menuActive = false;
-
-  @Mutation
-  toggleMenu() {
-    this.menuActive = !this.menuActive;
-  }
-}
+export class App extends VuexModule {}
 
 export default getModule(App);

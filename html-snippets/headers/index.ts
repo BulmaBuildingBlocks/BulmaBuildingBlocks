@@ -1,39 +1,38 @@
-import ExSimpleLogoLeft from '~/html-snippets/headers/header-simple-logo-left.vue';
-import ExSimpleLogoMiddle from '~/html-snippets/headers/header-simple-logo-middle.vue';
-import ExSimple from '~/html-snippets/headers/header-simple.vue';
-import ExSimpleTransparent from '~/html-snippets/headers/header-simple-transparent.vue';
-import ExMenuCenter from '~/html-snippets/headers/header-simple-menu-center.vue';
+import HeaderExSimpleLogoLeft from '~/html-snippets/headers/header-simple-logo-left.vue';
+import HeaderExSimpleLogoMiddle from '~/html-snippets/headers/header-simple-logo-middle.vue';
+import HeaderExSimple from '~/html-snippets/headers/header-simple.vue';
+import HeaderExSimpleTransparent from '~/html-snippets/headers/header-simple-transparent.vue';
+import HeaderExMenuCenter from '~/html-snippets/headers/header-simple-menu-center.vue';
 
 const components = [
   {
-    name: 'Navbar with Logo Left',
-    component: ExSimpleLogoLeft,
+    title: 'Navbar with Logo Left',
+    component: HeaderExSimpleLogoLeft,
     color: 'white',
-    containerToggle: true
+    container: true
   },
   {
-    name: 'Navbar with Logo Center',
-    component: ExSimpleLogoMiddle,
-    color: 'white',
-    containerToggle: true
+    title: 'Navbar with Logo Center',
+    component: HeaderExSimpleLogoMiddle,
+    color: 'white'
   },
   {
-    name: 'Navbar with Simple Nav',
-    component: ExSimple,
+    title: 'Navbar with Simple Nav',
+    component: HeaderExSimple,
     color: 'white',
-    containerToggle: true
+    container: true
   },
   {
-    name: 'Navbar without hover',
-    component: ExSimpleTransparent,
+    title: 'Navbar without hover',
+    component: HeaderExSimpleTransparent,
     color: 'white',
-    containerToggle: true
+    container: true
   },
   {
-    name: 'Navbar Centered',
-    component: ExMenuCenter,
+    title: 'Navbar Centered',
+    component: HeaderExMenuCenter,
     color: 'white',
-    containerToggle: true
+    container: true
   }
 ];
 

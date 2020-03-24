@@ -21,5 +21,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class Index extends mixins(HtmlSnippetMixin) {}
+export default class FeatureSimpleEightColumns extends mixins(HtmlSnippetMixin) {}
 </script>

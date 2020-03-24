@@ -1,51 +1,51 @@
-import SimpleTitle from '~/html-snippets/content/content-simple-title.vue';
-import SimpleSubtitle from '~/html-snippets/content/content-simple-subtitle.vue';
-import SimpleTitleSubtitle from '~/html-snippets/content/content-simple-title-subtitle.vue';
-import SimpleSubtitleLeft from '~/html-snippets/content/content-simple-subtitle-left.vue';
-import SimpleSubtitleRight from '~/html-snippets/content/content-simple-subtitle-right.vue';
-import SimpleTitleSubtitleFull from '~/html-snippets/content/content-simple-title-with-content.vue';
-import SimpleTitleTwoColumn from '~/html-snippets/content/content-simple-title-two-column.vue';
-import SingleImage from '~/html-snippets/content/content-simple-single-image.vue';
+import ContentSimpleTitle from '~/html-snippets/content/content-simple-title.vue';
+import ContentSimpleSubtitle from '~/html-snippets/content/content-simple-subtitle.vue';
+import ContentSimpleTitleSubtitle from '~/html-snippets/content/content-simple-title-subtitle.vue';
+import ContentSimpleSubtitleLeft from '~/html-snippets/content/content-simple-subtitle-left.vue';
+import ContentSimpleSubtitleRight from '~/html-snippets/content/content-simple-subtitle-right.vue';
+import ContentSimpleTitleSubtitleFull from '~/html-snippets/content/content-simple-title-with-content.vue';
+import ContentSimpleTitleTwoColumn from '~/html-snippets/content/content-simple-title-two-column.vue';
+import ContentSingleImage from '~/html-snippets/content/content-simple-single-image.vue';
 
 const components = [
   {
-    name: 'Title',
-    component: SimpleTitle,
+    title: 'Title',
+    component: ContentSimpleTitle,
     color: 'white'
   },
   {
-    name: 'Subtitle',
-    component: SimpleSubtitle,
+    title: 'Subtitle',
+    component: ContentSimpleSubtitle,
     color: 'white'
   },
   {
-    name: 'Title and Subtitle',
-    component: SimpleTitleSubtitle,
+    title: 'Title and Subtitle',
+    component: ContentSimpleTitleSubtitle,
     color: 'white'
   },
   {
-    name: 'Subtitle Left',
-    component: SimpleSubtitleLeft,
+    title: 'Subtitle Left',
+    component: ContentSimpleSubtitleLeft,
     color: 'white'
   },
   {
-    name: 'Subtitle Right',
-    component: SimpleSubtitleRight,
+    title: 'Subtitle Right',
+    component: ContentSimpleSubtitleRight,
     color: 'white'
   },
   {
-    name: 'Title with Content',
-    component: SimpleTitleSubtitleFull,
+    title: 'Title with Content',
+    component: ContentSimpleTitleSubtitleFull,
     color: 'white'
   },
   {
-    name: 'Title Two Columns',
-    component: SimpleTitleTwoColumn,
+    title: 'Title Two Columns',
+    component: ContentSimpleTitleTwoColumn,
     color: 'white'
   },
   {
-    name: 'Single Image',
-    component: SingleImage,
+    title: 'Single Image',
+    component: ContentSingleImage,
     color: 'white'
   }
 ];

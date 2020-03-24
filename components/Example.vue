@@ -10,9 +10,9 @@
             </p>
           </div>
           <div class="level-right">
-            <div v-if="containerToggle" class="level-item">
+            <div v-if="container" class="level-item">
               <b-field label="Container Applied" custom-class="is-small" horizontal>
-                <b-switch v-model="container" @input="updateRefs"></b-switch>
+                <b-switch v-model="containerValue" @input="updateRefs" />
               </b-field>
             </div>
             <div v-if="newColor" class="level-item">
@@ -35,13 +35,13 @@
         </div>
       </div>
     </div>
-    <div v-if="component" class="example" :class="{ 'is-vertical': vertical }">
+    <div v-if="component" class="example">
       <div class="button-container">
         <!--  <CodepenEdit :code="code" :title="title"/>-->
       </div>
       <div class="example__container">
-        <div class="example-component" :class="{ 'is-paddingless': paddingless }">
-          <component :is="component" ref="componenthtml" :color="newColor" :container="container" />
+        <div class="example-component">
+          <component :is="component" ref="componenthtml" :color="newColor" :container="containerValue" />
         </div>
         <div class="container is-fullwidth">
           <CodeView :code.sync="code" bordered codepen />
@@ -56,9 +56,8 @@
 // import CodepenEdit from './CodepenEdit';
 import { Prop, Vue, Component } from 'nuxt-property-decorator';
 import prettier from 'prettier/standalone';
-import parserHtml from 'prettier/parser-html';
 import CodeView from './CodeView.vue';
-import { statusColors } from '~/shared/config';
+import { prettierConf, statusColors } from '~/shared/config';
 
 @Component({
   components: {
@@ -70,30 +69,19 @@ export default class Example extends Vue {
   @Prop([Object, Function]) component!: object | Function;
   // @Prop(String) code!: string;
   @Prop(String) title!: string;
-  @Prop(Boolean) paddingless!: boolean;
-  @Prop(Boolean) vertical!: boolean;
-  @Prop(Boolean) containerToggle!: boolean;
+  @Prop(Boolean) container!: boolean;
   @Prop(String) color!: string;
 
   $refs!: any;
 
   code = '';
   newColor = this.color || '';
-  container = true;
+  containerValue = true;
   statuses = statusColors;
 
   updateRefs() {
     this.$nextTick(() => {
-      this.code = prettier.format(this.$refs.componenthtml.$el.outerHTML, {
-        parser: 'html',
-        semi: true,
-        arrowParens: 'always',
-        singleQuote: true,
-        endOfLine: 'auto',
-        printWidth: 120,
-        htmlWhitespaceSensitivity: 'ignore',
-        plugins: [parserHtml]
-      });
+      this.code = prettier.format(this.$refs.componenthtml.$el.outerHTML, prettierConf);
     });
   }
 
