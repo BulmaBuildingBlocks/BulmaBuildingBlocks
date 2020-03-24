@@ -1,6 +1,8 @@
 <h1 align="center">Welcome to Bulma Building Blocks 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.2.1-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/CHANGELOG.md">
+    <img alt="Version" src="https://img.shields.io/badge/version-0.2.1-blue.svg?cacheSeconds=2592000" />
+  </a>
   <a href="https://github.com/JosephAnson/BulmaBuildingBlocks#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -9,7 +11,7 @@
   </a>
 </p>
 
-### 🏠 [Homepage](https://github.com/JosephAnson/BulmaBuildingBlocks)
+### 🏠 [Demo](https://bulmabuildingblocks.herokuapp.com/)
 
 ## Install
 
