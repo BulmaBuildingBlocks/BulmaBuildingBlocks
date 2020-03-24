@@ -43,7 +43,6 @@ export const prettierConf: Options = {
   singleQuote: true,
   endOfLine: 'auto',
   printWidth: 120,
-  useTabs: true,
   htmlWhitespaceSensitivity: 'ignore',
   plugins: [parserHtml],
   jsxBracketSameLine: true
