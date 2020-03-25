@@ -2,11 +2,13 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import createLogger from 'vuex/dist/logger';
 import { App } from '~/store/app';
+import { PageBuilderStore } from '~/store/pageBuilder';
 
 Vue.use(Vuex);
 
 export interface IRootState {
   app: App;
+  pageBuilder: PageBuilderStore;
 }
 
 export const store = new Vuex.Store<IRootState>({

@@ -1,0 +1,12 @@
+.component-viewer-list {
+  &.has-components-shown {
+    > * {
+      margin-bottom: 0.5rem;
+      border: 1px solid $primary-light;
+    }
+
+    .sortable-ghost {
+      border: 3px solid $primary;
+    }
+  }
+}

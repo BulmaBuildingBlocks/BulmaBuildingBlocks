@@ -97,7 +97,9 @@ const nuxtConfig: Configuration = {
         ['@babel/plugin-proposal-class-properties', { loose: true }]
       ]
     },
-    extend(config: any) {
+    extend(config: any, ctx: any) {
+      // Added Line
+      config.devtool = ctx.isClient ? 'eval-source-map' : 'inline-source-map';
       // ..
       config.module.rules.push({
         test: /\.html$/i,
