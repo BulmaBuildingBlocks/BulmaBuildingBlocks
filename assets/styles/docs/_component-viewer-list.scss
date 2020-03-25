@@ -1,4 +1,6 @@
 .component-viewer-list {
+  height: 100%;
+
   &.has-components-shown {
     > * {
       margin-bottom: 0.5rem;

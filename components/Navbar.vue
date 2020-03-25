@@ -54,7 +54,11 @@
               </strong>
 
               <hr class="navbar-divider" />
-              <a class="navbar-item" href="https://github.com/JosephAnson/BulmaDesignBlocks/releases" target="_blank">
+              <a
+                class="navbar-item"
+                href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/CHANGELOG.md"
+                target="_blank"
+              >
                 Changelogs
               </a>
             </div>

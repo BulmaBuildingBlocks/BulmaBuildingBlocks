@@ -69,7 +69,9 @@
             </div>
           </div>
           <div class="page-builder__iframe" :class="`is-${deviceSize}`">
-            <device-viewer />
+            <client-only>
+              <device-viewer :component="ComponentViewer" />
+            </client-only>
           </div>
         </div>
       </div>
@@ -86,6 +88,7 @@ import { Component, Vue, Watch } from 'nuxt-property-decorator';
 
 import allComponents from '~/html-snippets';
 
+import ComponentViewer from '~/components/ComponentViewer.vue';
 import DeviceViewer from '~/components/DeviceViewer.vue';
 import PageBuilderStore from '~/store/pageBuilder';
 
@@ -99,6 +102,8 @@ export default class PageBuilder extends Vue {
   components = allComponents;
   deviceSize = 'desktop';
   showComponents = PageBuilderStore.showComponents;
+
+  ComponentViewer = ComponentViewer;
 
   get layout() {
     return 'empty';
