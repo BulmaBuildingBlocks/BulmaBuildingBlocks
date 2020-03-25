@@ -2,39 +2,6 @@
   <section id="page-builder" class="page-builder">
     <div class="page-builder__container">
       <div class="columns is-gapless">
-        <div class="column is-narrow has-background-light page-builder__viewer" :class="`is-${deviceSize}`">
-          <div class="page-builder__device-options">
-            <div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <b-field>
-                    <b-radio-button v-model="deviceSize" native-value="mobile" size="is-small">
-                      Mobile
-                    </b-radio-button>
-
-                    <b-radio-button v-model="deviceSize" native-value="tablet" size="is-small">
-                      Tablet
-                    </b-radio-button>
-
-                    <b-radio-button v-model="deviceSize" native-value="desktop" size="is-small">
-                      Desktop
-                    </b-radio-button>
-                  </b-field>
-                </div>
-                <div class="level-item">
-                  <b-field>
-                    <b-switch v-model="showComponents">
-                      <span class="label is-small is-nowrap">Container Spacing</span>
-                    </b-switch>
-                  </b-field>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="page-builder__iframe" :class="`is-${deviceSize}`">
-            <device-viewer />
-          </div>
-        </div>
         <div class="column">
           <div class="page-builder__component-list">
             <div class="level is-marginless">
@@ -70,6 +37,39 @@
                 <component :is="component.component" v-bind="component" />
               </div>
             </draggable>
+          </div>
+        </div>
+        <div class="column is-narrow has-background-light page-builder__viewer" :class="`is-${deviceSize}`">
+          <div class="page-builder__device-options">
+            <div class="level">
+              <div class="level-left">
+                <div class="level-item">
+                  <b-field>
+                    <b-radio-button v-model="deviceSize" native-value="mobile" size="is-small">
+                      Mobile
+                    </b-radio-button>
+
+                    <b-radio-button v-model="deviceSize" native-value="tablet" size="is-small">
+                      Tablet
+                    </b-radio-button>
+
+                    <b-radio-button v-model="deviceSize" native-value="desktop" size="is-small">
+                      Desktop
+                    </b-radio-button>
+                  </b-field>
+                </div>
+                <div class="level-item">
+                  <b-field>
+                    <b-switch v-model="showComponents">
+                      <span class="label is-small is-nowrap">Container Spacing</span>
+                    </b-switch>
+                  </b-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-builder__iframe" :class="`is-${deviceSize}`">
+            <device-viewer />
           </div>
         </div>
       </div>
