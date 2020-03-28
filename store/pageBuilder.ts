@@ -1,5 +1,6 @@
 import { Module, Mutation, VuexModule, getModule } from 'vuex-module-decorators';
 import { store } from '~/store/index';
+import { ISnippet } from '@/types/ISnippet';
 
 @Module({
   name: 'PageBuilderStore',
@@ -8,16 +9,16 @@ import { store } from '~/store/index';
 })
 export class PageBuilderStore extends VuexModule {
   code = '';
-  components: Function[] = [];
+  components: ISnippet[] = [];
   showComponents = true;
 
   @Mutation
-  addComponent(component: any) {
+  addComponent(component: ISnippet) {
     this.components.push(component);
   }
 
   @Mutation
-  removeComponent(component: any) {
+  removeComponent(component: ISnippet) {
     this.components.splice(this.components.indexOf(component), 1);
   }
 

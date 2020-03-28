@@ -70,7 +70,7 @@
           </div>
           <div class="page-builder__iframe" :class="`is-${deviceSize}`">
             <client-only>
-              <device-viewer :component="ComponentViewer" />
+              <device-viewer :component="PageBuilder" :components="PageBuilderComponents" />
             </client-only>
           </div>
         </div>
@@ -80,15 +80,13 @@
 </template>
 
 <script lang="ts">
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
 import draggable from 'vuedraggable';
 
 import { Component, Vue, Watch } from 'nuxt-property-decorator';
 
 import allComponents from '~/html-snippets';
 
-import ComponentViewer from '~/components/ComponentViewer.vue';
+import PageBuilder from '~/components/PageBuilder.vue';
 import DeviceViewer from '~/components/DeviceViewer.vue';
 import PageBuilderStore from '~/store/pageBuilder';
 
@@ -98,24 +96,25 @@ import PageBuilderStore from '~/store/pageBuilder';
     DeviceViewer
   }
 })
-export default class PageBuilder extends Vue {
+export default class PageBuilderPage extends Vue {
   components = allComponents;
   deviceSize = 'desktop';
   showComponents = PageBuilderStore.showComponents;
 
-  ComponentViewer = ComponentViewer;
+  PageBuilder = PageBuilder;
+  PageBuilderComponents = PageBuilderStore.components;
 
   get layout() {
     return 'empty';
   }
 
+  addComponentToPreview(component: any) {
+    PageBuilderStore.addComponent(component);
+  }
+
   @Watch('showComponents')
   onShowComponentsChange(value: boolean) {
     PageBuilderStore.toggleShowComponent(value);
-  }
-
-  addComponentToPreview(component: any) {
-    PageBuilderStore.addComponent(component);
   }
 
   async copyCode() {

@@ -1,5 +1,5 @@
 <script lang="ts">
-import Vue, { CreateElement } from 'vue';
+import Vue, { CreateElement, VueConstructor } from 'vue';
 import $ from 'jquery';
 import { store } from '~/store';
 import PageBuilderStore from '~/store/pageBuilder';
@@ -7,7 +7,7 @@ import { Component, Prop } from '~/node_modules/nuxt-property-decorator';
 
 @Component
 export default class DeviceViewer extends Vue {
-  @Prop() component!: any;
+  @Prop() component!: VueConstructor<any>;
 
   iApp: any = null;
 
@@ -17,6 +17,8 @@ export default class DeviceViewer extends Vue {
 
   render(h: CreateElement) {
     const renderComponent = this.component;
+    const attrs = this.$attrs;
+
     return h('iframe', {
       on: {
         load: () => {
@@ -46,9 +48,7 @@ export default class DeviceViewer extends Vue {
               store,
               render(createElement: CreateElement) {
                 return createElement(renderComponent, {
-                  props: {
-                    components: PageBuilderStore.components
-                  }
+                  props: attrs // Direction pass through the attributes to the component in the iframe
                 });
               }
             });

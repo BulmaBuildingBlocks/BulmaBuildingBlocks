@@ -2,7 +2,6 @@
 // @ts-nocheck
 import Vue from 'vue';
 import VueHighlightJS from 'vue-highlightjs';
-
 import Example from '~/components/Example';
 
 Vue.component('Example', Example);

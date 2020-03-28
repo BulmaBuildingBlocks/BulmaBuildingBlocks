@@ -11,4 +11,20 @@
       border: 3px solid $primary;
     }
   }
+
+  .component-viewer-item {
+    position: relative;
+
+    .component-viewer-item__options {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+      z-index: 999999;
+    }
+
+    &:hover .component-viewer-item__options {
+      display: block;
+    }
+  }
 }
