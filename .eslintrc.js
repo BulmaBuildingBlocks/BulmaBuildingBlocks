@@ -19,10 +19,6 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    '@typescript-eslint/interface-name-prefix': 0,
-    '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-var-requires': 0,
-    'import/no-webpack-loader-syntax': 0
+    'vue/no-v-html': 0
   }
 };

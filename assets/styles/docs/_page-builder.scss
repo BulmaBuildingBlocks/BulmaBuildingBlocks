@@ -31,8 +31,9 @@
 
     .page-builder__device-options {
       position: absolute;
-      bottom: 1rem;
-      left: 1rem;
+      bottom: 0;
+      left: 0;
+      padding: 1rem;
       z-index: 2;
     }
   }

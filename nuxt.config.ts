@@ -70,9 +70,7 @@ const nuxtConfig: Configuration = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
-    // Doc: https://github.com/webcore-it/nuxt-clipboard2
-    'nuxt-clipboard2'
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Axios module configuration
@@ -97,14 +95,15 @@ const nuxtConfig: Configuration = {
         ['@babel/plugin-proposal-class-properties', { loose: true }]
       ]
     },
-    extend(config: any, ctx: any) {
-      // Added Line
+    extend(config, ctx): void {
       config.devtool = ctx.isClient ? 'eval-source-map' : 'inline-source-map';
-      // ..
-      config.module.rules.push({
-        test: /\.html$/i,
-        loader: 'html-loader'
-      });
+
+      if (config.module) {
+        config.module.rules.push({
+          test: /\.html$/i,
+          loader: 'html-loader'
+        });
+      }
     }
   },
 

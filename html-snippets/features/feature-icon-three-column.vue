@@ -6,20 +6,37 @@
         <div class="column is-10">
           <div class="columns is-centered is-multiline">
             <div
-              v-for="(item, index) in 3"
-              :key="item"
+              v-for="(item, index) in content"
+              :key="index"
               class="column is-6 is-4-widescreen block"
               :class="`has-text-${color}-invert`"
             >
               <div class="level">
                 <div class="level-item">
-                  <div class="image is-128x128">
-                    <img :src="require(`../../assets/icons/${index + 1}.svg`)" />
-                  </div>
+                  <editable-content
+                    tag="div"
+                    class="image is-128x128"
+                    :value="item.image"
+                    :editable="editable"
+                    @value="item.image = $event"
+                  />
                 </div>
               </div>
-              <h3 class="label" :class="`has-text-${color}-invert`">Feature {{ index + 1 }}</h3>
-              <p>Objectively cultivate stand-alone experiences whereas collaborative scenarios.</p>
+              <editable-content
+                tag="h3"
+                class="label"
+                :class="`has-text-${color}-invert`"
+                :value="item.title"
+                :editable="editable"
+                @value="item.title = $event"
+              />
+              <editable-content
+                tag="div"
+                class="content"
+                :value="item.content"
+                :editable="editable"
+                @value="item.content = $event"
+              />
             </div>
           </div>
         </div>
@@ -33,11 +50,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class FeatureIconThreeColumns extends mixins(HtmlSnippetMixin) {
-  content = [
-    {
-      title: ''
-    }
-  ];
-}
+export default class FeatureIconThreeColumns extends mixins(HtmlSnippetMixin) {}
 </script>

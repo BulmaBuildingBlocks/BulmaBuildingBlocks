@@ -41,7 +41,13 @@
       </div>
       <div class="example__container">
         <div class="example-component">
-          <component :is="component" ref="componenthtml" :color="newColor" :container="containerValue" />
+          <component
+            :is="component"
+            ref="componenthtml"
+            :color="newColor"
+            :container="containerValue"
+            :content="content"
+          />
         </div>
         <div class="container is-fullwidth">
           <CodeView :code.sync="code" bordered codepen />
@@ -56,6 +62,7 @@
 // import CodepenEdit from './CodepenEdit';
 import { Prop, Vue, Component } from 'nuxt-property-decorator';
 import prettier from 'prettier/standalone';
+import clipboard from 'copy-to-clipboard';
 import CodeView from './CodeView.vue';
 import { prettierConf, statusColors } from '~/shared/config';
 
@@ -71,29 +78,31 @@ export default class Example extends Vue {
   @Prop(String) title!: string;
   @Prop(Boolean) container!: boolean;
   @Prop(String) color!: string;
+  @Prop([Object, Array]) content!: string;
 
-  $refs!: any;
+  $refs!: {
+    componenthtml: Vue;
+  };
 
   code = '';
   newColor = this.color || '';
   containerValue = true;
   statuses = statusColors;
 
-  updateRefs() {
+  updateRefs(): void {
     this.$nextTick(() => {
       this.code = prettier.format(this.$refs.componenthtml.$el.outerHTML, prettierConf);
     });
   }
 
-  mounted() {
+  mounted(): void {
     this.updateRefs();
   }
 
-  async copyCode() {
+  async copyCode(): Promise<void> {
     try {
-      await this.$copyText(this.code).then(() => {
-        this.$buefy.toast.open('Copied to clipboard!');
-      });
+      await clipboard(this.code);
+      this.$buefy.toast.open('Copied to clipboard!');
     } catch (e) {
       this.$buefy.toast.open({
         message: 'Error while copying to clipboard :(',
@@ -102,7 +111,7 @@ export default class Example extends Vue {
     }
   }
 
-  get slugifiedTitle() {
+  get slugifiedTitle(): string {
     if (!this.title) return '';
     return this.title
       .toLowerCase()

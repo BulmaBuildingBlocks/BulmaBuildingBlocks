@@ -28,11 +28,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class FeatureImagesThreeColumns extends mixins(HtmlSnippetMixin) {
-  content = [
-    {
-      title: ''
-    }
-  ];
-}
+export default class FeatureImagesThreeColumns extends mixins(HtmlSnippetMixin) {}
 </script>

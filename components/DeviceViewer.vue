@@ -1,27 +1,21 @@
 <script lang="ts">
-import Vue, { CreateElement, VueConstructor } from 'vue';
+import Vue, { CreateElement, VNode } from 'vue';
 import $ from 'jquery';
 import { store } from '~/store';
-import PageBuilderStore from '~/store/pageBuilder';
-import { Component, Prop } from '~/node_modules/nuxt-property-decorator';
+import { Component } from '~/node_modules/nuxt-property-decorator';
+import PageBuilder from '~/components/PageBuilder.vue';
 
 @Component
 export default class DeviceViewer extends Vue {
-  @Prop() component!: VueConstructor<any>;
+  iApp?: Vue = undefined;
 
-  iApp: any = null;
-
-  get components() {
-    return PageBuilderStore.components;
-  }
-
-  render(h: CreateElement) {
-    const renderComponent = this.component;
+  render(h: CreateElement): VNode {
+    const renderComponent = PageBuilder;
     const attrs = this.$attrs;
 
     return h('iframe', {
       on: {
-        load: () => {
+        load: (): void => {
           const iframeContentDocument = (this.$el as HTMLIFrameElement).contentDocument;
 
           if (iframeContentDocument) {
@@ -46,7 +40,7 @@ export default class DeviceViewer extends Vue {
             const IApp = new Vue({
               name: 'IApp',
               store,
-              render(createElement: CreateElement) {
+              render(createElement: CreateElement): VNode {
                 return createElement(renderComponent, {
                   props: attrs // Direction pass through the attributes to the component in the iframe
                 });

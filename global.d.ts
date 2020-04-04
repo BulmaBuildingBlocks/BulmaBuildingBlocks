@@ -7,12 +7,9 @@ import { Route } from 'vue-router';
 //    Vue has the constructor type in types/vue.d.ts
 declare module 'vue/types/vue' {
   // 3. Declare augmentation for Vue
+
   interface Vue {
     $buefy: BuefyNamespace;
     $route: Route;
-    $copyText: any;
   }
 }
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-declare interface Window {}

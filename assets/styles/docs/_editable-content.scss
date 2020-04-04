@@ -1,0 +1,37 @@
+.editor {
+  position: relative;
+
+  &.content{
+    margin: 0 !important;
+  }
+}
+
+.menubar {
+  position: absolute;
+  transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
+  background: $white;
+  box-shadow: $box-shadow;
+  width: 370px;
+  margin-left: (-370px / 2);
+  left: 50%;
+  flex-wrap: wrap;
+  bottom: calc(100% + 1rem);
+  color: $black;
+
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.is-focused {
+    display: flex !important;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.2s, opacity 0.2s;
+  }
+
+  .buttons,
+  .button {
+    margin: 0 !important;
+  }
+}

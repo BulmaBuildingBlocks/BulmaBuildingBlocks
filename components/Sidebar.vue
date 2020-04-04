@@ -34,21 +34,28 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import routes from '@/data/routes';
+import routes from '@/data/routes.json';
+
+export interface Routes {
+  [key: string]: {
+    [key: string]: {};
+  };
+}
 
 @Component
 export default class SideBar extends Vue {
-  @Prop(Array) data;
+  @Prop(Array) data!: [];
 
-  normalizedData(items) {
+  normalizedData(items: string[]): { [p: string]: {} }[] {
+    const Routes: Routes = routes;
     return items.map((item) => {
-      return typeof item === 'string' ? routes[item] : item;
+      return Routes[item];
     });
   }
 
-  backToTop() {
+  backToTop(): void {
     window.scroll({
       top: 0,
       behavior: 'smooth'

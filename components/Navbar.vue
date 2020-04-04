@@ -76,19 +76,19 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 // import bulmaPackage from 'bulma/package.json';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Navbar extends Vue {
-  @Prop(Boolean) light;
+  @Prop(Boolean) light!: boolean;
 
   isMenuActive = false;
   bulmaVersion = '0.8.0';
   // bulmaVersion = bulmaPackage.version | '0.8.0';
 
-  tweet() {
+  tweet(): void {
     const width = 575;
     const height = 400;
     const left = (window.screen.width - width) / 2;

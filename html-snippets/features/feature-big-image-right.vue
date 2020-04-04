@@ -3,7 +3,9 @@
     <div class="container">
       <div class="columns is-vcentered">
         <div class="column">
-          <h2 class="title is-spaced" :class="color ? `has-text-${color}-invert` : ''">Bulma Building Blocks</h2>
+          <h2 class="title is-spaced" :class="color ? `has-text-${color}-invert` : ''">
+            Bulma Building Blocks
+          </h2>
           <div class="content" :class="color ? `has-text-${color}-invert` : ''">
             <p>
               Continually leverage other's state of the art imperatives before orthogonal experiences. Completely

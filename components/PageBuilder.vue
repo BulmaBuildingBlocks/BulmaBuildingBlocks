@@ -3,12 +3,12 @@
     <draggable
       ref="pageHtml"
       class="component-viewer-list"
-      :class="{ 'has-components-shown': showComponents }"
+      :class="{ 'has-components-shown': showSnippetBorders }"
       :group="{ name: 'content' }"
       :list="components"
     >
-      <div v-for="component in components" :key="component.name" class="component-viewer-item">
-        <div class="component-viewer-item__options">
+      <div v-for="(component, index) in components" :key="index" class="component-viewer-item">
+        <div v-if="editable" class="component-viewer-item__options">
           <div class="buttons">
             <button class="button is-danger" @click="deleteComponentItem(component)">Delete</button>
           </div>
@@ -18,6 +18,8 @@
           ref="myTextEditorHtml"
           :color="component.color"
           :container="component.container"
+          :content="component.content"
+          :editable="editable"
         />
       </div>
     </draggable>
@@ -26,12 +28,10 @@
 
 <script lang="ts">
 import draggable from 'vuedraggable';
-import { Vue, Component, Prop, Watch } from 'nuxt-property-decorator';
-import prettier from 'prettier/standalone';
+import { Vue, Component, Watch } from 'nuxt-property-decorator';
 import { components } from '~/html-snippets';
-import { prettierConf } from '~/shared/config';
 import PageBuilderStore from '~/store/pageBuilder';
-import { ISnippet } from '~/types/ISnippet';
+import { Snippet } from '~/types/Snippet';
 
 @Component({
   components: {
@@ -40,31 +40,47 @@ import { ISnippet } from '~/types/ISnippet';
   }
 })
 export default class ComponentViewer extends Vue {
-  @Prop(Array) components!: ISnippet[];
+  $refs!: {
+    myTextEditorHtml: Vue[];
+  };
 
-  get showComponents() {
-    return PageBuilderStore.showComponents;
+  get components(): Snippet[] {
+    return PageBuilderStore.components;
   }
 
-  get editor() {
-    return this.$refs.QuillEditor.quill;
+  get showSnippetBorders(): boolean {
+    return PageBuilderStore.showSnippetBorders;
   }
 
-  $refs!: any;
+  get editable(): boolean {
+    return PageBuilderStore.editable;
+  }
 
-  deleteComponentItem(component: ISnippet) {
+  get copyingCode(): boolean {
+    return PageBuilderStore.copyingCode;
+  }
+
+  deleteComponentItem(component: Snippet): void {
     PageBuilderStore.removeComponent(component);
   }
 
-  @Watch('components')
-  updateCode() {
-    this.$nextTick(() => {
+  @Watch('copyingCode', { deep: true })
+  async updateCode(): Promise<void> {
+    if (PageBuilderStore.copyingCode) {
+      const currentEditState = PageBuilderStore.editable;
+
+      await PageBuilderStore.toggleEditable(false);
+      await this.$nextTick();
+
+      // Get and copy html content
       const htmlContent = this.$refs.myTextEditorHtml.reduce((accumulator: string, currentValue: Vue) => {
         return accumulator + currentValue.$el.outerHTML;
       }, '');
+      await PageBuilderStore.copyCode(htmlContent);
 
-      PageBuilderStore.updateCode(prettier.format(htmlContent, prettierConf));
-    });
+      await this.$nextTick();
+      await PageBuilderStore.toggleEditable(currentEditState);
+    }
   }
 }
 </script>

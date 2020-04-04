@@ -29,7 +29,7 @@ export default class CodeView extends Vue {
 
   isExpanded = false;
 
-  get figureClasses() {
+  get figureClasses(): object {
     return {
       'is-collapsed': !this.bordered && !this.expanded,
       'is-expanded': this.isExpanded || this.expanded

@@ -5,22 +5,101 @@ import FeatureImagesThreeColumns from '~/html-snippets/features/feature-image-th
 import FeatureIconThreeColumnsMedia from '~/html-snippets/features/feature-icon-three-column-media.vue';
 import FeatureBigImageLeft from '~/html-snippets/features/feature-big-image-left.vue';
 import FeatureBigImageRight from '~/html-snippets/features/feature-big-image-right.vue';
+import { ContentType, getContent } from '~/shared/content';
 
 const components = [
   {
     title: 'Six Column Feature',
     component: FeatureSimpleSixColumns,
-    color: 'white'
+    color: 'white',
+    content: [
+      {
+        title: getContent(ContentType.FeatureTitle, 1),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 2),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 3),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 4),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 5),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 6),
+        content: getContent(ContentType.SmallDescription)
+      }
+    ]
   },
   {
     title: 'Eight Column Feature',
     component: FeatureSimpleEightColumns,
-    color: 'white'
+    color: 'white',
+    container: true,
+    content: [
+      {
+        title: getContent(ContentType.FeatureTitle, 1),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 2),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 3),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 4),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 5),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 6),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 7),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        title: getContent(ContentType.FeatureTitle, 8),
+        content: getContent(ContentType.SmallDescription)
+      }
+    ]
   },
   {
     title: 'Three Icons Feature',
     component: FeatureIconThreeColumns,
-    color: 'white'
+    color: 'white',
+    content: [
+      {
+        image: `<img src="${require(`../../assets/icons/1.svg`)}" />`,
+        title: getContent(ContentType.FeatureTitle, 1),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        image: `<img src="${require(`../../assets/icons/2.svg`)}" />`,
+        title: getContent(ContentType.FeatureTitle, 2),
+        content: getContent(ContentType.SmallDescription)
+      },
+      {
+        image: `<img src="${require(`../../assets/icons/3.svg`)}" />`,
+        title: getContent(ContentType.FeatureTitle, 3),
+        content: getContent(ContentType.SmallDescription)
+      }
+    ]
   },
   {
     title: 'Three Images Feature',

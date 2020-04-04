@@ -6,12 +6,12 @@ import { PageBuilderStore } from '~/store/pageBuilder';
 
 Vue.use(Vuex);
 
-export interface IRootState {
+export interface RootState {
   app: App;
   pageBuilder: PageBuilderStore;
 }
 
-export const store = new Vuex.Store<IRootState>({
+export const store = new Vuex.Store<RootState>({
   /*
   Ideally if all your modules are dynamic
   then your store is registered initially

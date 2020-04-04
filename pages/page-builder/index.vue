@@ -15,11 +15,6 @@
                   Back
                 </nuxt-link>
               </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <button class="button is-small is-primary copy-code" @click="copyCode">Copy</button>
-                </div>
-              </div>
             </div>
             <hr />
             <draggable
@@ -40,7 +35,7 @@
           </div>
         </div>
         <div class="column is-narrow has-background-light page-builder__viewer" :class="`is-${deviceSize}`">
-          <div class="page-builder__device-options">
+          <div class="page-builder__device-options is-fullwidth">
             <div class="level">
               <div class="level-left">
                 <div class="level-item">
@@ -60,17 +55,29 @@
                 </div>
                 <div class="level-item">
                   <b-field>
-                    <b-switch v-model="showComponents">
+                    <b-switch v-model="showSnippetBorders">
                       <span class="label is-small is-nowrap">Container Spacing</span>
                     </b-switch>
                   </b-field>
+                </div>
+                <div class="level-item">
+                  <b-field>
+                    <b-switch v-model="editable">
+                      <span class="label is-small is-nowrap">Editable</span>
+                    </b-switch>
+                  </b-field>
+                </div>
+              </div>
+              <div class="level-right">
+                <div class="level-item">
+                  <button class="button is-small is-primary copy-code" @click="copyCode">Copy</button>
                 </div>
               </div>
             </div>
           </div>
           <div class="page-builder__iframe" :class="`is-${deviceSize}`">
             <client-only>
-              <device-viewer :component="PageBuilder" :components="PageBuilderComponents" />
+              <device-viewer />
             </client-only>
           </div>
         </div>
@@ -86,9 +93,9 @@ import { Component, Vue, Watch } from 'nuxt-property-decorator';
 
 import allComponents from '~/html-snippets';
 
-import PageBuilder from '~/components/PageBuilder.vue';
 import DeviceViewer from '~/components/DeviceViewer.vue';
 import PageBuilderStore from '~/store/pageBuilder';
+import { Snippet } from '~/types/Snippet';
 
 @Component({
   components: {
@@ -99,29 +106,30 @@ import PageBuilderStore from '~/store/pageBuilder';
 export default class PageBuilderPage extends Vue {
   components = allComponents;
   deviceSize = 'desktop';
-  showComponents = PageBuilderStore.showComponents;
+  showSnippetBorders = PageBuilderStore.showSnippetBorders;
+  editable = PageBuilderStore.editable;
 
-  PageBuilder = PageBuilder;
-  PageBuilderComponents = PageBuilderStore.components;
-
-  get layout() {
+  get layout(): string {
     return 'empty';
   }
 
-  addComponentToPreview(component: any) {
-    PageBuilderStore.addComponent(component);
+  addComponentToPreview(component: Snippet): void {
+    PageBuilderStore.addSnippet(component);
   }
 
-  @Watch('showComponents')
-  onShowComponentsChange(value: boolean) {
-    PageBuilderStore.toggleShowComponent(value);
+  @Watch('showSnippetBorders')
+  onShowSnippetBordersChange(value: boolean): void {
+    PageBuilderStore.toggleShowSnippetBorders(value);
   }
 
-  async copyCode() {
+  @Watch('editable')
+  onEditableChange(editable: boolean): void {
+    PageBuilderStore.toggleEditable(editable);
+  }
+
+  copyCode(): void {
     try {
-      await this.$copyText(PageBuilderStore.code).then(() => {
-        this.$buefy.toast.open('Copied to clipboard!');
-      });
+      PageBuilderStore.setCopyingCode(true);
     } catch (e) {
       this.$buefy.toast.open({
         message: 'Error while copying to clipboard :(',
