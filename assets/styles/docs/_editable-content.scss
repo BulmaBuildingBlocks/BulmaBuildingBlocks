@@ -1,7 +1,9 @@
+$menubar-width: 30rem;
+
 .editor {
   position: relative;
 
-  &.content{
+  &.content {
     margin: 0 !important;
   }
 }
@@ -11,8 +13,8 @@
   transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
   background: $white;
   box-shadow: $box-shadow;
-  width: 370px;
-  margin-left: (-370px / 2);
+  width: $menubar-width;
+  margin-left: (-$menubar-width / 2);
   left: 50%;
   flex-wrap: wrap;
   bottom: calc(100% + 1rem);

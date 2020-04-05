@@ -85,17 +85,17 @@ const components = [
     color: 'white',
     content: [
       {
-        image: `<img src="${require(`../../assets/icons/1.svg`)}" />`,
+        image: getContent(ContentType.Icons, 1),
         title: getContent(ContentType.FeatureTitle, 1),
         content: getContent(ContentType.SmallDescription)
       },
       {
-        image: `<img src="${require(`../../assets/icons/2.svg`)}" />`,
+        image: getContent(ContentType.Icons, 2),
         title: getContent(ContentType.FeatureTitle, 2),
         content: getContent(ContentType.SmallDescription)
       },
       {
-        image: `<img src="${require(`../../assets/icons/3.svg`)}" />`,
+        image: getContent(ContentType.Icons, 3),
         title: getContent(ContentType.FeatureTitle, 3),
         content: getContent(ContentType.SmallDescription)
       }
