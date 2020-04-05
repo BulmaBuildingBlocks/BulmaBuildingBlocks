@@ -1,3 +1,18 @@
+### 0.1.0 (2020-04-05)
+
+##### Chores
+
+*  content types added ([d0234ad7](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/d0234ad73a8eae306c6c0d6ded0bf6ee8e21ed71))
+
+##### New Features
+
+*  basic button editing and image editing ([df1dd120](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/df1dd12037a1e67c2d5bf5672e8e5482fab1466f))
+*  html editing working ([b71fcb58](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/b71fcb588a1f3f0c4e8de5bf3c4e9aba10854538))
+
+##### Refactors
+
+*  folder and html organisation improved ([6d8ceb34](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/6d8ceb34bdbf21de876b6deb8b9e864fcd98869c))
+
 #### 0.0.2 (2020-03-28)
 
 ##### New Features
