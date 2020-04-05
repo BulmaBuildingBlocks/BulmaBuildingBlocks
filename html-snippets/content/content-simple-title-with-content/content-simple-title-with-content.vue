@@ -26,5 +26,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class ContentSimpleTitleSubtitleFull extends mixins(HtmlSnippetMixin) {}
+export default class ContentTitleWithContent extends mixins(HtmlSnippetMixin) {}
 </script>

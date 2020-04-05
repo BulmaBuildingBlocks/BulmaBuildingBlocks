@@ -6,15 +6,24 @@
         <div class="column is-10">
           <div class="columns is-centered is-multiline">
             <div
-              v-for="(item, index) in 3"
+              v-for="(item, index) in 6"
               :key="item"
               class="column is-6 is-4-widescreen block"
               :class="`has-text-${color}-invert`"
             >
-              <div class="image is-3by2 is-covered is-fullwidth has-radius block">
-                <img :src="require(`../../assets/images/Background ${index + 1}.png`)" />
-              </div>
-              <h3 class="label" :class="`has-text-${color}-invert`">Feature {{ index + 1 }}</h3>
+              <article class="media">
+                <figure class="media-left">
+                  <p class="image is-64x64">
+                    <img :src="require(`~/assets/icons/${index + 1}.svg`)" />
+                  </p>
+                </figure>
+                <div class="media-content">
+                  <div class="content">
+                    <h3 class="label" :class="`has-text-${color}-invert`">Feature {{ index + 1 }}</h3>
+                    <p>Objectively cultivate stand-alone experiences whereas collaborative scenarios.</p>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
@@ -28,5 +37,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class FeatureImagesThreeColumns extends mixins(HtmlSnippetMixin) {}
+export default class FeatureIconThreeColumnsMedia extends mixins(HtmlSnippetMixin) {}
 </script>

@@ -31,5 +31,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class ContentSimpleTitleTwoColumn extends mixins(HtmlSnippetMixin) {}
+export default class ContentTitleTwoColumn extends mixins(HtmlSnippetMixin) {}
 </script>
