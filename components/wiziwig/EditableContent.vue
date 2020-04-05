@@ -2,12 +2,13 @@
 import { Component, Prop } from 'nuxt-property-decorator';
 import Vue, { CreateElement, VNode } from 'vue';
 import StaticContent from '~/components/StaticContent.vue';
-import WiziwigContent from '~/components/WiziwigContent.vue';
+import WiziwigContent from '~/components/wiziwig/WiziwigContent.vue';
 
 @Component
 export default class EditableContent extends Vue {
   @Prop(String) value!: string;
   @Prop(String) tag!: string;
+  @Prop(String) type!: string;
   @Prop(Boolean) editable!: boolean;
 
   render(h: CreateElement): VNode {
@@ -15,7 +16,8 @@ export default class EditableContent extends Vue {
       attrs: this.$attrs,
       props: {
         value: this.value,
-        tag: this.tag
+        tag: this.tag,
+        type: this.type
       }
     });
   }

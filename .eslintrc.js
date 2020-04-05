@@ -19,6 +19,8 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    'vue/no-v-html': 0
+    'vue/no-v-html': 0,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/no-explicit-any': 0
   }
 };

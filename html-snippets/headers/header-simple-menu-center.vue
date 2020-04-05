@@ -2,23 +2,35 @@
   <nav class="navbar is-spaced" role="navigation" aria-label="main navigation" :class="color ? `is-${color}` : ''">
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="level is-fullwidth">
-        <div class="level-item has-text-centered">
-          <a class="navbar-item" :class="color ? `has-text-${color}-invert` : ''">Home</a>
-        </div>
-        <div class="level-item has-text-centered">
-          <a class="navbar-item" :class="color ? `has-text-${color}-invert` : ''">Menu</a>
-        </div>
-        <div class="level-item has-text-centered">
-          <a href="#">
-            <img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;" />
-          </a>
-        </div>
-        <div class="level-item has-text-centered">
-          <a class="navbar-item" :class="color ? `has-text-${color}-invert` : ''">Reservations</a>
-        </div>
-        <div class="level-item has-text-centered">
-          <a class="navbar-item" :class="color ? `has-text-${color}-invert` : ''">Contact</a>
-        </div>
+        <editable-content
+          v-for="(item, index) in content.navLeft"
+          :key="index + 'navLeft'"
+          tag="div"
+          type="text"
+          class="level-item has-text-centered"
+          :value="item.content"
+          :editable="editable"
+          @value="item.content = $event"
+        />
+        <editable-content
+          tag="div"
+          type="image"
+          class="level-item has-text-centered"
+          :class="`has-text-${color}-invert`"
+          :value="content.logo"
+          :editable="editable"
+          @value="content.logo = $event"
+        />
+        <editable-content
+          v-for="(item, index) in content.navRight"
+          :key="index + 'navRight'"
+          tag="div"
+          type="text"
+          class="level-item has-text-centered"
+          :value="item.content"
+          :editable="editable"
+          @value="item.content = $event"
+        />
       </div>
     </div>
   </nav>

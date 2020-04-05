@@ -3,11 +3,15 @@
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="section is-small is-fullwidth">
         <div class="level">
-          <div class="level-item has-text-centered">
-            <a href="#">
-              <img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;" />
-            </a>
-          </div>
+          <editable-content
+            tag="div"
+            type="image"
+            class="level-item has-text-centered"
+            :class="`has-text-${color}-invert`"
+            :value="content.logo"
+            :editable="editable"
+            @value="content.logo = $event"
+          />
         </div>
       </div>
     </div>

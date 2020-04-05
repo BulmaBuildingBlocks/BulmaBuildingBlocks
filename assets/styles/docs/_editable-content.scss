@@ -1,4 +1,4 @@
-$menubar-width: 30rem;
+$menubar-width: 31.1rem;
 
 .editor {
   position: relative;
@@ -6,34 +6,41 @@ $menubar-width: 30rem;
   &.content {
     margin: 0 !important;
   }
-}
 
-.menubar {
-  position: absolute;
-  transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
-  background: $white;
-  box-shadow: $box-shadow;
-  width: $menubar-width;
-  margin-left: (-$menubar-width / 2);
-  left: 50%;
-  flex-wrap: wrap;
-  bottom: calc(100% + 1rem);
-  color: $black;
-
-  &.is-hidden {
-    visibility: hidden;
-    opacity: 0;
+  &.is-text .menubar {
+    width: $menubar-width;
+    margin-left: (-$menubar-width / 2);
   }
 
-  &.is-focused {
-    display: flex !important;
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0.2s, opacity 0.2s;
+  &.is-image .buttons {
+    flex-wrap: nowrap;
   }
 
-  .buttons,
-  .button {
-    margin: 0 !important;
+  .menubar {
+    position: absolute;
+    transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
+    background: $white;
+    box-shadow: $box-shadow;
+    left: 50%;
+    bottom: calc(100% + 1rem);
+    color: $black;
+    flex-wrap: wrap;
+
+    &.is-hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &.is-focused {
+      display: flex !important;
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0.2s, opacity 0.2s;
+    }
+
+    .buttons,
+    .button {
+      margin: 0 !important;
+    }
   }
 }

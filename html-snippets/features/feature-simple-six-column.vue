@@ -12,6 +12,7 @@
             >
               <editable-content
                 tag="h3"
+                type="text"
                 class="label"
                 :class="`has-text-${color}-invert`"
                 :value="item.title"
@@ -21,6 +22,7 @@
 
               <editable-content
                 tag="div"
+                type="text"
                 class="content"
                 :class="`has-text-${color}-invert`"
                 :value="item.content"

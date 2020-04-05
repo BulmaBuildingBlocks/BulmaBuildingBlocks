@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
-import EditableContent from '~/components/EditableContent.vue';
+import EditableContent from '~/components/wiziwig/EditableContent.vue';
 
 @Component({
   components: {

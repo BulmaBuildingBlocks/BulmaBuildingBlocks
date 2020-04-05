@@ -2,9 +2,15 @@
   <nav class="navbar" role="navigation" aria-label="main navigation" :class="color ? `is-${color}` : ''">
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
-        </a>
+        <editable-content
+          tag="div"
+          type="image"
+          class="navbar-item"
+          :class="`has-text-${color}-invert`"
+          :value="content.logo"
+          :editable="editable"
+          @value="content.logo = $event"
+        />
 
         <a
           role="button"
@@ -21,24 +27,30 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item">
-            Home
-          </a>
-
-          <a class="navbar-item">
-            Documentation
-          </a>
+          <editable-content
+            v-for="(item, index) in content.navLinks"
+            :key="index"
+            tag="div"
+            type="text"
+            :value="item.content"
+            :editable="editable"
+            @value="item.content = $event"
+          />
         </div>
 
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light">
-                Log in
-              </a>
+            <div class="field is-grouped">
+              <editable-content
+                v-for="(item, index) in content.navButtons"
+                :key="index"
+                tag="div"
+                type="text"
+                class="control"
+                :value="item.content"
+                :editable="editable"
+                @value="item.content = $event"
+              />
             </div>
           </div>
         </div>

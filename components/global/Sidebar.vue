@@ -36,7 +36,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import routes from '@/data/routes.json';
+import routes from '~/data/routes.json';
 
 export interface Routes {
   [key: string]: {

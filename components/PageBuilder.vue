@@ -4,7 +4,7 @@
       ref="pageHtml"
       class="component-viewer-list"
       :class="{ 'has-components-shown': showSnippetBorders }"
-      :group="{ name: 'content' }"
+      :group="{ name: 'content', put: editable, sort: editable }"
       :list="components"
     >
       <div v-for="(component, index) in components" :key="index" class="component-viewer-item">

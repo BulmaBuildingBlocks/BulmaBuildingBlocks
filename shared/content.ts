@@ -8,14 +8,14 @@ export enum ContentType {
   Icons = 'Icons',
   Backgrounds = 'Backgrounds',
   Images = 'Images',
-  Button = 'Button'
+  LinkButton = 'LinkButton'
 }
 
 const content: Map<ContentType, string | string[]> = new Map();
 
 const contentData: { [x: string]: string | string[] } = {
-  Logo: `<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />`,
-  BasicLogo: `<img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;" />`,
+  Logo: `<a href=""><img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /></a>`,
+  BasicLogo: `<a href=""><img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;" /></a>`,
   Title: 'Bulma Building Blocks',
   FeatureTitle: [`Feature 1`, `Feature 2`, `Feature 3`, `Feature 4`, `Feature 5`, `Feature 6`],
   SmallDescription: '<p>Objectively cultivate stand-alone experiences whereas collaborative scenarios.</p>',
@@ -46,7 +46,8 @@ const contentData: { [x: string]: string | string[] } = {
     `<img src="${require(`~/assets/images/Scene Plants.svg`)}" />`,
     `<img src="${require(`~/assets/images/Scene Whiteboard.svg`)}" />`,
     `<img src="${require(`~/assets/images/Scene Wireframe.svg`)}" />`
-  ]
+  ],
+  LinkButton: `<a class="{class}" href="">{text}</a>`
 };
 
 type ContentTypeStrings = keyof typeof ContentType;
@@ -55,11 +56,28 @@ Object.keys(contentData).forEach((key: string) => {
   content.set(ContentType[key as ContentTypeStrings], contentData[key]);
 });
 
-export const getContent = (type: ContentType, index?: number) => {
-  const contentText = content.get(type);
+interface FormatProps {
+  [x: string]: string;
+}
 
-  if (contentText && index) {
-    return contentText[index - 1];
+const format = (string: string, args: FormatProps): string => {
+  for (const k in args) {
+    string = string.replace('{' + k + '}', args[k]);
+  }
+  return string;
+};
+
+export const getContent = (type: ContentType, param?: number | FormatProps): string | string[] => {
+  const contentText = content.get(type) || '';
+
+  // If array get the index of the array
+  if (Array.isArray(contentText) && typeof param === 'number') {
+    return contentText[param - 1];
+  }
+
+  // If string and param exists run the replacement script
+  if (typeof contentText === 'string' && typeof param === 'object') {
+    return format(contentText, param);
   }
 
   return contentText;
