@@ -1,25 +1,21 @@
 <script lang="ts">
-import { Component, Prop } from 'nuxt-property-decorator';
-import Vue, { CreateElement, VNode } from 'vue';
+import { Component } from 'nuxt-property-decorator';
+import Vue, { CreateElement, VNode, RenderContext } from 'vue';
 import StaticContent from '~/components/StaticContent.vue';
 import WiziwigContent from '~/components/wiziwig/WiziwigContent.vue';
 
-@Component
+@Component({
+  functional: true
+} as any)
 export default class EditableContent extends Vue {
-  @Prop(String) value!: string;
-  @Prop(String) tag!: string;
-  @Prop(String) type!: string;
-  @Prop(Boolean) editable!: boolean;
+  render(h: CreateElement, context: RenderContext): VNode {
+    function appropriateEditableElement() {
+      if (context.props && context.props.editable) return WiziwigContent;
 
-  render(h: CreateElement): VNode {
-    return h(this.editable ? WiziwigContent : StaticContent, {
-      attrs: this.$attrs,
-      props: {
-        value: this.value,
-        tag: this.tag,
-        type: this.type
-      }
-    });
+      return StaticContent;
+    }
+
+    return h(appropriateEditableElement(), context.data);
   }
 }
 </script>
