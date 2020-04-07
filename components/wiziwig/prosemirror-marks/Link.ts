@@ -2,7 +2,9 @@
 // @ts-ignore
 import { updateMark, removeMark, pasteRule } from 'tiptap-commands';
 import { getMarkAttrs } from 'tiptap-utils';
-import { Mark, Plugin } from 'tiptap';
+import { Mark } from 'tiptap';
+import { Plugin } from 'prosemirror-state';
+import { MarkSpec } from 'prosemirror-model';
 
 export default class Link extends Mark {
   get name(): string {
@@ -15,7 +17,11 @@ export default class Link extends Mark {
     };
   }
 
-  get schema() {
+  get isAtom() {
+    return true;
+  }
+
+  get schema(): MarkSpec {
     return {
       attrs: {
         href: {
@@ -23,13 +29,20 @@ export default class Link extends Mark {
         },
         class: {
           default: ''
+        },
+        isolating: {
+          default: true
+        },
+        atom: {
+          default: true
         }
       },
       inclusive: false,
       parseDOM: [
         {
           tag: 'a[href]',
-          getAttrs: (dom: HTMLElement) => {
+          getAttrs: (node) => {
+            const dom: HTMLElement = node as HTMLElement;
             return {
               href: dom.getAttribute('href'),
               class: dom.classList
@@ -85,8 +98,10 @@ export default class Link extends Mark {
 
             if (attrs.href && event.target instanceof HTMLAnchorElement) {
               event.stopPropagation();
-              window.open(attrs.href);
+              // window.open(attrs.href);
             }
+
+            return true;
           }
         }
       })

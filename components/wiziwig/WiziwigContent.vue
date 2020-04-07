@@ -30,7 +30,7 @@
         </form>
 
         <div v-else class="buttons has-addons">
-          <template v-if="type === 'text'">
+          <template v-if="type === 'text' || type === 'title'">
             <button class="button is-small is-white" :class="{ 'is-active': isActive.bold() }" @click="commands.bold">
               <b-icon pack="fa" icon="bold" />
             </button>
@@ -59,7 +59,7 @@
               <b-icon pack="fa" icon="underline" />
             </button>
 
-            <button
+            <!--  <button
               class="button is-small is-white"
               :class="{ 'is-active': isActive.heading({ level: 1 }) }"
               @click="commands.heading({ level: 1 })"
@@ -87,38 +87,40 @@
               <span class="icon">
                 H3
               </span>
-            </button>
+            </button> -->
 
-            <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.bullet_list() }"
-              @click="commands.bullet_list"
-            >
-              <b-icon pack="fa" icon="list" />
-            </button>
+            <template v-if="type === 'text'">
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.bullet_list() }"
+                @click="commands.bullet_list"
+              >
+                <b-icon pack="fa" icon="list" />
+              </button>
 
-            <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.ordered_list() }"
-              @click="commands.ordered_list"
-            >
-              <b-icon pack="fa" icon="list-ol" />
-            </button>
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.ordered_list() }"
+                @click="commands.ordered_list"
+              >
+                <b-icon pack="fa" icon="list-ol" />
+              </button>
 
-            <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.blockquote() }"
-              @click="commands.blockquote"
-            >
-              <b-icon pack="fa" icon="quote-left" />
-            </button>
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.blockquote() }"
+                @click="commands.blockquote"
+              >
+                <b-icon pack="fa" icon="quote-left" />
+              </button>
 
-            <button class="button is-small is-white" :class="{ 'is-active': isActive.code() }" @click="commands.code">
-              <b-icon pack="fa" icon="code" />
-            </button>
+              <button class="button is-small is-white" :class="{ 'is-active': isActive.code() }" @click="commands.code">
+                <b-icon pack="fa" icon="code" />
+              </button>
+            </template>
           </template>
 
-          <button class="button is-small is-white" @click="showImagePrompt(commands.image)">
+          <button v-if="type !== 'title'" class="button is-small is-white" @click="showImagePrompt(commands.image)">
             <b-icon pack="fa" icon="image" />
           </button>
 
