@@ -3,7 +3,7 @@ import { Component, Prop } from 'nuxt-property-decorator';
 
 import Vue, { CreateElement, VNode } from 'vue';
 
-@Component
+@Component({ inheritAttrs: false })
 export default class StaticContent extends Vue {
   @Prop(String) value!: string;
   @Prop(String) tag!: string;

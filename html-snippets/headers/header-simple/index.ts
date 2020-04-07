@@ -14,14 +14,14 @@ const component: Snippet = {
         type: ContentType.LinkButton,
         content: getContent(ContentType.LinkButton, {
           text: 'Home',
-          class: 'navbar-item'
+          class: ''
         })
       },
       {
         type: ContentType.LinkButton,
         content: getContent(ContentType.LinkButton, {
           text: 'Documentation',
-          class: 'navbar-item'
+          class: ''
         })
       }
     ],

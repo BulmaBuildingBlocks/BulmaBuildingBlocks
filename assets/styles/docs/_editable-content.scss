@@ -1,4 +1,5 @@
-$menubar-width: 31.1rem;
+$menubar-font-size: 22px;
+$menubar-width: 31.1em;
 
 .editor {
   position: relative;
@@ -18,6 +19,7 @@ $menubar-width: 31.1rem;
 
   .menubar {
     position: absolute;
+    font-size: $menubar-font-size;
     transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
     background: $white;
     box-shadow: $box-shadow;
@@ -41,6 +43,7 @@ $menubar-width: 31.1rem;
     .buttons,
     .button {
       margin: 0 !important;
+      font-weight: $weight-bold;
     }
   }
 }
