@@ -29,6 +29,7 @@ $menubar-width: 31.1em;
     bottom: calc(100% + 1rem);
     color: $black;
     flex-wrap: wrap;
+    max-width: 100%;
 
     &.is-hidden {
       visibility: hidden;
