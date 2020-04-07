@@ -1,25 +1,46 @@
 <template>
   <div class="section is-large has-text-centered" :class="color ? `has-background-${color}` : ''">
     <div class="container">
-      <h2 class="title is-1" :class="color ? `has-text-${color}-invert` : ''">
-        Bulma Building Blocks
-      </h2>
-      <h3 class="subtitle" :class="color ? `has-text-${color}-invert` : ''">
-        Helping to create
-      </h3>
+      <editable-content
+        tag="h2"
+        type="title"
+        class="title"
+        :class="color ? `has-text-${color}-invert` : ''"
+        :value="content.title"
+        :editable="editable"
+        @value="content.title = $event"
+      />
+      <editable-content
+        tag="h2"
+        type="title"
+        class="subtitle"
+        :class="color ? `has-text-${color}-invert` : ''"
+        :value="content.subtitle"
+        :editable="editable"
+        @value="content.subtitle = $event"
+      />
       <div class="buttons is-centered">
-        <a href="#" class="button is-white">
-          About
-        </a>
-        <a href="#" class="button is-primary">
-          Shop
-        </a>
+        <editable-content
+          v-for="(item, index) in content.navButtons"
+          :key="index"
+          tag="div"
+          type="text"
+          class="control"
+          :value="item.content"
+          :editable="editable"
+          @value="item.content = $event"
+        />
       </div>
       <div class="columns is-centered">
         <div class="column is-9-desktop is-7-widescreen">
-          <div class="image is-3by2 is-contained">
-            <img src="~/assets/images/Scene Living Room.svg" />
-          </div>
+          <editable-content
+            tag="div"
+            type="image"
+            class="image is-3by2  is-contained"
+            :value="content.image"
+            :editable="editable"
+            @value="content.image = $event"
+          />
         </div>
       </div>
     </div>

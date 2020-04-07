@@ -2,9 +2,11 @@ export enum ContentType {
   Logo = 'Logo',
   BasicLogo = 'BasicLogo',
   Title = 'Title',
+  Subtitle = 'Subtitle',
   FeatureTitle = 'FeatureTitle',
   SmallDescription = 'SmallDescription',
   Paragraph = 'Paragraph',
+  Paragraphs = 'Paragraphs',
   Icons = 'Icons',
   Backgrounds = 'Backgrounds',
   Images = 'Images',
@@ -17,14 +19,35 @@ const contentData: { [x: string]: string | string[] } = {
   Logo: `<a href=""><img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /></a>`,
   BasicLogo: `<a href=""><img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;" /></a>`,
   Title: 'Bulma Building Blocks',
-  FeatureTitle: [`Feature 1`, `Feature 2`, `Feature 3`, `Feature 4`, `Feature 5`, `Feature 6`],
+  Subtitle: 'Helping to create beautiful websites',
+  FeatureTitle: [
+    `Feature 1`,
+    `Feature 2`,
+    `Feature 3`,
+    `Feature 4`,
+    `Feature 5`,
+    `Feature 6`,
+    `Feature 7`,
+    `Feature 8`
+  ],
   SmallDescription: '<p>Objectively cultivate stand-alone experiences whereas collaborative scenarios.</p>',
   Paragraph: `<p>
-            Continually leverage other's state of the art imperatives before orthogonal experiences. Completely
-            administrate highly efficient sources via go forward customer service. Appropriately parallel task
-            high-quality "outside the box" thinking through bleeding-edge systems. Globally revolutionize
-            collaborative bandwidth via B2C intellectual capital.
-          </p>`,
+                Continually leverage other's state of the art imperatives before orthogonal experiences. Completely
+                administrate highly efficient sources via go forward customer service. Appropriately parallel task
+                high-quality "outside the box" thinking through bleeding-edge systems. Globally revolutionize
+                collaborative bandwidth via B2C intellectual capital.
+              </p>`,
+  Paragraphs: `<p>
+                Continually leverage other's state of the art imperatives before orthogonal experiences. Completely
+                administrate highly efficient sources via go forward customer service. Appropriately parallel task
+                high-quality "outside the box" thinking through bleeding-edge systems. Globally revolutionize
+                collaborative bandwidth via B2C intellectual capital.
+              </p>
+              <p>
+                Enthusiastically exploit multimedia based web-readiness whereas scalable quality vectors. Objectively
+                morph professional models through focused niches. Authoritatively impact collaborative interfaces before
+                distributed leadership.
+              </p>`,
   Icons: [
     `<img src="${require(`~/assets/icons/1.svg`)}" />`,
     `<img src="${require(`~/assets/icons/2.svg`)}" />`,
@@ -34,18 +57,22 @@ const contentData: { [x: string]: string | string[] } = {
     `<img src="${require(`~/assets/icons/6.svg`)}" />`
   ],
   Backgrounds: [
-    `<img src="${require(`~/assets/images/Background 1.png`)}" />`,
-    `<img src="${require(`~/assets/images/Background 2.png`)}" />`,
-    `<img src="${require(`~/assets/images/Background 3.png`)}" />`,
-    `<img src="${require(`~/assets/images/Background 4.png`)}" />`,
-    `<img src="${require(`~/assets/images/Background 5.png`)}" />`,
-    `<img src="${require(`~/assets/images/Background 6.png`)}" />`
+    `<img src="${require(`~/assets/images/Background 1.jpg`)}" />`,
+    `<img src="${require(`~/assets/images/Background 2.jpg`)}" />`,
+    `<img src="${require(`~/assets/images/Background 3.jpg`)}" />`,
+    `<img src="${require(`~/assets/images/Background 4.jpg`)}" />`,
+    `<img src="${require(`~/assets/images/Background 5.jpg`)}" />`,
+    `<img src="${require(`~/assets/images/Background 6.jpg`)}" />`
   ],
   Images: [
     `<img src="${require(`~/assets/images/Scene Living Room.svg`)}" />`,
     `<img src="${require(`~/assets/images/Scene Plants.svg`)}" />`,
     `<img src="${require(`~/assets/images/Scene Whiteboard.svg`)}" />`,
-    `<img src="${require(`~/assets/images/Scene Wireframe.svg`)}" />`
+    `<img src="${require(`~/assets/images/Scene Wireframe.svg`)}" />`,
+    `<img src="${require(`~/assets/images/Scene Living Room Background.svg`)}" />`,
+    `<img src="${require(`~/assets/images/Scene Plants Background.svg`)}" />`,
+    `<img src="${require(`~/assets/images/Scene Whiteboard Background.svg`)}" />`,
+    `<img src="${require(`~/assets/images/Scene Wireframe Background.svg`)}" />`
   ],
   LinkButton: `<a class="{class}" href="">{text}</a>`
 };

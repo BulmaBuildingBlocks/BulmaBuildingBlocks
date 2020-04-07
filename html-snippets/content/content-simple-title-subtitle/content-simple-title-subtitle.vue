@@ -3,11 +3,24 @@
     <div class="container has-text-centered">
       <div class="columns is-centered">
         <div class="column is-9-desktop is-6-widescreen">
-          <h2 class="title is-1 is-spaced" :class="color ? `has-text-${color}-invert` : ''">Bulma Building Blocks</h2>
-          <h3 class="subtitle" :class="color ? `has-text-${color}-invert` : ''">
-            Continually initiate fully tested human capital before an expanded array of action items. Proactively
-            benchmark next-generation information.
-          </h3>
+          <editable-content
+            tag="h2"
+            type="title"
+            class="title is-spaced"
+            :class="color ? `has-text-${color}-invert` : ''"
+            :value="content.title"
+            :editable="editable"
+            @value="content.title = $event"
+          />
+          <editable-content
+            tag="h3"
+            type="text"
+            class="subtitle"
+            :class="color ? `has-text-${color}-invert` : ''"
+            :value="content.subtitle"
+            :editable="editable"
+            @value="content.subtitle = $event"
+          />
         </div>
       </div>
     </div>

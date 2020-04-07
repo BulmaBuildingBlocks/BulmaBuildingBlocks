@@ -12,7 +12,7 @@
             >
               <editable-content
                 tag="h3"
-                type="text"
+                type="title"
                 class="label"
                 :class="`has-text-${color}-invert`"
                 :value="item.title"

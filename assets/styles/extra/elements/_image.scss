@@ -18,4 +18,9 @@
       object-fit: contain;
     }
   }
+
+  &.has-radius img {
+    overflow: hidden;
+    border-radius: $radius;
+  }
 }

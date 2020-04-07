@@ -1,24 +1,27 @@
 <template>
   <div class="section is-large" :class="color ? `has-background-${color}` : ''">
     <div class="container">
-      <h2 class="title is-1 has-text-centered" :class="color ? `has-text-${color}-invert` : ''">
-        Bulma Building Blocks
-      </h2>
+      <editable-content
+        tag="h2"
+        type="title"
+        class="title has-text-centered"
+        :class="color ? `has-text-${color}-invert` : ''"
+        :value="content.title"
+        :editable="editable"
+        @value="content.title = $event"
+      />
       <div class="content is-medium">
         <div class="columns">
-          <div class="column">
-            <p>
-              Continually leverage other's state of the art imperatives before orthogonal experiences. Completely
-              administrate highly efficient sources via go forward customer service. Appropriately parallel task
-              high-quality "outside the box" thinking through bleeding-edge systems.
-            </p>
-          </div>
-          <div class="column">
-            <p>
-              Continually leverage other's state of the art imperatives before orthogonal experiences. Completely
-              administrate highly efficient sources via go forward customer service. Appropriately parallel task
-              high-quality "outside the box" thinking through bleeding-edge systems.
-            </p>
+          <div v-for="(item, index) in content.paragraphs" :key="index" class="column">
+            <editable-content
+              tag="div"
+              type="text"
+              class="content"
+              :class="color ? `has-text-${color}-invert` : ''"
+              :value="item"
+              :editable="editable"
+              @value="item = $event"
+            />
           </div>
         </div>
       </div>

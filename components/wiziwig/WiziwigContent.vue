@@ -29,7 +29,7 @@
           </div>
         </form>
 
-        <div v-else class="buttons has-addons">
+        <div v-else class="buttons has-addons is-multiline  ">
           <template v-if="type === 'text' || type === 'title'">
             <button class="button is-small is-white" :class="{ 'is-active': isActive.bold() }" @click="commands.bold">
               <b-icon pack="fa" icon="bold" />

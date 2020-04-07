@@ -9,12 +9,20 @@ $menubar-width: 31.1em;
   }
 
   &.is-text .menubar {
-    width: $menubar-width;
+    @include tablet {
+      width: $menubar-width;
+    }
   }
 
   &.is-title .buttons,
   &.is-image .buttons {
-    flex-wrap: nowrap;
+    @include mobile {
+      justify-content: center;
+    }
+
+    @include tablet {
+      flex-wrap: nowrap;
+    }
   }
 
   .menubar {
@@ -29,7 +37,11 @@ $menubar-width: 31.1em;
     bottom: calc(100% + 1rem);
     color: $black;
     flex-wrap: wrap;
-    max-width: 100%;
+
+    @include mobile {
+      width: 90vw;
+      justify-content: center;
+    }
 
     &.is-hidden {
       visibility: hidden;

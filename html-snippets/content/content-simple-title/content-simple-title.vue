@@ -1,7 +1,15 @@
 <template>
   <div class="section is-large" :class="color ? `has-background-${color}` : ''">
     <div class="container has-text-centered">
-      <h2 class="title is-1" :class="color ? `has-text-${color}-invert` : ''">Bulma Building Blocks</h2>
+      <editable-content
+        tag="h2"
+        type="title"
+        class="title is-spaced"
+        :class="color ? `has-text-${color}-invert` : ''"
+        :value="content.title"
+        :editable="editable"
+        @value="content.title = $event"
+      />
     </div>
   </div>
 </template>

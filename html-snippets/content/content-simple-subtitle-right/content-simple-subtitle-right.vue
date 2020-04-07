@@ -3,11 +3,15 @@
     <div class="container">
       <div class="columns is-right">
         <div class="column is-9-desktop is-7-widescreen">
-          <h2 class="subtitle" :class="color ? `has-text-${color}-invert` : ''">
-            Continually leverage other's state of the art imperatives before orthogonal experiences. Completely
-            administrate highly efficient sources via go forward customer service. Appropriately parallel task
-            high-quality "outside the box" thinking through bleeding-edge systems.
-          </h2>
+          <editable-content
+            tag="h3"
+            type="text"
+            class="subtitle"
+            :class="color ? `has-text-${color}-invert` : ''"
+            :value="content.subtitle"
+            :editable="editable"
+            @value="content.subtitle = $event"
+          />
         </div>
       </div>
     </div>
