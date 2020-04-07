@@ -17,7 +17,7 @@
 
             <div class="buttons">
               <a class="button" href="https://github.com/JosephAnson/BulmaDesignBlocks" target="_blank">
-                <b-icon icon="github-circle" />
+                <b-icon pack="fab" icon="github" />
                 <span>GitHub</span>
               </a>
               <!--

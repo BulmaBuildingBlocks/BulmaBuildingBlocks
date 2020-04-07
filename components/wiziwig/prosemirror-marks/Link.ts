@@ -17,10 +17,6 @@ export default class Link extends Mark {
     };
   }
 
-  get isAtom() {
-    return true;
-  }
-
   get schema(): MarkSpec {
     return {
       attrs: {
@@ -29,12 +25,6 @@ export default class Link extends Mark {
         },
         class: {
           default: ''
-        },
-        isolating: {
-          default: true
-        },
-        atom: {
-          default: true
         }
       },
       inclusive: false,
