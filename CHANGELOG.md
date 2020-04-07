@@ -1,3 +1,27 @@
+### 0.2.0 (2020-04-07)
+
+##### Chores
+
+*  packages updated ([871d412f](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/871d412fd41a2ffad958f1f182ee2d74b58fffd6))
+
+##### New Features
+
+*  all content converted to be editable ([6db5a336](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/6db5a336009f0c6ea4ef88296584fd1e201ff4ce))
+*  new wiziwig type ([03b4fc71](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/03b4fc71f40c8db66297fc7ab2c6a5bdceaabc7a))
+
+##### Bug Fixes
+
+*  store updating from wiziwig component ([d29237bb](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/d29237bb3e62f695ff4bf6533312c63b5681916e))
+
+##### Refactors
+
+*  convert editable content component to functional ([37ce4895](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/37ce4895337ccbce4daca9e924feaab670ff72e5))
+
+##### Code Style Changes
+
+*  wiziwig menu restained to window in mobile view ([f202bfb4](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/f202bfb4c91547e850f9581cb7dd3055f4723d96))
+*  minor header fixes and editor bar size increased ([f5f36f5a](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/f5f36f5a4168fe9e849c285c15a2ee8d5a3ded50))
+
 ### 0.1.0 (2020-04-05)
 
 ##### Chores
