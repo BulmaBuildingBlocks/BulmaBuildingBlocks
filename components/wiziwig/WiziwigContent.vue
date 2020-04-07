@@ -248,7 +248,7 @@ export default class WiziwigContent extends Vue {
   updateValue({ getHTML }: { [x: string]: Function }): void {
     // get new content on update
     const html = getHTML();
-    this.$parent.$emit('value', html);
+    this.$emit('value', html);
   }
 }
 </script>
