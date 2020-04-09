@@ -12,7 +12,11 @@
       />
       <div class="content is-medium">
         <div class="columns">
-          <div v-for="(item, index) in content.paragraphs" :key="index" class="column">
+          <div
+            v-for="(item, index) in content.paragraphs"
+            :key="index"
+            class="column"
+          >
             <editable-content
               tag="div"
               type="text"

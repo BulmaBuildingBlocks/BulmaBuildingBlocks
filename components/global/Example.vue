@@ -11,21 +11,43 @@
           </div>
           <div class="level-right">
             <div v-if="container" class="level-item">
-              <b-field label="Container Applied" custom-class="is-small" horizontal>
+              <b-field
+                label="Container Applied"
+                custom-class="is-small"
+                horizontal
+              >
                 <b-switch v-model="containerValue" @input="updateRefs" />
               </b-field>
             </div>
             <div v-if="newColor" class="level-item">
-              <b-field label="Background Color" custom-class="is-small" horizontal>
-                <b-select v-model="newColor" size="is-small" placeholder="Select a color" @input="updateRefs">
-                  <option v-for="option in statuses" :key="option" :value="option">
+              <b-field
+                label="Background Color"
+                custom-class="is-small"
+                horizontal
+              >
+                <b-select
+                  v-model="newColor"
+                  size="is-small"
+                  placeholder="Select a color"
+                  @input="updateRefs"
+                >
+                  <option
+                    v-for="option in statuses"
+                    :key="option"
+                    :value="option"
+                  >
                     {{ option }}
                   </option>
                 </b-select>
               </b-field>
             </div>
             <div class="level-item">
-              <button class="button is-small is-primary copy-code" @click="copyCode">Copy</button>
+              <button
+                class="button is-small is-primary copy-code"
+                @click="copyCode"
+              >
+                Copy
+              </button>
             </div>
           </div>
         </div>
@@ -91,7 +113,10 @@ export default class Example extends Vue {
 
   updateRefs(): void {
     this.$nextTick(() => {
-      this.code = prettier.format(this.$refs.componenthtml.$el.outerHTML, prettierConf);
+      this.code = prettier.format(
+        this.$refs.componenthtml.$el.outerHTML,
+        prettierConf
+      );
     });
   }
 

@@ -1,5 +1,8 @@
 <template>
-  <section class="section is-large has-text-centered" :class="`has-background-${color}`">
+  <section
+    class="section is-large has-text-centered"
+    :class="`has-background-${color}`"
+  >
     <div :class="container ? 'container' : ''">
       <editable-content
         tag="h2"

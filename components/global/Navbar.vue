@@ -1,5 +1,8 @@
 <template>
-  <nav class="navbar docs-navbar is-spaced has-shadow" :class="{ 'is-primary is-transparent': light }">
+  <nav
+    class="navbar docs-navbar is-spaced has-shadow"
+    :class="{ 'is-primary is-transparent': light }"
+  >
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link
@@ -21,7 +24,11 @@
           <b-icon icon="github-circle" />
         </a>
 
-        <span class="navbar-burger burger" :class="{ 'is-active': isMenuActive }" @click="isMenuActive = !isMenuActive">
+        <span
+          class="navbar-burger burger"
+          :class="{ 'is-active': isMenuActive }"
+          @click="isMenuActive = !isMenuActive"
+        >
           <span />
           <span />
           <span />
@@ -65,7 +72,11 @@
           </div>
 
           <div class="navbar-item">
-            <a class="button is-outlined" :class="light ? 'is-light' : 'is-twitter'" @click="tweet">
+            <a
+              class="button is-outlined"
+              :class="light ? 'is-light' : 'is-twitter'"
+              @click="tweet"
+            >
               <b-icon icon="twitter" />
               <span>Tweet</span>
             </a>

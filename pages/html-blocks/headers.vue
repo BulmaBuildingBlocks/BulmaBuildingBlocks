@@ -1,6 +1,10 @@
 <template>
   <div id="page-headers" class="section">
-    <Example v-for="component in components" :key="component.name" v-bind="component" />
+    <Example
+      v-for="component in components"
+      :key="component.name"
+      v-bind="component"
+    />
   </div>
 </template>
 

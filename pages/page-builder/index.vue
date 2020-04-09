@@ -19,7 +19,12 @@
             <hr />
             <draggable
               class="page-builder__component-list__items"
-              :group="{ name: 'content', pull: 'clone', put: false, sort: false }"
+              :group="{
+                name: 'content',
+                pull: 'clone',
+                put: false,
+                sort: false
+              }"
               :sort="false"
               :list="components"
             >
@@ -34,21 +39,36 @@
             </draggable>
           </div>
         </div>
-        <div class="column is-narrow has-background-light page-builder__viewer" :class="`is-${deviceSize}`">
+        <div
+          class="column is-narrow has-background-light page-builder__viewer"
+          :class="`is-${deviceSize}`"
+        >
           <div class="page-builder__device-options is-fullwidth">
             <div class="level">
               <div class="level-left">
                 <div class="level-item">
                   <b-field>
-                    <b-radio-button v-model="deviceSize" native-value="mobile" size="is-small">
+                    <b-radio-button
+                      v-model="deviceSize"
+                      native-value="mobile"
+                      size="is-small"
+                    >
                       Mobile
                     </b-radio-button>
 
-                    <b-radio-button v-model="deviceSize" native-value="tablet" size="is-small">
+                    <b-radio-button
+                      v-model="deviceSize"
+                      native-value="tablet"
+                      size="is-small"
+                    >
                       Tablet
                     </b-radio-button>
 
-                    <b-radio-button v-model="deviceSize" native-value="desktop" size="is-small">
+                    <b-radio-button
+                      v-model="deviceSize"
+                      native-value="desktop"
+                      size="is-small"
+                    >
                       Desktop
                     </b-radio-button>
                   </b-field>
@@ -56,7 +76,9 @@
                 <div class="level-item">
                   <b-field>
                     <b-switch v-model="showSnippetBorders">
-                      <span class="label is-small is-nowrap">Container Spacing</span>
+                      <span class="label is-small is-nowrap"
+                        >Container Spacing</span
+                      >
                     </b-switch>
                   </b-field>
                 </div>
@@ -70,7 +92,12 @@
               </div>
               <div class="level-right">
                 <div class="level-item">
-                  <button class="button is-small is-primary copy-code" @click="copyCode">Copy</button>
+                  <button
+                    class="button is-small is-primary copy-code"
+                    @click="copyCode"
+                  >
+                    Copy
+                  </button>
                 </div>
               </div>
             </div>

@@ -1,4 +1,10 @@
-import { Module, Mutation, VuexModule, getModule, Action } from 'vuex-module-decorators';
+import {
+  Module,
+  Mutation,
+  VuexModule,
+  getModule,
+  Action
+} from 'vuex-module-decorators';
 import prettier from 'prettier/standalone';
 import _ from 'lodash';
 import { ToastProgrammatic as Toast } from 'buefy';

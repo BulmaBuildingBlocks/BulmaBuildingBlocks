@@ -34,7 +34,17 @@ export const I18N = {
   }
 };
 
-export const statusColors = ['white', 'black', 'primary', 'info', 'success', 'warning', 'danger', 'light', 'dark'];
+export const statusColors = [
+  'white',
+  'black',
+  'primary',
+  'info',
+  'success',
+  'warning',
+  'danger',
+  'light',
+  'dark'
+];
 
 export const prettierConf: Options = {
   parser: 'html',

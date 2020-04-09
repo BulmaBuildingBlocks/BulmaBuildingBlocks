@@ -1,5 +1,9 @@
 <template>
-  <nav class="navbar is-light is-spaced is-medium" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar is-light is-spaced is-medium"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="container">
       <div class="navbar-menu">
         <template v-for="(items, i) in data">
@@ -15,7 +19,10 @@
               <template v-else>
                 <p>{{ item.category }}</p>
                 <ul>
-                  <li v-for="subItem in normalizedData(item.pages)" :key="subItem.title">
+                  <li
+                    v-for="subItem in normalizedData(item.pages)"
+                    :key="subItem.title"
+                  >
                     <nuxt-link class="navbar-item" :to="subItem.path">
                       <span>{{ subItem.title }}</span>
                       <b-tag v-if="subItem.isNew" type="is-success">New!</b-tag>

@@ -1,5 +1,10 @@
 <template>
-  <nav class="navbar is-spaced" role="navigation" aria-label="main navigation" :class="color ? `is-${color}` : ''">
+  <nav
+    class="navbar is-spaced"
+    role="navigation"
+    aria-label="main navigation"
+    :class="color ? `is-${color}` : ''"
+  >
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="level is-fullwidth">
         <editable-content

@@ -7,10 +7,19 @@
       :group="{ name: 'content', put: editable, sort: editable }"
       :list="components"
     >
-      <div v-for="(component, index) in components" :key="index" class="component-viewer-item">
+      <div
+        v-for="(component, index) in components"
+        :key="index"
+        class="component-viewer-item"
+      >
         <div v-if="editable" class="component-viewer-item__options">
           <div class="buttons">
-            <button class="button is-danger" @click="deleteComponentItem(component)">Delete</button>
+            <button
+              class="button is-danger"
+              @click="deleteComponentItem(component)"
+            >
+              Delete
+            </button>
           </div>
         </div>
         <component
@@ -73,9 +82,12 @@ export default class ComponentViewer extends Vue {
       await this.$nextTick();
 
       // Get and copy html content
-      const htmlContent = this.$refs.myTextEditorHtml.reduce((accumulator: string, currentValue: Vue) => {
-        return accumulator + currentValue.$el.outerHTML;
-      }, '');
+      const htmlContent = this.$refs.myTextEditorHtml.reduce(
+        (accumulator: string, currentValue: Vue) => {
+          return accumulator + currentValue.$el.outerHTML;
+        },
+        ''
+      );
       await PageBuilderStore.copyCode(htmlContent);
 
       await this.$nextTick();

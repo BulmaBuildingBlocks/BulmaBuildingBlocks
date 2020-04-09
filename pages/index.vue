@@ -13,7 +13,9 @@
               </h2>
             </div>
           </div>
-          <div class="column is-paddingless is-half is-offset-1 homepage-banner-img"></div>
+          <div
+            class="column is-paddingless is-half is-offset-1 homepage-banner-img"
+          ></div>
         </div>
       </div>
     </header>

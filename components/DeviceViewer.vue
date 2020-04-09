@@ -16,7 +16,8 @@ export default class DeviceViewer extends Vue {
     return h('iframe', {
       on: {
         load: (): void => {
-          const iframeContentDocument = (this.$el as HTMLIFrameElement).contentDocument;
+          const iframeContentDocument = (this.$el as HTMLIFrameElement)
+            .contentDocument;
 
           if (iframeContentDocument) {
             const head = iframeContentDocument.head;

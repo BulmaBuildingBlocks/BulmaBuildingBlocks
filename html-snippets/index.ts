@@ -4,7 +4,11 @@ import contentComponents from '~/html-snippets/content';
 import { Snippet, SnippetListObject } from '~/types/Snippet';
 
 // Manifest all components into one array
-const allHtmlSnippets: Snippet[] = [...headerComponents, ...featureComponents, ...contentComponents];
+const allHtmlSnippets: Snippet[] = [
+  ...headerComponents,
+  ...featureComponents,
+  ...contentComponents
+];
 
 // Creates Object of Components used for importing directly as components in vue templates
 const componentsExtract = (): SnippetListObject => {

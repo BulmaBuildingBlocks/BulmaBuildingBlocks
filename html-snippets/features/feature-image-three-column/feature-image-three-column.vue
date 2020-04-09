@@ -1,5 +1,8 @@
 <template>
-  <section class="section is-large has-text-centered" :class="`has-background-${color}`">
+  <section
+    class="section is-large has-text-centered"
+    :class="`has-background-${color}`"
+  >
     <div :class="container ? 'container' : ''">
       <editable-content
         tag="h2"
@@ -49,5 +52,7 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class FeatureImagesThreeColumns extends mixins(HtmlSnippetMixin) {}
+export default class FeatureImagesThreeColumns extends mixins(
+  HtmlSnippetMixin
+) {}
 </script>

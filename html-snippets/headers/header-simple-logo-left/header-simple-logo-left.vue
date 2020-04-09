@@ -1,5 +1,10 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation" :class="color ? `is-${color}` : ''">
+  <nav
+    class="navbar"
+    role="navigation"
+    aria-label="main navigation"
+    :class="color ? `is-${color}` : ''"
+  >
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="navbar-brand">
         <editable-content

@@ -1,6 +1,10 @@
 [
   {
     "category": "UI components",
-    "pages": ["documentation/headers", "documentation/contents", "documentation/features"]
+    "pages": [
+      "documentation/headers",
+      "documentation/contents",
+      "documentation/features"
+    ]
   }
 ]

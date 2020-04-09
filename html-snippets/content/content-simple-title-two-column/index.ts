@@ -8,7 +8,10 @@ const component: Snippet = {
   color: 'white',
   content: {
     title: getContent(ContentType.Title),
-    paragraphs: [getContent(ContentType.Paragraph), getContent(ContentType.Paragraph)]
+    paragraphs: [
+      getContent(ContentType.Paragraph),
+      getContent(ContentType.Paragraph)
+    ]
   }
 };
 

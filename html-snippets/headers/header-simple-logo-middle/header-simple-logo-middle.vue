@@ -1,5 +1,10 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation" :class="color ? `is-${color}` : ''">
+  <nav
+    class="navbar"
+    role="navigation"
+    aria-label="main navigation"
+    :class="color ? `is-${color}` : ''"
+  >
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="section is-small is-fullwidth">
         <div class="level">
@@ -23,5 +28,7 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlSnippetMixin from '~/mixins/HtmlSnippetMixin';
 
 @Component
-export default class HeaderExSimpleLogoMiddle extends mixins(HtmlSnippetMixin) {}
+export default class HeaderExSimpleLogoMiddle extends mixins(
+  HtmlSnippetMixin
+) {}
 </script>

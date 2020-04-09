@@ -6,17 +6,27 @@
           <div class="column">
             <p>
               Authored by
-              <a href="https://twitter.com/JosephLeeAnson" target="_blank">Joseph Anson</a>
+              <a href="https://twitter.com/JosephLeeAnson" target="_blank"
+                >Joseph Anson</a
+              >
             </p>
             <p>
               <small>
                 Bulma Building Blocks source code is licensed under
-                <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
+                <a
+                  href="http://opensource.org/licenses/mit-license.php"
+                  target="_blank"
+                  >MIT</a
+                >.
               </small>
             </p>
 
             <div class="buttons">
-              <a class="button" href="https://github.com/JosephAnson/BulmaDesignBlocks" target="_blank">
+              <a
+                class="button"
+                href="https://github.com/JosephAnson/BulmaDesignBlocks"
+                target="_blank"
+              >
                 <b-icon pack="fab" icon="github" />
                 <span>GitHub</span>
               </a>

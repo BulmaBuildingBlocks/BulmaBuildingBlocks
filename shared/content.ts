@@ -30,7 +30,8 @@ const contentData: { [x: string]: string | string[] } = {
     `Feature 7`,
     `Feature 8`
   ],
-  SmallDescription: '<p>Objectively cultivate stand-alone experiences whereas collaborative scenarios.</p>',
+  SmallDescription:
+    '<p>Objectively cultivate stand-alone experiences whereas collaborative scenarios.</p>',
   Paragraph: `<p>
                 Continually leverage other's state of the art imperatives before orthogonal experiences. Completely
                 administrate highly efficient sources via go forward customer service. Appropriately parallel task
@@ -94,7 +95,10 @@ const format = (string: string, args: FormatProps): string => {
   return string;
 };
 
-export const getContent = (type: ContentType, param?: number | FormatProps): string | string[] => {
+export const getContent = (
+  type: ContentType,
+  param?: number | FormatProps
+): string | string[] => {
   const contentText = content.get(type) || '';
 
   // If array get the index of the array

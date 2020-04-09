@@ -17,7 +17,10 @@ export const store = new Vuex.Store<RootState>({
   then your store is registered initially
   as a completely empty object
   */
-  plugins: process.env.NODE_ENV !== 'production' ? [createLogger({ collapsed: false })] : []
+  plugins:
+    process.env.NODE_ENV !== 'production'
+      ? [createLogger({ collapsed: false })]
+      : []
 });
 
 export const createStore = store;
