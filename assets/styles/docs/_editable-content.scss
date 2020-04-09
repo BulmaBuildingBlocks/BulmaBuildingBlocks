@@ -26,15 +26,11 @@ $menubar-width: 31.1em;
   }
 
   .menubar {
-    position: absolute;
     z-index: 1000;
     font-size: $menubar-font-size;
     transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
     background: $white;
     box-shadow: $box-shadow;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: calc(100% + 1rem);
     color: $black;
     flex-wrap: wrap;
 

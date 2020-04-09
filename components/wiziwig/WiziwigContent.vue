@@ -1,150 +1,180 @@
 <template>
   <component :is="tag" v-bind="$attrs" class="editor" :class="typeClass">
-    <editor-menu-bar v-slot="{ commands, isActive, focused, getMarkAttrs }" :editor="editor">
-      <div class="menubar is-hidden" :class="{ 'is-focused': focused }">
-        <form
-          v-if="linkMenuIsActive"
-          class="field is-marginless has-addons is-fullwidth"
-          @submit.prevent="setLinkUrl(commands.link, linkUrl)"
-        >
-          <div class="control">
-            <button class="button" type="button" @click="hideLinkMenu">
-              <b-icon pack="fa" icon="angle-left" />
-            </button>
-          </div>
-          <div class="control is-expanded">
-            <input
-              ref="linkInput"
-              v-model="linkUrl"
-              class="input"
-              type="text"
-              placeholder="https://"
-              @keydown.esc="clearLinkMenu"
-            />
-          </div>
-          <div class="control">
-            <button class="button" type="button" @click="setLinkUrl(commands.link, null)">
-              <b-icon pack="fa" icon="trash" />
-            </button>
-          </div>
-        </form>
-
-        <div v-else class="buttons has-addons is-multiline  ">
-          <template v-if="type === 'text' || type === 'title'">
-            <button class="button is-small is-white" :class="{ 'is-active': isActive.bold() }" @click="commands.bold">
-              <b-icon pack="fa" icon="bold" />
-            </button>
-
-            <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.italic() }"
-              @click="commands.italic"
-            >
-              <b-icon pack="fa" icon="italic" />
-            </button>
-
-            <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.strike() }"
-              @click="commands.strike"
-            >
-              <b-icon pack="fa" icon="strikethrough" />
-            </button>
-
-            <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.underline() }"
-              @click="commands.underline"
-            >
-              <b-icon pack="fa" icon="underline" />
-            </button>
-
-            <!--  <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-              @click="commands.heading({ level: 1 })"
-            >
-              <span class="icon">
-                H1
-              </span>
-            </button>
-
-            <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-              @click="commands.heading({ level: 2 })"
-            >
-              <span class="icon">
-                H2
-              </span>
-            </button>
-
-            <button
-              class="button is-small is-white"
-              :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-              @click="commands.heading({ level: 3 })"
-            >
-              <span class="icon">
-                H3
-              </span>
-            </button> -->
-
-            <template v-if="type === 'text'">
-              <button
-                class="button is-small is-white"
-                :class="{ 'is-active': isActive.bullet_list() }"
-                @click="commands.bullet_list"
-              >
-                <b-icon pack="fa" icon="list" />
-              </button>
-
-              <button
-                class="button is-small is-white"
-                :class="{ 'is-active': isActive.ordered_list() }"
-                @click="commands.ordered_list"
-              >
-                <b-icon pack="fa" icon="list-ol" />
-              </button>
-
-              <button
-                class="button is-small is-white"
-                :class="{ 'is-active': isActive.blockquote() }"
-                @click="commands.blockquote"
-              >
-                <b-icon pack="fa" icon="quote-left" />
-              </button>
-
-              <button class="button is-small is-white" :class="{ 'is-active': isActive.code() }" @click="commands.code">
-                <b-icon pack="fa" icon="code" />
-              </button>
-            </template>
-          </template>
-
-          <button v-if="type !== 'title'" class="button is-small is-white" @click="showImagePrompt(commands.image)">
-            <b-icon pack="fa" icon="image" />
-          </button>
-
-          <button
-            class="button is-small is-white"
-            :class="{ 'is-active': isActive.link() }"
-            @click="showLinkMenu(getMarkAttrs('link'))"
+    <popup-modal
+      :show="popupShown"
+      :options="{
+        placement: 'top'
+      }"
+    >
+      <editor-menu-bar
+        v-slot="{ commands, isActive, focused, getMarkAttrs }"
+        :editor="editor"
+      >
+        <div class="menubar">
+          <form
+            v-if="linkMenuIsActive"
+            class="field is-marginless has-addons is-fullwidth"
+            @submit.prevent="setLinkUrl(commands.link, linkUrl)"
           >
-            <b-icon pack="fa" icon="link" />
-            <span>{{ isActive.link() ? 'Update Link' : 'Add Link' }}</span>
-          </button>
+            <div class="control">
+              <button class="button" type="button" @click="hideLinkMenu">
+                <b-icon pack="fa" icon="angle-left" />
+              </button>
+            </div>
+            <div class="control is-expanded">
+              <input
+                ref="linkInput"
+                v-model="linkUrl"
+                class="input"
+                type="text"
+                placeholder="https://"
+                @keydown.esc="clearLinkMenu"
+              />
+            </div>
+            <div class="control">
+              <button
+                class="button"
+                type="button"
+                @click="setLinkUrl(commands.link, null)"
+              >
+                <b-icon pack="fa" icon="trash" />
+              </button>
+            </div>
+          </form>
 
-          <button class="button is-small is-white" @click="commands.undo">
-            <b-icon pack="fa" icon="undo" />
-          </button>
+          <div v-else class="buttons has-addons is-multiline  ">
+            <template v-if="type === 'text' || type === 'title'">
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.bold() }"
+                @click="commands.bold"
+              >
+                <b-icon pack="fa" icon="bold" />
+              </button>
 
-          <button class="button is-small is-white" @click="commands.redo">
-            <b-icon pack="fa" icon="redo" />
-          </button>
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.italic() }"
+                @click="commands.italic"
+              >
+                <b-icon pack="fa" icon="italic" />
+              </button>
+
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.strike() }"
+                @click="commands.strike"
+              >
+                <b-icon pack="fa" icon="strikethrough" />
+              </button>
+
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.underline() }"
+                @click="commands.underline"
+              >
+                <b-icon pack="fa" icon="underline" />
+              </button>
+
+              <!--  <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                @click="commands.heading({ level: 1 })"
+              >
+                <span class="icon">
+                  H1
+                </span>
+              </button>
+
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                @click="commands.heading({ level: 2 })"
+              >
+                <span class="icon">
+                  H2
+                </span>
+              </button>
+
+              <button
+                class="button is-small is-white"
+                :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+                @click="commands.heading({ level: 3 })"
+              >
+                <span class="icon">
+                  H3
+                </span>
+              </button> -->
+
+              <template v-if="type === 'text'">
+                <button
+                  class="button is-small is-white"
+                  :class="{ 'is-active': isActive.bullet_list() }"
+                  @click="commands.bullet_list"
+                >
+                  <b-icon pack="fa" icon="list" />
+                </button>
+
+                <button
+                  class="button is-small is-white"
+                  :class="{ 'is-active': isActive.ordered_list() }"
+                  @click="commands.ordered_list"
+                >
+                  <b-icon pack="fa" icon="list-ol" />
+                </button>
+
+                <button
+                  class="button is-small is-white"
+                  :class="{ 'is-active': isActive.blockquote() }"
+                  @click="commands.blockquote"
+                >
+                  <b-icon pack="fa" icon="quote-left" />
+                </button>
+
+                <button
+                  class="button is-small is-white"
+                  :class="{ 'is-active': isActive.code() }"
+                  @click="commands.code"
+                >
+                  <b-icon pack="fa" icon="code" />
+                </button>
+              </template>
+            </template>
+
+            <button
+              v-if="type !== 'title'"
+              class="button is-small is-white"
+              @click="showImagePrompt(commands.image)"
+            >
+              <b-icon pack="fa" icon="image" />
+            </button>
+
+            <button
+              class="button is-small is-white"
+              :class="{ 'is-active': isActive.link() }"
+              @click="showLinkMenu(getMarkAttrs('link'))"
+            >
+              <b-icon pack="fa" icon="link" />
+              <span>{{ isActive.link() ? 'Update Link' : 'Add Link' }}</span>
+            </button>
+
+            <button class="button is-small is-white" @click="commands.undo">
+              <b-icon pack="fa" icon="undo" />
+            </button>
+
+            <button class="button is-small is-white" @click="commands.redo">
+              <b-icon pack="fa" icon="redo" />
+            </button>
+          </div>
         </div>
-      </div>
-    </editor-menu-bar>
+      </editor-menu-bar>
 
-    <editor-content class="editor__content" :editor="editor" />
+      <editor-content
+        slot="reference"
+        class="editor__content"
+        :editor="editor"
+      />
+    </popup-modal>
   </component>
 </template>
 
@@ -168,11 +198,13 @@ import {
 import Link from '~/components/wiziwig/prosemirror-marks/Link';
 import Image from '~/components/wiziwig/prosemirror-marks/Image';
 import { Vue, Component, Prop } from '~/node_modules/nuxt-property-decorator';
+import PopupModal from '~/components/global/PopupModal.vue';
 
 @Component({
   components: {
     EditorContent,
-    EditorMenuBar
+    EditorMenuBar,
+    PopupModal
   }
 })
 export default class WiziwigContent extends Vue {
@@ -183,6 +215,8 @@ export default class WiziwigContent extends Vue {
 
   linkUrl?: string = undefined;
   linkMenuIsActive = false;
+
+  popupShown = false;
 
   $refs!: {
     linkInput: HTMLInputElement;
@@ -211,8 +245,19 @@ export default class WiziwigContent extends Vue {
       new History()
     ],
     content: this.value,
-    onUpdate: this.updateValue
+    onUpdate: this.updateValue,
+    onFocus: () => {
+      this.setPopupShown(true);
+    },
+    onBlur: () => {
+      this.setPopupShown(false);
+    }
   });
+
+  setPopupShown(shown: boolean) {
+    this.popupShown = shown;
+    console.log(this.popupShown);
+  }
 
   showLinkMenu(attrs: HTMLLinkElement): void {
     this.linkUrl = attrs.href;
