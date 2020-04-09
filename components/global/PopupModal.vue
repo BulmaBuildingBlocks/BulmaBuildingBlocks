@@ -1,10 +1,8 @@
 <template>
   <span class="is-relative">
-    <transition name="fade">
-      <span v-show="show" class="popper">
-        <slot />
-      </span>
-    </transition>
+    <span v-show="show" class="popper">
+      <slot />
+    </span>
     <slot name="reference" />
   </span>
 </template>
@@ -51,15 +49,22 @@ export default class PopupModal extends Vue {
     ]
   };
 
+  referenceElm?: HTMLElement = undefined;
+  content?: HTMLElement = undefined;
+
   $slots!: {
     reference: VNode[];
     default: VNode[];
   };
 
   @Watch('show')
-  async onShowPopperChange() {
-    if (this.popperInstance) {
-      await this.popperInstance.update();
+  onShowPopperChange(show: boolean) {
+    if (show) {
+      console.log('hi');
+      this.showPopup();
+    } else {
+      console.log('bye');
+      this.hidePopup();
     }
   }
 
@@ -68,17 +73,23 @@ export default class PopupModal extends Vue {
   }
 
   mounted() {
-    const referenceElm = this.$slots.reference[0].elm as HTMLElement;
-    const popper = this.$slots.default[0].elm as HTMLElement;
-
-    this.popperInstance = createPopper(
-      referenceElm,
-      popper,
-      this.popperOptions
-    );
+    this.referenceElm = this.$slots.reference[0].elm as HTMLElement;
+    this.content = this.$slots.default[0].elm as HTMLElement;
   }
 
-  destroy() {
+  async showPopup() {
+    if (this.referenceElm && this.content) {
+      this.popperInstance = createPopper(
+        this.referenceElm,
+        this.content,
+        this.popperOptions
+      );
+
+      await this.popperInstance.update();
+    }
+  }
+
+  hidePopup() {
     if (this.popperInstance) {
       this.popperInstance.destroy();
       this.popperInstance = undefined;

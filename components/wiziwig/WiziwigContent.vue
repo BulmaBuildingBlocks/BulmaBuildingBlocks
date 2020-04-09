@@ -7,7 +7,7 @@
       }"
     >
       <editor-menu-bar
-        v-slot="{ commands, isActive, focused, getMarkAttrs }"
+        v-slot="{ commands, isActive, getMarkAttrs }"
         :editor="editor"
       >
         <div class="menubar">
@@ -195,6 +195,7 @@ import {
   Underline,
   History
 } from 'tiptap-extensions';
+import _ from 'lodash';
 import Link from '~/components/wiziwig/prosemirror-marks/Link';
 import Image from '~/components/wiziwig/prosemirror-marks/Image';
 import { Vue, Component, Prop } from '~/node_modules/nuxt-property-decorator';
@@ -226,6 +227,7 @@ export default class WiziwigContent extends Vue {
     return `is-${this.type}`;
   }
 
+  queueHidePopup?: any = undefined;
   editor = new Editor({
     extensions: [
       new Blockquote(),
@@ -248,14 +250,25 @@ export default class WiziwigContent extends Vue {
     onUpdate: this.updateValue,
     onFocus: () => {
       this.setPopupShown(true);
+
+      if (this.queueHidePopup) {
+        this.queueHidePopup.cancel();
+      }
     },
     onBlur: () => {
-      this.setPopupShown(false);
+      console.log('BLURRR');
+      this.queueHidePopup = _.debounce(this.hidePopup, 150);
+      this.queueHidePopup();
     }
   });
 
   setPopupShown(shown: boolean) {
     this.popupShown = shown;
+    console.log(this.popupShown);
+  }
+
+  hidePopup() {
+    this.popupShown = false;
     console.log(this.popupShown);
   }
 
