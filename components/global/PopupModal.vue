@@ -37,7 +37,7 @@ export default class PopupModal extends Vue {
       {
         name: 'flip',
         options: {
-          fallbackPlacements: ['top', 'right']
+          fallbackPlacements: ['bottom', 'right', 'left']
         }
       },
       {

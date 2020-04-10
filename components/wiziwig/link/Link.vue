@@ -5,6 +5,7 @@ import ButtonToolbar from './LinkToolbar.vue';
 import PopupModal from '~/components/global/PopupModal.vue';
 import { PropSync } from '~/node_modules/nuxt-property-decorator';
 import { EditableLinkProps } from '~/components/wiziwig/link/types';
+import ClickOutside from '~/directives/click-outside';
 
 /***
  * Editting Features:
@@ -13,7 +14,11 @@ import { EditableLinkProps } from '~/components/wiziwig/link/types';
  * Link
  */
 
-@Component
+@Component({
+  directives: {
+    ClickOutside
+  }
+})
 export default class Link extends Vue {
   @Prop(Boolean) editable!: boolean;
   @PropSync('value', { type: Object }) newValue!: EditableLinkProps;
@@ -80,7 +85,13 @@ export default class Link extends Vue {
         options: {
           placement: this.newValue.popupPlacement || 'right-start'
         }
-      }
+      },
+      directives: [
+        {
+          name: 'click-outside',
+          value: { handler: this.closeModal }
+        }
+      ]
     });
 
     return popupModal;

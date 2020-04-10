@@ -5,6 +5,7 @@ import ImageToolbar from './ImageToolbar.vue';
 import PopupModal from '~/components/global/PopupModal.vue';
 import { PropSync } from '~/node_modules/nuxt-property-decorator';
 import { EditableImageProps } from '~/components/wiziwig/image/types';
+import ClickOutside from '~/directives/click-outside';
 
 /***
  * Editting Features:
@@ -13,7 +14,11 @@ import { EditableImageProps } from '~/components/wiziwig/image/types';
  * Link
  */
 
-@Component
+@Component({
+  directives: {
+    ClickOutside
+  }
+})
 export default class Image extends Vue {
   @Prop(Boolean) editable!: boolean;
   @PropSync('value', { type: Object }) newValue!: EditableImageProps;
@@ -82,6 +87,12 @@ export default class Image extends Vue {
           return imageToolbar;
         }
       },
+      directives: [
+        {
+          name: 'click-outside',
+          value: { handler: this.closeModal }
+        }
+      ],
       props: {
         show: this.editable && this.modalOpen,
         options: {
