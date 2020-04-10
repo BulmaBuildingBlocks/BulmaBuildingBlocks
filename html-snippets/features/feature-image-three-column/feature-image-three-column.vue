@@ -22,9 +22,7 @@
               class="column is-6 is-4-widescreen block"
               :class="`has-text-${color}-invert`"
             >
-              <editable-content
-                tag="div"
-                type="image"
+              <editable-image
                 class="image is-3by2 is-covered is-fullwidth has-radius block"
                 :value="item.image"
                 :editable="editable"

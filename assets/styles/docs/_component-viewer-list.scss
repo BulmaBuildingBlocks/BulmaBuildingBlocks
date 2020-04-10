@@ -26,5 +26,9 @@
     &:hover .component-viewer-item__options {
       display: block;
     }
+
+    .navbar {
+      z-index: auto;
+    }
   }
 }

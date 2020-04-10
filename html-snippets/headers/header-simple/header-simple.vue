@@ -7,11 +7,9 @@
   >
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="navbar-brand">
-        <editable-content
-          tag="div"
-          type="image"
+        <editable-image
           class="navbar-item"
-          :value="content.logo"
+          :value.sync="content.logo"
           :editable="editable"
           @value="content.logo = $event"
         />
@@ -31,31 +29,27 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <editable-content
+          <editable-link
             v-for="(item, index) in content.navLinks"
             :key="index"
-            tag="div"
-            type="text"
             class="navbar-item"
             :class="`has-text-${color}-invert`"
-            :value="item.content"
+            :value="item"
             :editable="editable"
-            @value="item.content = $event"
+            @value="item = $event"
           />
         </div>
 
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
-              <editable-content
+              <editable-link
                 v-for="(item, index) in content.navButtons"
                 :key="index"
-                tag="div"
-                type="text"
                 class="control"
-                :value="item.content"
+                :value="item"
                 :editable="editable"
-                @value="item.content = $event"
+                @value="item = $event"
               />
             </div>
           </div>

@@ -1,18 +1,12 @@
 import ContentTitleTwoColumn from './content-simple-title-two-column.vue';
+import Model from './model';
 import { Snippet } from '~/types/Snippet';
-import { ContentType, getContent } from '~/shared/content';
 
 const component: Snippet = {
   title: 'Title Two Columns',
   component: ContentTitleTwoColumn,
   color: 'white',
-  content: {
-    title: getContent(ContentType.Title),
-    paragraphs: [
-      getContent(ContentType.Paragraph),
-      getContent(ContentType.Paragraph)
-    ]
-  }
+  content: new Model()
 };
 
 export default component;

@@ -6,7 +6,7 @@
     <div :class="container ? 'container' : ''">
       <div class="columns is-centered is-multiline">
         <div
-          v-for="(item, index) in content"
+          v-for="(item, index) in content.items"
           :key="index"
           class="column is-6 is-4-desktop is-3-widescreen block"
           :class="`has-text-${color}-invert`"

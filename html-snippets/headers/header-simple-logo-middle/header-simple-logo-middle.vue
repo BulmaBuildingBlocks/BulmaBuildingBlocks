@@ -8,9 +8,7 @@
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="section is-small is-fullwidth">
         <div class="level">
-          <editable-content
-            tag="div"
-            type="image"
+          <editable-image
             class="level-item has-text-centered"
             :class="`has-text-${color}-invert`"
             :value="content.logo"

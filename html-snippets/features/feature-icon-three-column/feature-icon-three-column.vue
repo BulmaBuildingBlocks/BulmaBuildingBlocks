@@ -24,9 +24,7 @@
             >
               <div class="level">
                 <div class="level-item">
-                  <editable-content
-                    tag="div"
-                    type="image"
+                  <editable-image
                     class="image is-128x128"
                     :value="item.image"
                     :editable="editable"

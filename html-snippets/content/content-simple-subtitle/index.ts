@@ -1,14 +1,12 @@
 import ContentSubtitle from './content-simple-subtitle.vue';
+import Model from './model';
 import { Snippet } from '~/types/Snippet';
-import { ContentType, getContent } from '~/shared/content';
 
 const component: Snippet = {
   title: 'Subtitle',
   component: ContentSubtitle,
   color: 'white',
-  content: {
-    subtitle: getContent(ContentType.SmallDescription)
-  }
+  content: new Model()
 };
 
 export default component;

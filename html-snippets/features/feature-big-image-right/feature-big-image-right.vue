@@ -23,10 +23,8 @@
           />
         </div>
         <div class="column">
-          <editable-content
-            tag="div"
-            type="image"
-            class="image is-3by2"
+          <editable-image
+            class="image is-3by2 is-contained"
             :value="content.image"
             :editable="editable"
             @value="content.image = $event"

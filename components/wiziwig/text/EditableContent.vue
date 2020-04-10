@@ -1,8 +1,8 @@
 <script lang="ts">
 import { Component } from 'nuxt-property-decorator';
 import Vue, { CreateElement, VNode, RenderContext } from 'vue';
-import StaticContent from '~/components/wiziwig/StaticContent.vue';
-import WiziwigContent from '~/components/wiziwig/WiziwigContent.vue';
+import StaticContent from '~/components/wiziwig/text/StaticContent.vue';
+import WiziwigContent from '~/components/wiziwig/text/EditableText.vue';
 
 @Component({
   functional: true

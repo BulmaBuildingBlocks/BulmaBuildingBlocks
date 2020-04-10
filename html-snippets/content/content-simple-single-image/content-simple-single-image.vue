@@ -23,23 +23,19 @@
         @value="content.subtitle = $event"
       />
       <div class="buttons is-centered">
-        <editable-content
+        <editable-link
           v-for="(item, index) in content.navButtons"
           :key="index"
-          tag="div"
-          type="text"
           class="control"
-          :value="item.content"
+          :value="item"
           :editable="editable"
-          @value="item.content = $event"
+          @value="item = $event"
         />
       </div>
       <div class="columns is-centered">
         <div class="column is-9-desktop is-7-widescreen">
-          <editable-content
-            tag="div"
-            type="image"
-            class="image is-3by2  is-contained"
+          <editable-image
+            class="image is-3by2 is-contained"
             :value="content.image"
             :editable="editable"
             @value="content.image = $event"

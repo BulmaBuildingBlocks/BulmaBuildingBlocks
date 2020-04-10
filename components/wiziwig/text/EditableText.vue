@@ -196,8 +196,8 @@ import {
   History
 } from 'tiptap-extensions';
 import _ from 'lodash';
-import Link from '~/components/wiziwig/prosemirror-marks/Link';
-import Image from '~/components/wiziwig/prosemirror-marks/Image';
+import Link from '~/components/wiziwig/text/prosemirror-marks/Link';
+import Image from '~/components/wiziwig/text/prosemirror-marks/Image';
 import { Vue, Component, Prop } from '~/node_modules/nuxt-property-decorator';
 import PopupModal from '~/components/global/PopupModal.vue';
 
@@ -256,7 +256,6 @@ export default class WiziwigContent extends Vue {
       }
     },
     onBlur: () => {
-      console.log('BLURRR');
       this.queueHidePopup = _.debounce(this.hidePopup, 150);
       this.queueHidePopup();
     }
@@ -264,12 +263,10 @@ export default class WiziwigContent extends Vue {
 
   setPopupShown(shown: boolean) {
     this.popupShown = shown;
-    console.log(this.popupShown);
   }
 
   hidePopup() {
     this.popupShown = false;
-    console.log(this.popupShown);
   }
 
   showLinkMenu(attrs: HTMLLinkElement): void {

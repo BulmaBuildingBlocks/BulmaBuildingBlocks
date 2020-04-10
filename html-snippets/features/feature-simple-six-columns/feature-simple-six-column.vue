@@ -8,7 +8,7 @@
         <div class="column is-10">
           <div class="columns is-centered is-multiline">
             <div
-              v-for="(item, index) in content"
+              v-for="(item, index) in content.items"
               :key="index"
               class="column is-6 is-4-widescreen block"
               :class="`has-text-${color}-invert`"

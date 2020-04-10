@@ -1,6 +1,6 @@
 <template>
-  <span class="is-relative">
-    <span v-show="show" class="popper">
+  <span>
+    <span v-if="show" class="popup">
       <slot />
     </span>
     <slot name="reference" />
@@ -37,7 +37,7 @@ export default class PopupModal extends Vue {
       {
         name: 'flip',
         options: {
-          fallbackPlacements: ['bottom']
+          fallbackPlacements: ['top', 'right']
         }
       },
       {
@@ -52,18 +52,17 @@ export default class PopupModal extends Vue {
   referenceElm?: HTMLElement = undefined;
   content?: HTMLElement = undefined;
 
-  $slots!: {
-    reference: VNode[];
-    default: VNode[];
+  $scopedSlots!: {
+    reference: () => VNode[];
+    default: () => VNode[];
   };
 
-  @Watch('show')
-  onShowPopperChange(show: boolean) {
+  @Watch('show', { immediate: true })
+  async onShowPopperChange(show: boolean) {
     if (show) {
-      console.log('hi');
+      await this.$nextTick();
       this.showPopup();
     } else {
-      console.log('bye');
       this.hidePopup();
     }
   }
@@ -72,12 +71,11 @@ export default class PopupModal extends Vue {
     this.popperOptions = Object.assign(this.popperOptions, this.options);
   }
 
-  mounted() {
-    this.referenceElm = this.$slots.reference[0].elm as HTMLElement;
-    this.content = this.$slots.default[0].elm as HTMLElement;
-  }
-
   async showPopup() {
+    this.referenceElm = (await this.$scopedSlots.reference()[0]
+      .elm) as HTMLElement;
+    this.content = (await this.$scopedSlots.default()[0].elm) as HTMLElement;
+
     if (this.referenceElm && this.content) {
       this.popperInstance = createPopper(
         this.referenceElm,

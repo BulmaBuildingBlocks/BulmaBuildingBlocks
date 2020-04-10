@@ -24,7 +24,7 @@
             >
               <article class="media">
                 <figure class="media-left">
-                  <editable-content
+                  <editable-image
                     tag="div"
                     type="image"
                     class="image is-64x64"

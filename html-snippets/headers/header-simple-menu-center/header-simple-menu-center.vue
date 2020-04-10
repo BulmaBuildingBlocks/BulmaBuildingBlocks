@@ -18,9 +18,7 @@
           :editable="editable"
           @value="item.content = $event"
         />
-        <editable-content
-          tag="div"
-          type="image"
+        <editable-image
           class="level-item has-text-centered"
           :class="`has-text-${color}-invert`"
           :value="content.logo"

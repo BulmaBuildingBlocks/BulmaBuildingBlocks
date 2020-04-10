@@ -1,9 +1,13 @@
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
-import EditableContent from '~/components/wiziwig/EditableContent.vue';
+import EditableContent from '~/components/wiziwig/text/EditableContent.vue';
+import EditableImage from '~/components/wiziwig/image/Image.vue';
+import EditableLink from '~/components/wiziwig/link/Link.vue';
 
 @Component({
   components: {
-    EditableContent
+    EditableContent,
+    EditableImage,
+    EditableLink
   }
 })
 export default class HtmlSnippetMixin extends Vue {

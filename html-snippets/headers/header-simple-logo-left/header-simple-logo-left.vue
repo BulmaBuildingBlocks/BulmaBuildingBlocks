@@ -7,12 +7,10 @@
   >
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="navbar-brand">
-        <editable-content
-          tag="div"
-          type="image"
+        <editable-image
           class="navbar-item"
           :class="`has-text-${color}-invert`"
-          :value="content.logo"
+          :value.sync="content.logo"
           :editable="editable"
           @value="content.logo = $event"
         />
