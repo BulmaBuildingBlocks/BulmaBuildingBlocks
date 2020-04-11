@@ -1,8 +1,8 @@
 <script lang="ts">
 import Vue, { CreateElement, VNode } from 'vue';
 import $ from 'jquery';
+import { Component } from 'nuxt-property-decorator';
 import { store } from '~/store';
-import { Component } from '~/node_modules/nuxt-property-decorator';
 import PageBuilder from '~/components/PageBuilder.vue';
 
 @Component

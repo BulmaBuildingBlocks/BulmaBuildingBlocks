@@ -2,11 +2,22 @@
 // @ts-nocheck
 import Vue from 'vue';
 import VueHighlightJS from 'vue-highlightjs';
+import { Input, Field, Icon, Select, Tag, Switch, Radio, Toast } from 'buefy';
 import Example from '~/components/global/Example.vue';
 
 Vue.component('Example', Example);
 
-// Tell Vue.js to use vue-highlightjs
+// Import Buefy Components
+Vue.use(Input);
+Vue.use(Field);
+Vue.use(Icon);
+Vue.use(Select);
+Vue.use(Tag);
+Vue.use(Switch);
+Vue.use(Radio);
+Vue.use(Toast);
+
+// Import Vue Highlight
 Vue.use(VueHighlightJS);
 
 Vue.filter('pre', (text) => {

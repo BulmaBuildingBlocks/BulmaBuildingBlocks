@@ -5,7 +5,7 @@ const host = process.env.HOST || 'localhost';
 
 const nuxtConfig: Configuration = {
   mode: 'universal',
-
+  srcDir: 'src',
   env: {
     host,
     port
@@ -54,8 +54,6 @@ const nuxtConfig: Configuration = {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/buefy/nuxt-buefy
-    'nuxt-buefy',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module

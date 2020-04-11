@@ -8926,13 +8926,6 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-buefy@^0.3.26:
-  version "0.3.26"
-  resolved "https://registry.yarnpkg.com/nuxt-buefy/-/nuxt-buefy-0.3.26.tgz#af1e9bde97f82fe8ad0323b614acc68d2ebc7f7e"
-  integrity sha512-16m/ME6nHvQTI9Fk+3N4RcCXojkVNOaD7pwICrdgHXu9ilcMF3qPnSglx0TcPtJuJ31fdp/Rcwinjshnkz0V1w==
-  dependencies:
-    buefy "^0.8.15"
-
 nuxt-property-decorator@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/nuxt-property-decorator/-/nuxt-property-decorator-2.5.1.tgz#5fd2103993330930930ee78d80c6e67f254734f2"

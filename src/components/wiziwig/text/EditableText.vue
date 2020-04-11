@@ -196,9 +196,9 @@ import {
   History
 } from 'tiptap-extensions';
 import _ from 'lodash';
+import { Vue, Component, Prop } from 'nuxt-property-decorator';
 import Link from '~/components/wiziwig/text/prosemirror-marks/Link';
 import Image from '~/components/wiziwig/text/prosemirror-marks/Image';
-import { Vue, Component, Prop } from '~/node_modules/nuxt-property-decorator';
 import PopupModal from '~/components/global/PopupModal.vue';
 
 @Component({

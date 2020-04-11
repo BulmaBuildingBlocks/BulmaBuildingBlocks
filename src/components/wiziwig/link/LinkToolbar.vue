@@ -23,11 +23,7 @@
 </template>
 
 <script lang="ts">
-import {
-  Vue,
-  Component,
-  PropSync
-} from '~/node_modules/nuxt-property-decorator';
+import { Vue, Component, PropSync } from 'nuxt-property-decorator';
 import { EditableLinkProps } from '~/components/wiziwig/link/types';
 
 /***

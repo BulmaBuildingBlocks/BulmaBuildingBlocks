@@ -73,7 +73,7 @@
     "core-js": "2.6.11",
     "jquery": "^3.4.1",
     "nuxt": "^2.12.2",
-    "nuxt-buefy": "^0.3.26",
+    "buefy": "^0.8.15",
     "raw-loader": "^4.0.0",
     "redirect-ssl": "^1.4.1",
     "require-context": "^1.1.0",

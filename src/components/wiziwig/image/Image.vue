@@ -1,15 +1,15 @@
 <script lang="ts">
 import { CreateElement } from 'vue';
-import { Vue, Component, Prop } from 'nuxt-property-decorator';
-import ButtonToolbar from './LinkToolbar.vue';
+import { Vue, Component, Prop, PropSync } from 'nuxt-property-decorator';
+import ImageToolbar from './ImageToolbar.vue';
 import PopupModal from '~/components/global/PopupModal.vue';
-import { PropSync } from '~/node_modules/nuxt-property-decorator';
-import { EditableLinkProps } from '~/components/wiziwig/link/types';
+
+import { EditableImageProps } from '~/components/wiziwig/image/types';
 import ClickOutside from '~/directives/click-outside';
 
 /***
  * Editting Features:
- * Upload and replace button
+ * Upload and replace image
  * Alt tag
  * Link
  */
@@ -19,9 +19,9 @@ import ClickOutside from '~/directives/click-outside';
     ClickOutside
   }
 })
-export default class Link extends Vue {
+export default class EditableImage extends Vue {
   @Prop(Boolean) editable!: boolean;
-  @PropSync('value', { type: Object }) newValue!: EditableLinkProps;
+  @PropSync('value', { type: Object }) newValue!: EditableImageProps;
 
   modalOpen = false;
 
@@ -42,30 +42,37 @@ export default class Link extends Vue {
   }
 
   render(createElement: CreateElement) {
-    const button = createElement(
+    const image = createElement('img', {
+      attrs: {
+        src: this.newValue.src,
+        alt: this.newValue.alt,
+        width: this.newValue.width,
+        height: this.newValue.height
+      },
+      on: {
+        click: this.toggleModal
+      }
+    });
+
+    const imageWithLink = createElement(
       'a',
       {
-        class: this.newValue.styles,
-        on: {
-          click: this.toggleModal
-        },
         attrs: {
           href: this.newValue.href
         }
       },
-      this.newValue.label
+      [image]
     );
 
-    const buttonToolbar = createElement(ButtonToolbar, {
+    const imageToolbar = createElement(ImageToolbar, {
       props: {
         value: this.newValue
       },
       on: {
-        click: this.toggleModal,
         closeModal: () => {
           this.closeModal();
         },
-        'update:value': (value: EditableLinkProps) => {
+        'update:value': (value: EditableImageProps) => {
           this.newValue = value;
         }
       }
@@ -74,16 +81,10 @@ export default class Link extends Vue {
     const popupModal = createElement(PopupModal, {
       scopedSlots: {
         reference: () => {
-          return button;
+          return this.newValue.href ? imageWithLink : image;
         },
         default: () => {
-          return buttonToolbar;
-        }
-      },
-      props: {
-        show: this.editable && this.modalOpen,
-        options: {
-          placement: this.newValue.popupPlacement || 'right-start'
+          return imageToolbar;
         }
       },
       directives: [
@@ -91,7 +92,21 @@ export default class Link extends Vue {
           name: 'click-outside',
           value: { handler: this.closeModal }
         }
-      ]
+      ],
+      props: {
+        show: this.editable && this.modalOpen,
+        options: {
+          placement: this.newValue.popupPlacement || 'right'
+        },
+        modifiers: [
+          {
+            name: 'flip',
+            options: {
+              fallbackPlacements: ['left', 'top']
+            }
+          }
+        ]
+      }
     });
 
     return popupModal;
