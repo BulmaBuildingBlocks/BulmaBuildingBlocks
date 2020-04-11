@@ -20,7 +20,7 @@ import { prettierConf } from '~/shared/config';
 })
 export class PageBuilderStore extends VuexModule {
   code = '';
-  components: Snippet[] = [];
+  snippets: Snippet[] = [];
   showSnippetBorders = true;
   editable = true;
   copyingCode = false;
@@ -44,13 +44,13 @@ export class PageBuilderStore extends VuexModule {
   }
 
   @Mutation
-  addSnippet(component: Snippet): void {
-    this.components.push(_.cloneDeep(component));
+  addSnippet(snippet: Snippet): void {
+    this.snippets.push(_.cloneDeep(snippet));
   }
 
   @Mutation
-  removeComponent(component: Snippet): void {
-    this.components.splice(this.components.indexOf(component), 1);
+  removeSnippet(snippet: Snippet): void {
+    this.snippets.splice(this.snippets.indexOf(snippet), 1);
   }
 
   @Mutation
@@ -66,7 +66,27 @@ export class PageBuilderStore extends VuexModule {
   @Action
   copyCode(html: string): Promise<void> {
     return new Promise((resolve) => {
-      const formattedHtml = prettier.format(html, prettierConf);
+      const header = `<!DOCTYPE html>
+                        <html>
+                          <head>
+                            <meta charset="utf-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1">
+                            <title>Bulma Building Block</title>
+                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+                            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+                            <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+                          </head>
+                          <body>
+                          `;
+
+      const footer = `</body>
+                  </html>`;
+
+      const formattedHtml = prettier.format(
+        header + html + footer,
+        prettierConf
+      );
+
       this.setCode(formattedHtml);
       clipboard(this.code);
       Toast.open('Copied to clipboard!');

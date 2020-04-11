@@ -1,17 +1,17 @@
-import headerComponents from '~/html-snippets/headers';
-import featureComponents from '~/html-snippets/features';
-import contentComponents from '~/html-snippets/content';
+import headerSnippets from '~/html-snippets/headers';
+import featureSnippets from '~/html-snippets/features';
+import contentSnippets from '~/html-snippets/content';
 import { Snippet, SnippetListObject } from '~/types/Snippet';
 
-// Manifest all components into one array
+// Manifest all snippets into one array
 const allHtmlSnippets: Snippet[] = [
-  ...headerComponents,
-  ...featureComponents,
-  ...contentComponents
+  ...headerSnippets,
+  ...featureSnippets,
+  ...contentSnippets
 ];
 
-// Creates Object of Components used for importing directly as components in vue templates
-const componentsExtract = (): SnippetListObject => {
+// Creates Object of Snippets used for importing directly as snippets in vue templates
+const snippetsExtract = (): SnippetListObject => {
   const snippets: SnippetListObject = {};
   const allSnippetsArray = allHtmlSnippets.map((x) => x.component);
 
@@ -22,6 +22,6 @@ const componentsExtract = (): SnippetListObject => {
   return snippets;
 };
 
-export const components = componentsExtract();
+export const snippets = snippetsExtract();
 
 export default allHtmlSnippets;

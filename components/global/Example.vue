@@ -5,28 +5,30 @@
         <div class="level">
           <div class="level-left">
             <p :id="`${slugifiedTitle}`" class="title is-4">
-              <nuxt-link v-if="title" :to="`#${slugifiedTitle}`">#</nuxt-link>
-              {{ title }}
+              <nuxt-link v-if="snippet.title" :to="`#${slugifiedTitle}`"
+                >#</nuxt-link
+              >
+              {{ snippet.title }}
             </p>
           </div>
           <div class="level-right">
-            <div v-if="container" class="level-item">
+            <div class="level-item">
               <b-field
                 label="Container Applied"
                 custom-class="is-small"
                 horizontal
               >
-                <b-switch v-model="containerValue" @input="updateRefs" />
+                <b-switch v-model="snippet.container" @input="updateRefs" />
               </b-field>
             </div>
-            <div v-if="newColor" class="level-item">
+            <div v-if="snippet.color" class="level-item">
               <b-field
                 label="Background Color"
                 custom-class="is-small"
                 horizontal
               >
                 <b-select
-                  v-model="newColor"
+                  v-model="snippet.color"
                   size="is-small"
                   placeholder="Select a color"
                   @input="updateRefs"
@@ -57,18 +59,16 @@
         </div>
       </div>
     </div>
-    <div v-if="component" class="example">
+    <div v-if="snippet.component" class="example">
       <div class="button-container">
         <!--  <CodepenEdit :code="code" :title="title"/>-->
       </div>
       <div class="example__container">
         <div class="example-component">
           <component
-            :is="component"
+            :is="snippet.component"
             ref="componenthtml"
-            :color="newColor"
-            :container="containerValue"
-            :content="content"
+            :snippet="snippet"
           />
         </div>
         <div class="container is-fullwidth">
@@ -87,6 +87,7 @@ import prettier from 'prettier/standalone';
 import clipboard from 'copy-to-clipboard';
 import CodeView from './CodeView.vue';
 import { prettierConf, statusColors } from '~/shared/config';
+import { Snippet } from '~/types/Snippet';
 
 @Component({
   components: {
@@ -95,20 +96,13 @@ import { prettierConf, statusColors } from '~/shared/config';
   }
 })
 export default class Example extends Vue {
-  @Prop([Object, Function]) component!: object | Function;
-  // @Prop(String) code!: string;
-  @Prop(String) title!: string;
-  @Prop(Boolean) container!: boolean;
-  @Prop(String) color!: string;
-  @Prop([Object, Array]) content!: string;
+  @Prop([Object]) snippet!: Snippet;
 
   $refs!: {
     componenthtml: Vue;
   };
 
   code = '';
-  newColor = this.color || '';
-  containerValue = true;
   statuses = statusColors;
 
   updateRefs(): void {
@@ -137,8 +131,8 @@ export default class Example extends Vue {
   }
 
   get slugifiedTitle(): string {
-    if (!this.title) return '';
-    return this.title
+    if (!this.snippet.title) return '';
+    return this.snippet.title
       .toLowerCase()
       .replace(/\s+/g, '-') // Replace spaces with -
       .replace(/[^\w-]+/g, '') // Remove all non-word chars

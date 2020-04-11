@@ -8,7 +8,7 @@ import ContentTitleTwoColumn from './content-simple-title-two-column';
 import ContentSingleImage from './content-simple-single-image';
 import { Snippet } from '~/types/Snippet';
 
-const components: Snippet[] = [
+const snippets: Snippet[] = [
   ContentTitleWithContent,
   ContentTitle,
   ContentSubtitle,
@@ -19,4 +19,4 @@ const components: Snippet[] = [
   ContentSingleImage
 ];
 
-export default components;
+export default snippets;

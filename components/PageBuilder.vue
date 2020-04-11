@@ -5,10 +5,10 @@
       class="component-viewer-list"
       :class="{ 'has-components-shown': showSnippetBorders }"
       :group="{ name: 'content', put: editable, sort: editable }"
-      :list="components"
+      :list="snippets"
     >
       <div
-        v-for="(component, index) in components"
+        v-for="(snippet, index) in snippets"
         :key="index"
         class="component-viewer-item"
       >
@@ -16,18 +16,16 @@
           <div class="buttons">
             <button
               class="button is-danger"
-              @click="deleteComponentItem(component)"
+              @click="deleteComponentItem(snippet)"
             >
               Delete
             </button>
           </div>
         </div>
         <component
-          :is="component.component"
+          :is="snippet.component"
           ref="myTextEditorHtml"
-          :color="component.color"
-          :container="component.container"
-          :content="component.content"
+          :snippet="snippet"
           :editable="editable"
         />
       </div>
@@ -38,13 +36,13 @@
 <script lang="ts">
 import draggable from 'vuedraggable';
 import { Vue, Component, Watch } from 'nuxt-property-decorator';
-import { components } from '~/html-snippets';
+import { snippets } from '~/html-snippets';
 import PageBuilderStore from '~/store/pageBuilder';
 import { Snippet } from '~/types/Snippet';
 
 @Component({
   components: {
-    ...components,
+    ...snippets,
     draggable
   }
 })
@@ -53,8 +51,8 @@ export default class ComponentViewer extends Vue {
     myTextEditorHtml: Vue[];
   };
 
-  get components(): Snippet[] {
-    return PageBuilderStore.components;
+  get snippets(): Snippet[] {
+    return PageBuilderStore.snippets;
   }
 
   get showSnippetBorders(): boolean {
@@ -69,8 +67,8 @@ export default class ComponentViewer extends Vue {
     return PageBuilderStore.copyingCode;
   }
 
-  deleteComponentItem(component: Snippet): void {
-    PageBuilderStore.removeComponent(component);
+  deleteComponentItem(snippet: Snippet): void {
+    PageBuilderStore.removeSnippet(snippet);
   }
 
   @Watch('copyingCode', { deep: true })

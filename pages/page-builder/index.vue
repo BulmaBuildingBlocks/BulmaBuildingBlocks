@@ -34,7 +34,7 @@
                 class="is-fullwidth page-builder__component-list__item"
                 @click="addComponentToPreview(component)"
               >
-                <component :is="component.component" v-bind="component" />
+                <component :is="component.component" :snippet="component" />
               </div>
             </draggable>
           </div>
@@ -118,6 +118,7 @@ import draggable from 'vuedraggable';
 
 import { Component, Vue, Watch } from 'nuxt-property-decorator';
 
+// import html2canvas from 'html2canvas';
 import allComponents from '~/html-snippets';
 
 import DeviceViewer from '~/components/DeviceViewer.vue';

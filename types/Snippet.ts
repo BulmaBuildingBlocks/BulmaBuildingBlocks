@@ -6,7 +6,6 @@ export interface Snippet {
   content?: any;
   color?: string;
   container?: boolean;
-  editable?: boolean;
 }
 
 export interface SnippetListObject {

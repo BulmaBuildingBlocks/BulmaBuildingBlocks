@@ -7,7 +7,7 @@ import FeatureBigImageLeft from './feature-big-image-left';
 import FeatureBigImageRight from './feature-big-image-right';
 import { Snippet } from '~/types/Snippet';
 
-const components: Snippet[] = [
+const snippets: Snippet[] = [
   FeatureSimpleSixColumns,
   FeatureSimpleEightColumns,
   FeatureImagesThreeColumns,
@@ -17,4 +17,4 @@ const components: Snippet[] = [
   FeatureIconThreeColumnsMedia
 ];
 
-export default components;
+export default snippets;
