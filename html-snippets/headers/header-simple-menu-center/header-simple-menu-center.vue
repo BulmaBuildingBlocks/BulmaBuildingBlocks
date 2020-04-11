@@ -7,16 +7,14 @@
   >
     <div :class="container ? 'container' : 'navbar-row'">
       <div class="level is-fullwidth">
-        <editable-content
+        <editable-link
           v-for="(item, index) in content.navLeft"
           :key="index + 'navLeft'"
-          tag="div"
-          type="text"
           class="level-item has-text-centered"
           :class="`has-text-${color}-invert`"
-          :value="item.content"
+          :value="item"
           :editable="editable"
-          @value="item.content = $event"
+          @value="item = $event"
         />
         <editable-image
           class="level-item has-text-centered"
@@ -25,16 +23,14 @@
           :editable="editable"
           @value="content.logo = $event"
         />
-        <editable-content
+        <editable-link
           v-for="(item, index) in content.navRight"
           :key="index + 'navRight'"
-          tag="div"
-          type="text"
           class="level-item has-text-centered"
           :class="`has-text-${color}-invert`"
-          :value="item.content"
+          :value="item"
           :editable="editable"
-          @value="item.content = $event"
+          @value="item = $event"
         />
       </div>
     </div>

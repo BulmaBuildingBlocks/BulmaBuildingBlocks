@@ -19,7 +19,7 @@ import ClickOutside from '~/directives/click-outside';
     ClickOutside
   }
 })
-export default class Image extends Vue {
+export default class EditableImage extends Vue {
   @Prop(Boolean) editable!: boolean;
   @PropSync('value', { type: Object }) newValue!: EditableImageProps;
 

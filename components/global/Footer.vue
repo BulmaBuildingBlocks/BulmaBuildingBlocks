@@ -6,7 +6,10 @@
           <div class="column">
             <p>
               Authored by
-              <a href="https://twitter.com/JosephLeeAnson" target="_blank"
+              <a
+                href="https://twitter.com/JosephLeeAnson"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
                 >Joseph Anson</a
               >
             </p>
@@ -26,6 +29,7 @@
                 class="button"
                 href="https://github.com/JosephAnson/BulmaDesignBlocks"
                 target="_blank"
+                rel="noopener noreferrer nofollow"
               >
                 <b-icon pack="fab" icon="github" />
                 <span>GitHub</span>
