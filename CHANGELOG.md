@@ -1,3 +1,27 @@
+### 0.3.0 (2020-04-11)
+
+##### Chores
+
+*  minor layout link tweaks ([24ac6538](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/24ac6538b864d7b89430fc468d2ccdd55150a36f))
+
+##### New Features
+
+*  blur event for popups ([39dc04e3](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/39dc04e31432e1bd9277631a13855f9c80f89ca8))
+*  image and button editable components created ([bb723a33](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/bb723a33b36fc73871ce4e016387c0530c636ad2))
+*  popup placement improved ([9477c56c](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/9477c56cf7dbdabe1e9b1061fcc3ade4985c3244))
+
+##### Bug Fixes
+
+*  issue with button editing ([75e23fcb](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/75e23fcb4347b7c388a914cb962463ffdd5dfe73))
+
+##### Refactors
+
+*  hide and show popup correctly when blurred ([f6ceab05](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/f6ceab055dc110ea03ba03baba25e0ed0e9efa47))
+
+##### Code Style Changes
+
+*  prettier conf updated ([e2d8c2a5](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/e2d8c2a5d4bb3e8c693f1b853f57a558bc1c1559))
+
 ### 0.2.0 (2020-04-07)
 
 ##### Chores
