@@ -21,7 +21,7 @@ class Model {
     },
     {
       image: {
-        src: require(`~/assets/icons/1.svg`),
+        src: require(`~/assets/icons/2.svg`),
         alt: 'Icon two'
       },
       title: 'Feature 2',
@@ -30,7 +30,7 @@ class Model {
     },
     {
       image: {
-        src: require(`~/assets/icons/1.svg`),
+        src: require(`~/assets/icons/3.svg`),
         alt: 'Icon three'
       },
       title: 'Feature 3',
