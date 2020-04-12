@@ -38,6 +38,10 @@
       background-image: url('~assets/images/desktop-outline.png');
       background-repeat: no-repeat;
       background-size: 100% 100%;
+
+      iframe {
+        border: 2px solid $grey-lightest;
+      }
     }
 
     iframe {
@@ -51,7 +55,7 @@
       &.has-device-frame {
         height: calc(1024px + 7rem);
         width: calc(769px + 7.6rem);
-        padding: 3.5rem 3.8rem;
+        padding: 5.3rem 3.2rem 5.5rem;
         background-image: url('~assets/images/tablet-outline.png');
       }
     }
@@ -62,11 +66,11 @@
       &.has-device-frame {
         height: calc(667px + 2.4rem);
         width: calc(376px + 3rem);
-        padding: 1.3rem 1.75rem;
+        padding: 1.3rem 1.5rem;
         background-image: url('~assets/images/mobile-outline.png');
 
         iframe {
-          border-radius: 2rem;
+          border-radius: 2.3rem;
           overflow: hidden;
         }
       }
