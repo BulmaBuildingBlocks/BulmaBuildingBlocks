@@ -22,10 +22,14 @@ $general-spacing-large: 6rem;
   }
 
   &.is-medium {
-    @include block-spacing($general-spacing-medium);
+    @include desktop {
+      @include block-spacing($general-spacing-medium);
+    }
   }
 
   &.is-large {
-    @include block-spacing($general-spacing-large);
+    @include desktop {
+      @include block-spacing($general-spacing-large);
+    }
   }
 }

@@ -4,7 +4,9 @@
       <div class="columns is-gapless">
         <div class="column">
           <div class="page-builder__component-list">
-            <div class="level is-marginless">
+            <div
+              class="page-builder__component-list__header level is-marginless"
+            >
               <div class="level-left">
                 <div class="level-item">
                   <p class="title is-4">
@@ -16,7 +18,6 @@
                 </nuxt-link>
               </div>
             </div>
-            <hr />
             <draggable
               class="page-builder__component-list__items"
               :group="{
@@ -39,73 +40,71 @@
             </draggable>
           </div>
         </div>
-        <div
-          class="column is-narrow has-background-light page-builder__viewer"
-          :class="`is-${deviceSize}`"
-        >
-          <div class="page-builder__device-options is-fullwidth">
-            <div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <b-field>
-                    <b-radio-button
-                      v-model="deviceSize"
-                      native-value="mobile"
-                      size="is-small"
-                    >
-                      Mobile
-                    </b-radio-button>
-
-                    <b-radio-button
-                      v-model="deviceSize"
-                      native-value="tablet"
-                      size="is-small"
-                    >
-                      Tablet
-                    </b-radio-button>
-
-                    <b-radio-button
-                      v-model="deviceSize"
-                      native-value="desktop"
-                      size="is-small"
-                    >
-                      Desktop
-                    </b-radio-button>
-                  </b-field>
-                </div>
-                <div class="level-item">
-                  <b-field>
-                    <b-switch v-model="showSnippetBorders">
-                      <span class="label is-small is-nowrap"
-                        >Container Spacing</span
+        <div class="column is-narrow">
+          <div
+            class="has-background-grey-lighter page-builder__viewer"
+            :class="`is-${deviceSize}`"
+          >
+            <div class="page-builder__device-options is-fullwidth">
+              <div class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <b-field>
+                      <b-radio-button
+                        v-model="deviceSize"
+                        native-value="mobile"
+                        size="is-small"
                       >
-                    </b-switch>
-                  </b-field>
+                        Mobile
+                      </b-radio-button>
+
+                      <b-radio-button
+                        v-model="deviceSize"
+                        native-value="tablet"
+                        size="is-small"
+                      >
+                        Tablet
+                      </b-radio-button>
+
+                      <b-radio-button
+                        v-model="deviceSize"
+                        native-value="desktop"
+                        size="is-small"
+                      >
+                        Desktop
+                      </b-radio-button>
+                    </b-field>
+                  </div>
+                  <div class="level-item">
+                    <b-field>
+                      <b-switch v-model="deviceFrame">
+                        <span class="label is-small is-nowrap"
+                          >Show Device Frame</span
+                        >
+                      </b-switch>
+                    </b-field>
+                  </div>
                 </div>
-                <div class="level-item">
-                  <b-field>
-                    <b-switch v-model="editable">
-                      <span class="label is-small is-nowrap">Editable</span>
-                    </b-switch>
-                  </b-field>
-                </div>
-              </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <button
-                    class="button is-small is-primary copy-code"
-                    @click="copyCode"
-                  >
-                    Copy
-                  </button>
+                <div class="level-right">
+                  <div class="level-item">
+                    <button
+                      class="button is-small is-primary copy-code"
+                      @click="copyCode"
+                    >
+                      Copy
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="page-builder__iframe" :class="`is-${deviceSize}`">
-            <client-only>
-              <device-viewer />
-            </client-only>
+            <div
+              class="page-builder__iframe"
+              :class="[`is-${deviceSize}`, { 'has-device-frame': deviceFrame }]"
+            >
+              <client-only>
+                <device-viewer />
+              </client-only>
+            </div>
           </div>
         </div>
       </div>
@@ -135,8 +134,7 @@ import { Snippet } from '~/types/Snippet';
 export default class PageBuilderPage extends Vue {
   components = allComponents;
   deviceSize = 'desktop';
-  showSnippetBorders = PageBuilderStore.showSnippetBorders;
-  editable = PageBuilderStore.editable;
+  deviceFrame = false;
 
   get layout(): string {
     return 'empty';
@@ -148,11 +146,6 @@ export default class PageBuilderPage extends Vue {
 
   addComponentToPreview(component: Snippet): void {
     PageBuilderStore.addSnippet(component);
-  }
-
-  @Watch('showSnippetBorders')
-  onShowSnippetBordersChange(value: boolean): void {
-    PageBuilderStore.toggleShowSnippetBorders(value);
   }
 
   @Watch('editable')

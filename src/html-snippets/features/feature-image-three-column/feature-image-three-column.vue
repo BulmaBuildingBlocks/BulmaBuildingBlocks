@@ -19,7 +19,7 @@
             <div
               v-for="(item, index) in content.items"
               :key="index"
-              class="column is-6 is-4-widescreen block"
+              class="column is-6 is-4-widescreen"
               :class="`has-text-${color}-invert`"
             >
               <editable-image

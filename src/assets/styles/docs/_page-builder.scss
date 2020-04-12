@@ -5,17 +5,27 @@
 
   .page-builder__viewer {
     position: relative;
-    width: 990px;
+    height: 100%;
+    width: calc(#{1920px / 2} + 2rem);
+    padding: 1rem 1rem 4.5rem;
 
     .page-builder__iframe {
       position: relative;
+      top: 50%;
       left: 50%;
       transform-origin: top left;
-      transform: scale(0.5) translate(-50%);
-      width: 1980px;
+      transform: scale(0.5) translate(-50%, -50%);
+      width: 1920px;
       height: 200%;
-      padding: 1rem 1rem 8rem;
-      background: $light;
+
+      &.has-device-frame {
+        height: calc(1080px - 1rem);
+        padding: 3.05rem 0 1.4rem;
+
+        background-image: url('~assets/images/desktop-outline.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
 
       iframe {
         width: 100%;
@@ -24,11 +34,30 @@
     }
 
     &.is-tablet .page-builder__iframe {
-      width: 980px;
+      width: 769px;
+
+      &.has-device-frame {
+        height: calc(1024px + 7rem);
+        width: calc(769px + 7.6rem);
+        padding: 3.5rem 3.8rem;
+        background-image: url('~assets/images/tablet-outline.png');
+      }
     }
 
     &.is-mobile .page-builder__iframe {
-      width: 480px;
+      width: 376px;
+
+      &.has-device-frame {
+        height: calc(667px + 2.4rem);
+        width: calc(376px + 3rem);
+        padding: 1.2rem 1.5rem;
+        background-image: url('~assets/images/mobile-outline.png');
+
+        iframe {
+          border-radius: 2rem;
+          overflow: hidden;
+        }
+      }
     }
 
     .page-builder__device-options {
@@ -41,10 +70,23 @@
   }
 
   .page-builder__component-list {
-    padding: 1.5rem !important;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    overflow-y: scroll;
+    border-right: 1px solid $grey-lighter;
   }
+}
+
+.page-builder__component-list__header {
+  padding: 1rem;
+  border-bottom: 1px solid $grey-lighter;
+}
+
+.page-builder__component-list__items {
+  padding: 1rem;
+  height: 100%;
+  overflow-y: scroll;
+  background: $light;
 }
 
 // Placed on own as it will keeps styles when dragged
@@ -53,8 +95,12 @@
   justify-content: center;
   align-content: center;
   margin-bottom: 0.5rem;
-  border: 1px solid $primary-light;
+  border: 1px solid transparent;
   cursor: pointer;
+
+  &:hover {
+    border-color: $primary;
+  }
 
   img {
     width: 100%;

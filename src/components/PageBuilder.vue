@@ -3,7 +3,6 @@
     <draggable
       ref="pageHtml"
       class="component-viewer-list"
-      :class="{ 'has-components-shown': showSnippetBorders }"
       :group="{ name: 'content', put: editable, sort: editable }"
       :list="snippets"
     >
@@ -53,10 +52,6 @@ export default class ComponentViewer extends Vue {
 
   get snippets(): Snippet[] {
     return PageBuilderStore.snippets;
-  }
-
-  get showSnippetBorders(): boolean {
-    return PageBuilderStore.showSnippetBorders;
   }
 
   get editable(): boolean {

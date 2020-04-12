@@ -21,7 +21,6 @@ import { prettierConf } from '~/shared/config';
 export class PageBuilderStore extends VuexModule {
   code = '';
   snippets: Snippet[] = [];
-  showSnippetBorders = true;
   editable = true;
   copyingCode = false;
 
@@ -51,11 +50,6 @@ export class PageBuilderStore extends VuexModule {
   @Mutation
   removeSnippet(snippet: Snippet): void {
     this.snippets.splice(this.snippets.indexOf(snippet), 1);
-  }
-
-  @Mutation
-  toggleShowSnippetBorders(show: boolean): void {
-    this.showSnippetBorders = show;
   }
 
   @Mutation
