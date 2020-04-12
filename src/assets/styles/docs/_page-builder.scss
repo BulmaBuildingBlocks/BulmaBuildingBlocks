@@ -42,14 +42,19 @@
     padding: 1.5rem !important;
     height: 100%;
     overflow-y: scroll;
+  }
+}
 
-    .page-builder__component-list__items {
-      .page-builder__component-list__item {
-        padding: 0.125rem 0.25rem;
-        margin-bottom: 0.5rem;
-        border: 1px solid $primary-light;
-      }
-    }
+// Placed on own as it will keeps styles when dragged
+.page-builder__component-list__item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 0.5rem;
+  border: 1px solid $primary-light;
+
+  img {
+    width: 100%;
   }
 }
 

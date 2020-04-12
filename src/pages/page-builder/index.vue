@@ -34,7 +34,7 @@
                 class="is-fullwidth page-builder__component-list__item"
                 @click="addComponentToPreview(component)"
               >
-                <component :is="component.component" :snippet="component" />
+                <img :src="componentImageUrl(component.title)" />
               </div>
             </draggable>
           </div>
@@ -117,6 +117,7 @@
 import draggable from 'vuedraggable';
 
 import { Component, Vue, Watch } from 'nuxt-property-decorator';
+import slugifyString from '~/shared/slugifyString';
 
 // import html2canvas from 'html2canvas';
 import allComponents from '~/html-snippets';
@@ -139,6 +140,10 @@ export default class PageBuilderPage extends Vue {
 
   get layout(): string {
     return 'empty';
+  }
+
+  componentImageUrl(title: string): string {
+    return require(`~/assets/component-images/${slugifyString(title)}.png`);
   }
 
   addComponentToPreview(component: Snippet): void {
