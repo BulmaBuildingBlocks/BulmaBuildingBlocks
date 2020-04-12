@@ -5,10 +5,9 @@
         <div class="level">
           <div class="level-left">
             <p :id="`${slugifiedTitle}`" class="title is-4">
-              <nuxt-link v-if="snippet.title" :to="`#${slugifiedTitle}`"
-                >#</nuxt-link
-              >
-              {{ snippet.title }}
+              <nuxt-link v-if="snippet.title" :to="`#${slugifiedTitle}`">
+                # {{ snippet.title }}
+              </nuxt-link>
             </p>
           </div>
           <div class="level-right">
@@ -88,6 +87,7 @@ import clipboard from 'copy-to-clipboard';
 import CodeView from './CodeView.vue';
 import { prettierConf, statusColors } from '~/shared/config';
 import { Snippet } from '~/types/Snippet';
+import slugifyString from '~/shared/slugifyString';
 
 @Component({
   components: {
@@ -132,13 +132,7 @@ export default class Example extends Vue {
 
   get slugifiedTitle(): string {
     if (!this.snippet.title) return '';
-    return this.snippet.title
-      .toLowerCase()
-      .replace(/\s+/g, '-') // Replace spaces with -
-      .replace(/[^\w-]+/g, '') // Remove all non-word chars
-      .replace(/--+/g, '-') // Replace multiple - with single -
-      .replace(/^-+/, '') // Trim - from start of text
-      .replace(/-+$/, ''); // Trim - from end of text
+    return slugifyString(this.snippet.title);
   }
 }
 </script>
