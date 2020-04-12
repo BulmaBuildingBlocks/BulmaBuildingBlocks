@@ -7,33 +7,45 @@
     position: relative;
     height: 100%;
     width: calc(#{1920px / 2} + 2rem);
-    padding: 1rem 1rem 4.5rem;
+    display: flex;
+    flex-direction: column;
 
-    .page-builder__iframe {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform-origin: top left;
-      transform: scale(0.5) translate(-50%, -50%);
-      width: 1920px;
-      height: 200%;
-
-      &.has-device-frame {
-        height: calc(1080px - 1rem);
-        padding: 3.05rem 0 1.4rem;
-
-        background-image: url('~assets/images/desktop-outline.png');
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-      }
-
-      iframe {
-        width: 100%;
-        height: 100%;
-      }
+    &__iframe {
+      height: 100%;
+      padding: 1rem;
     }
 
-    &.is-tablet .page-builder__iframe {
+    .page-builder__device-options {
+      padding: 1rem;
+      z-index: 2;
+      background: $white;
+    }
+  }
+
+  .page-builder__iframe {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left;
+    transform: scale(0.5) translate(-50%, -50%);
+    width: 1920px;
+    height: 200%;
+
+    &.has-device-frame {
+      height: calc(1080px - 1rem);
+      padding: 3.05rem 0 1.4rem;
+
+      background-image: url('~assets/images/desktop-outline.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.is-tablet {
       width: 769px;
 
       &.has-device-frame {
@@ -44,13 +56,13 @@
       }
     }
 
-    &.is-mobile .page-builder__iframe {
+    &.is-mobile {
       width: 376px;
 
       &.has-device-frame {
         height: calc(667px + 2.4rem);
         width: calc(376px + 3rem);
-        padding: 1.2rem 1.5rem;
+        padding: 1.3rem 1.75rem;
         background-image: url('~assets/images/mobile-outline.png');
 
         iframe {
@@ -58,14 +70,6 @@
           overflow: hidden;
         }
       }
-    }
-
-    .page-builder__device-options {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      padding: 1rem;
-      z-index: 2;
     }
   }
 

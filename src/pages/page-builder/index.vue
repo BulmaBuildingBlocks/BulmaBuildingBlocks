@@ -9,13 +9,15 @@
             >
               <div class="level-left">
                 <div class="level-item">
+                  <nuxt-link to="/" exact class="button is-small is-primary">
+                    Back
+                  </nuxt-link>
+                </div>
+                <div class="level-item">
                   <p class="title is-4">
                     Page Builder
                   </p>
                 </div>
-                <nuxt-link to="/" exact class="is-size-7 has-text-weight-bold">
-                  Back
-                </nuxt-link>
               </div>
             </div>
             <draggable
@@ -97,13 +99,18 @@
                 </div>
               </div>
             </div>
-            <div
-              class="page-builder__iframe"
-              :class="[`is-${deviceSize}`, { 'has-device-frame': deviceFrame }]"
-            >
-              <client-only>
-                <device-viewer />
-              </client-only>
+            <div class="page-builder__viewer__iframe">
+              <div
+                class="page-builder__iframe"
+                :class="[
+                  `is-${deviceSize}`,
+                  { 'has-device-frame': deviceFrame }
+                ]"
+              >
+                <client-only>
+                  <device-viewer />
+                </client-only>
+              </div>
             </div>
           </div>
         </div>

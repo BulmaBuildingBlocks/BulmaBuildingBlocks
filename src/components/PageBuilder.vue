@@ -69,8 +69,6 @@ export default class ComponentViewer extends Vue {
   @Watch('copyingCode', { deep: true })
   async updateCode(): Promise<void> {
     if (PageBuilderStore.copyingCode) {
-      const currentEditState = PageBuilderStore.editable;
-
       await PageBuilderStore.toggleEditable(false);
       await this.$nextTick();
 
@@ -84,7 +82,7 @@ export default class ComponentViewer extends Vue {
       await PageBuilderStore.copyCode(htmlContent);
 
       await this.$nextTick();
-      await PageBuilderStore.toggleEditable(currentEditState);
+      await PageBuilderStore.toggleEditable(true);
     }
   }
 }
