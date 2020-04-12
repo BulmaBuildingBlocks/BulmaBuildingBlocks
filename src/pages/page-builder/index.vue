@@ -126,11 +126,11 @@ import { Component, Vue, Watch } from 'nuxt-property-decorator';
 import slugifyString from '~/shared/slugifyString';
 
 // import html2canvas from 'html2canvas';
-import allComponents from '~/html-snippets';
+import allComponents from '~/html-blocks';
 
 import DeviceViewer from '~/components/DeviceViewer.vue';
 import PageBuilderStore from '~/store/pageBuilder';
-import { Snippet } from '~/types/Snippet';
+import { Block } from '~/types/Block';
 
 @Component({
   components: {
@@ -151,8 +151,8 @@ export default class PageBuilderPage extends Vue {
     return require(`~/assets/component-images/${slugifyString(title)}.png`);
   }
 
-  addComponentToPreview(component: Snippet): void {
-    PageBuilderStore.addSnippet(component);
+  addComponentToPreview(component: Block): void {
+    PageBuilderStore.addBlock(component);
   }
 
   @Watch('editable')

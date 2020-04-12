@@ -10,7 +10,7 @@ import _ from 'lodash';
 import { ToastProgrammatic as Toast } from 'buefy';
 import clipboard from 'copy-to-clipboard';
 import { store } from '~/store/index';
-import { Snippet } from '@/types/Snippet';
+import { Block } from '@/types/Block';
 import { prettierConf } from '~/shared/config';
 
 @Module({
@@ -20,7 +20,7 @@ import { prettierConf } from '~/shared/config';
 })
 export class PageBuilderStore extends VuexModule {
   code = '';
-  snippets: Snippet[] = [];
+  blocks: Block[] = [];
   editable = true;
   copyingCode = false;
 
@@ -43,13 +43,13 @@ export class PageBuilderStore extends VuexModule {
   }
 
   @Mutation
-  addSnippet(snippet: Snippet): void {
-    this.snippets.push(_.cloneDeep(snippet));
+  addBlock(block: Block): void {
+    this.blocks.push(_.cloneDeep(block));
   }
 
   @Mutation
-  removeSnippet(snippet: Snippet): void {
-    this.snippets.splice(this.snippets.indexOf(snippet), 1);
+  removeBlock(block: Block): void {
+    this.blocks.splice(this.blocks.indexOf(block), 1);
   }
 
   @Mutation

@@ -1,20 +1,16 @@
 <template>
   <div id="page-content" class="section">
-    <Example
-      v-for="snippet in snippets"
-      :key="snippet.name"
-      :snippet="snippet"
-    />
+    <Example v-for="block in blocks" :key="block.name" :block="block" />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
 
-import snippets from '~/html-snippets/content';
+import blocks from '~/html-blocks/content';
 
 @Component
 export default class Index extends Vue {
-  snippets = snippets;
+  blocks = blocks;
 }
 </script>

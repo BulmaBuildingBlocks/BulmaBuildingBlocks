@@ -3,5 +3,6 @@
   "arrowParens": "always",
   "singleQuote": true,
   "endOfLine": "auto",
-  "printWidth": 80
+  "printWidth": 80,
+  "jsxBracketSameLine": false
 }

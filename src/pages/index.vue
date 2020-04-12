@@ -1,24 +1,31 @@
 <template>
-  <div>
-    <header class="section is-large has-background-info homepage-banner">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-            <div class="section is-medium">
-              <h1 class="title has-text-white">
-                Bulma Building Blocks
-              </h1>
-              <h2 class="subtitle has-text-white">
-                Snippets that can be used to create your site
-              </h2>
-            </div>
+  <div class="page-homepage">
+    <section class="page-homepage__hero hero is-primary is-bold is-medium">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="image is-128x128 block">
+            <img src="~static/icon-white.png" />
           </div>
-          <div
-            class="column is-paddingless is-half is-offset-1 homepage-banner-img"
-          ></div>
+          <h1 class="title has-text-white">
+            Bulma Building Blocks
+          </h1>
+          <h2 class="subtitle has-text-white">
+            Html Building Blocks using the Bulma css framework
+          </h2>
+          <div class="buttons is-centered">
+            <nuxt-link
+              class="button is-medium is-white is-outlined"
+              to="/html-blocks/headers"
+            >
+              Html Blocks
+            </nuxt-link>
+            <nuxt-link class="button is-medium is-white" to="/page-builder">
+              Page Builder
+            </nuxt-link>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
   </div>
 </template>
 

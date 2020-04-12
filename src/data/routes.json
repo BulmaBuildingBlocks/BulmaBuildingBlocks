@@ -10,36 +10,36 @@
     "subtitle": "Sorry, we couldn’t find the page you were looking for",
     "path": "/notfound"
   },
-  "documentation": {
-    "title": "Page Builder",
-    "subtitle": "User the Page builder to craft your site",
-    "path": "/page-builder",
-    "githubPath": "pages/page-builder/index.vue",
-    "menu": "documentation",
-    "breadcrumb": ["/", "page builder"]
-  },
-  "documentation/headers": {
+  "html-blocks": {
     "title": "Headers",
     "subtitle": "Selection of all Header",
     "path": "/html-blocks/headers",
-    "githubPath": "html-snippets",
-    "menu": "documentation",
-    "breadcrumb": ["/", "documentation", "documentation/headers"]
+    "githubPath": "html-blocks",
+    "menu": "html-blocks",
+    "breadcrumb": ["/", "page builder"]
   },
-  "documentation/contents": {
+  "html-blocks/headers": {
+    "title": "Headers",
+    "subtitle": "Selection of all Header",
+    "path": "/html-blocks/headers",
+    "githubPath": "html-blocks",
+    "menu": "html-blocks",
+    "breadcrumb": ["/", "html-blocks", "html-blocks/headers"]
+  },
+  "html-blocks/contents": {
     "title": "Content",
     "subtitle": "Selection of all Content Blocks",
     "path": "/html-blocks/contents",
-    "githubPath": "html-snippets/content",
-    "menu": "documentation",
-    "breadcrumb": ["/", "documentation", "documentation/content"]
+    "githubPath": "html-blocks/content",
+    "menu": "html-blocks",
+    "breadcrumb": ["/", "html-blocks", "html-blocks/content"]
   },
-  "documentation/features": {
+  "html-blocks/features": {
     "title": "Feature",
     "subtitle": "Selection of all Feature Blocks",
     "path": "/html-blocks/features",
-    "githubPath": "html-snippets/features",
-    "menu": "documentation",
-    "breadcrumb": ["/", "documentation", "documentation/content"]
+    "githubPath": "html-blocks/features",
+    "menu": "html-blocks",
+    "breadcrumb": ["/", "html-blocks", "html-blocks/content"]
   }
 }

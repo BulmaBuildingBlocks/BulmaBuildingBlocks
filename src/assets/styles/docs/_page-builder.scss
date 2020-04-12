@@ -11,7 +11,7 @@
     flex-direction: column;
 
     &__iframe {
-      height: 100%;
+      height: calc(100% - 4.5rem);
       padding: 1rem;
     }
 

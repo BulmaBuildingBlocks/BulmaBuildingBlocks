@@ -4,10 +4,10 @@
       ref="pageHtml"
       class="component-viewer-list"
       :group="{ name: 'content', put: editable, sort: editable }"
-      :list="snippets"
+      :list="blocks"
     >
       <div
-        v-for="(snippet, index) in snippets"
+        v-for="(block, index) in blocks"
         :key="index"
         class="component-viewer-item"
       >
@@ -15,16 +15,16 @@
           <div class="buttons">
             <button
               class="button is-danger"
-              @click="deleteComponentItem(snippet)"
+              @click="deleteComponentItem(block)"
             >
               Delete
             </button>
           </div>
         </div>
         <component
-          :is="snippet.component"
+          :is="block.component"
           ref="myTextEditorHtml"
-          :snippet="snippet"
+          :block="block"
           :editable="editable"
         />
       </div>
@@ -35,13 +35,13 @@
 <script lang="ts">
 import draggable from 'vuedraggable';
 import { Vue, Component, Watch } from 'nuxt-property-decorator';
-import { snippets } from '~/html-snippets';
+import { blocks } from '~/html-blocks';
 import PageBuilderStore from '~/store/pageBuilder';
-import { Snippet } from '~/types/Snippet';
+import { Block } from '~/types/Block';
 
 @Component({
   components: {
-    ...snippets,
+    ...blocks,
     draggable
   }
 })
@@ -50,8 +50,8 @@ export default class ComponentViewer extends Vue {
     myTextEditorHtml: Vue[];
   };
 
-  get snippets(): Snippet[] {
-    return PageBuilderStore.snippets;
+  get blocks(): Block[] {
+    return PageBuilderStore.blocks;
   }
 
   get editable(): boolean {
@@ -62,8 +62,8 @@ export default class ComponentViewer extends Vue {
     return PageBuilderStore.copyingCode;
   }
 
-  deleteComponentItem(snippet: Snippet): void {
-    PageBuilderStore.removeSnippet(snippet);
+  deleteComponentItem(block: Block): void {
+    PageBuilderStore.removeBlock(block);
   }
 
   @Watch('copyingCode', { deep: true })

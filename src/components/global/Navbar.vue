@@ -1,8 +1,5 @@
 <template>
-  <nav
-    class="navbar docs-navbar is-spaced has-shadow"
-    :class="{ 'is-primary is-transparent': light }"
-  >
+  <nav class="navbar-main is-fixed-top navbar has-shadow">
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link
@@ -11,12 +8,13 @@
           title="Buefy: lightweight UI components for Vue.js based on Bulma"
           active-class=""
         >
-          Bulma Building Block
+          <div class="image is-48x48 is-contained">
+            <img src="~static/icon.png" />
+          </div>
         </nuxt-link>
 
         <a
           class="navbar-item"
-          :class="{ 'has-text-dark': !light }"
           href="https://github.com/JosephAnson/BulmaDesignBlocks"
           target="_blank"
           title="Github"
@@ -73,12 +71,8 @@
           </div>
 
           <div class="navbar-item">
-            <a
-              class="button is-outlined"
-              :class="light ? 'is-light' : 'is-twitter'"
-              @click="tweet"
-            >
-              <b-icon icon="twitter" />
+            <a class="button is-outlined" @click="tweet">
+              <b-icon pack="fab" icon="twitter" />
               <span>Tweet</span>
             </a>
           </div>
@@ -89,16 +83,14 @@
 </template>
 
 <script lang="ts">
-// import bulmaPackage from 'bulma/package.json';
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import bulmaPackage from 'bulma/package.json';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Navbar extends Vue {
-  @Prop(Boolean) light!: boolean;
-
   isMenuActive = false;
-  bulmaVersion = '0.8.0';
-  // bulmaVersion = bulmaPackage.version | '0.8.0';
+  // bulmaVersion = '0.8.0';
+  bulmaVersion = bulmaPackage.version || '0.8.0';
 
   tweet(): void {
     const width = 575;

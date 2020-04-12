@@ -5,8 +5,8 @@
         <div class="level">
           <div class="level-left">
             <p :id="`${slugifiedTitle}`" class="title is-4">
-              <nuxt-link v-if="snippet.title" :to="`#${slugifiedTitle}`">
-                # {{ snippet.title }}
+              <nuxt-link v-if="block.title" :to="`#${slugifiedTitle}`">
+                # {{ block.title }}
               </nuxt-link>
             </p>
           </div>
@@ -17,17 +17,17 @@
                 custom-class="is-small"
                 horizontal
               >
-                <b-switch v-model="snippet.container" @input="updateRefs" />
+                <b-switch v-model="block.container" @input="updateRefs" />
               </b-field>
             </div>
-            <div v-if="snippet.color" class="level-item">
+            <div v-if="block.color" class="level-item">
               <b-field
                 label="Background Color"
                 custom-class="is-small"
                 horizontal
               >
                 <b-select
-                  v-model="snippet.color"
+                  v-model="block.color"
                   size="is-small"
                   placeholder="Select a color"
                   @input="updateRefs"
@@ -58,17 +58,13 @@
         </div>
       </div>
     </div>
-    <div v-if="snippet.component" class="example">
+    <div v-if="block.component" class="example">
       <div class="button-container">
         <!--  <CodepenEdit :code="code" :title="title"/>-->
       </div>
       <div class="example__container">
         <div class="example-component">
-          <component
-            :is="snippet.component"
-            ref="componenthtml"
-            :snippet="snippet"
-          />
+          <component :is="block.component" ref="componenthtml" :block="block" />
         </div>
         <div class="container is-fullwidth">
           <CodeView :code.sync="code" bordered codepen />
@@ -86,7 +82,7 @@ import prettier from 'prettier/standalone';
 import clipboard from 'copy-to-clipboard';
 import CodeView from './CodeView.vue';
 import { prettierConf, statusColors } from '~/shared/config';
-import { Snippet } from '~/types/Snippet';
+import { Block } from '~/types/Block';
 import slugifyString from '~/shared/slugifyString';
 
 @Component({
@@ -96,7 +92,7 @@ import slugifyString from '~/shared/slugifyString';
   }
 })
 export default class Example extends Vue {
-  @Prop([Object]) snippet!: Snippet;
+  @Prop([Object]) block!: Block;
 
   $refs!: {
     componenthtml: Vue;
@@ -131,8 +127,8 @@ export default class Example extends Vue {
   }
 
   get slugifiedTitle(): string {
-    if (!this.snippet.title) return '';
-    return slugifyString(this.snippet.title);
+    if (!this.block.title) return '';
+    return slugifyString(this.block.title);
   }
 }
 </script>

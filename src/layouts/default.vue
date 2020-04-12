@@ -18,6 +18,11 @@ import VNavbar from '~/components/global/Navbar.vue';
 import VFooter from '~/components/global/Footer.vue';
 
 @Component({
+  head: {
+    bodyAttrs: {
+      class: 'has-navbar-fixed-top'
+    }
+  },
   components: {
     VNavbar,
     VFooter

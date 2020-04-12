@@ -1,3 +1,18 @@
-.docs-navbar {
-  z-index: 40;
+.navbar {
+  &.navbar-main {
+    z-index: 40 !important;
+
+    img {
+      max-height: none;
+    }
+  }
+
+  &.block-menu .navbar-item {
+    height: 100%;
+  }
+}
+
+html.has-navbar-fixed-top,
+body.has-navbar-fixed-top {
+  padding-top: 4rem;
 }
