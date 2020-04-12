@@ -20,8 +20,7 @@
       "@types/node",
       "@types/jest",
       "@types/lodash",
-      "@nuxt/types",
-      "cypress"
+      "@nuxt/types"
     ]
   },
   "exclude": ["node_modules"]
