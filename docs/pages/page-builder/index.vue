@@ -3,10 +3,8 @@
     <div class="page-builder__container">
       <div class="columns is-gapless">
         <div class="column">
-          <div class="page-builder__component-list">
-            <div
-              class="page-builder__component-list__header level is-marginless"
-            >
+          <div class="page-builder__blocks">
+            <div class="page-builder__header level is-marginless">
               <div class="level-left">
                 <div class="level-item">
                   <nuxt-link to="/" exact class="button is-small is-primary">
@@ -21,7 +19,7 @@
               </div>
             </div>
             <draggable
-              class="page-builder__component-list__items"
+              class="page-builder__items"
               :group="{
                 name: 'content',
                 pull: 'clone',
@@ -34,7 +32,7 @@
               <div
                 v-for="component in components"
                 :key="component.name"
-                class="is-fullwidth page-builder__component-list__item"
+                class="is-fullwidth page-builder__item"
                 @click="addComponentToPreview(component)"
               >
                 <img :src="componentImageUrl(component.title)" />
@@ -47,7 +45,7 @@
             class="has-background-grey-lighter page-builder__viewer"
             :class="`is-${deviceSize}`"
           >
-            <div class="page-builder__device-options is-fullwidth">
+            <div class="page-builder__options is-fullwidth">
               <div class="level">
                 <div class="level-left">
                   <div class="level-item">
@@ -125,7 +123,6 @@ import draggable from 'vuedraggable';
 import { Component, Vue, Watch } from 'nuxt-property-decorator';
 import slugifyString from '~/shared/slugifyString';
 
-// import html2canvas from 'html2canvas';
 import allComponents from '~/html-blocks';
 
 import DeviceViewer from '~/components/DeviceViewer.vue';

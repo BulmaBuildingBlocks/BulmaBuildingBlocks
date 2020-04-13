@@ -1,0 +1,59 @@
+$family-primary: 'Montserrat', BlinkMacSystemFont, -apple-system, 'Segoe UI',
+  'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+  'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+$orange: #ff9b21;
+$yellow: #ffd429;
+$green: #45c775;
+$turquoise: #89c5cc;
+$cyan: #2f3676;
+$blue: #2942ff;
+$purple: #b86bff;
+$red: #ff4133;
+
+$light: #f2f2f2;
+$dark: #0d0d0d;
+
+$primary: #2b44ff;
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+
+$text: $dark;
+
+$link: $dark;
+$link-hover: $primary;
+
+$size-1: 2.488em;
+$size-2: 2.074em;
+$size-3: 1.728em;
+$size-4: 1.44em;
+$size-5: 1.2em;
+$size-6: 1rem;
+$size-7: 0.833em;
+
+$section-padding-small: 1.5rem;
+$section-padding: 3rem 1.5rem;
+$section-padding-medium: 4.5rem 1.5rem;
+$section-padding-large: 6rem 1.5rem;
+
+$block-spacing: 2rem;
+
+$title-size: $size-1;
+$title-line-height: 1.2;
+
+$subtitle-size: $size-4;
+$subtitle-line-height: 1.4;
+
+$container-gap: 64px;
+$column-gap: 2rem;
+
+$control-height: 2.75em;
+$control-padding-horizontal: 1.25em;
+
+$button-padding-horizontal: 2em;
+
+$radius-small: 4px;
+$radius: 6px;
+$radius-large: 8px;

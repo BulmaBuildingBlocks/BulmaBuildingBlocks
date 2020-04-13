@@ -10,7 +10,7 @@ import _ from 'lodash';
 import { ToastProgrammatic as Toast } from 'buefy';
 import clipboard from 'copy-to-clipboard';
 import { store } from '~/store/index';
-import { Block } from '@/types/Block';
+import { Block } from '~/types/Block';
 import { prettierConf } from '~/shared/config';
 
 @Module({

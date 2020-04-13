@@ -1,0 +1,24 @@
+@import './utilities/initial-variables';
+
+// Bulma
+@import '~bulma/bulma';
+
+// Bulma Building Blocks Styles
+@import '../../../src/scss/main';
+
+// Buefy
+@import '~buefy/src/scss/buefy';
+
+// Highlight.js
+@import '~highlight.js/styles/atelier-cave-light';
+
+// FontAwesome 5
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+@import 'base/manifest';
+@import 'components/manifest';
+@import 'pages/manifest';

@@ -1,13 +1,7 @@
-@import 'extra/utilities/initial-variables';
+@import './utilities/initial-variables';
 
 // Bulma
 @import '~bulma/bulma';
-
-// Buefy
-@import '~buefy/src/scss/buefy';
-
-// Highlight.js
-@import '~highlight.js/styles/atelier-cave-light';
 
 // FontAwesome 5
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
@@ -16,6 +10,9 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
-// Doc css
-@import 'docs/manifest';
-@import 'extra/manifest';
+@import 'utilities/manifest';
+@import 'base/manifest';
+@import 'grid/manifest';
+@import 'layout/manifest';
+@import 'elements/manifest';
+@import 'components/manifest';

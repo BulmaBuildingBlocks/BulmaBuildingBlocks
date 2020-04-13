@@ -5,7 +5,7 @@ const host = process.env.HOST || 'localhost';
 
 const nuxtConfig: Configuration = {
   mode: 'universal',
-  srcDir: 'src',
+  srcDir: 'docs',
   env: {
     host,
     port
