@@ -83,10 +83,6 @@ export class PageBuilderStore extends VuexModule {
 
   @Action
   downloadCode(): void {
-    const imagesSrcRegex = /<img.*?src="([^http].*?)"/g;
-    let code = this.code;
-    const imagesSources = getRegexMatches(code, imagesSrcRegex, 1);
-
     function getFilename(src: string): string {
       return src.split('/').pop() || '';
     }
@@ -103,41 +99,52 @@ export class PageBuilderStore extends VuexModule {
       });
     }
 
-    // Convert img sources to match output folder structure
-    for (const imagesSource of imagesSources) {
-      const modifiedSrc = getFilename(imagesSource);
+    try {
+      const imagesSrcRegex = /<img.*?src="([^http].*?)"/g;
+      let code = this.code;
+      const imagesSources = getRegexMatches(code, imagesSrcRegex, 1);
 
-      code = replace(code, imagesSource, './images/' + modifiedSrc);
-    }
+      // Convert img sources to match output folder structure
+      for (const imagesSource of imagesSources) {
+        const modifiedSrc = getFilename(imagesSource);
 
-    const zip = new JSZip();
-
-    const img = zip.folder('images');
-
-    for (const imagesSource of imagesSources) {
-      // converts the image src into a name
-      const modifiedSrc = getFilename(imagesSource);
-
-      img.file(modifiedSrc, urlToPromise(imagesSource), { binary: true });
-    }
-
-    // Creates html page from user created content
-    zip.file('index.html', code);
-
-    zip.file('bulmabuildingblocks.min.css', BulmaBuildingBlockCss);
-
-    // when everything has been downloaded, we can trigger the dl
-    zip.generateAsync({ type: 'blob' }).then(
-      function callback(content: string) {
-        // see FileSaver.js
-        saveAs(content, 'BulmaBuildingBlocks.zip');
-
-        Toast.open('Download Finished');
-      },
-      function() {
-        Toast.open('Download Failed');
+        code = replace(code, imagesSource, './images/' + modifiedSrc);
       }
-    );
+
+      const zip = new JSZip();
+
+      const img = zip.folder('images');
+
+      for (const imagesSource of imagesSources) {
+        // converts the image src into a name
+        const modifiedSrc = getFilename(imagesSource);
+
+        img.file(modifiedSrc, urlToPromise(imagesSource), { binary: true });
+      }
+
+      // Creates html page from user created content
+      zip.file('index.html', code);
+
+      zip.file('bulmabuildingblocks.min.css', BulmaBuildingBlockCss);
+
+      // when everything has been downloaded, we can trigger the dl
+      zip.generateAsync({ type: 'blob' }).then(
+        function callback(content: string) {
+          // see FileSaver.js
+          saveAs(content, 'BulmaBuildingBlocks.zip');
+
+          Toast.open('Download Finished');
+        },
+        function() {
+          Toast.open('Download Failed');
+        }
+      );
+    } catch (e) {
+      Toast.open({
+        message: 'Error while downloading, try again',
+        type: 'is-danger'
+      });
+    }
   }
 }
 

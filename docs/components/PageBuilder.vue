@@ -88,6 +88,8 @@ export default class ComponentViewer extends Vue {
       await PageBuilderStore.setCode(htmlContent);
 
       await this.$nextTick();
+
+      await PageBuilderStore.downloadCode();
     }
 
     await PageBuilderStore.toggleEditable(true);

@@ -157,28 +157,8 @@ export default class PageBuilderPage extends Vue {
     PageBuilderStore.toggleEditable(editable);
   }
 
-  async downloadCode(): Promise<void> {
-    try {
-      PageBuilderStore.setDownloadingCode();
-
-      /***
-       * Requires three ticks to get the contend for copying
-       * 1: Set Copying code to true
-       * 2: Watch picks up change and settings code in Store
-       * 3: Updates the model with the correct code to copy
-       */
-
-      await this.$nextTick();
-      await this.$nextTick();
-      await this.$nextTick();
-
-      await PageBuilderStore.downloadCode();
-    } catch (e) {
-      this.$buefy.toast.open({
-        message: 'Error while copying to clipboard :(',
-        type: 'is-danger'
-      });
-    }
+  downloadCode(): void {
+    PageBuilderStore.setDownloadingCode();
   }
 }
 </script>
