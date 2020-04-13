@@ -33,10 +33,10 @@ $size-5: 1.2em;
 $size-6: 1rem;
 $size-7: 0.833em;
 
-$section-padding-small: 1.5rem;
-$section-padding: 3rem 1.5rem;
-$section-padding-medium: 4.5rem 1.5rem;
-$section-padding-large: 6rem 1.5rem;
+$section-padding-small: 1.5rem 0;
+$section-padding: 3rem 0;
+$section-padding-medium: 4.5rem 0;
+$section-padding-large: 6rem 0;
 
 $block-spacing: 2rem;
 
@@ -57,3 +57,10 @@ $button-padding-horizontal: 2em;
 $radius-small: 4px;
 $radius: 6px;
 $radius-large: 8px;
+
+$gap: 64px;
+
+$tablet: 768px;
+
+$container-padding-mobile: 5%;
+$container-padding-tablet: 4rem;

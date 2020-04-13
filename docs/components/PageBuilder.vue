@@ -73,8 +73,6 @@ export default class ComponentViewer extends Vue {
      * Only way i could get the value of the ref elements
      */
 
-    console.log('copyingCode', PageBuilderStore.downloadingCode);
-
     if (PageBuilderStore.downloadingCode && PageBuilderStore.blocks.length) {
       await PageBuilderStore.toggleEditable(false);
 

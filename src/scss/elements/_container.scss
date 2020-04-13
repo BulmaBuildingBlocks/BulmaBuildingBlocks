@@ -1,0 +1,9 @@
+.container {
+  padding-left: $container-padding-mobile;
+  padding-right: $container-padding-mobile;
+
+  @include tablet {
+    padding-left: $container-padding-tablet;
+    padding-right: $container-padding-tablet;
+  }
+}

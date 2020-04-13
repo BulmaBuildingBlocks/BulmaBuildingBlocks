@@ -86,6 +86,7 @@
     "vue-template-compiler": "^2.6.11",
     "vuedraggable": "^2.23.2",
     "jszip": "^3.3.0",
+    "jszip-utils": "^0.1.0",
     "file-saver": "^2.0.2"
   },
   "devDependencies": {

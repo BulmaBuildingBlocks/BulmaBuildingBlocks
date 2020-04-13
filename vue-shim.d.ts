@@ -9,4 +9,5 @@ declare module 'tiptap-utils';
 declare module 'tiptap-commands';
 declare module 'vuedraggable';
 declare module 'jszip';
+declare module 'jszip-utils';
 declare module 'file-saver';

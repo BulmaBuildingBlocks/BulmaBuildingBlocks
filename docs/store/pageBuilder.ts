@@ -6,13 +6,18 @@ import {
   VuexModule
 } from 'vuex-module-decorators';
 import prettier from 'prettier/standalone';
-import _ from 'lodash';
+import { replace, cloneDeep } from 'lodash';
 import { ToastProgrammatic as Toast } from 'buefy';
 import JSZip from 'jszip';
+import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
 import { store } from '~/store/index';
 import { Block } from '~/types/Block';
 import { prettierConf } from '~/shared/config';
+import { getRegexMatches } from '~/shared/utils';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import BulmaBuildingBlockCss from '!!raw-loader!~/static/bulmabuildingblocks.min.css';
 
@@ -63,7 +68,7 @@ export class PageBuilderStore extends VuexModule {
 
   @Mutation
   addBlock(block: Block): void {
-    this.blocks.push(_.cloneDeep(block));
+    this.blocks.push(cloneDeep(block));
   }
 
   @Mutation
@@ -77,20 +82,62 @@ export class PageBuilderStore extends VuexModule {
   }
 
   @Action
-  downloadCode(): Promise<void> {
-    return new Promise((resolve) => {
-      const zip = new JSZip();
-      zip.file('index.html', this.code);
-      zip.file('bulmabuildingblocks.min.css', BulmaBuildingBlockCss);
+  downloadCode(): void {
+    const imagesSrcRegex = /<img.*?src="([^http].*?)"/g;
+    let code = this.code;
+    const imagesSources = getRegexMatches(code, imagesSrcRegex, 1);
 
-      zip.generateAsync({ type: 'blob' }).then((content: any) => {
+    function getFilename(src: string): string {
+      return src.split('/').pop() || '';
+    }
+
+    function urlToPromise(url: string) {
+      return new Promise(function(resolve, reject) {
+        JSZipUtils.getBinaryContent(url, function(err: any, data: any) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(data);
+          }
+        });
+      });
+    }
+
+    // Convert img sources to match output folder structure
+    for (const imagesSource of imagesSources) {
+      const modifiedSrc = getFilename(imagesSource);
+
+      code = replace(code, imagesSource, './images/' + modifiedSrc);
+    }
+
+    const zip = new JSZip();
+
+    const img = zip.folder('images');
+
+    for (const imagesSource of imagesSources) {
+      // converts the image src into a name
+      const modifiedSrc = getFilename(imagesSource);
+
+      img.file(modifiedSrc, urlToPromise(imagesSource), { binary: true });
+    }
+
+    // Creates html page from user created content
+    zip.file('index.html', code);
+
+    zip.file('bulmabuildingblocks.min.css', BulmaBuildingBlockCss);
+
+    // when everything has been downloaded, we can trigger the dl
+    zip.generateAsync({ type: 'blob' }).then(
+      function callback(content: string) {
         // see FileSaver.js
         saveAs(content, 'BulmaBuildingBlocks.zip');
 
-        Toast.open('Download Started');
-        resolve();
-      });
-    });
+        Toast.open('Download Finished');
+      },
+      function() {
+        Toast.open('Download Failed');
+      }
+    );
   }
 }
 
