@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar-main is-fixed-top navbar has-shadow">
+  <nav class="navbar-main is-fixed-top is-spaced navbar has-shadow">
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link
@@ -8,7 +8,7 @@
           title="Buefy: lightweight UI components for Vue.js based on Bulma"
           active-class=""
         >
-          <div class="image is-48x48 is-contained">
+          <div class="image is-32x32 is-contained">
             <img src="~static/icon.png" />
           </div>
         </nuxt-link>

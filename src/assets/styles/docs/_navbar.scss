@@ -1,6 +1,7 @@
 .navbar {
   &.navbar-main {
     z-index: 40 !important;
+    padding: 0;
 
     img {
       max-height: none;
@@ -14,5 +15,5 @@
 
 html.has-navbar-fixed-top,
 body.has-navbar-fixed-top {
-  padding-top: 4rem;
+  padding-top: 3.8rem;
 }
