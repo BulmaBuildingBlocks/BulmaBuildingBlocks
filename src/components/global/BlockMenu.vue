@@ -1,19 +1,20 @@
 <template>
   <nav
-    class="navbar is-light is-medium is-spaced block-menu"
+    class="navbar navbar-block-menu is-primary is-medium block-menu"
     role="navigation"
     aria-label="main navigation"
   >
     <div class="container">
-      <ul class="navbar-start">
-        <li v-for="item in normalizedData" :key="item.title">
-          <nuxt-link v-if="item.title" class="navbar-item" :to="item.path">
-            <span>{{ item.title }}</span>
-            <b-tag v-if="item.isNew" type="is-success">New!</b-tag>
-            <b-tag v-if="item.isUpdated" type="is-info">Updated</b-tag>
-          </nuxt-link>
-        </li>
-      </ul>
+      <div class="navbar-start">
+        <nuxt-link
+          v-for="item in normalizedData"
+          :key="item.title"
+          class="navbar-item"
+          :to="item.path"
+        >
+          {{ item.title }}
+        </nuxt-link>
+      </div>
     </div>
   </nav>
 </template>
