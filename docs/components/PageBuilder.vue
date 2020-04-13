@@ -59,7 +59,7 @@ export default class ComponentViewer extends Vue {
   }
 
   get copyingCode(): boolean {
-    return PageBuilderStore.copyingCode;
+    return PageBuilderStore.downloadingCode;
   }
 
   deleteComponentItem(block: Block): void {
@@ -68,8 +68,16 @@ export default class ComponentViewer extends Vue {
 
   @Watch('copyingCode', { deep: true })
   async updateCode(): Promise<void> {
-    if (PageBuilderStore.copyingCode) {
+    /***
+     * Only run if copyingCode is externally changed to true
+     * Only way i could get the value of the ref elements
+     */
+
+    console.log('copyingCode', PageBuilderStore.downloadingCode);
+
+    if (PageBuilderStore.downloadingCode && PageBuilderStore.blocks.length) {
       await PageBuilderStore.toggleEditable(false);
+
       await this.$nextTick();
 
       // Get and copy html content
@@ -79,11 +87,13 @@ export default class ComponentViewer extends Vue {
         },
         ''
       );
-      await PageBuilderStore.copyCode(htmlContent);
+      await PageBuilderStore.setCode(htmlContent);
 
       await this.$nextTick();
-      await PageBuilderStore.toggleEditable(true);
     }
+
+    await PageBuilderStore.toggleEditable(true);
+    await PageBuilderStore.setDownloadingCode(false);
   }
 }
 </script>

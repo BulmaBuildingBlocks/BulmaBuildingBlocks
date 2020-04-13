@@ -33,7 +33,9 @@
     "dev": "nuxt-ts",
     "e2e": "cypress open --browser chrome",
     "e2e:headless": "cypress run",
-    "format": "prettier --check **/*.{vue,ts,scss,json} --ignore-path .gitignore --write",
+    "format": "concurrently \"yarn run format:scripts\" \"yarn run format:scss\"",
+    "format:scripts": "prettier --check **/*.{vue,ts,scss,json} --ignore-path .gitignore --write",
+    "format:scss": "npx stylelint ./docs/assets/styles/**/*.scss ./src/scss/**/*.scss --fix",
     "generate:images": "cypress run --config screenshotsFolder=docs/assets/component-images/,integrationFolder=cypress/generate --spec \"/**/*\"",
     "lint": "eslint --ext .vue,.ts --ignore-path .gitignore . --fix",
     "lint-watch": "esw --ext .vue,.ts --ignore-path .gitignore . --fix --watch",
@@ -44,7 +46,6 @@
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version minor",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version patch",
     "start": "nuxt-ts start",
-    "stylelint": "npx stylelint ./assets/styles/**/*.scss --fix",
     "test": "cross-env NODE_ENV=test jest",
     "test:coverage": "cross-env NODE_ENV=test jest --coverage",
     "test:update": "cross-env NODE_ENV=test jest --u",
@@ -84,7 +85,8 @@
     "vue-progressbar": "^0.7.5",
     "vue-template-compiler": "^2.6.11",
     "vuedraggable": "^2.23.2",
-    "jszip": "^3.3.0"
+    "jszip": "^3.3.0",
+    "file-saver": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",

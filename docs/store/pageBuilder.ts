@@ -1,17 +1,20 @@
 import {
+  Action,
+  getModule,
   Module,
   Mutation,
-  VuexModule,
-  getModule,
-  Action
+  VuexModule
 } from 'vuex-module-decorators';
 import prettier from 'prettier/standalone';
 import _ from 'lodash';
 import { ToastProgrammatic as Toast } from 'buefy';
-import clipboard from 'copy-to-clipboard';
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';
 import { store } from '~/store/index';
 import { Block } from '~/types/Block';
 import { prettierConf } from '~/shared/config';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import BulmaBuildingBlockCss from '!!raw-loader!~/static/bulmabuildingblocks.min.css';
 
 @Module({
   name: 'PageBuilderStore',
@@ -22,16 +25,32 @@ export class PageBuilderStore extends VuexModule {
   code = '';
   blocks: Block[] = [];
   editable = true;
-  copyingCode = false;
+  downloadingCode = false;
 
   @Mutation
-  setCode(code: string): void {
-    this.code = code;
+  async setCode(code: string): Promise<void> {
+    const header = `<!DOCTYPE html>
+                        <html>
+                          <head>
+                            <meta charset="utf-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1">
+                            <title>Bulma Building Block</title>
+                            <link rel="stylesheet" type="text/css" href="./bulmabuildingblocks.min.css">
+                            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+                            <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+                          </head>
+                          <body>
+                          `;
+
+    const footer = `</body>
+                  </html>`;
+
+    this.code = await prettier.format(header + code + footer, prettierConf);
   }
 
   @Mutation
-  setCopyingCode(copying: boolean): void {
-    this.copyingCode = copying;
+  setDownloadingCode(copying = true): void {
+    this.downloadingCode = copying;
   }
 
   @Mutation
@@ -58,34 +77,19 @@ export class PageBuilderStore extends VuexModule {
   }
 
   @Action
-  copyCode(html: string): Promise<void> {
+  downloadCode(): Promise<void> {
     return new Promise((resolve) => {
-      const header = `<!DOCTYPE html>
-                        <html>
-                          <head>
-                            <meta charset="utf-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1">
-                            <title>Bulma Building Block</title>
-                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-                            <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-                          </head>
-                          <body>
-                          `;
+      const zip = new JSZip();
+      zip.file('index.html', this.code);
+      zip.file('bulmabuildingblocks.min.css', BulmaBuildingBlockCss);
 
-      const footer = `</body>
-                  </html>`;
+      zip.generateAsync({ type: 'blob' }).then((content: any) => {
+        // see FileSaver.js
+        saveAs(content, 'BulmaBuildingBlocks.zip');
 
-      const formattedHtml = prettier.format(
-        header + html + footer,
-        prettierConf
-      );
-
-      this.setCode(formattedHtml);
-      clipboard(this.code);
-      Toast.open('Copied to clipboard!');
-      this.setCopyingCode(false);
-      resolve();
+        Toast.open('Download Started');
+        resolve();
+      });
     });
   }
 }

@@ -89,9 +89,9 @@
                   <div class="level-item">
                     <button
                       class="button is-small is-primary copy-code"
-                      @click="copyCode"
+                      @click="downloadCode"
                     >
-                      Copy
+                      Download
                     </button>
                   </div>
                 </div>
@@ -157,9 +157,22 @@ export default class PageBuilderPage extends Vue {
     PageBuilderStore.toggleEditable(editable);
   }
 
-  copyCode(): void {
+  async downloadCode(): Promise<void> {
     try {
-      PageBuilderStore.setCopyingCode(true);
+      PageBuilderStore.setDownloadingCode();
+
+      /***
+       * Requires three ticks to get the contend for copying
+       * 1: Set Copying code to true
+       * 2: Watch picks up change and settings code in Store
+       * 3: Updates the model with the correct code to copy
+       */
+
+      await this.$nextTick();
+      await this.$nextTick();
+      await this.$nextTick();
+
+      await PageBuilderStore.downloadCode();
     } catch (e) {
       this.$buefy.toast.open({
         message: 'Error while copying to clipboard :(',
