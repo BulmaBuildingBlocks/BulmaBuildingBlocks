@@ -4,46 +4,57 @@
       <div class="columns is-gapless">
         <div class="column">
           <div class="page-builder__blocks">
-            <div class="page-builder__header level is-marginless">
-              <div class="level-left">
-                <div class="level-item">
-                  <nuxt-link to="/" exact class="button is-small is-primary">
-                    Back
-                  </nuxt-link>
-                </div>
-                <div class="level-item">
-                  <p class="title is-4">
-                    Page Builder
-                  </p>
+            <div class="page-builder__tabs">
+              <div class="page-builder__header level is-marginless">
+                <div class="level-left">
+                  <div class="level-item">
+                    <a
+                      class="button is-small is-outlined"
+                      @click="$router.back()"
+                      >Back</a
+                    >
+                  </div>
+                  <div class="level-item">
+                    <div class="field has-addons is-fullwidth is-marginless">
+                      <div
+                        v-for="(item, index) in allComponents"
+                        :key="index"
+                        class="control"
+                      >
+                        <button
+                          class="button is-small"
+                          :class="{ 'is-primary': shownComponent === index }"
+                          @click="shownComponent = index"
+                        >
+                          {{ index }}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <draggable
+                class="page-builder__items"
+                :group="{
+                  name: 'content',
+                  pull: 'clone',
+                  put: false,
+                  sort: false
+                }"
+                :sort="false"
+                :list="allComponents[shownComponent]"
+              >
+                <div
+                  v-for="component in allComponents[shownComponent]"
+                  :key="component.name"
+                  class="is-fullwidth page-builder__item"
+                  @click="addComponentToPreview(component)"
+                >
+                  <img :src="componentImageUrl(component.title)" />
+                </div>
+              </draggable>
             </div>
-            <b-tabs class="page-builder__tabs" type="is-toggle" size="is-small">
-              <template v-for="(components, index) in allComponents">
-                <b-tab-item :key="index" :label="index">
-                  <draggable
-                    class="page-builder__items"
-                    :group="{
-                      name: 'content',
-                      pull: 'clone',
-                      put: false,
-                      sort: false
-                    }"
-                    :sort="false"
-                    :list="components"
-                  >
-                    <div
-                      v-for="component in components"
-                      :key="component.name"
-                      class="is-fullwidth page-builder__item"
-                      @click="addComponentToPreview(component)"
-                    >
-                      <img :src="componentImageUrl(component.title)" />
-                    </div>
-                  </draggable>
-                </b-tab-item>
-              </template>
-            </b-tabs>
           </div>
         </div>
         <div class="column is-narrow">
@@ -143,10 +154,11 @@ import { Block } from '~/types/Block';
 })
 export default class PageBuilderPage extends Vue {
   allComponents = allComponents;
+  shownComponent = 'Headers';
   deviceSize = 'desktop';
-  deviceFrame = false;
+  deviceFrame = true;
 
-  get layout(): string {
+  get layout() {
     return 'empty';
   }
 
