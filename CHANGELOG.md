@@ -1,3 +1,36 @@
+### 0.4.0 (2020-04-14)
+
+##### New Features
+
+*  blocks sorting added for editor and updated block viewer sorting ([e89daa06](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/e89daa0674fa0dbb697216456b28aacea6600e63))
+*  download functionality including images ([588bde2d](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/588bde2d2c9591321a2abcad3898874dd8987140))
+*  download options added to editor ([ceaf1cee](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/ceaf1ceea8de7126931a7e90bcff04e0688102b9))
+*  split doc styles from package source styles ([31d8ba5a](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/31d8ba5a775b1b6fdd8713fe9e8a3ec1e3580196))
+*  device frame option added to page editor ([dd810064](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/dd8100646948edc6bca8b0efa27e1128c0034a76))
+*  page builder snippets are now displayed as images ([b6e84a4f](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/b6e84a4f8f51da7354ac64672ff1c15e30882079))
+*  cypress script to auto generate images of all components ([8cd760d0](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/8cd760d0d8aee25898c73c5e9729e02a01bc53ea))
+
+##### Bug Fixes
+
+*  bug with reorganising content and downloaded file ([b57fa5f1](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/b57fa5f19f13062bbd180e6d615bf5971c72e8a1))
+*  snippet images have correct viewport width now ([b63ab924](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/b63ab924afe6518d10e343a8ab0611d2d1ac04dd))
+*  icon numbers changed to correct value ([811f80f8](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/811f80f8a3c489ce0358767b63476ee656bdbe21))
+
+##### Refactors
+
+*  all references of snippet changed to block ([963e8ebe](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/963e8ebe6ee062436c3a63a341ea4d57c557542e))
+*  project restructure ([7aec1597](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/7aec1597990539592885965af463797fc9e58e47))
+*  changed to component name to snippet and component api ([a237a93d](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/a237a93dfdfa24d1dc339644ed731f26fffd29f4))
+
+##### Code Style Changes
+
+*  blocks menu updated ([06fc0ef6](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/06fc0ef6c432d9c66015cb91cd267973555a2619))
+*  navbar logo size ([63a9748c](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/63a9748c0628b65da01d6178fe5758737687d92b))
+*  added border to editor preview when in device view ([6d3afb94](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/6d3afb94dd6ba17f9d9fe3e1a3a2957b5bdc4ac9))
+*  editor style updated ([90053142](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/90053142c41355bfd7eb32d1c51f4660d88f14ba))
+*  adjust editor style ([6d5918e1](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/6d5918e18224477d8fe04556eb91bd0412478117))
+*  icon and favicon updated ([b8a3fa47](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/b8a3fa47021a980f6cf9d899baf31d3b019e2381))
+
 ### 0.3.0 (2020-04-11)
 
 ##### Chores
