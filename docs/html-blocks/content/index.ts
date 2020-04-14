@@ -9,14 +9,14 @@ import ContentSingleImage from './content-simple-single-image';
 import { Block } from '~/types/Block';
 
 const blocks: Block[] = [
-  ContentTitleWithContent,
+  ContentSingleImage,
   ContentTitle,
-  ContentSubtitle,
   ContentTitleSubtitle,
+  ContentSubtitle,
   ContentSubtitleLeft,
   ContentSubtitleRight,
-  ContentTitleTwoColumn,
-  ContentSingleImage
+  ContentTitleWithContent,
+  ContentTitleTwoColumn
 ];
 
 export default blocks;

@@ -5,9 +5,9 @@ import HeaderSimple from './header-simple';
 import { Block } from '~/types/Block';
 
 const blocks: Block[] = [
+  HeaderSimple,
   HeaderSimpleLogoLeft,
   HeaderSimpleLogoMiddle,
-  HeaderSimple,
   HeaderMenuCenter
 ];
 

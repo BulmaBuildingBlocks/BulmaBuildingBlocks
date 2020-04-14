@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar-main is-fixed-top is-spaced navbar has-shadow">
+  <nav class="navbar-main is-spaced navbar has-shadow">
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link

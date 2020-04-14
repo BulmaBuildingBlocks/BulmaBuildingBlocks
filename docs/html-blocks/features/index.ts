@@ -8,13 +8,13 @@ import FeatureBigImageRight from './feature-big-image-right';
 import { Block } from '~/types/Block';
 
 const blocks: Block[] = [
-  FeatureSimpleSixColumns,
-  FeatureSimpleEightColumns,
-  FeatureImagesThreeColumns,
-  FeatureIconThreeColumns,
   FeatureBigImageLeft,
   FeatureBigImageRight,
-  FeatureIconThreeColumnsMedia
+  FeatureIconThreeColumns,
+  FeatureImagesThreeColumns,
+  FeatureIconThreeColumnsMedia,
+  FeatureSimpleSixColumns,
+  FeatureSimpleEightColumns
 ];
 
 export default blocks;

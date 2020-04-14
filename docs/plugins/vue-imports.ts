@@ -2,7 +2,17 @@
 // @ts-nocheck
 import Vue from 'vue';
 import VueHighlightJS from 'vue-highlightjs';
-import { Input, Field, Icon, Select, Tag, Switch, Radio, Toast } from 'buefy';
+import {
+  Input,
+  Field,
+  Icon,
+  Select,
+  Tag,
+  Tabs,
+  Switch,
+  Radio,
+  Toast
+} from 'buefy';
 import Example from '~/components/global/Example.vue';
 
 Vue.component('Example', Example);
@@ -16,6 +26,7 @@ Vue.use(Tag);
 Vue.use(Switch);
 Vue.use(Radio);
 Vue.use(Toast);
+Vue.use(Tabs);
 
 // Import Vue Highlight
 Vue.use(VueHighlightJS);

@@ -18,26 +18,32 @@
                 </div>
               </div>
             </div>
-            <draggable
-              class="page-builder__items"
-              :group="{
-                name: 'content',
-                pull: 'clone',
-                put: false,
-                sort: false
-              }"
-              :sort="false"
-              :list="components"
-            >
-              <div
-                v-for="component in components"
-                :key="component.name"
-                class="is-fullwidth page-builder__item"
-                @click="addComponentToPreview(component)"
-              >
-                <img :src="componentImageUrl(component.title)" />
-              </div>
-            </draggable>
+            <b-tabs class="page-builder__tabs" type="is-toggle" size="is-small">
+              <template v-for="(components, index) in allComponents">
+                <b-tab-item :key="index" :label="index">
+                  <draggable
+                    class="page-builder__items"
+                    :group="{
+                      name: 'content',
+                      pull: 'clone',
+                      put: false,
+                      sort: false
+                    }"
+                    :sort="false"
+                    :list="components"
+                  >
+                    <div
+                      v-for="component in components"
+                      :key="component.name"
+                      class="is-fullwidth page-builder__item"
+                      @click="addComponentToPreview(component)"
+                    >
+                      <img :src="componentImageUrl(component.title)" />
+                    </div>
+                  </draggable>
+                </b-tab-item>
+              </template>
+            </b-tabs>
           </div>
         </div>
         <div class="column is-narrow">
@@ -136,7 +142,7 @@ import { Block } from '~/types/Block';
   }
 })
 export default class PageBuilderPage extends Vue {
-  components = allComponents;
+  allComponents = allComponents;
   deviceSize = 'desktop';
   deviceFrame = false;
 

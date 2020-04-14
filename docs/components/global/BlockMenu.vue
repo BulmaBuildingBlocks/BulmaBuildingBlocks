@@ -1,19 +1,19 @@
 <template>
-  <nav
-    class="navbar navbar-block-menu is-primary is-medium block-menu"
-    role="navigation"
-    aria-label="main navigation"
-  >
+  <nav class="block-menu" role="navigation" aria-label="main navigation">
     <div class="container">
-      <div class="navbar-start">
-        <nuxt-link
-          v-for="item in normalizedData"
-          :key="item.title"
-          class="navbar-item"
-          :to="item.path"
-        >
-          {{ item.title }}
-        </nuxt-link>
+      <div class="tabs b-tabs is-toggle is-primary">
+        <ul>
+          <nuxt-link
+            v-for="item in normalizedData"
+            :key="item.title"
+            tag="li"
+            :to="item.path"
+          >
+            <a>
+              {{ item.title }}
+            </a>
+          </nuxt-link>
+        </ul>
       </div>
     </div>
   </nav>

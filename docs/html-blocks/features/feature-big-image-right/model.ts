@@ -16,7 +16,7 @@ class Model {
               </p>`;
 
   image: EditableImageProps = {
-    src: require(`~/assets/images/Scene Plants.svg`),
+    src: require(`~/assets/images/Scene Whiteboard Background.svg`),
     alt: ''
   };
 }

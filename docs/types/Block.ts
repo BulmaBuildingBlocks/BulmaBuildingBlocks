@@ -9,5 +9,5 @@ export interface Block {
 }
 
 export interface BlockListObject {
-  [p: string]: VueConstructor;
+  [x: string]: VueConstructor;
 }
