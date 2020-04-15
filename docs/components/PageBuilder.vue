@@ -2,24 +2,64 @@
   <div>
     <draggable
       ref="pageHtml"
-      class="component-viewer-list"
+      class="block-viewer-list"
       :group="{ name: 'content', put: editable, sort: editable }"
       :list="blocks"
     >
       <div
         v-for="(block, index) in blocks"
         :key="index"
-        class="component-viewer-item"
+        class="block-viewer-item"
       >
-        <div v-if="editable" class="component-viewer-item__options">
-          <div class="buttons">
-            <button
-              class="button is-danger"
-              @click="deleteComponentItem(block)"
-            >
-              Delete
-            </button>
-          </div>
+        <div v-if="editable" class="block-viewer-item__options">
+          <b-field grouped>
+            <b-field>
+              <b-dropdown hoverable aria-role="list">
+                <button slot="trigger" class="button is-primary">
+                  <b-icon pack="fa" icon="fill-drip" />
+                </button>
+
+                <b-dropdown-item
+                  v-for="status in statuses"
+                  :key="status"
+                  aria-role="listitem"
+                  @click="block.color = status"
+                >
+                  <div class="level is-fullwidth">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <span>{{ status }}</span>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <b-icon
+                          pack="fa"
+                          icon="circle"
+                          :class="`has-text-${status}`"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </b-dropdown-item>
+              </b-dropdown>
+            </b-field>
+            <b-field>
+              <button class="button" @click="moveBlockItem(block, -1)">
+                <b-icon pack="fa" icon="angle-up" />
+              </button>
+            </b-field>
+            <b-field>
+              <button class="button" @click="moveBlockItem(block, 1)">
+                <b-icon pack="fa" icon="angle-down" />
+              </button>
+            </b-field>
+            <b-field>
+              <button class="button is-danger" @click="deleteBlockItem(block)">
+                Delete
+              </button>
+            </b-field>
+          </b-field>
         </div>
         <component
           :is="block.component"
@@ -38,6 +78,7 @@ import { Vue, Component, Watch } from 'nuxt-property-decorator';
 import { blocks } from '~/html-blocks';
 import PageBuilderStore from '~/store/pageBuilder';
 import { Block } from '~/types/Block';
+import { statusColors } from '~/shared/config';
 
 @Component({
   components: {
@@ -45,7 +86,9 @@ import { Block } from '~/types/Block';
     draggable
   }
 })
-export default class ComponentViewer extends Vue {
+export default class PageBuilder extends Vue {
+  statuses = statusColors;
+
   $refs!: {
     myTextEditorHtml: Vue[];
   };
@@ -62,8 +105,12 @@ export default class ComponentViewer extends Vue {
     return PageBuilderStore.downloadingCode;
   }
 
-  deleteComponentItem(block: Block): void {
+  deleteBlockItem(block: Block): void {
     PageBuilderStore.removeBlock(block);
+  }
+
+  moveBlockItem(block: Block, direction: number): void {
+    PageBuilderStore.moveBlock({ block, direction });
   }
 
   @Watch('copyingCode', { deep: true })

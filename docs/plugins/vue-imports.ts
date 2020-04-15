@@ -11,16 +11,18 @@ import {
   Tabs,
   Switch,
   Radio,
-  Toast
+  Toast,
+  Dropdown
 } from 'buefy';
 import Example from '~/components/global/Example.vue';
 
 Vue.component('Example', Example);
 
 // Import Buefy Components
+Vue.use(Dropdown);
 Vue.use(Input);
-Vue.use(Field);
 Vue.use(Icon);
+Vue.use(Field);
 Vue.use(Select);
 Vue.use(Tag);
 Vue.use(Switch);

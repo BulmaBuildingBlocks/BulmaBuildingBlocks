@@ -27,8 +27,8 @@ import BulmaBuildingBlockCss from '!!raw-loader!~/static/bulmabuildingblocks.min
   store
 })
 export class PageBuilderStore extends VuexModule {
-  code = '';
   blocks: Block[] = [];
+  code = '';
   editable = true;
   downloadingCode = false;
 
@@ -74,6 +74,20 @@ export class PageBuilderStore extends VuexModule {
   @Mutation
   removeBlock(block: Block): void {
     this.blocks.splice(this.blocks.indexOf(block), 1);
+  }
+
+  @Mutation
+  moveBlock({ block, direction }: { block: Block; direction: number }): void {
+    const index = this.blocks.indexOf(block);
+    const newIndex = index + direction;
+
+    if (newIndex > -1 && newIndex < this.blocks.length) {
+      // Remove the element from the array
+      const removedElement = this.blocks.splice(index, 1)[0];
+
+      // At "newIndex", remove 0 elements, insert the removed element
+      this.blocks.splice(newIndex, 0, removedElement);
+    }
   }
 
   @Mutation
