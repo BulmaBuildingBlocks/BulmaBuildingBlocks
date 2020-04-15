@@ -12,23 +12,24 @@
         class="block-viewer-item"
       >
         <div v-if="editable" class="block-viewer-item__options">
-          <b-field grouped>
+          <b-field addons>
             <b-field>
-              <b-dropdown hoverable aria-role="list">
-                <button slot="trigger" class="button is-primary">
+              <b-dropdown class="color-selector" hoverable aria-role="list">
+                <button slot="trigger" class="button is-white">
                   <b-icon pack="fa" icon="fill-drip" />
                 </button>
 
                 <b-dropdown-item
-                  v-for="status in statuses"
+                  v-for="(status, name) in statuses"
                   :key="status"
                   aria-role="listitem"
+                  class="color-selector__item"
                   @click="block.color = status"
                 >
                   <div class="level is-fullwidth">
                     <div class="level-left">
                       <div class="level-item">
-                        <span>{{ status }}</span>
+                        <span>{{ name }}</span>
                       </div>
                     </div>
                     <div class="level-right">
@@ -45,12 +46,12 @@
               </b-dropdown>
             </b-field>
             <b-field>
-              <button class="button" @click="moveBlockItem(block, -1)">
+              <button class="button is-white" @click="moveBlockItem(block, -1)">
                 <b-icon pack="fa" icon="angle-up" />
               </button>
             </b-field>
             <b-field>
-              <button class="button" @click="moveBlockItem(block, 1)">
+              <button class="button is-white" @click="moveBlockItem(block, 1)">
                 <b-icon pack="fa" icon="angle-down" />
               </button>
             </b-field>

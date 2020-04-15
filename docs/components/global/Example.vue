@@ -17,7 +17,7 @@
                 custom-class="is-small"
                 horizontal
               >
-                <b-switch v-model="block.container" @input="updateRefs" />
+                <b-switch v-model="block.container" />
               </b-field>
             </div>
             <div v-if="block.color" class="level-item">
@@ -26,20 +26,41 @@
                 custom-class="is-small"
                 horizontal
               >
-                <b-select
-                  v-model="block.color"
-                  size="is-small"
-                  placeholder="Select a color"
-                  @input="updateRefs"
+                <b-dropdown
+                  class="color-selector"
+                  trap-focus
+                  append-to-body
+                  aria-role="list"
                 >
-                  <option
-                    v-for="option in statuses"
-                    :key="option"
-                    :value="option"
+                  <button slot="trigger" class="button is-small">
+                    <b-icon pack="fa" icon="fill-drip" />
+                  </button>
+
+                  <b-dropdown-item
+                    v-for="(status, name) in statuses"
+                    :key="status"
+                    aria-role="listitem"
+                    class="color-selector__item"
+                    @click="block.color = status"
                   >
-                    {{ option }}
-                  </option>
-                </b-select>
+                    <div class="level is-fullwidth">
+                      <div class="level-left">
+                        <div class="level-item">
+                          <span>{{ name }}</span>
+                        </div>
+                      </div>
+                      <div class="level-right">
+                        <div class="level-item">
+                          <b-icon
+                            pack="fa"
+                            icon="circle"
+                            :class="`has-text-${status}`"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </b-dropdown-item>
+                </b-dropdown>
               </b-field>
             </div>
             <div class="level-item">
@@ -77,7 +98,7 @@
 
 <script lang="ts">
 // import CodepenEdit from './CodepenEdit';
-import { Prop, Vue, Component } from 'nuxt-property-decorator';
+import { Prop, Vue, Component, Watch } from 'nuxt-property-decorator';
 import prettier from 'prettier/standalone';
 import clipboard from 'copy-to-clipboard';
 import CodeView from './CodeView.vue';
@@ -101,6 +122,8 @@ export default class Example extends Vue {
   code = '';
   statuses = statusColors;
 
+  // Used to update the code preview
+  @Watch('block', { deep: true, immediate: true })
   updateRefs(): void {
     this.$nextTick(() => {
       this.code = prettier.format(
@@ -108,10 +131,6 @@ export default class Example extends Vue {
         prettierConf
       );
     });
-  }
-
-  mounted(): void {
-    this.updateRefs();
   }
 
   async copyCode(): Promise<void> {

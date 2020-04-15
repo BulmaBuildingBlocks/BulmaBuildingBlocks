@@ -34,17 +34,17 @@ export const I18N = {
   }
 };
 
-export const statusColors = [
-  'white',
-  'black',
-  'primary',
-  'info',
-  'success',
-  'warning',
-  'danger',
-  'light',
-  'dark'
-];
+export const statusColors = {
+  White: 'white',
+  Black: 'black',
+  Light: 'light',
+  Dark: 'dark',
+  'Light Blue': 'primary',
+  'Dark Blue': 'info',
+  Green: 'success',
+  Yellow: 'warning',
+  Red: 'danger'
+};
 
 export const prettierConf: Options = {
   parser: 'html',
