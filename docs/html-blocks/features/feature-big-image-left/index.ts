@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Big Image Right',
   component: FeatureBigImageRight,
   color: 'white',
+  container: true,
   content: new Model()
 };
 

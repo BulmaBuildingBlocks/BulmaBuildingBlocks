@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Title Two Columns',
   component: ContentTitleTwoColumn,
   color: 'white',
+  container: true,
   content: new Model()
 };
 

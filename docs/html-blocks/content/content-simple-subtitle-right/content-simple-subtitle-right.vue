@@ -1,6 +1,6 @@
 <template>
   <div class="section is-large" :class="color ? `has-background-${color}` : ''">
-    <div class="container">
+    <div :class="container ? 'container' : ''">
       <div class="columns is-right">
         <div class="column is-9-desktop is-7-widescreen">
           <editable-content

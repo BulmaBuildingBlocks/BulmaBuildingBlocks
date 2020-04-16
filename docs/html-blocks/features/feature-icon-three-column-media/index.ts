@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Three Icons Media Feature',
   component: FeatureIconThreeColumnsMedia,
   color: 'white',
+  container: true,
   content: new Model()
 };
 

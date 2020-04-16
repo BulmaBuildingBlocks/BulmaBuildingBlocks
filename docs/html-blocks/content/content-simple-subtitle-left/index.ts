@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Subtitle Left',
   component: ContentSubtitleLeft,
   color: 'white',
+  container: true,
   content: new Model()
 };
 

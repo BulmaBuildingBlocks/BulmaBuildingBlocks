@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Title',
   component: ContentTitle,
   color: 'white',
+  container: true,
   content: new Model()
 };
 

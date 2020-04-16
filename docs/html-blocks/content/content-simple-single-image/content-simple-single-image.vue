@@ -3,7 +3,7 @@
     class="section is-large has-text-centered"
     :class="color ? `has-background-${color}` : ''"
   >
-    <div class="container">
+    <div :class="container ? 'container' : ''">
       <editable-content
         tag="h2"
         type="title"

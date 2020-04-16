@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Three Images Feature',
   component: FeatureImagesThreeColumns,
   color: 'white',
+  container: true,
   content: new Model()
 };
 

@@ -24,6 +24,6 @@ export default class HtmlBlockMixin extends Vue {
   }
 
   get container() {
-    return this.newBlock.container || true;
+    return this.newBlock.container;
   }
 }

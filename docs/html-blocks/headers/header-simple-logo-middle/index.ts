@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Navbar with Logo Center',
   component: HeaderSimpleLogoMiddle,
   color: 'white',
+  container: true,
   content: new Model()
 };
 

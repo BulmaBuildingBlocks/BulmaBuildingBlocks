@@ -1,6 +1,6 @@
 <template>
   <div class="section is-large" :class="color ? `has-background-${color}` : ''">
-    <div class="container has-text-centered">
+    <div class="has-text-centered" :class="container ? 'container' : ''">
       <editable-content
         tag="h2"
         type="title"

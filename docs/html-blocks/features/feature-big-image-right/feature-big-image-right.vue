@@ -1,6 +1,6 @@
 <template>
   <div class="section is-large" :class="color ? `has-background-${color}` : ''">
-    <div class="container">
+    <div :class="container ? 'container' : ''">
       <div class="columns is-vcentered">
         <div class="column">
           <editable-content

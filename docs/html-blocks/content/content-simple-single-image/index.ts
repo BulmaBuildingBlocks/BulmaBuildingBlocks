@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Single Image',
   component: ContentSingleImage,
   color: 'white',
+  container: true,
   content: new Model()
 };
 

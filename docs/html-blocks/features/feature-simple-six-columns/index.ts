@@ -6,6 +6,7 @@ const component: Block = {
   title: 'Six Column Feature',
   component: FeatureSimpleSixColumns,
   color: 'white',
+  container: true,
   content: new Model()
 };
 
