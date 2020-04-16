@@ -28,7 +28,7 @@ class Model {
     }
   ];
 
-  copyright = '2020 Copyright Bulma Building Blocks';
+  copyright = '©2020 Copyright Bulma Building Blocks';
 }
 
 export default Model;
