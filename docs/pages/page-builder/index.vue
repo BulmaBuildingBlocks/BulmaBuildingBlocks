@@ -3,7 +3,9 @@
     <div class="page-builder__header level is-marginless">
       <div class="level-left">
         <div class="level-item">
-          <a class="button is-small is-outlined" @click="$router.back()"
+          <a
+            class="button is-small is-outlined"
+            @click.prevent="handleBack('/')"
             >Back</a
           >
         </div>
@@ -132,7 +134,7 @@
 <script lang="ts">
 import draggable from 'vuedraggable';
 
-import { Component, Vue, Watch } from 'nuxt-property-decorator';
+import { Component, mixins, Watch } from 'nuxt-property-decorator';
 import slugifyString from '~/shared/slugifyString';
 
 import allComponents from '~/html-blocks';
@@ -140,6 +142,7 @@ import allComponents from '~/html-blocks';
 import DeviceViewer from '~/components/DeviceViewer.vue';
 import PageBuilderStore from '~/store/pageBuilder';
 import { Block } from '~/types/Block';
+import HandleBack from '~/mixins/HandleBack';
 
 @Component({
   components: {
@@ -147,7 +150,7 @@ import { Block } from '~/types/Block';
     DeviceViewer
   }
 })
-export default class PageBuilderPage extends Vue {
+export default class PageBuilderPage extends mixins(HandleBack) {
   allComponents = allComponents;
   shownComponent = 'Headers';
   deviceSize = 'desktop';
