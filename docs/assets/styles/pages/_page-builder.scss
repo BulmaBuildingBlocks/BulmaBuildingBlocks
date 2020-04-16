@@ -32,7 +32,7 @@
   flex-shrink: 0;
 
   .page-builder__blocks__filters {
-    padding: 1rem 1rem 0;
+    padding: 1rem;
   }
 
   .page-builder__blocks__selector {
@@ -48,7 +48,7 @@
 }
 
 .page-builder__items {
-  padding: 1rem;
+  padding: 0 1rem 1rem;
 }
 
 // Placed on own as it will keeps styles when dragged
