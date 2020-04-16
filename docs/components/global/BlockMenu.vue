@@ -1,19 +1,21 @@
 <template>
-  <nav class="block-menu" role="navigation" aria-label="main navigation">
+  <nav
+    class="block-menu has-background-primary"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="container">
-      <div class="tabs b-tabs is-toggle is-primary">
-        <ul>
-          <nuxt-link
-            v-for="item in normalizedData"
-            :key="item.title"
-            tag="li"
-            :to="item.path"
-          >
-            <a>
-              {{ item.title }}
-            </a>
-          </nuxt-link>
-        </ul>
+      <div class="buttons has-addons is-toggle">
+        <nuxt-link
+          v-for="item in normalizedData"
+          :key="item.title"
+          tag="button"
+          :to="item.path"
+          class="button is-white is-small"
+          active-class="is-primary is-inverted is-outlined"
+        >
+          {{ item.title }}
+        </nuxt-link>
       </div>
     </div>
   </nav>

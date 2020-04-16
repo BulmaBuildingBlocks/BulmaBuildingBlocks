@@ -4,7 +4,7 @@
       <div class="example-section__info section">
         <div class="level">
           <div class="level-left">
-            <p :id="`${slugifiedTitle}`" class="title is-4">
+            <p :id="`${slugifiedTitle}`" class="subtitle">
               <nuxt-link v-if="block.title" :to="`#${slugifiedTitle}`">
                 # {{ block.title }}
               </nuxt-link>

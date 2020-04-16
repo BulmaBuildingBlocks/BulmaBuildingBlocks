@@ -1,22 +1,11 @@
 .block-viewer-list {
   height: 100%;
 
-  &.has-components-shown {
-    > * {
-      margin-bottom: 0.5rem;
-      border: 1px solid $primary-light;
-    }
-
-    .sortable-ghost {
-      border: 3px solid $primary;
-    }
-  }
-
   .block-viewer-item {
     position: relative;
 
     &:hover {
-      border: 3px solid $primary;
+      border: 2px solid $primary;
     }
 
     .block-viewer-item__options {
@@ -35,7 +24,8 @@
       }
 
       .level-item {
-        padding: 0 0.25rem;
+        font-size: $size-5;
+        padding: 0 0.25em;
       }
     }
 

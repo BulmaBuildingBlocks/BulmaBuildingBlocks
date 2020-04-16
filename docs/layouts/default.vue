@@ -3,9 +3,7 @@
     <v-navbar />
 
     <section class="documentation">
-      <div class="docs-main">
-        <nuxt />
-      </div>
+      <nuxt />
     </section>
 
     <v-footer />

@@ -1,11 +1,8 @@
 <template>
   <div content="html-blocks">
+    <block-menu />
     <section class="documentation">
-      <block-menu />
-
-      <div class="docs-main">
-        <nuxt-child />
-      </div>
+      <nuxt-child />
     </section>
   </div>
 </template>

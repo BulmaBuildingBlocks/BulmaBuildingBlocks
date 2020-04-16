@@ -1,0 +1,23 @@
+.buttons {
+  &.has-addons {
+    .button {
+      margin-right: -1px !important;
+    }
+  }
+
+  &.is-toggle {
+    .button {
+      box-shadow: none;
+      outline: none;
+    }
+
+    .button.is-primary.is-inverted.is-outlined {
+      &:hover,
+      &:focus {
+        background: $primary;
+        color: $white;
+        box-shadow: none;
+      }
+    }
+  }
+}

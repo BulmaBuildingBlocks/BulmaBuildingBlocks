@@ -16,11 +16,6 @@
             class="field is-marginless has-addons is-fullwidth"
             @submit.prevent="setLinkUrl(commands.link, linkUrl)"
           >
-            <div class="control">
-              <button class="button" type="button" @click="hideLinkMenu">
-                <b-icon pack="fa" icon="angle-left" />
-              </button>
-            </div>
             <div class="control is-expanded">
               <input
                 ref="linkInput"
@@ -28,7 +23,8 @@
                 class="input"
                 type="text"
                 placeholder="https://"
-                @keydown.esc="clearLinkMenu"
+                @keydown.esc="hideLinkMenu"
+                @focus="cancelHidePopupQueue"
               />
             </div>
             <div class="control">
@@ -208,7 +204,7 @@ import PopupModal from '~/components/global/PopupModal.vue';
     PopupModal
   }
 })
-export default class WiziwigContent extends Vue {
+export default class EditableText extends Vue {
   @Prop(String) value!: string;
   @Prop(String) tag!: string;
   @Prop(String) type!: string;
@@ -256,7 +252,7 @@ export default class WiziwigContent extends Vue {
       }
     },
     onBlur: () => {
-      this.queueHidePopup = _.debounce(this.hidePopup, 150);
+      this.queueHidePopup = _.debounce(this.hidePopup, 500);
       this.queueHidePopup();
     }
   });
@@ -269,11 +265,20 @@ export default class WiziwigContent extends Vue {
     this.popupShown = false;
   }
 
+  cancelHidePopupQueue() {
+    if (this.queueHidePopup) {
+      this.queueHidePopup.cancel();
+    }
+  }
+
   showLinkMenu(attrs: HTMLLinkElement): void {
     this.linkUrl = attrs.href;
     this.linkMenuIsActive = true;
+    this.cancelHidePopupQueue();
+
     this.$nextTick(() => {
       this.$refs.linkInput.focus();
+      this.cancelHidePopupQueue();
     });
   }
 
