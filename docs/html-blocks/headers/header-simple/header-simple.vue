@@ -64,5 +64,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlBlockMixin from '~/mixins/HtmlBlockMixin';
 
 @Component
-export default class HeaderExSimple extends mixins(HtmlBlockMixin) {}
+export default class HeaderSimple extends mixins(HtmlBlockMixin) {}
 </script>

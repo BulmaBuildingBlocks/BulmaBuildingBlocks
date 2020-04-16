@@ -1,13 +1,15 @@
 import headerBlocks from '~/html-blocks/headers';
 import featureBlocks from '~/html-blocks/features';
 import contentBlocks from '~/html-blocks/content';
+import footerBlocks from '~/html-blocks/footers';
 import { Block, BlockListObject } from '~/types/Block';
 
 // Manifest all blocks into one array
 const allHtmlBlocks: { [x: string]: Block[] } = {
-  Headers: headerBlocks,
-  Features: featureBlocks,
-  Content: contentBlocks
+  headers: headerBlocks,
+  features: featureBlocks,
+  contents: contentBlocks,
+  footers: footerBlocks
 };
 
 // Creates Object of Blocks used for importing directly as blocks in vue templates

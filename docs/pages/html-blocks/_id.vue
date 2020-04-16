@@ -1,16 +1,20 @@
 <template>
   <div id="page-headers" class="section">
-    <Example v-for="block in blocks" :key="block.name" :block="block" />
+    <Example v-for="block in filterBlocks" :key="block.name" :block="block" />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
 
-import blocks from '~/html-blocks/headers';
+import Blocks from '~/html-blocks';
 
 @Component
 export default class Index extends Vue {
-  blocks = blocks;
+  blocks = Blocks;
+
+  get filterBlocks() {
+    return this.blocks[this.$route.params.id];
+  }
 }
 </script>

@@ -26,17 +26,13 @@
         <div class="page-builder__blocks">
           <div class="page-builder__blocks__filters">
             <div class="field has-addons is-fullwidth is-marginless">
-              <div
-                v-for="(item, index) in allComponents"
-                :key="index"
-                class="control"
-              >
+              <div v-for="(item, key) in allBlocks" :key="key" class="control">
                 <button
                   class="button is-small"
-                  :class="{ 'is-primary': shownComponent === index }"
-                  @click="shownComponent = index"
+                  :class="{ 'is-primary': shownBlocks === key }"
+                  @click="shownBlocks = key"
                 >
-                  {{ index }}
+                  {{ key | capitalize }}
                 </button>
               </div>
             </div>
@@ -51,10 +47,10 @@
                 sort: false
               }"
               :sort="false"
-              :list="allComponents[shownComponent]"
+              :list="allBlocks[shownBlocks]"
             >
               <div
-                v-for="component in allComponents[shownComponent]"
+                v-for="component in allBlocks[shownBlocks]"
                 :key="component.name"
                 class="is-fullwidth page-builder__item"
                 @click="addComponentToPreview(component)"
@@ -137,7 +133,7 @@ import draggable from 'vuedraggable';
 import { Component, mixins, Watch } from 'nuxt-property-decorator';
 import slugifyString from '~/shared/slugifyString';
 
-import allComponents from '~/html-blocks';
+import allBlocks from '~/html-blocks';
 
 import DeviceViewer from '~/components/DeviceViewer.vue';
 import PageBuilderStore from '~/store/pageBuilder';
@@ -151,8 +147,8 @@ import HandleBack from '~/mixins/HandleBack';
   }
 })
 export default class PageBuilderPage extends mixins(HandleBack) {
-  allComponents = allComponents;
-  shownComponent = 'Headers';
+  allBlocks = allBlocks;
+  shownBlocks = 'headers';
   deviceSize = 'desktop';
   deviceFrame = true;
 

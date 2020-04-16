@@ -1,10 +1,10 @@
-import HeaderMenuCenter from './header-simple-menu-center.vue';
+import FooterSimple from './footer-simple.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 
 const component: Block = {
-  title: 'Navbar Centered',
-  component: HeaderMenuCenter,
+  title: 'Simple Footer',
+  component: FooterSimple,
   color: 'white',
   container: true,
   content: new Model()

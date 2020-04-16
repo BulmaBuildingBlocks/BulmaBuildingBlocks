@@ -1,10 +1,10 @@
-import HeaderExSimple from './header-simple.vue';
+import HeaderSimple from './header-simple.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 
 const component: Block = {
   title: 'Navbar with Simple Nav',
-  component: HeaderExSimple,
+  component: HeaderSimple,
   color: 'white',
   container: true,
   content: new Model()

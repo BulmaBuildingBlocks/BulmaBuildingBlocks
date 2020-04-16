@@ -1,10 +1,10 @@
-import HeaderExSimpleLogoMiddle from './header-simple-logo-middle.vue';
+import HeaderSimpleLogoMiddle from './header-simple-logo-middle.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 
 const component: Block = {
   title: 'Navbar with Logo Center',
-  component: HeaderExSimpleLogoMiddle,
+  component: HeaderSimpleLogoMiddle,
   color: 'white',
   content: new Model()
 };

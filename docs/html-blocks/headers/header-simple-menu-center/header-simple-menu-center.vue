@@ -42,5 +42,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlBlockMixin from '~/mixins/HtmlBlockMixin';
 
 @Component
-export default class HeaderExMenuCenter extends mixins(HtmlBlockMixin) {}
+export default class HeaderMenuCenter extends mixins(HtmlBlockMixin) {}
 </script>

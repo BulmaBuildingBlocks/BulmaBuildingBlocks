@@ -19,7 +19,7 @@ describe('Create Component Images', () => {
       const content = $el.find('.example-component')[0].firstChild;
 
       const title = $el
-        .find('.title a')
+        .find('.subtitle a')
         .text()
         .toLowerCase()
         .replace(/\s+/g, '-') // Replace spaces with -
@@ -28,7 +28,7 @@ describe('Create Component Images', () => {
         .replace(/^-+/, '') // Trim - from start of text
         .replace(/-+$/, ''); // Trim - from end of text
 
-      cy.get(content).screenshot('./' + title);
+      cy.get(content).screenshot(title);
     });
   });
 });

@@ -7,14 +7,14 @@
     <div class="container">
       <div class="buttons has-addons is-toggle">
         <nuxt-link
-          v-for="item in normalizedData"
-          :key="item.title"
+          v-for="(item, key) in blocks"
+          :key="key"
           tag="button"
-          :to="item.path"
+          :to="`/html-blocks/${key}`"
           class="button is-white is-small"
           active-class="is-primary is-inverted is-outlined"
         >
-          {{ item.title }}
+          {{ key | capitalize }}
         </nuxt-link>
       </div>
     </div>
@@ -23,23 +23,10 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import Routes from '~/data/routes.json';
-import MenuData from '~/data/block-menu.json';
-
-export interface RoutesObj {
-  [key: string]: {
-    [key: string]: {};
-  };
-}
+import Blocks from '~/html-blocks';
 
 @Component
 export default class BlockMenu extends Vue {
-  get normalizedData(): { [p: string]: {} }[] {
-    const routes: RoutesObj = Routes;
-    const menu: string[] = MenuData;
-    return menu.map((item: string) => {
-      return routes[item];
-    });
-  }
+  blocks = Blocks;
 }
 </script>
