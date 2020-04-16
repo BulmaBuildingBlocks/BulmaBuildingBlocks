@@ -1,5 +1,5 @@
 class Model {
-  title = '©2020 Copyright Bulma Building Blocks';
+  title = '©2020 Bulma Building Blocks';
 }
 
 export default Model;

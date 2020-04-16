@@ -1,15 +1,6 @@
-import { EditableImageProps } from '~/components/wiziwig/image/types';
 import { EditableLinkProps } from '~/components/wiziwig/link/types';
 
 class Model {
-  logo: EditableImageProps = {
-    src: `https://bulma.io/images/bulma-logo.png`,
-    alt: 'Bulma Logo',
-    href: '',
-    popupPlacement: 'top-start',
-    width: 140
-  };
-
   navLinks: EditableLinkProps[] = [
     {
       label: 'Home',
@@ -23,6 +14,16 @@ class Model {
     },
     {
       label: 'Info',
+      href: '#',
+      popupPlacement: 'top-start'
+    },
+    {
+      label: 'Terms',
+      href: '#',
+      popupPlacement: 'top-start'
+    },
+    {
+      label: 'Contact',
       href: '#',
       popupPlacement: 'top-start'
     }
