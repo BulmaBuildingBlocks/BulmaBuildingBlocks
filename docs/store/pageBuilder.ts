@@ -136,6 +136,11 @@ export class PageBuilderStore extends VuexModule {
         img.file(modifiedSrc, urlToPromise(imagesSource), { binary: true });
       }
 
+      zip.file(
+        'README.txt',
+        'Extract code to a new folder after downloading and click the index.html to view the site. '
+      );
+
       // Creates html page from user created content
       zip.file('index.html', code);
 
