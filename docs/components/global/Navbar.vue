@@ -50,9 +50,15 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <div class="navbar-link">Info</div>
 
-            <div class="navbar-dropdown is-boxed">
+            <div class="navbar-dropdown">
               <strong class="navbar-item is-version">
                 <div class="tags has-addons">
+                  <span class="tag">Version</span>
+                  <span class="tag is-primary">{{ version }}</span>
+                </div>
+              </strong>
+              <strong class="navbar-item is-version">
+                <div class="tags has-addons is-fullwidth">
                   <span class="tag">Bulma</span>
                   <span class="tag is-primary">{{ bulmaVersion }}</span>
                 </div>
@@ -85,11 +91,13 @@
 <script lang="ts">
 import bulmaPackage from 'bulma/package.json';
 import { Component, Vue } from 'vue-property-decorator';
+import packageJson from '@@/package.json';
 
 @Component
 export default class Navbar extends Vue {
   isMenuActive = false;
   // bulmaVersion = '0.8.0';
+  version = packageJson.version;
   bulmaVersion = bulmaPackage.version || '0.8.0';
 
   tweet(): void {

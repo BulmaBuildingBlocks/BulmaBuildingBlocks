@@ -138,7 +138,7 @@ export class PageBuilderStore extends VuexModule {
 
       zip.file(
         'README.txt',
-        'Extract code to a new folder after downloading and click the index.html to view the site. '
+        'Extract code to a new folder and click the index.html to view the site. '
       );
 
       // Creates html page from user created content

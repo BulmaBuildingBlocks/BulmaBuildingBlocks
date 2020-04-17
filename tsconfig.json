@@ -14,7 +14,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./docs/*"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "~~/*": ["./docs/*"],
+      "@@/*": ["./*"]
     },
     "types": ["@types/node", "@types/jest", "@types/lodash", "@nuxt/types"]
   },
