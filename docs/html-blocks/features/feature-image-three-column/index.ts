@@ -1,4 +1,4 @@
-import FeatureImagesThreeColumns from './feature-image-three-column.vue';
+import FeatureImagesThreeColumns from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

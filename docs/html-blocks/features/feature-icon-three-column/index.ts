@@ -1,4 +1,4 @@
-import FeatureIconThreeColumns from './feature-icon-three-column.vue';
+import FeatureIconThreeColumns from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

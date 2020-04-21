@@ -1,4 +1,4 @@
-import FeatureSimpleEightColumns from './feature-simple-eight-column.vue';
+import FeatureSimpleEightColumns from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

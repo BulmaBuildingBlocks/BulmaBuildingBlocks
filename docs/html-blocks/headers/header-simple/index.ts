@@ -1,4 +1,4 @@
-import HeaderSimple from './header-simple.vue';
+import HeaderSimple from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

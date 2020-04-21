@@ -1,4 +1,4 @@
-import FeatureBigImageLeft from './feature-big-image-right.vue';
+import FeatureBigImageLeft from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

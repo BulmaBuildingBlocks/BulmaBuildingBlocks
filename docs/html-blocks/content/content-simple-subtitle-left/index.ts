@@ -1,4 +1,4 @@
-import ContentSubtitleLeft from './content-simple-subtitle-left.vue';
+import ContentSubtitleLeft from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

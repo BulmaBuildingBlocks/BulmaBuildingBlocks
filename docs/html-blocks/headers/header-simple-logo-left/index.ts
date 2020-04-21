@@ -1,4 +1,4 @@
-import HeaderSimpleLogoLeft from './header-simple-logo-left.vue';
+import HeaderSimpleLogoLeft from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

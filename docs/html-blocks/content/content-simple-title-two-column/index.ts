@@ -1,4 +1,4 @@
-import ContentTitleTwoColumn from './content-simple-title-two-column.vue';
+import ContentTitleTwoColumn from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

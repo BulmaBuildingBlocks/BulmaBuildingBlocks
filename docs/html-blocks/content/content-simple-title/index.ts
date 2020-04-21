@@ -1,4 +1,4 @@
-import ContentTitle from './content-simple-title.vue';
+import ContentTitle from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

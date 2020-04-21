@@ -1,4 +1,4 @@
-import FeatureSimpleSixColumns from './feature-simple-six-column.vue';
+import FeatureSimpleSixColumns from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

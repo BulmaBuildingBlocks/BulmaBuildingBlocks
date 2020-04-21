@@ -1,4 +1,4 @@
-import ContentSingleImage from './content-simple-single-image.vue';
+import ContentSingleImage from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

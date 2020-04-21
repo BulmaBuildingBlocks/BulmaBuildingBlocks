@@ -1,4 +1,4 @@
-import HeaderMenuCenter from './header-simple-menu-center.vue';
+import HeaderMenuCenter from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 

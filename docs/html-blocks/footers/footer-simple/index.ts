@@ -1,4 +1,4 @@
-import FooterSimple from './footer-simple.vue';
+import FooterSimple from './html.vue';
 import Model from './model';
 import { Block } from '~/types/Block';
 
