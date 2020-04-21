@@ -1,6 +1,7 @@
 <template>
   <component :is="tag" v-bind="$attrs" class="editor" :class="typeClass">
     <popup-modal
+      v-click-outside="{ handler: hidePopup }"
       :show="popupShown"
       :options="{
         placement: 'top'
@@ -12,33 +13,45 @@
       >
         <div class="menubar">
           <form
-            v-if="linkMenuIsActive"
+            v-show="linkMenuIsActive"
             class="field is-marginless has-addons is-fullwidth"
             @submit.prevent="setLinkUrl(commands.link, linkUrl)"
           >
+            <div class="control">
+              <button class="button" type="button" @click="hideLinkMenu">
+                <b-icon pack="fa" icon="angle-left" />
+              </button>
+            </div>
             <div class="control is-expanded">
-              <input
+              <b-input
                 ref="linkInput"
                 v-model="linkUrl"
-                class="input"
-                type="text"
                 placeholder="https://"
+                type="text"
+                icon=""
+                icon-pack="fa"
+                icon-right="trash"
+                icon-right-clickable
                 @keydown.esc="hideLinkMenu"
-                @focus="cancelHidePopupQueue"
-              />
+                @icon-right-click="clearLinkMenu(commands.link)"
+              >
+              </b-input>
             </div>
             <div class="control">
               <button
                 class="button"
                 type="button"
-                @click="setLinkUrl(commands.link, null)"
+                @click="setLinkUrl(commands.link, linkUrl)"
               >
-                <b-icon pack="fa" icon="trash" />
+                <b-icon pack="fa" icon="save" />
               </button>
             </div>
           </form>
 
-          <div v-else class="buttons has-addons is-multiline  ">
+          <div
+            v-show="!linkMenuIsActive"
+            class="buttons has-addons is-multiline  "
+          >
             <template v-if="type === 'text' || type === 'title'">
               <button
                 class="button is-small is-white"
@@ -191,17 +204,21 @@ import {
   Underline,
   History
 } from 'tiptap-extensions';
-import _ from 'lodash';
+// import _ from 'lodash';
 import { Vue, Component, Prop } from 'nuxt-property-decorator';
 import Link from '~/components/wiziwig/text/prosemirror-marks/Link';
 import Image from '~/components/wiziwig/text/prosemirror-marks/Image';
 import PopupModal from '~/components/global/PopupModal.vue';
+import ClickOutside from '~/directives/click-outside';
 
 @Component({
   components: {
     EditorContent,
     EditorMenuBar,
     PopupModal
+  },
+  directives: {
+    ClickOutside
   }
 })
 export default class EditableText extends Vue {
@@ -210,7 +227,7 @@ export default class EditableText extends Vue {
   @Prop(String) type!: string;
   @Prop(Boolean) editable!: boolean;
 
-  linkUrl?: string = undefined;
+  linkUrl = '';
   linkMenuIsActive = false;
 
   popupShown = false;
@@ -223,7 +240,6 @@ export default class EditableText extends Vue {
     return `is-${this.type}`;
   }
 
-  queueHidePopup?: any = undefined;
   editor = new Editor({
     extensions: [
       new Blockquote(),
@@ -246,14 +262,10 @@ export default class EditableText extends Vue {
     onUpdate: this.updateValue,
     onFocus: () => {
       this.setPopupShown(true);
-
-      if (this.queueHidePopup) {
-        this.queueHidePopup.cancel();
-      }
     },
     onBlur: () => {
-      this.queueHidePopup = _.debounce(this.hidePopup, 500);
-      this.queueHidePopup();
+      // this.queueHidePopup = _.debounce(this.hidePopup, 500);
+      // this.queueHidePopup();
     }
   });
 
@@ -265,20 +277,18 @@ export default class EditableText extends Vue {
     this.popupShown = false;
   }
 
-  cancelHidePopupQueue() {
-    if (this.queueHidePopup) {
-      this.queueHidePopup.cancel();
-    }
+  hideLinkMenu(): void {
+    this.linkMenuIsActive = false;
+    this.editor.focus();
   }
 
   showLinkMenu(attrs: HTMLLinkElement): void {
     this.linkUrl = attrs.href;
     this.linkMenuIsActive = true;
-    this.cancelHidePopupQueue();
 
     this.$nextTick(() => {
       this.$refs.linkInput.focus();
-      this.cancelHidePopupQueue();
+      this.popupShown = true;
     });
   }
 
@@ -289,13 +299,9 @@ export default class EditableText extends Vue {
     }
   }
 
-  clearLinkMenu(): void {
+  clearLinkMenu(command: Function): void {
+    command({ href: '' });
     this.linkUrl = '';
-  }
-
-  hideLinkMenu(): void {
-    this.linkMenuIsActive = false;
-    this.editor.focus();
   }
 
   setLinkUrl(command: Function, url: string): void {
