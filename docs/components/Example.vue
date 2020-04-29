@@ -20,47 +20,18 @@
                 <b-switch v-model="block.container" />
               </b-field>
             </div>
-            <div v-if="block.color" class="level-item">
+            <div class="level-item">
               <b-field
                 label="Background Color"
                 custom-class="is-small"
                 horizontal
               >
-                <b-dropdown
-                  class="color-selector"
-                  trap-focus
+                <color-picker
                   append-to-body
-                  aria-role="list"
-                >
-                  <button slot="trigger" class="button is-small">
-                    <b-icon pack="fa" icon="fill-drip" />
-                  </button>
-
-                  <b-dropdown-item
-                    v-for="(name, status) in statuses"
-                    :key="status"
-                    aria-role="listitem"
-                    class="color-selector__item"
-                    @click="block.color = status"
-                  >
-                    <div class="level is-fullwidth">
-                      <div class="level-left">
-                        <div class="level-item">
-                          <span>{{ name }}</span>
-                        </div>
-                      </div>
-                      <div class="level-right">
-                        <div class="level-item">
-                          <b-icon
-                            pack="fa"
-                            icon="circle"
-                            :class="`has-text-${status}`"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </b-dropdown-item>
-                </b-dropdown>
+                  size="is-small"
+                  :color="block.color"
+                  @color="block.color = $event"
+                />
               </b-field>
             </div>
             <div class="level-item">
@@ -102,14 +73,16 @@ import { Prop, Vue, Component, Watch } from 'nuxt-property-decorator';
 import prettier from 'prettier/standalone';
 import clipboard from 'copy-to-clipboard';
 import CodeView from './CodeView.vue';
-import { prettierConf, statusColorClasses } from '~/shared/config';
+import { prettierConf } from '~/shared/config';
 import { Block } from '~/types/Block';
 import slugifyString from '~/shared/slugifyString';
+import ColorPicker from '~/components/ColorPicker.vue';
 
 @Component({
   components: {
     // CodepenEdit
-    CodeView
+    CodeView,
+    ColorPicker
   }
 })
 export default class Example extends Vue {
@@ -120,7 +93,6 @@ export default class Example extends Vue {
   };
 
   code = '';
-  statuses = statusColorClasses;
 
   // Used to update the code preview
   @Watch('block', { deep: true, immediate: true })

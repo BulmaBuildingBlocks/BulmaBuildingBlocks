@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar"
+    class="navbar is-transparent"
     role="navigation"
     aria-label="main navigation"
     :class="color ? `is-${color}` : ''"
@@ -33,7 +33,7 @@
             v-for="(item, index) in content.navLinks"
             :key="index"
             class="navbar-item"
-            :class="`has-text-${color}-invert`"
+            :class="color ? `has-text-${color}-invert` : ''"
             :value="item"
             :editable="editable"
             @value="item = $event"

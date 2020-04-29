@@ -18,7 +18,7 @@
           v-for="(item, index) in content.items"
           :key="index"
           class="column is-6 is-4-widescreen"
-          :class="`has-text-${color}-invert`"
+          :class="color ? `has-text-${color}-invert` : ''"
         >
           <article class="media">
             <figure class="media-left">
@@ -36,7 +36,7 @@
                 tag="h3"
                 type="title"
                 class="label"
-                :class="`has-text-${color}-invert`"
+                :class="color ? `has-text-${color}-invert` : ''"
                 :value="item.title"
                 :editable="editable"
                 @value="item.title = $event"

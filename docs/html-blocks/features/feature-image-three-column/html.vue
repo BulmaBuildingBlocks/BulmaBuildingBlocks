@@ -20,7 +20,7 @@
               v-for="(item, index) in content.items"
               :key="index"
               class="column is-6 is-4-widescreen"
-              :class="`has-text-${color}-invert`"
+              :class="color ? `has-text-${color}-invert` : ''"
             >
               <editable-image
                 class="image is-3by2 is-covered is-fullwidth has-radius block"
@@ -32,7 +32,7 @@
                 tag="h3"
                 type="title"
                 class="label"
-                :class="`has-text-${color}-invert`"
+                :class="color ? `has-text-${color}-invert` : ''"
                 :value="item.title"
                 :editable="editable"
                 @value="item.title = $event"

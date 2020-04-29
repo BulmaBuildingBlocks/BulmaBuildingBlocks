@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar"
+    class="navbar is-transparent"
     role="navigation"
     aria-label="main navigation"
     :class="color ? `is-${color}` : ''"
@@ -9,7 +9,6 @@
       <div class="navbar-brand">
         <editable-image
           class="navbar-item"
-          :class="`has-text-${color}-invert`"
           :value.sync="content.logo"
           :editable="editable"
           @value="content.logo = $event"

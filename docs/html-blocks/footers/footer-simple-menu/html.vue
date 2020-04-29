@@ -15,7 +15,7 @@
             v-for="(item, index) in content.navLinks"
             :key="index"
             class="level-item"
-            :class="`has-text-${color}-invert`"
+            :class="color ? `has-text-${color}-invert` : ''"
             :value="item"
             :editable="editable"
             @value="item = $event"

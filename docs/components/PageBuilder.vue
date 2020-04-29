@@ -14,36 +14,10 @@
         <div v-if="editable" class="block-viewer-item__options">
           <b-field addons>
             <b-field>
-              <b-dropdown class="color-selector" hoverable aria-role="list">
-                <button slot="trigger" class="button is-white">
-                  <b-icon pack="fa" icon="fill-drip" />
-                </button>
-
-                <b-dropdown-item
-                  v-for="(name, status) in statuses"
-                  :key="status"
-                  aria-role="listitem"
-                  class="color-selector__item"
-                  @click="block.color = status"
-                >
-                  <div class="level is-fullwidth">
-                    <div class="level-left">
-                      <div class="level-item">
-                        <span>{{ name }}</span>
-                      </div>
-                    </div>
-                    <div class="level-right">
-                      <div class="level-item">
-                        <b-icon
-                          pack="fa"
-                          icon="circle"
-                          :class="`has-text-${status}`"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </b-dropdown-item>
-              </b-dropdown>
+              <color-picker
+                :color="block.color"
+                @color="block.color = $event"
+              />
             </b-field>
             <b-field>
               <button class="button is-white" @click="moveBlockItem(block, -1)">
@@ -80,11 +54,13 @@ import { blocks } from '~/html-blocks';
 import PageBuilderStore from '~/store/pageBuilder';
 import { Block } from '~/types/Block';
 import { statusColorClasses } from '~/shared/config';
+import ColorPicker from '~/components/ColorPicker.vue';
 
 @Component({
   components: {
     ...blocks,
-    draggable
+    draggable,
+    ColorPicker
   }
 })
 export default class PageBuilder extends Vue {

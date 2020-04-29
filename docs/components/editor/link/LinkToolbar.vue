@@ -24,36 +24,10 @@
       </b-field>
 
       <b-field label="Color">
-        <b-dropdown class="color-selector" trap-focus aria-role="list">
-          <button slot="trigger" class="button is-marginless">
-            <b-icon pack="fa" icon="fill-drip" />
-          </button>
-
-          <b-dropdown-item
-            v-for="(name, status) in statuses"
-            :key="status"
-            aria-role="listitem"
-            class="color-selector__item"
-            @click="setColor(status)"
-          >
-            <div class="level is-fullwidth">
-              <div class="level-left">
-                <div class="level-item">
-                  <span>{{ name }}</span>
-                </div>
-              </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <b-icon
-                    pack="fa"
-                    icon="circle"
-                    :class="`has-text-${status}`"
-                  />
-                </div>
-              </div>
-            </div>
-          </b-dropdown-item>
-        </b-dropdown>
+        <color-picker
+          :color="newValue.status"
+          @color="newValue.status = $event"
+        />
       </b-field>
     </div>
   </div>
@@ -62,7 +36,7 @@
 <script lang="ts">
 import { Vue, Component, PropSync } from 'nuxt-property-decorator';
 import { EditableLinkProps, LinkType } from '~/components/editor/link/types';
-import { statusColorClasses, Status } from '~/shared/config';
+import ColorPicker from '~/components/ColorPicker.vue';
 
 /***
  * Editing Features:
@@ -71,16 +45,15 @@ import { statusColorClasses, Status } from '~/shared/config';
  * Link
  */
 
-@Component
+@Component({
+  components: {
+    ColorPicker
+  }
+})
 export default class LinkToolbar extends Vue {
   @PropSync('value', { type: Object }) newValue!: EditableLinkProps;
 
-  statuses = statusColorClasses;
   LinkType = LinkType;
-
-  setColor(status: Status) {
-    this.newValue.styles = status;
-  }
 
   closeModal() {
     this.$emit('closeModal');

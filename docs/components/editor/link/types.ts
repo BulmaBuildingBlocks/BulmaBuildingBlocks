@@ -14,7 +14,7 @@ export const ButtonTypeClasses = {
 export class EditableLink implements EditableLinkItem {
   constructor(props: EditableLinkProps) {
     this.label = props.label;
-    this.styles = props.styles || Status.None;
+    this.status = props.status || Status.None;
     this.linkType = props.linkType;
     this.href = props.href;
     this.popupPlacement = props.popupPlacement;
@@ -23,7 +23,7 @@ export class EditableLink implements EditableLinkItem {
   href?: string;
   label: string;
   popupPlacement?: string;
-  styles: Status;
+  status: Status;
   linkType: LinkType;
 }
 
@@ -46,7 +46,7 @@ export interface EditableLinkItem {
   /**
    * Link styles.
    */
-  styles: Status;
+  status: Status;
 
   /**
    * Popup Placement.
@@ -73,7 +73,7 @@ export interface EditableLinkProps {
   /**
    * Link styles.
    */
-  styles?: Status;
+  status?: Status;
 
   /**
    * Popup Placement.

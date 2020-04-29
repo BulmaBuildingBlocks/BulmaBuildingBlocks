@@ -29,14 +29,14 @@ class Model {
     new EditableLink({
       label: 'Sign up',
       href: '#',
-      styles: Status.Primary,
+      status: Status.Primary,
       linkType: LinkType.Button,
       popupPlacement: 'top-end'
     }),
     new EditableLink({
       label: 'Log in',
       href: '#',
-      styles: Status.Light,
+      status: Status.Light,
       linkType: LinkType.Button,
       popupPlacement: 'top-end'
     })

@@ -29,16 +29,18 @@ export default class Link extends Vue {
     const linkType = this.newValue.linkType.toLowerCase();
     let linkStyle = '';
 
-    switch (this.newValue.linkType) {
-      case LinkType.NavLink:
-        linkStyle = `has-text-${this.newValue.styles?.toLowerCase()}`;
-        break;
-      case LinkType.Link:
-        linkStyle = `has-text-${this.newValue.styles?.toLowerCase()}`;
-        break;
-      case LinkType.Button:
-        linkStyle = `is-${this.newValue.styles?.toLowerCase()}`;
-        break;
+    if (this.newValue.status) {
+      switch (this.newValue.linkType) {
+        case LinkType.NavLink:
+          linkStyle = `has-text-${this.newValue.status?.toLowerCase()}`;
+          break;
+        case LinkType.Link:
+          linkStyle = `has-text-${this.newValue.status.toLowerCase()}`;
+          break;
+        case LinkType.Button:
+          linkStyle = `is-${this.newValue.status?.toLowerCase()}`;
+          break;
+      }
     }
 
     return [linkType, linkStyle];

@@ -17,13 +17,13 @@ class Model {
       label: 'About',
       href: '#',
       linkType: LinkType.Button,
-      styles: Status.White
+      status: Status.White
     }),
     new EditableLink({
       label: 'Shop',
       href: '#',
       linkType: LinkType.Button,
-      styles: Status.Primary
+      status: Status.Primary
     })
   ];
 }

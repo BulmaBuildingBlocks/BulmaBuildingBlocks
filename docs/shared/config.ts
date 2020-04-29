@@ -36,15 +36,15 @@ export const I18N = {
 
 export enum Status {
   None = '',
-  White = 'White',
-  Black = 'Black',
-  Light = 'Light',
-  Dark = 'Dark',
-  Primary = 'Primary',
-  Info = 'Info',
-  Success = 'Success',
-  Warning = 'Warning',
-  Danger = 'Danger'
+  White = 'white',
+  Black = 'black',
+  Light = 'light',
+  Dark = 'dark',
+  Primary = 'primary',
+  Info = 'info',
+  Success = 'success',
+  Warning = 'warning',
+  Danger = 'danger'
 }
 
 export const statusColorClasses = {

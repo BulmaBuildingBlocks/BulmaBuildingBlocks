@@ -22,6 +22,8 @@ $danger: $red;
 
 $text: $dark;
 
+$primary-light: findLightColor($primary);
+
 $link: $dark;
 $link-hover: $primary;
 
@@ -64,3 +66,6 @@ $tabs-link-padding: 0.5em 2em;
 
 $tabs-toggle-link-active-background-color: $primary;
 $tabs-toggle-link-active-border-color: $primary;
+
+$dropdown-item-active-color: $text;
+$dropdown-item-active-background-color: $primary-light;
