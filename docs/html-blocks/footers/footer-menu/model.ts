@@ -5,31 +5,31 @@ class Model {
     new EditableLink({
       label: 'Home',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     }),
     new EditableLink({
       label: 'Products',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     }),
     new EditableLink({
       label: 'Info',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     }),
     new EditableLink({
       label: 'Terms',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     }),
     new EditableLink({
       label: 'Contact',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     })
   ];

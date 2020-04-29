@@ -15,13 +15,13 @@ class Model {
     new EditableLink({
       label: 'Home',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     }),
     new EditableLink({
       label: 'About',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     })
   ];
@@ -30,13 +30,13 @@ class Model {
     new EditableLink({
       label: 'FAQ',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-end'
     }),
     new EditableLink({
       label: 'Contact',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-end'
     })
   ];

@@ -11,15 +11,18 @@
               :class="color ? `is-${color}` : ''"
             >
               <div class="navbar-row">
-                <editable-link
+                <div
                   v-for="(item, index) in content.navLinks"
                   :key="index"
                   class="navbar-item"
                   :class="color ? `has-text-${color}-invert` : ''"
-                  :value="item"
-                  :editable="editable"
-                  @value="item = $event"
-                />
+                >
+                  <editable-link
+                    :value="item"
+                    :editable="editable"
+                    @value="item = $event"
+                  />
+                </div>
               </div>
             </nav>
           </div>

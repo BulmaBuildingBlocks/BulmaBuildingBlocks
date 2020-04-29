@@ -1,15 +1,12 @@
 import { Status } from '~/shared/config';
 
 export enum LinkType {
-  Button = 'button',
   Link = 'Link',
-  NavLink = 'navbar-item'
+  Button = 'button',
+  Rounded = 'button is-rounded',
+  Outlined = 'button is-outlined',
+  'Rounded Outlined' = 'button is-rounded is-outlined'
 }
-
-export const ButtonTypeClasses = {
-  Normal: '',
-  Outlined: 'is-outlined'
-};
 
 export class EditableLink implements EditableLinkItem {
   constructor(props: EditableLinkProps) {

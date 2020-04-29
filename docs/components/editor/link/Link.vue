@@ -31,13 +31,10 @@ export default class Link extends Vue {
 
     if (this.newValue.status) {
       switch (this.newValue.linkType) {
-        case LinkType.NavLink:
-          linkStyle = `has-text-${this.newValue.status?.toLowerCase()}`;
-          break;
         case LinkType.Link:
           linkStyle = `has-text-${this.newValue.status.toLowerCase()}`;
           break;
-        case LinkType.Button:
+        default:
           linkStyle = `is-${this.newValue.status?.toLowerCase()}`;
           break;
       }

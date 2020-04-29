@@ -14,13 +14,13 @@ class Model {
     new EditableLink({
       label: 'Home',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     }),
     new EditableLink({
       label: 'Documentation',
       href: '#',
-      linkType: LinkType.NavLink,
+      linkType: LinkType.Link,
       popupPlacement: 'top-start'
     })
   ];

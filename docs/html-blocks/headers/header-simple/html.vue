@@ -29,29 +29,32 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <editable-link
+          <div
             v-for="(item, index) in content.navLinks"
             :key="index"
             class="navbar-item"
             :class="color ? `has-text-${color}-invert` : ''"
-            :value="item"
-            :editable="editable"
-            @value="item = $event"
-          />
+          >
+            <editable-link
+              :value="item"
+              :editable="editable"
+              @value="item = $event"
+            />
+          </div>
         </div>
 
         <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <editable-link
-                v-for="(item, index) in content.navButtons"
-                :key="index"
-                class="control"
-                :value="item"
-                :editable="editable"
-                @value="item = $event"
-              />
-            </div>
+          <div
+            v-for="(item, index) in content.navButtons"
+            :key="index"
+            class="navbar-item"
+            :class="color ? `has-text-${color}-invert` : ''"
+          >
+            <editable-link
+              :value="item"
+              :editable="editable"
+              @value="item = $event"
+            />
           </div>
         </div>
       </div>
