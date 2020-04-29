@@ -1,3 +1,40 @@
+### 0.5.0 (2020-04-29)
+
+##### Documentation Changes
+
+*  html blocks page style update ([ff5f2fad](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/ff5f2fad9db6d866d8b322944a355febd4fba905))
+
+##### New Features
+
+*  additional link styles added ([af908d97](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/af908d97bbbe44913063fe51123f967a18067f3e))
+*  color picker component created ([20b958e2](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/20b958e2eff60631dec8d9e1526527e2b788e299))
+*  link type option and color selection in editor ([c1a3c4f2](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/c1a3c4f251ca071798eb203f64666f92f1449451))
+*  new media blocks added ([087ae1ac](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/087ae1ace8c747bd81eb7614d610dbd953347a04))
+*  add package version to menu ([7bd9f2e9](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/7bd9f2e946b6618ec7a27e2811dec49ba4e402d7))
+*  add readme.txt to the downloaded code ([52ab9605](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/52ab960573f97fbf366c9c95863c9c440c49926a))
+*  added block footer menu vertical ([3b108203](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/3b10820331c81f087749b7f20792354029365afc))
+*  new footer block added ([fe840f59](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/fe840f5940355a76e78c85896630c1e16cb0e8d0))
+*  implement back button in editor ([d52a5ae4](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/d52a5ae44b907a745884b2c8318e37d46c96ddd8))
+*  user friendly names added to colors ([9c33c0e9](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/9c33c0e99fbc863a1b056fdb5edffe948c3242b4))
+*  block color selector added in editor ([f25eed9e](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/f25eed9ef270ce960395d47937a9b88bae9eddd8))
+
+##### Bug Fixes
+
+*  link editing in editor ([eba50cc6](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/eba50cc604e5ac62eca90e61573bef0ac2b5d30e))
+*  padding change for editor html viewer ([2ccd6f55](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/2ccd6f556705411093d0109d2df06df7bea28dff))
+
+##### Refactors
+
+*  folder structure ([578f2108](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/578f2108be5dc02d3e7261f9583e86758eb1f479))
+*  changed file names to be generic ([f92ec1d3](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/f92ec1d35bd1842fc5ccddd5a0d0cdbe71c95354))
+*  add copyright symbol add to content in footer ([b58f5f8a](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/b58f5f8ae6c7b90615994f2b3666eb2f9bf8c4e2))
+*  add container options to the blocks ([0ea1713d](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/0ea1713d3c61c7600904000c2184932c08b475f5))
+*  updated html blocks page logic ([c1472cc5](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/c1472cc591ba644eca4a809c518930dcc9d2119c))
+
+##### Code Style Changes
+
+*  global site changes ([7c044dd9](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/7c044dd9f2761ec08a484047d900788449eecdf9))
+
 ### 0.4.0 (2020-04-14)
 
 ##### New Features
