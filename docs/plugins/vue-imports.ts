@@ -14,7 +14,7 @@ import {
   Toast,
   Dropdown
 } from 'buefy';
-import Example from '~/components/global/Example.vue';
+import Example from '~/components/Example.vue';
 
 Vue.component('Example', Example);
 

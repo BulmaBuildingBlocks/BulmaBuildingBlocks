@@ -2,7 +2,7 @@
 import { CreateElement } from 'vue';
 import { Vue, Component, Prop, PropSync } from 'nuxt-property-decorator';
 import ButtonToolbar from './LinkToolbar.vue';
-import PopupModal from '~/components/global/PopupModal.vue';
+import PopupModal from '~/components/PopupModal.vue';
 
 import { EditableLinkProps, LinkType } from '~/components/editor/link/types';
 import ClickOutside from '~/directives/click-outside';

@@ -208,7 +208,7 @@ import {
 import { Vue, Component, Prop } from 'nuxt-property-decorator';
 import Link from '~/components/editor/text/prosemirror-marks/Link';
 import Image from '~/components/editor/text/prosemirror-marks/Image';
-import PopupModal from '~/components/global/PopupModal.vue';
+import PopupModal from '~/components/PopupModal.vue';
 import ClickOutside from '~/directives/click-outside';
 
 @Component({

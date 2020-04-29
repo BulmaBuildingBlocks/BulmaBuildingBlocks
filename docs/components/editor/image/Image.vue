@@ -2,7 +2,7 @@
 import { CreateElement } from 'vue';
 import { Vue, Component, Prop, PropSync } from 'nuxt-property-decorator';
 import ImageToolbar from './ImageToolbar.vue';
-import PopupModal from '~/components/global/PopupModal.vue';
+import PopupModal from '~/components/PopupModal.vue';
 
 import { EditableImageProps } from '~/components/editor/image/types';
 import ClickOutside from '~/directives/click-outside';

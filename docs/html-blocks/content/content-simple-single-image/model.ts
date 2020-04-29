@@ -1,5 +1,6 @@
 import { EditableLink, LinkType } from '~/components/editor/link/types';
 import { EditableImageProps } from '~/components/editor/image/types';
+import { Status } from '~/shared/config';
 
 class Model {
   title = 'Bulma Building Blocks';
@@ -16,13 +17,13 @@ class Model {
       label: 'About',
       href: '#',
       linkType: LinkType.Button,
-      styles: 'white'
+      styles: Status.White
     }),
     new EditableLink({
       label: 'Shop',
       href: '#',
       linkType: LinkType.Button,
-      styles: 'primary'
+      styles: Status.Primary
     })
   ];
 }

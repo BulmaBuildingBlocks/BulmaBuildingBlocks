@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import BlockMenu from '~/components/global/BlockMenu.vue';
+import BlockMenu from '~/components/BlockMenu.vue';
 
 @Component({
   components: {
