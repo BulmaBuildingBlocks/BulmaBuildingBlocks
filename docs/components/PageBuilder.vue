@@ -20,7 +20,7 @@
                 </button>
 
                 <b-dropdown-item
-                  v-for="(status, name) in statuses"
+                  v-for="(name, status) in statuses"
                   :key="status"
                   aria-role="listitem"
                   class="color-selector__item"
@@ -79,7 +79,7 @@ import { Vue, Component, Watch } from 'nuxt-property-decorator';
 import { blocks } from '~/html-blocks';
 import PageBuilderStore from '~/store/pageBuilder';
 import { Block } from '~/types/Block';
-import { statusColors } from '~/shared/config';
+import { statusColorClasses } from '~/shared/config';
 
 @Component({
   components: {
@@ -88,7 +88,7 @@ import { statusColors } from '~/shared/config';
   }
 })
 export default class PageBuilder extends Vue {
-  statuses = statusColors;
+  statuses = statusColorClasses;
 
   $refs!: {
     myTextEditorHtml: Vue[];

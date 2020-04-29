@@ -1,7 +1,7 @@
 import { Component, Vue, PropSync, Prop } from 'nuxt-property-decorator';
-import EditableContent from '~/components/wiziwig/text/EditableContent.vue';
-import EditableImage from '~/components/wiziwig/image/Image.vue';
-import EditableLink from '~/components/wiziwig/link/Link.vue';
+import EditableContent from '~/components/editor/text/EditableContent.vue';
+import EditableImage from '~/components/editor/image/Image.vue';
+import EditableLink from '~/components/editor/link/Link.vue';
 import { Block } from '~/types/Block';
 
 @Component({

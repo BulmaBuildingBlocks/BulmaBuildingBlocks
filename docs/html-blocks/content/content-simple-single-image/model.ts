@@ -1,5 +1,5 @@
-import { EditableLinkProps } from '~/components/wiziwig/link/types';
-import { EditableImageProps } from '~/components/wiziwig/image/types';
+import { EditableLink, LinkType } from '~/components/editor/link/types';
+import { EditableImageProps } from '~/components/editor/image/types';
 
 class Model {
   title = 'Bulma Building Blocks';
@@ -11,17 +11,19 @@ class Model {
     alt: ''
   };
 
-  navButtons: EditableLinkProps[] = [
-    {
+  navButtons: EditableLink[] = [
+    new EditableLink({
       label: 'About',
       href: '#',
-      styles: 'button is-white'
-    },
-    {
+      linkType: LinkType.Button,
+      styles: 'white'
+    }),
+    new EditableLink({
       label: 'Shop',
       href: '#',
-      styles: 'button is-primary'
-    }
+      linkType: LinkType.Button,
+      styles: 'primary'
+    })
   ];
 }
 

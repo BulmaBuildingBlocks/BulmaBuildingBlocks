@@ -4,12 +4,12 @@ import { Vue, Component, Prop, PropSync } from 'nuxt-property-decorator';
 import ButtonToolbar from './LinkToolbar.vue';
 import PopupModal from '~/components/global/PopupModal.vue';
 
-import { EditableLinkProps } from '~/components/wiziwig/link/types';
+import { EditableLinkProps, LinkType } from '~/components/editor/link/types';
 import ClickOutside from '~/directives/click-outside';
 
 /***
  * Editting Features:
- * Upload and replace button
+ * Upload and replace link
  * Alt tag
  * Link
  */
@@ -24,6 +24,25 @@ export default class Link extends Vue {
   @PropSync('value', { type: Object }) newValue!: EditableLinkProps;
 
   modalOpen = false;
+
+  get linkClasses() {
+    const linkType = this.newValue.linkType.toLowerCase();
+    let linkStyle = '';
+
+    switch (this.newValue.linkType) {
+      case LinkType.NavLink:
+        linkStyle = `has-text-${this.newValue.styles?.toLowerCase()}`;
+        break;
+      case LinkType.Link:
+        linkStyle = `has-text-${this.newValue.styles?.toLowerCase()}`;
+        break;
+      case LinkType.Button:
+        linkStyle = `is-${this.newValue.styles?.toLowerCase()}`;
+        break;
+    }
+
+    return [linkType, linkStyle];
+  }
 
   toggleModal(event: Event) {
     event.preventDefault();
@@ -42,10 +61,10 @@ export default class Link extends Vue {
   }
 
   render(createElement: CreateElement) {
-    const button = createElement(
+    const link = createElement(
       'a',
       {
-        class: this.newValue.styles,
+        class: this.linkClasses,
         on: {
           click: this.toggleModal
         },
@@ -56,7 +75,7 @@ export default class Link extends Vue {
       this.newValue.label
     );
 
-    const buttonToolbar = createElement(ButtonToolbar, {
+    const linkToolbar = createElement(ButtonToolbar, {
       props: {
         value: this.newValue
       },
@@ -74,10 +93,10 @@ export default class Link extends Vue {
     const popupModal = createElement(PopupModal, {
       scopedSlots: {
         reference: () => {
-          return button;
+          return link;
         },
         default: () => {
-          return buttonToolbar;
+          return linkToolbar;
         }
       },
       props: {

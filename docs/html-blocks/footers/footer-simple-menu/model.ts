@@ -1,5 +1,5 @@
-import { EditableImageProps } from '~/components/wiziwig/image/types';
-import { EditableLinkProps } from '~/components/wiziwig/link/types';
+import { EditableImageProps } from '~/components/editor/image/types';
+import { EditableLink, LinkType } from '~/components/editor/link/types';
 
 class Model {
   logo: EditableImageProps = {
@@ -10,22 +10,25 @@ class Model {
     width: 140
   };
 
-  navLinks: EditableLinkProps[] = [
-    {
+  navLinks: EditableLink[] = [
+    new EditableLink({
       label: 'Home',
       href: '#',
+      linkType: LinkType.NavLink,
       popupPlacement: 'top-start'
-    },
-    {
+    }),
+    new EditableLink({
       label: 'Products',
       href: '#',
+      linkType: LinkType.NavLink,
       popupPlacement: 'top-start'
-    },
-    {
+    }),
+    new EditableLink({
       label: 'Info',
       href: '#',
+      linkType: LinkType.NavLink,
       popupPlacement: 'top-start'
-    }
+    })
   ];
 
   copyright = '©2020 Bulma Building Blocks';

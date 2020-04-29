@@ -2,21 +2,21 @@
   <div class="image-toolbar card">
     <header class="card-header">
       <p class="card-header-title">
-        Configuration
+        Image Configuration
       </p>
       <a class="card-header-icon" aria-label="close" @click="closeModal">
         <b-icon pack="fa" icon="times" />
       </a>
     </header>
     <div class="card-content">
-      <b-field label="Label" placeholder="http://">
-        <b-input v-model="newValue.label" />
+      <b-field label="Image Url" placeholder="http://">
+        <b-input v-model="newValue.src" />
       </b-field>
-      <b-field label="Link">
+      <b-field label="Description">
+        <b-input v-model="newValue.alt" />
+      </b-field>
+      <b-field label="Image Link">
         <b-input v-model="newValue.href" />
-      </b-field>
-      <b-field label="Class">
-        <b-input v-model="newValue.styles" />
       </b-field>
     </div>
   </div>
@@ -24,18 +24,18 @@
 
 <script lang="ts">
 import { Vue, Component, PropSync } from 'nuxt-property-decorator';
-import { EditableLinkProps } from '~/components/wiziwig/link/types';
+import { EditableImageProps } from '~/components/editor/image/types';
 
 /***
- * Editing Features:
+ * Editting Features:
  * Upload and replace image
  * Alt tag
  * Link
  */
 
 @Component
-export default class LinkToolbar extends Vue {
-  @PropSync('value', { type: Object }) newValue!: EditableLinkProps;
+export default class ImageToolbar extends Vue {
+  @PropSync('value', { type: Object }) newValue!: EditableImageProps;
 
   closeModal() {
     this.$emit('closeModal');

@@ -1,4 +1,4 @@
-import { EditableImageProps } from '~/components/wiziwig/image/types';
+import { EditableImageProps } from '~/components/editor/image/types';
 
 interface Column {
   image: EditableImageProps;

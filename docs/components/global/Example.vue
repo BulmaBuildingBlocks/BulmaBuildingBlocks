@@ -37,7 +37,7 @@
                   </button>
 
                   <b-dropdown-item
-                    v-for="(status, name) in statuses"
+                    v-for="(name, status) in statuses"
                     :key="status"
                     aria-role="listitem"
                     class="color-selector__item"
@@ -102,7 +102,7 @@ import { Prop, Vue, Component, Watch } from 'nuxt-property-decorator';
 import prettier from 'prettier/standalone';
 import clipboard from 'copy-to-clipboard';
 import CodeView from './CodeView.vue';
-import { prettierConf, statusColors } from '~/shared/config';
+import { prettierConf, statusColorClasses } from '~/shared/config';
 import { Block } from '~/types/Block';
 import slugifyString from '~/shared/slugifyString';
 
@@ -120,7 +120,7 @@ export default class Example extends Vue {
   };
 
   code = '';
-  statuses = statusColors;
+  statuses = statusColorClasses;
 
   // Used to update the code preview
   @Watch('block', { deep: true, immediate: true })

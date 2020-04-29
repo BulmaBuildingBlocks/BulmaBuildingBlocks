@@ -8,12 +8,12 @@
 
   .has-text-#{$name}-invert {
     &,
-    & > a {
+    & > a:not(.button) {
       color: $color-invert !important;
     }
   }
 
-  a.has-text-#{$name}-invert {
+  a.has-text-#{$name}-invert:not(.button) {
     &:hover,
     &:focus {
       color: darken($color-invert, 10%) !important;

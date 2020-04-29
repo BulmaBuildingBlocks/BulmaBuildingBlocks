@@ -34,16 +34,29 @@ export const I18N = {
   }
 };
 
-export const statusColors = {
-  White: 'white',
-  Black: 'black',
-  Light: 'light',
-  Dark: 'dark',
-  'Light Blue': 'primary',
-  'Dark Blue': 'info',
-  Green: 'success',
-  Yellow: 'warning',
-  Red: 'danger'
+export enum Status {
+  None = '',
+  White = 'White',
+  Black = 'Black',
+  Light = 'Light',
+  Dark = 'Dark',
+  Primary = 'Primary',
+  Info = 'Info',
+  Success = 'Success',
+  Warning = 'Warning',
+  Danger = 'Danger'
+}
+
+export const statusColorClasses = {
+  [Status.White]: 'White',
+  [Status.Black]: 'Black',
+  [Status.Light]: 'Light',
+  [Status.Dark]: 'Dark',
+  [Status.Primary]: 'Light Blue',
+  [Status.Info]: 'Dark Blue',
+  [Status.Success]: 'Green',
+  [Status.Warning]: 'Yellow',
+  [Status.Danger]: 'Red'
 };
 
 export const prettierConf: Options = {

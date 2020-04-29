@@ -1,5 +1,5 @@
-import { EditableImageProps } from '~/components/wiziwig/image/types';
-import { EditableLinkProps } from '~/components/wiziwig/link/types';
+import { EditableImageProps } from '~/components/editor/image/types';
+import { EditableLink, LinkType } from '~/components/editor/link/types';
 
 class Model {
   logo: EditableImageProps = {
@@ -11,30 +11,34 @@ class Model {
     height: 30
   };
 
-  navLeft: EditableLinkProps[] = [
-    {
+  navLeft: EditableLink[] = [
+    new EditableLink({
       label: 'Home',
       href: '#',
+      linkType: LinkType.NavLink,
       popupPlacement: 'top-start'
-    },
-    {
+    }),
+    new EditableLink({
       label: 'About',
       href: '#',
+      linkType: LinkType.NavLink,
       popupPlacement: 'top-start'
-    }
+    })
   ];
 
-  navRight: EditableLinkProps[] = [
-    {
+  navRight: EditableLink[] = [
+    new EditableLink({
       label: 'FAQ',
       href: '#',
+      linkType: LinkType.NavLink,
       popupPlacement: 'top-end'
-    },
-    {
+    }),
+    new EditableLink({
       label: 'Contact',
       href: '#',
+      linkType: LinkType.NavLink,
       popupPlacement: 'top-end'
-    }
+    })
   ];
 }
 
