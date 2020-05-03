@@ -1,5 +1,7 @@
-<h1 align="center">Welcome to Bulma Building Blocks 👋</h1>
-<p>
+<p align="center">
+    <a href="https://buefy.org">
+        <img src="https://raw.githubusercontent.com/JosephAnson/BulmaBuildingBlocks/master/docs/static/icon-black.png" />
+    </a>
   <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/CHANGELOG.md">
     <img alt="Version" src="https://img.shields.io/badge/version-0.2.1-blue.svg?cacheSeconds=2592000" />
   </a>
@@ -11,47 +13,22 @@
   </a>
 </p>
 
-### 🏠 [Demo](https://bulmabuildingblocks.herokuapp.com/)
+> Bulma Building Blocks is a lightweight library of responsive HTML snippets based on [Bulma](http://bulma.io/) framework and design.
 
-## Install
+## Features
 
-```sh
-$ npm install
-```
+* Keep your current Bulma theme / variables easily
+* Very lightweight with none internal dependencies aside from Bulma
 
-## Running the app
+## Documentation
 
-```sh
-# development
-$ npm run dev
+The documentation is in the docs directory, it serves as the demo as well.
 
-# watch mode
-$ npm run dev
-
-# production
-$ npm run build
-$ npm run start
-```
-
-## Test
-
-```sh
-# unit tests
-$ npm run test
-
-# watch tests
-$ npm run test:watch
-
-# test coverage
-$ npm run test:coverage
-```
-
-## Author
-
-👤 **Joseph Anson**
-
-* Github: [@JosephAnson](https://github.com/JosephAnson)
+Browse [online documentation here](http://bulmabuildingblocks.com/).
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/JosephAnson/BulmaBuildingBlocks/issues).
+
+## Copyright and license
+Code copyright 2020 Joseph Anson. Code released under the MIT license.
