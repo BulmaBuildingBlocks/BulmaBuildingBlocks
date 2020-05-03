@@ -44,11 +44,11 @@
               <h4>Installation</h4>
               <div class="content">
                 <p>Just download or use these as CDN:</p>
-                <a
+                <pre class="npm"><a
                   href="https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css"
                   target="_blank"
-                  >https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css</a
-                >
+                >https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css</a
+                ></pre>
               </div>
             </div>
           </div>
@@ -70,10 +70,7 @@
                 Look at the below example of how to importusing npm
               </p>
 
-              <pre
-                v-highlightjs="importExample"
-                class="is-paddingless"
-              ><code class="scss"/></pre>
+              <pre v-highlightjs="importExample"><code class="scss"/></pre>
 
               <p>
                 Look at the below example of how to import into an existing
@@ -82,7 +79,6 @@
 
               <pre
                 v-highlightjs="importExistingExample"
-                class="is-paddingless"
               ><code class="scss"/></pre>
             </div>
           </div>
@@ -99,10 +95,7 @@
                 snippets into the recommended area.
               </p>
 
-              <pre
-                v-highlightjs="template"
-                class="is-paddingless"
-              ><code class="html"/></pre>
+              <pre v-highlightjs="template"><code class="html"/></pre>
             </div>
           </div>
         </div>
@@ -116,22 +109,17 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Default extends Vue {
-  importExample = `
-      //Bulma Building Block
-      @import 'bulmabuildingblocks/';
-  `;
+  importExample = `//Bulma Building Block
+@import 'bulmabuildingblocks/';`;
 
-  importExistingExample = `
-      //Bulma Building Block variables
-      @import 'bulmabuildingblocks/src/initial-variables';
+  importExistingExample = `//Bulma Building Block variables
+@import 'bulmabuildingblocks/src/initial-variables';
 
-      // Bulma
-      @import 'bulma/bulma';
+// Bulma
+@import 'bulma/bulma';
 
-      //Bulma Building Block variables
-      @import 'bulmabuildingblocks/src/main';
-
-  `;
+//Bulma Building Block variables
+@import 'bulmabuildingblocks/src/main';`;
 
   template = `<!DOCTYPE html>
 <html>
