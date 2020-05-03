@@ -2,19 +2,49 @@
   width: 100%;
 }
 
+@include mobile {
+  .is-fullwidth-mobile {
+    width: 100% !important;
+  }
+}
+
+@include tablet {
+  .is-fullwidth-tablet {
+    width: 100% !important;
+  }
+}
+
+@include tablet-only {
+  .is-fullwidth-tablet-only {
+    width: 100% !important;
+  }
+}
+
+@include touch {
+  .is-fullwidth-touch {
+    width: 100% !important;
+  }
+}
+
+@include desktop {
+  .is-fullwidth-desktop {
+    width: 100% !important;
+  }
+}
+
 @each $name, $pair in $colors {
   $color: nth($pair, 1);
   $color-invert: findColorInvert($color);
 
-  .has-text-#{$name}-invert {
+  .is-fullwidth-#{$name}-invert {
     &,
-    & > a:not(.button):not([class*='has-text-']),
-    & > span > a:not(.button):not([class*='has-text-']) {
+    & > a:not(.button):not([class*='is-fullwidth-']),
+    & > span > a:not(.button):not([class*='is-fullwidth-']) {
       color: $color-invert !important;
     }
   }
 
-  a.has-text-#{$name}-invert:not(.button):not([class*='has-text-']) {
+  a.is-fullwidth-#{$name}-invert:not(.button):not([class*='is-fullwidth-']) {
     &:hover,
     &:focus {
       color: darken($color-invert, 10%) !important;

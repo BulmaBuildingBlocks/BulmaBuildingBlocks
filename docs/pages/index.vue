@@ -14,12 +14,15 @@
           </h2>
           <div class="buttons is-centered">
             <nuxt-link
-              class="button is-medium is-white is-outlined"
+              class="button is-medium is-white is-outlined is-fullwidth-mobile"
               to="/html-blocks/headers"
             >
               Html Blocks
             </nuxt-link>
-            <nuxt-link class="button is-medium is-white" to="/page-builder">
+            <nuxt-link
+              class="button is-medium is-white is-fullwidth-mobile"
+              to="/page-builder"
+            >
               Page Builder
             </nuxt-link>
           </div>
