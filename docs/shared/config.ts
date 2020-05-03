@@ -48,6 +48,7 @@ export enum Status {
 }
 
 export const statusColorClasses = {
+  [Status.None]: 'None',
   [Status.White]: 'White',
   [Status.Black]: 'Black',
   [Status.Light]: 'Light',

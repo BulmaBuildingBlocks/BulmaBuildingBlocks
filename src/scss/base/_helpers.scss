@@ -36,15 +36,15 @@
   $color: nth($pair, 1);
   $color-invert: findColorInvert($color);
 
-  .is-fullwidth-#{$name}-invert {
+  .has-text-#{$name}-invert {
     &,
-    & > a:not(.button):not([class*='is-fullwidth-']),
-    & > span > a:not(.button):not([class*='is-fullwidth-']) {
+    & > a:not(.button):not([class*='has-text-']),
+    & > span > a:not(.button):not([class*='has-text-']) {
       color: $color-invert !important;
     }
   }
 
-  a.is-fullwidth-#{$name}-invert:not(.button):not([class*='is-fullwidth-']) {
+  a.ihas-text-#{$name}-invert:not(.button):not([class*='has-text-']) {
     &:hover,
     &:focus {
       color: darken($color-invert, 10%) !important;
