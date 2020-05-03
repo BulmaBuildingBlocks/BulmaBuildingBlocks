@@ -1,6 +1,6 @@
 {
   "name": "bulmabuildingblocks",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A website to provide the ability to generate websites using html building blocks",
   "main": "./src/with-variables.scss",
   "homepage": "https://github.com/JosephAnson/BulmaBuildingBlocks",

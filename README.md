@@ -26,7 +26,7 @@
 
 The documentation is in the docs directory, it serves as the demo as well.
 
-Browse [online documentation here](http://bulmabuildingblocks.com/).
+Browse [online documentation here](https://bulmabuildingblocks.herokuapp.com/).
 
 ## 🤝 Contributing
 
