@@ -39,6 +39,10 @@
             Home
           </nuxt-link>
 
+          <nuxt-link to="/documentation" exact class="navbar-item">
+            Documentation
+          </nuxt-link>
+
           <nuxt-link to="/html-blocks/headers" exact class="navbar-item">
             Html Blocks
           </nuxt-link>

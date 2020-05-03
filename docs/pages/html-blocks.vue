@@ -1,7 +1,7 @@
 <template>
   <div content="html-blocks">
     <block-menu />
-    <section class="documentation">
+    <section class="htmlbuildingblocks">
       <nuxt-child />
     </section>
   </div>
