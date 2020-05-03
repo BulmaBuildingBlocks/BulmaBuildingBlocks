@@ -10,7 +10,7 @@
     </button>
 
     <b-dropdown-item
-      v-for="(name, status) in statuses"
+      v-for="name in statuses"
       :key="name"
       :value="name"
       aria-role="listitem"
@@ -20,7 +20,7 @@
       <div class="level is-fullwidth">
         <div class="level-left">
           <div class="level-item">
-            <span>{{ status }}</span>
+            <span>{{ statusColors[name] }}</span>
           </div>
         </div>
         <div class="level-right">
@@ -35,7 +35,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import { Status } from '~/shared/config';
+import { Status, statusColorClasses } from '~/shared/config';
 
 @Component
 export default class ColorPicker extends Vue {
@@ -44,6 +44,7 @@ export default class ColorPicker extends Vue {
   @Prop(String) size!: string;
 
   statuses = Status;
+  statusColors = statusColorClasses;
 
   newColor = this.color;
 

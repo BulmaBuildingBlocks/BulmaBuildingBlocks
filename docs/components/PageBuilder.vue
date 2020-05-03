@@ -53,7 +53,6 @@ import { Vue, Component, Watch } from 'nuxt-property-decorator';
 import { blocks } from '~/html-blocks';
 import PageBuilderStore from '~/store/pageBuilder';
 import { Block } from '~/types/Block';
-import { statusColorClasses } from '~/shared/config';
 import ColorPicker from '~/components/ColorPicker.vue';
 
 @Component({
@@ -64,8 +63,6 @@ import ColorPicker from '~/components/ColorPicker.vue';
   }
 })
 export default class PageBuilder extends Vue {
-  statuses = statusColorClasses;
-
   $refs!: {
     myTextEditorHtml: Vue[];
   };
