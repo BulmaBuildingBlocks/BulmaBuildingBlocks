@@ -1,3 +1,21 @@
+#### 0.5.2 (2020-05-03)
+
+##### Chores
+
+*  update changelog ([772227c2](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/772227c2d96edaa381a2d800e53957e25d5ddb38))
+*  add main to package.json ([f1e494cd](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/f1e494cd8e56ee57b04e87f9f5828677f832cbd7))
+*  dist files added to repo ([e4bd0426](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/e4bd042675453ef86ed55b1ebefedc4d4bb4105d))
+*  update issue templates ([e47453db](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/e47453db72f6062d67f857fd2724575b8d6f3c58))
+
+##### New Features
+
+*  new documentation page added with detailed instructions ([6136681c](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/6136681c405fedd08d2cc4709d42a96cd141dda5))
+
+##### Bug Fixes
+
+*  image position in readme ([fcc30d59](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/fcc30d59cd8467ab0ebd7ede7e3d92f97784e6c0))
+*  color picker color description ([57178410](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/57178410d89bd894b6042028b7f9e094cc1cde3a))
+
 #### 0.5.1 (2020-05-03)
 
 ##### Chores
