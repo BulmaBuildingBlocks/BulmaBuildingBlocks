@@ -1,7 +1,9 @@
 <p align="center">
-    <a href="https://buefy.org">
-        <img src="https://raw.githubusercontent.com/JosephAnson/BulmaBuildingBlocks/master/docs/static/icon-black.png" />
-    </a>
+  <a href="https://buefy.org">
+    <img src="https://raw.githubusercontent.com/JosephAnson/BulmaBuildingBlocks/master/docs/static/icon-black.png" />
+  </a>
+</p>
+<p>
   <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/CHANGELOG.md">
     <img alt="Version" src="https://img.shields.io/badge/version-0.2.1-blue.svg?cacheSeconds=2592000" />
   </a>
