@@ -1,3 +1,20 @@
+#### 0.5.4 (2020-05-03)
+
+##### Chores
+
+*  add scss build to package version change ([dbf79af9](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/dbf79af95e35880ae9fecc4371a24f67d0d1e1b2))
+*  update changelog ([4104f26c](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/4104f26c1e68ad04c32d7a87926c1b1d2370305c))
+*  bulma version bump ([79903bc4](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/79903bc413681f386710f8b90a8b76caed9ca1ca))
+
+##### Bug Fixes
+
+*  color picker friendly name and block color selection ([243e0c9c](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/243e0c9c8466f873e6f0508a0d7d3abdf5d39c66))
+*  styling issues for documentation page on mobile ([0cfc3c01](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/0cfc3c018513098c66ce45a9ae40dd31a2152ea2))
+
+##### Code Style Changes
+
+*  fullwidth buttons on homepage hero for mobile ([16ea10c7](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/16ea10c7e9e46b68a732b08f81b1c2fe51b6512d))
+
 #### 0.5.3 (2020-05-03)
 
 ##### Chores
