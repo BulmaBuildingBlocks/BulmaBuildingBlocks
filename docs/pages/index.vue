@@ -37,8 +37,8 @@
           <div class="column">
             <h3 class="subtitle has-text-white-invert">
               <p>
-                View the documentation to get started using bulma building
-                blocks
+                View the documentation to get started using Bulma Building
+                Blocks
               </p>
             </h3>
             <div class="buttons">
@@ -67,7 +67,7 @@
             </span>
           </div>
           <div class="column">
-            <h2 class="title has-text-white-invert"><p>Build Easier</p></h2>
+            <h2 class="title has-text-white-invert"><p>HTML Snippets</p></h2>
             <div class="content has-text-white-invert">
               <p>
                 Bulma Building Blocks is a selection html snippets that can be
@@ -96,7 +96,8 @@
               <p>
                 Bulma Building Blocks provides an easy to use page builder that
                 can be downloaded as a static ready to be used website. You can
-                live edit the design changing text, text formats and buttons.
+                live edit the design changing text, images, button styles and
+                more.
               </p>
             </div>
             <div class="buttons">

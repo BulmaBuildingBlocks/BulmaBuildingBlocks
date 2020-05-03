@@ -40,7 +40,7 @@ export class PageBuilderStore extends VuexModule {
                             <meta charset="utf-8">
                             <meta name="viewport" content="width=device-width, initial-scale=1">
                             <title>Bulma Building Block</title>
-                            <link rel="stylesheet" type="text/css" href="./bulmabuildingblocks.min.css">
+                            <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@0.5.0/dist/bulmabuildingblocks.min.css">
                             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
                             <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
                           </head>

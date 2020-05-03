@@ -1,38 +1,109 @@
 <template>
   <div content="html-blocks">
-    <section class="hero is-primary is-medium">
+    <section class="hero is-primary">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
             Getting Started
           </h1>
-          <h2 class="subtitle">
-            How to use Bulma Building Blocks
-          </h2>
         </div>
       </div>
     </section>
     <section class="section is-large">
       <div class="container">
         <div class="content">
-          <p class="title">Standalone</p>
-          <p class="subtitle is-spaced">
-            Using CDN or downloading files to serve local
-          </p>
-          <p class="title is-4">Installation</p>
-          <div class="content">
-            <p>Just download or use these as CDN:</p>
-            <ul>
-              <li>
-                Style:
+          <div class="columns">
+            <div class="column is-3">
+              <h3>Use the Builder</h3>
+            </div>
+            <div class="column">
+              <div class="buttons">
+                <nuxt-link class="button is-primary" to="/page-builder">
+                  Start Building
+                </nuxt-link>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="columns">
+            <div class="column is-3">
+              <h3>Standalone</h3>
+            </div>
+            <div class="column">
+              <p>
+                Using CDN or downloading files to serve local
+              </p>
+              <ul>
+                <li>
+                  The css file comes with Bulma, Font Awesome and Bulma Building
+                  Blocks.
+                </li>
+              </ul>
+              <h4>Installation</h4>
+              <div class="content">
+                <p>Just download or use these as CDN:</p>
                 <a
-                  href="https://unpkg.com/JosephAnson/BulmaBuildingBlocks/blob/master/docs/static/bulmabuildingblocks.min.css"
+                  href="https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css"
                   target="_blank"
+                  >https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css</a
                 >
-                  https://unpkg.com/JosephAnson/BulmaBuildingBlocks/blob/master/docs/static/bulmabuildingblocks.min.css
-                </a>
-              </li>
-            </ul>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="columns">
+            <div class="column is-3">
+              <h3>Using npm</h3>
+            </div>
+            <div class="column">
+              <p>
+                Install the npm package
+              </p>
+
+              <pre class="npm">npm install bulmabuildingblocks</pre>
+
+              <p>
+                Look at the below example of how to importusing npm
+              </p>
+
+              <pre
+                v-highlightjs="importExample"
+                class="is-paddingless"
+              ><code class="scss"/></pre>
+
+              <p>
+                Look at the below example of how to import into an existing
+                bulma project using npm
+              </p>
+
+              <pre
+                v-highlightjs="importExistingExample"
+                class="is-paddingless"
+              ><code class="scss"/></pre>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="columns">
+            <div class="column is-3">
+              <h3>Use the skeleton</h3>
+            </div>
+            <div class="column">
+              <p>
+                Use the template below as a starting point, copy the html
+                snippets into the recommended area.
+              </p>
+
+              <pre
+                v-highlightjs="template"
+                class="is-paddingless"
+              ><code class="html"/></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -44,5 +115,37 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class Default extends Vue {}
+export default class Default extends Vue {
+  importExample = `
+      //Bulma Building Block
+      @import 'bulmabuildingblocks/';
+  `;
+
+  importExistingExample = `
+      //Bulma Building Block variables
+      @import 'bulmabuildingblocks/src/initial-variables';
+
+      // Bulma
+      @import 'bulma/bulma';
+
+      //Bulma Building Block variables
+      @import 'bulmabuildingblocks/src/main';
+
+  `;
+
+  template = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulma Building Block</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@0.5.0/dist/bulmabuildingblocks.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" />
+  </head>
+  <body>
+     <!-- Insert the html blocks here. -->
+  </body>
+</html>`;
+}
 </script>

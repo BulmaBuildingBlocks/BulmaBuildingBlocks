@@ -2,7 +2,7 @@
   "name": "bulmabuildingblocks",
   "version": "0.5.0",
   "description": "A website to provide the ability to generate websites using html building blocks",
-  "main": "./src/scss/main.scss",
+  "main": "./src/with-variables.scss",
   "homepage": "https://github.com/JosephAnson/BulmaBuildingBlocks",
   "bugs": {
     "url": "https://github.com/JosephAnson/BulmaBuildingBlocks/issues"
@@ -31,7 +31,7 @@
     "build": "nuxt-ts build",
     "build:scss": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js --output-style expanded src/scss/main.scss | node ./build/banner.js > dist/bulmabuildingblocks.css && cleancss -o dist/bulmabuildingblocks.min.css dist/bulmabuildingblocks.css",
     "ci": "concurrently \"yarn run lint\" \"yarn run test:coverage -- --runInBand\"",
-    "clean": "rimraf ./dist ./coverage ./shared/**/*.js .nuxt",
+    "clean": "rimraf ./coverage ./shared/**/*.js .nuxt",
     "dev": "nuxt-ts",
     "e2e": "cypress open --browser chrome",
     "e2e:headless": "cypress run",

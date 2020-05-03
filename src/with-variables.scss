@@ -1,4 +1,4 @@
-@import './utilities/initial-variables';
+@import './initial-variables';
 
 // Bulma
 @import '~bulma/bulma';
@@ -10,9 +10,9 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
-@import 'utilities/manifest';
-@import 'base/manifest';
-@import 'grid/manifest';
-@import 'layout/manifest';
-@import 'elements/manifest';
-@import 'components/manifest';
+@import 'scss/base/manifest';
+@import 'scss/grid/manifest';
+@import 'scss/layout/manifest';
+@import 'scss/elements/manifest';
+@import 'scss/components/manifest';
+@import 'scss/extras/manifest';
