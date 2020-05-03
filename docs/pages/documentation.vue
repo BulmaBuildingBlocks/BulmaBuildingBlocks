@@ -110,7 +110,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class Default extends Vue {
   importExample = `//Bulma Building Block
-@import 'bulmabuildingblocks/';`;
+@import 'bulmabuildingblocks';`;
 
   importExistingExample = `//Bulma Building Block variables
 @import 'bulmabuildingblocks/src/initial-variables';
