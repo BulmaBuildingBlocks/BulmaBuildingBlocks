@@ -1,3 +1,13 @@
+#### 0.5.5 (2020-05-04)
+
+##### Bug Fixes
+
+*  fix import into sass string ([6d40b959](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/6d40b959221298d7ba97252def6b34c4c070f37a))
+
+##### Refactors
+
+*  use cdn instead of importing the local file ([a0efac0a](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/a0efac0ac6da19e2e0084a74959f7d34bf3f73e9))
+
 #### 0.5.4 (2020-05-03)
 
 ##### Chores
