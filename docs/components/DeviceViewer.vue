@@ -24,6 +24,12 @@ export default class DeviceViewer extends Vue {
           if (iframeContentDocument) {
             const head = iframeContentDocument.head;
             const body = iframeContentDocument.body;
+            const headStyleContent = $('head style').clone();
+
+            // Add all of the pages style tags also to the iframe
+            if (headStyleContent) {
+              $(head).append(headStyleContent);
+            }
 
             // Add Google Fonts
             $(head).append(
