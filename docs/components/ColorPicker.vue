@@ -17,7 +17,7 @@
       class="color-selector__item"
       @click="setColor(name)"
     >
-      <div class="level is-fullwidth">
+      <div class="level is-fullwidth is-mobile">
         <div class="level-left">
           <div class="level-item">
             <span>{{ statusColors[name] }}</span>

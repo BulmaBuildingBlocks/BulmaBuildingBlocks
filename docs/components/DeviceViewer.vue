@@ -33,8 +33,7 @@ export default class DeviceViewer extends Vue {
 
             // Add Google Fonts
             $(head).append(
-              '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">',
-              `<link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@${this.version}/dist/bulmabuildingblocks.min.css">`
+              '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">'
             );
 
             // We will mount or nested app to this element

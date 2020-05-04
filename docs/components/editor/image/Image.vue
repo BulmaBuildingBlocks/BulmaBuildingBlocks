@@ -102,7 +102,7 @@ export default class EditableImage extends Vue {
           {
             name: 'flip',
             options: {
-              fallbackPlacements: ['left', 'top']
+              fallbackPlacements: ['left', 'top', 'right', 'bottom']
             }
           }
         ]
