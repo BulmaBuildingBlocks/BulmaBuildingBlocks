@@ -17,20 +17,30 @@
               <color-picker
                 :color="block.color"
                 @color="block.color = $event"
+                size="is-small"
               />
             </b-field>
             <b-field>
-              <button class="button is-white" @click="moveBlockItem(block, -1)">
+              <button
+                class="button is-white is-small"
+                @click="moveBlockItem(block, -1)"
+              >
                 <b-icon pack="fa" icon="angle-up" />
               </button>
             </b-field>
             <b-field>
-              <button class="button is-white" @click="moveBlockItem(block, 1)">
+              <button
+                class="button is-white is-small"
+                @click="moveBlockItem(block, 1)"
+              >
                 <b-icon pack="fa" icon="angle-down" />
               </button>
             </b-field>
             <b-field>
-              <button class="button is-danger" @click="deleteBlockItem(block)">
+              <button
+                class="button is-danger is-small"
+                @click="deleteBlockItem(block)"
+              >
                 Delete
               </button>
             </b-field>

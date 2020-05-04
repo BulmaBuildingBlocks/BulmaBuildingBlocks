@@ -31,7 +31,8 @@ export default class PopupModal extends Vue {
       {
         name: 'preventOverflow',
         options: {
-          padding: 5
+          padding: 5,
+          altAxis: true
         }
       },
       {
