@@ -3,13 +3,6 @@
 // Bulma
 @import '~bulma/bulma';
 
-// FontAwesome 5
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
-
 @import 'scss/base/manifest';
 @import 'scss/grid/manifest';
 @import 'scss/layout/manifest';

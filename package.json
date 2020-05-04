@@ -29,7 +29,7 @@
   },
   "scripts": {
     "build": "nuxt-ts build",
-    "build:scss": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js --output-style expanded src/scss/main.scss | node ./build/banner.js > dist/bulmabuildingblocks.css && cleancss -o dist/bulmabuildingblocks.min.css dist/bulmabuildingblocks.css",
+    "build:scss": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js --output-style expanded src/with-variables.scss | node ./build/banner.js > dist/bulmabuildingblocks.css && cleancss -o dist/bulmabuildingblocks.min.css dist/bulmabuildingblocks.css",
     "ci": "concurrently \"yarn run lint\" \"yarn run test:coverage -- --runInBand\"",
     "clean": "rimraf ./coverage ./shared/**/*.js .nuxt",
     "dev": "nuxt-ts",

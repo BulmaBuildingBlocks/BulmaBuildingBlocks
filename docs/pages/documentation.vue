@@ -37,8 +37,7 @@
               </p>
               <ul>
                 <li>
-                  The css file comes with Bulma, Font Awesome and Bulma Building
-                  Blocks.
+                  The css file comes with Bulma and Bulma Building Blocks.
                 </li>
               </ul>
               <h4>Installation</h4>
@@ -67,14 +66,15 @@
               <pre class="npm">npm install bulmabuildingblocks</pre>
 
               <p>
-                Look at the below example of how to importusing npm
+                Look at the below example of how to import using npm
               </p>
 
               <pre v-highlightjs="importExample"><code class="scss"/></pre>
 
               <p>
                 Look at the below example of how to import into an existing
-                bulma project using npm
+                Bulma project using npm, you can leave out the variable file if
+                you don't want the same configuration as Bulma Building Blocks
               </p>
 
               <pre
@@ -106,9 +106,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import packageJson from '@@/package.json';
 
 @Component
 export default class Default extends Vue {
+  version = packageJson.version;
+
   importExample = `//Bulma Building Block
 @import 'bulmabuildingblocks';`;
 
@@ -127,9 +130,8 @@ export default class Default extends Vue {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bulma Building Block</title>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@0.5.0/dist/bulmabuildingblocks.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@${this.version}/dist/bulmabuildingblocks.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" />
   </head>
   <body>
      <!-- Insert the html blocks here. -->

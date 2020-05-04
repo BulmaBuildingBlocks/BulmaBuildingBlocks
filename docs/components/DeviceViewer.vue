@@ -2,11 +2,13 @@
 import Vue, { CreateElement, VNode } from 'vue';
 import $ from 'jquery';
 import { Component } from 'nuxt-property-decorator';
+import packageJson from '@@/package.json';
 import { store } from '~/store';
 import PageBuilder from '~/components/PageBuilder.vue';
 
 @Component
 export default class DeviceViewer extends Vue {
+  version = packageJson.version;
   iApp?: Vue = undefined;
 
   render(h: CreateElement): VNode {
@@ -22,16 +24,11 @@ export default class DeviceViewer extends Vue {
           if (iframeContentDocument) {
             const head = iframeContentDocument.head;
             const body = iframeContentDocument.body;
-            const headStyleContent = $('head style').clone();
-
-            // Add all of the pages style tags also to the iframe
-            if (headStyleContent) {
-              $(head).append(headStyleContent);
-            }
 
             // Add Google Fonts
             $(head).append(
-              '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">'
+              '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">',
+              `<link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@${this.version}/dist/bulmabuildingblocks.min.css">`
             );
 
             // We will mount or nested app to this element
