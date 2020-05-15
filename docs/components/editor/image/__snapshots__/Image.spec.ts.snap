@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image.vue has the expected html structure 1`] = `
+<span>
+  <!---->
+   
+  <img
+    alt="Stock Image"
+    src="./icon.png"
+  />
+</span>
+`;
+
+exports[`Image.vue has the expected html structure with link 1`] = `
+<span>
+  <!---->
+   
+  <a
+    href="http://www.bulmabuildingblocks.com/"
+  >
+    <img
+      alt="Click Here"
+      src="./click-here.png"
+    />
+  </a>
+</span>
+`;

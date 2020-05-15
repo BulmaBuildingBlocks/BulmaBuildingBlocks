@@ -8,7 +8,7 @@ export enum LinkType {
   'Rounded Outlined' = 'button is-rounded is-outlined'
 }
 
-export class EditableLink implements EditableLinkItem {
+export class EditableLink {
   constructor(props: EditableLinkProps) {
     this.label = props.label;
     this.status = props.status || Status.None;
@@ -17,14 +17,6 @@ export class EditableLink implements EditableLinkItem {
     this.popupPlacement = props.popupPlacement;
   }
 
-  href?: string;
-  label: string;
-  popupPlacement?: string;
-  status: Status;
-  linkType: LinkType;
-}
-
-export interface EditableLinkItem {
   /*
    * Label on the button.
    */

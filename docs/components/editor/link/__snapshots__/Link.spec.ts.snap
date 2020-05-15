@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link.vue has the expected html structure 1`] = `
+<span>
+  <!---->
+   
+  <a
+    class="link"
+  >
+    
+  </a>
+</span>
+`;

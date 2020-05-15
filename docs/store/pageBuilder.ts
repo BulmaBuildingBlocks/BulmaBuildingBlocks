@@ -126,7 +126,6 @@ export class PageBuilderStore extends VuexModule {
       }
 
       const zip = new JSZip();
-
       const img = zip.folder('images');
 
       for (const imagesSource of imagesSources) {
@@ -143,7 +142,6 @@ export class PageBuilderStore extends VuexModule {
 
       // Creates html page from user created content
       zip.file('index.html', code);
-
       zip.file('bulmabuildingblocks.min.css', BulmaBuildingBlockCss);
 
       // when everything has been downloaded, we can trigger the dl

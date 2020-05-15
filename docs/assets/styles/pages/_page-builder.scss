@@ -100,9 +100,50 @@
   top: 50%;
   left: 50%;
   transform-origin: top left;
-  transform: scale(0.5) translate(-50%, -50%);
+  transform: scale(0.3) translate(-50%, -50%);
   width: 1920px;
-  height: 200%;
+  height: 180%;
+
+  @include from(1400px) {
+    transform: scale(0.45) translate(-50%, -50%);
+  }
+
+  @include from(1800px) {
+    height: 150%;
+    transform: scale(0.65) translate(-50%, -50%);
+  }
+
+  &.is-tablet {
+    width: 769px;
+
+    &.has-device-frame {
+      height: calc(1024px + 7rem);
+      width: calc(769px + 7.6rem);
+      padding: 5.3rem 3.2rem 5.5rem;
+      background-image: url('~assets/images/tablet-outline.png');
+    }
+  }
+
+  &.is-mobile {
+    width: 376px;
+
+    @include from(1800px) {
+      height: 120%;
+      transform: scale(0.8) translate(-50%, -50%);
+    }
+
+    &.has-device-frame {
+      height: calc(667px + 2.4rem);
+      width: calc(376px + 3rem);
+      padding: 1.3rem 1.5rem;
+      background-image: url('~assets/images/mobile-outline.png');
+
+      iframe {
+        border-radius: 2.3rem;
+        overflow: hidden;
+      }
+    }
+  }
 
   &.has-device-frame {
     height: calc(1080px - 1rem);
@@ -120,32 +161,5 @@
   iframe {
     width: 100%;
     height: 100%;
-  }
-
-  &.is-tablet {
-    width: 769px;
-
-    &.has-device-frame {
-      height: calc(1024px + 7rem);
-      width: calc(769px + 7.6rem);
-      padding: 5.3rem 3.2rem 5.5rem;
-      background-image: url('~assets/images/tablet-outline.png');
-    }
-  }
-
-  &.is-mobile {
-    width: 376px;
-
-    &.has-device-frame {
-      height: calc(667px + 2.4rem);
-      width: calc(376px + 3rem);
-      padding: 1.3rem 1.5rem;
-      background-image: url('~assets/images/mobile-outline.png');
-
-      iframe {
-        border-radius: 2.3rem;
-        overflow: hidden;
-      }
-    }
   }
 }

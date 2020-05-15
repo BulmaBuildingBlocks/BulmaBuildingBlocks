@@ -48,10 +48,11 @@
     "release:minor": "npm run build:scss && changelog -m && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version minor",
     "release:patch": "npm run build:scss && changelog -p && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version patch",
     "start": "nuxt-ts start",
-    "test": "cross-env NODE_ENV=test jest",
-    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
-    "test:update": "cross-env NODE_ENV=test jest --u",
-    "test:watch": "jest --watchAll"
+    "test": "cross-env NODE_ENV=test yarn run unit && yarn run e2e:headless",
+    "unit": "cross-env NODE_ENV=test jest",
+    "unit:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "unit:update": "cross-env NODE_ENV=test jest --u",
+    "unit:watch": "jest --watchAll"
   },
   "husky": {
     "hooks": {

@@ -112,16 +112,16 @@ import packageJson from '@@/package.json';
 export default class Default extends Vue {
   version = packageJson.version;
 
-  importExample = `//Bulma Building Block
+  importExample = `// Bulma Building Block
 @import 'bulmabuildingblocks';`;
 
-  importExistingExample = `//Bulma Building Block variables
+  importExistingExample = `// Bulma Building Block variables
 @import 'bulmabuildingblocks/src/initial-variables';
 
 // Bulma
 @import 'bulma/bulma';
 
-//Bulma Building Block variables
+// Bulma Building Block
 @import 'bulmabuildingblocks/src/main';`;
 
   template = `<!DOCTYPE html>

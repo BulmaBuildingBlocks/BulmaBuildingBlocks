@@ -16,8 +16,8 @@
             <b-field>
               <color-picker
                 :color="block.color"
-                @color="block.color = $event"
                 size="is-small"
+                @color="block.color = $event"
               />
             </b-field>
             <b-field>

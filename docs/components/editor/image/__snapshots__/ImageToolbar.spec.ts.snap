@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageToolbar.vue has the expected html structure 1`] = `
+<div
+  class="image-toolbar card"
+>
+  <header
+    class="card-header"
+  >
+    <p
+      class="card-header-title"
+    >
+      
+      Image Configuration
+    
+    </p>
+     
+    <a
+      aria-label="close"
+      class="card-header-icon"
+    >
+      <b-icon-stub
+        icon="times"
+        pack="fa"
+      />
+    </a>
+  </header>
+   
+  <div
+    class="card-content"
+  >
+    <b-field-stub
+      addons="true"
+      label="Image Url"
+      placeholder="http://"
+    >
+      <b-input-stub
+        customclass=""
+        hascounter="true"
+        type="text"
+        usehtml5validation="true"
+        value=""
+      />
+    </b-field-stub>
+     
+    <b-field-stub
+      addons="true"
+      label="Description"
+    >
+      <b-input-stub
+        customclass=""
+        hascounter="true"
+        type="text"
+        usehtml5validation="true"
+        value=""
+      />
+    </b-field-stub>
+     
+    <b-field-stub
+      addons="true"
+      label="Image Link"
+    >
+      <b-input-stub
+        customclass=""
+        hascounter="true"
+        type="text"
+        usehtml5validation="true"
+      />
+    </b-field-stub>
+  </div>
+</div>
+`;

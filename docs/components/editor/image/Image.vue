@@ -31,12 +31,6 @@ export default class EditableImage extends Vue {
     this.modalOpen = !this.modalOpen;
   }
 
-  openModal(event: Event) {
-    event.preventDefault();
-
-    this.modalOpen = true;
-  }
-
   closeModal() {
     this.modalOpen = false;
   }

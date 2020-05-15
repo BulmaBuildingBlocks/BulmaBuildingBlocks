@@ -1,6 +1,6 @@
 <script lang="ts">
 import { CreateElement } from 'vue';
-import { Vue, Component, Prop, PropSync } from 'nuxt-property-decorator';
+import { Component, Prop, PropSync, Vue } from 'nuxt-property-decorator';
 import ButtonToolbar from './LinkToolbar.vue';
 import PopupModal from '~/components/PopupModal.vue';
 
@@ -30,13 +30,10 @@ export default class Link extends Vue {
     let linkStyle = '';
 
     if (this.newValue.status) {
-      switch (this.newValue.linkType) {
-        case LinkType.Link:
-          linkStyle = `has-text-${this.newValue.status.toLowerCase()}`;
-          break;
-        default:
-          linkStyle = `is-${this.newValue.status?.toLowerCase()}`;
-          break;
+      if (this.newValue.linkType === LinkType.Link) {
+        linkStyle = `has-text-${this.newValue.status.toLowerCase()}`;
+      } else {
+        linkStyle = `is-${this.newValue.status?.toLowerCase()}`;
       }
     }
 
@@ -47,12 +44,6 @@ export default class Link extends Vue {
     event.preventDefault();
 
     this.modalOpen = !this.modalOpen;
-  }
-
-  openModal(event: Event) {
-    event.preventDefault();
-
-    this.modalOpen = true;
   }
 
   closeModal() {
@@ -89,7 +80,7 @@ export default class Link extends Vue {
       }
     });
 
-    const popupModal = createElement(PopupModal, {
+    return createElement(PopupModal, {
       scopedSlots: {
         reference: () => {
           return link;
@@ -111,8 +102,6 @@ export default class Link extends Vue {
         }
       ]
     });
-
-    return popupModal;
   }
 }
 </script>
