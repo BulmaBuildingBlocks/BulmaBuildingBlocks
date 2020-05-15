@@ -44,7 +44,7 @@
     }
   }
 
-  a.ihas-text-#{$name}-invert:not(.button):not([class*='has-text-']) {
+  a.has-text-#{$name}-invert:not(.button):not([class*='has-text-']) {
     &:hover,
     &:focus {
       color: darken($color-invert, 10%) !important;
