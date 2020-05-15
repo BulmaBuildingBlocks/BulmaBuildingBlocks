@@ -60,16 +60,6 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column">
-            <span class="image is-3by2 is-contained">
-              <!---->
-              <img
-                src="~assets/images/Scene Wireframe Background.svg"
-                alt=""
-                draggable="false"
-              />
-            </span>
-          </div>
-          <div class="column">
             <h2 class="title has-text-white-invert"><p>HTML Snippets</p></h2>
             <div class="content has-text-white-invert">
               <p>
@@ -87,12 +77,32 @@
               </nuxt-link>
             </div>
           </div>
+          <div class="column">
+            <span class="image is-3by2 is-contained">
+              <!---->
+              <img
+                src="~assets/images/Scene Wireframe Background.svg"
+                alt=""
+                draggable="false"
+              />
+            </span>
+          </div>
         </div>
       </div>
     </div>
     <div class="section is-large ">
       <div class="container">
         <div class="columns is-vcentered">
+          <div class="column">
+            <span class="image is-3by2 is-contained">
+              <!---->
+              <img
+                src="~assets/images/Scene Whiteboard.svg"
+                alt=""
+                draggable="false"
+              />
+            </span>
+          </div>
           <div class="column">
             <h2 class="title has-text-white-invert"><p>Page Builder</p></h2>
             <div class="content has-text-white-invert">
@@ -108,16 +118,6 @@
                 Start Building
               </nuxt-link>
             </div>
-          </div>
-          <div class="column">
-            <span class="image is-3by2 is-contained">
-              <!---->
-              <img
-                src="~assets/images/Scene Whiteboard.svg"
-                alt=""
-                draggable="false"
-              />
-            </span>
           </div>
         </div>
       </div>
