@@ -1,7 +1,6 @@
 dist: trusty
-sudo: false
+os: linux
 language: node_js
-codecov: true
 notifications:
   email: false
 cache:
