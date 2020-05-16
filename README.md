@@ -5,13 +5,16 @@
 </p>
 <p>
   <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/CHANGELOG.md">
-    <img alt="Version" src="https://img.shields.io/badge/version-0.2.1-blue.svg?cacheSeconds=2592000" />
+    <img alt="Version" src="https://img.shields.io/badge/version-0.5.5-blue.svg?cacheSeconds=2592000" />
   </a>
   <a href="https://github.com/JosephAnson/BulmaBuildingBlocks#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+   <a href="https://codecov.io/gh/JosephAnson/BulmaBuildingBlocks">
+    <img src="https://codecov.io/gh/JosephAnson/BulmaBuildingBlocks/branch/master/graph/badge.svg" />
   </a>
 </p>
 
