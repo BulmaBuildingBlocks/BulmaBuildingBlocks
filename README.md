@@ -15,6 +15,9 @@
   </a>
    <a href="https://codecov.io/gh/JosephAnson/BulmaBuildingBlocks">
     <img src="https://codecov.io/gh/JosephAnson/BulmaBuildingBlocks/branch/master/graph/badge.svg" />
+  </a>  
+  <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/LICENSE">
+    <img src="https://img.shields.io/npm/l/bulmabuildingblocks.svg" />
   </a>
 </p>
 
@@ -31,7 +34,7 @@ The documentation is in the docs directory, it serves as the demo as well.
 
 Browse [online documentation here](https://bulmabuildingblocks.herokuapp.com/).
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/JosephAnson/BulmaBuildingBlocks/issues).
 
