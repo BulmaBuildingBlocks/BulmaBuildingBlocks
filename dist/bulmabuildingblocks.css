@@ -1,4 +1,4 @@
-/*! Bulma Building Blocks v0.5.4 | MIT License | https://github.com/JosephAnson/BulmaBuildingBlocks */
+/*! Bulma Building Blocks v0.5.5 | MIT License | https://github.com/JosephAnson/BulmaBuildingBlocks */
 /*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -10867,7 +10867,7 @@ label.panel-block:hover {
   color: rgba(0, 0, 0, 0.7) !important;
 }
 
-a.ihas-text-white-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-white-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-white-invert:not(.button):not([class*='has-text-']):hover, a.has-text-white-invert:not(.button):not([class*='has-text-']):focus {
   color: rgba(0, 0, 0, 0.7) !important;
 }
 
@@ -10877,7 +10877,7 @@ a.ihas-text-white-invert:not(.button):not([class*='has-text-']):hover, a.ihas-te
   color: #fff !important;
 }
 
-a.ihas-text-black-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-black-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-black-invert:not(.button):not([class*='has-text-']):hover, a.has-text-black-invert:not(.button):not([class*='has-text-']):focus {
   color: #e6e6e6 !important;
 }
 
@@ -10887,7 +10887,7 @@ a.ihas-text-black-invert:not(.button):not([class*='has-text-']):hover, a.ihas-te
   color: rgba(0, 0, 0, 0.7) !important;
 }
 
-a.ihas-text-light-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-light-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-light-invert:not(.button):not([class*='has-text-']):hover, a.has-text-light-invert:not(.button):not([class*='has-text-']):focus {
   color: rgba(0, 0, 0, 0.7) !important;
 }
 
@@ -10897,7 +10897,7 @@ a.ihas-text-light-invert:not(.button):not([class*='has-text-']):hover, a.ihas-te
   color: #fff !important;
 }
 
-a.ihas-text-dark-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-dark-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-dark-invert:not(.button):not([class*='has-text-']):hover, a.has-text-dark-invert:not(.button):not([class*='has-text-']):focus {
   color: #e6e6e6 !important;
 }
 
@@ -10907,7 +10907,7 @@ a.ihas-text-dark-invert:not(.button):not([class*='has-text-']):hover, a.ihas-tex
   color: #fff !important;
 }
 
-a.ihas-text-primary-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-primary-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-primary-invert:not(.button):not([class*='has-text-']):hover, a.has-text-primary-invert:not(.button):not([class*='has-text-']):focus {
   color: #e6e6e6 !important;
 }
 
@@ -10917,7 +10917,7 @@ a.ihas-text-primary-invert:not(.button):not([class*='has-text-']):hover, a.ihas-
   color: #fff !important;
 }
 
-a.ihas-text-link-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-link-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-link-invert:not(.button):not([class*='has-text-']):hover, a.has-text-link-invert:not(.button):not([class*='has-text-']):focus {
   color: #e6e6e6 !important;
 }
 
@@ -10927,7 +10927,7 @@ a.ihas-text-link-invert:not(.button):not([class*='has-text-']):hover, a.ihas-tex
   color: #fff !important;
 }
 
-a.ihas-text-info-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-info-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-info-invert:not(.button):not([class*='has-text-']):hover, a.has-text-info-invert:not(.button):not([class*='has-text-']):focus {
   color: #e6e6e6 !important;
 }
 
@@ -10937,7 +10937,7 @@ a.ihas-text-info-invert:not(.button):not([class*='has-text-']):hover, a.ihas-tex
   color: #fff !important;
 }
 
-a.ihas-text-success-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-success-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-success-invert:not(.button):not([class*='has-text-']):hover, a.has-text-success-invert:not(.button):not([class*='has-text-']):focus {
   color: #e6e6e6 !important;
 }
 
@@ -10947,7 +10947,7 @@ a.ihas-text-success-invert:not(.button):not([class*='has-text-']):hover, a.ihas-
   color: rgba(0, 0, 0, 0.7) !important;
 }
 
-a.ihas-text-warning-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-warning-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-warning-invert:not(.button):not([class*='has-text-']):hover, a.has-text-warning-invert:not(.button):not([class*='has-text-']):focus {
   color: rgba(0, 0, 0, 0.7) !important;
 }
 
@@ -10957,7 +10957,7 @@ a.ihas-text-warning-invert:not(.button):not([class*='has-text-']):hover, a.ihas-
   color: #fff !important;
 }
 
-a.ihas-text-danger-invert:not(.button):not([class*='has-text-']):hover, a.ihas-text-danger-invert:not(.button):not([class*='has-text-']):focus {
+a.has-text-danger-invert:not(.button):not([class*='has-text-']):hover, a.has-text-danger-invert:not(.button):not([class*='has-text-']):focus {
   color: #e6e6e6 !important;
 }
 
