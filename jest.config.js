@@ -26,7 +26,7 @@ module.exports = {
     '!**/html-blocks/**',
     '!**/node_modules/**'
   ],
-  coverageReporters: ['html', 'text-summary'],
+  coverageReporters: ['html', 'text-summary', 'json', 'lcov', 'clover'],
   verbose: true,
   globals: {
     NODE_ENV: 'test',
