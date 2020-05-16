@@ -19,7 +19,7 @@ module.exports = {
       'jest-transform-stub'
   },
   snapshotSerializers: ['jest-serializer-vue'],
-  collectCoverage: false,
+  collectCoverage: true,
   collectCoverageFrom: [
     './docs/**/*.ts',
     './docs/**/*.vue',
