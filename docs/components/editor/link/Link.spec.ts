@@ -10,6 +10,7 @@ const createWrapper = (propsData: EditableLinkProps) => {
   return mount(Link, {
     propsData: { value: propsData, editable: true },
     stubs: {
+      transition: false, // fixes error when using transition component
       PopupModal,
       ButtonToolbar
     },

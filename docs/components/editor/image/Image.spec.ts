@@ -9,6 +9,7 @@ const createWrapper = (propsData: EditableImageProps) => {
   return mount(Image, {
     propsData: { value: propsData, editable: true },
     stubs: {
+      transition: false, // fixes error when using transition component
       PopupModal,
       ImageToolbar
     },

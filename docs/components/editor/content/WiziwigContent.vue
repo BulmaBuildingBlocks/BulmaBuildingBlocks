@@ -206,10 +206,11 @@ import {
 } from 'tiptap-extensions';
 // import _ from 'lodash';
 import { Vue, Component, Prop } from 'nuxt-property-decorator';
-import Link from '~/components/editor/text/prosemirror-marks/Link';
-import Image from '~/components/editor/text/prosemirror-marks/Image';
+import Link from '~/components/editor/content/prosemirror-marks/Link';
+import Image from '~/components/editor/content/prosemirror-marks/Image';
 import PopupModal from '~/components/PopupModal.vue';
 import ClickOutside from '~/directives/click-outside';
+import { EditableContentTypes } from '~/components/editor/content/types';
 
 @Component({
   components: {
@@ -221,10 +222,10 @@ import ClickOutside from '~/directives/click-outside';
     ClickOutside
   }
 })
-export default class EditableText extends Vue {
+export default class WiziwigContent extends Vue {
   @Prop(String) value!: string;
-  @Prop(String) tag!: string;
-  @Prop(String) type!: string;
+  @Prop({ default: 'div' }) tag!: string | Function;
+  @Prop({ default: EditableContentTypes.Text }) type!: EditableContentTypes;
   @Prop(Boolean) editable!: boolean;
 
   linkUrl = '';
@@ -309,7 +310,7 @@ export default class EditableText extends Vue {
     this.hideLinkMenu();
   }
 
-  beforeDestroy(): void {
+  destroy(): void {
     this.editor.destroy();
   }
 
