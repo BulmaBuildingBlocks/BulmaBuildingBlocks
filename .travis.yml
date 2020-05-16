@@ -9,7 +9,7 @@ cache:
     - "~/.npm"
     - "~/.cache"
 node_js:
-  - 8.11.1
+  - 10.16.1
 install:
   - npm install
 script:
