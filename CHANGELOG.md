@@ -1,3 +1,44 @@
+#### 0.5.6 (2020-05-16)
+
+##### Build System / Dependencies
+
+*  reorganise the package.json file ([26ec6854](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/26ec6854492f39c08f48de7a389671824d0dd60b))
+*  include additional reporters for code coverage ([a3034d5d](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/a3034d5df7dea60b775df6041750fcec2263dd88))
+*  correct travis ci settings ([fdc7683d](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/fdc7683d2fc8d9ff416baa831a71d590a47ef0a3))
+*  set coverage to true by default ([8158eb52](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/8158eb52a0062de24535973eed131e9c9f21a6c6))
+
+##### Chores
+
+*  node version bump ([f996553a](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/f996553a1e27244244f39bce6ef8f0112016a5aa))
+*  add codecov badge to readme ([7fc0e3be](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/7fc0e3be422f942b871a4261c7932d3120c80317))
+*  code formatted ([10b8d97f](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/10b8d97fdfb9b4fcb1a8ccc0b2efcd461af3c153))
+*  node bump in travis.ci ([34455c63](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/34455c6321ad4f72fd57dabfb6194b26036381a5))
+*  codecov ([4b0b141a](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/4b0b141ab0f374b74c2f0b9961eea29e6d2d08fa))
+
+##### Bug Fixes
+
+*  radio button style in editor ([6012b566](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/6012b566c8db495557cb6b46e8330697d6d98b42))
+*  typo in class name for invert classes ([f9cf6fa2](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/f9cf6fa294b10cdc5e80556ea97c08b098f4d8a7))
+
+##### Other Changes
+
+* //github.com/JosephAnson/BulmaDesignBlocks ([5d8eb9ae](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/5d8eb9ae489a3f9cde448cb7761fa034f85164a2))
+
+##### Refactors
+
+*  homepage reorganised ([c26b5ce2](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/c26b5ce2711c6c71e0fb9b7d88af24cb387f970c))
+*  readd style imports to device viewer ([a933ac9d](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/a933ac9d0d61c7691fc9b534ad99570cf0426dd9))
+
+##### Code Style Changes
+
+*  page builder buttons made smaller ([888c2e2e](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/888c2e2e05eddd3bfb89f88b6a681d378dd85f6f))
+*  image toolbar for page builder and color picker on mobile ([1bb2156e](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/1bb2156e633d80a4b0032a7fe324b50ca2da3ced))
+
+##### Tests
+
+*  unit tests for editor content ([41dfdfb4](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/41dfdfb46851f64539d0a6f6bc23bfb855b2e22e))
+*  unit tests for image and link in editor ([7bd12cd8](https://github.com/JosephAnson/BulmaBuildingBlocks/commit/7bd12cd842a45a895cb3d1a28331395809462e4e))
+
 #### 0.5.5 (2020-05-04)
 
 ##### Bug Fixes
