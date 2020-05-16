@@ -5,8 +5,12 @@
 </p>
 <p>
   <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/CHANGELOG.md">
-    <img alt="Version" src="https://img.shields.io/badge/version-0.5.5-blue.svg?cacheSeconds=2592000" />
+    <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/josephanson/bulmabuildingblocks">
   </a>
+  <a href="https://www.npmjs.com/package/bulmabuildingblocks">
+    <img src="https://img.shields.io/npm/dt/bulmabuildingblocks.svg" />
+  </a>
+
   <a href="https://github.com/JosephAnson/BulmaBuildingBlocks#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
