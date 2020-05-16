@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer " :class="color ? `has-background-${color}` : ''">
+  <footer class="footer" :class="color ? `has-background-${color}` : ''">
     <div :class="container ? 'container' : ''">
       <div class="level">
         <div class="level-left">

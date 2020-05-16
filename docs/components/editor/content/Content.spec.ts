@@ -1,6 +1,5 @@
 import { mount, Wrapper } from '@vue/test-utils';
 
-import Vue, { ComponentOptions } from 'vue';
 import EditableContent from '~/components/editor/content/Content.vue';
 import {
   EditableContentProps,
@@ -11,7 +10,7 @@ import WiziwigContent from '~/components/editor/content/WiziwigContent.vue';
 const createWrapper = (
   propsData: EditableContentProps
 ): Wrapper<EditableContent & { [key: string]: any }> => {
-  const WrappedContent: ComponentOptions<Vue> = {
+  const WrappedContent = {
     template: `
          <div>
           <editable-content

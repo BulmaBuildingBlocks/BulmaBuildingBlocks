@@ -40,10 +40,7 @@ Vue.filter('pre', (text) => {
   text = text.replace(/^\s*[\r\n]/g, '');
 
   // Find how many whitespaces before the first character of the first line
-  const whitespaces = /^[ \t]*./
-    .exec(text)
-    .toString()
-    .slice(0, -1);
+  const whitespaces = /^[ \t]*./.exec(text).toString().slice(0, -1);
 
   // Replace first occurrance of whitespace on each line
   let newText = [];
@@ -55,7 +52,7 @@ Vue.filter('pre', (text) => {
   return newText;
 });
 
-Vue.filter('capitalize', function(value) {
+Vue.filter('capitalize', function (value) {
   if (!value) return '';
   value = value.toString();
   return value.charAt(0).toUpperCase() + value.slice(1);

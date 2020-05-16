@@ -50,7 +50,7 @@
 
           <div
             v-show="!linkMenuIsActive"
-            class="buttons has-addons is-multiline  "
+            class="buttons has-addons is-multiline"
           >
             <template v-if="type === 'text' || type === 'title'">
               <button

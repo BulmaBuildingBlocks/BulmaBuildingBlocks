@@ -102,8 +102,8 @@ export class PageBuilderStore extends VuexModule {
     }
 
     function urlToPromise(url: string) {
-      return new Promise(function(resolve, reject) {
-        JSZipUtils.getBinaryContent(url, function(err: any, data: any) {
+      return new Promise(function (resolve, reject) {
+        JSZipUtils.getBinaryContent(url, function (err: any, data: any) {
           if (err) {
             reject(err);
           } else {
@@ -152,7 +152,7 @@ export class PageBuilderStore extends VuexModule {
 
           Toast.open('Download Finished');
         },
-        function() {
+        function () {
           Toast.open('Download Failed');
         }
       );

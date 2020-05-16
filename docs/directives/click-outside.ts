@@ -47,9 +47,7 @@ function bind(el: HTMLElement, { value }: DirectiveBinding) {
   };
 
   instance.eventHandlers.forEach(({ event, handler }: any) =>
-    $(el)
-      .closest('body')
-      .on(event, handler)
+    $(el).closest('body').on(event, handler)
   );
   instances.push(instance);
 }
@@ -60,9 +58,7 @@ function update(el: HTMLElement, { value }: DirectiveBinding) {
   const instance = instances.filter((instance) => instance.el === el)[0];
 
   instance.eventHandlers.forEach(({ event, handler }: any) =>
-    $(el)
-      .closest('body')
-      .off(event, handler)
+    $(el).closest('body').off(event, handler)
   );
 
   instance.eventHandlers = events.map((eventName: any) => ({
@@ -71,9 +67,7 @@ function update(el: HTMLElement, { value }: DirectiveBinding) {
   }));
 
   instance.eventHandlers.forEach(({ event, handler }: any) =>
-    $(el)
-      .closest('body')
-      .on(event, handler)
+    $(el).closest('body').on(event, handler)
   );
 }
 
@@ -81,9 +75,7 @@ function unbind(el: HTMLElement) {
   // `filter` instead of `find` for compat with IE
   const instance = instances.filter((instance) => instance.el === el)[0];
   instance.eventHandlers.forEach(({ event, handler }: any) =>
-    $(el)
-      .closest('body')
-      .off(event, handler)
+    $(el).closest('body').off(event, handler)
   );
 }
 

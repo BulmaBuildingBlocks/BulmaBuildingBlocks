@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer " :class="color ? `has-background-${color}` : ''">
+  <footer class="footer" :class="color ? `has-background-${color}` : ''">
     <div :class="container ? 'container' : ''">
       <div class="columns is-centered">
         <div class="column is-narrow">

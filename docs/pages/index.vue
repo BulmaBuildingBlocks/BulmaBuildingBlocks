@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-    <div class="section is-large ">
+    <div class="section is-large">
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column">
