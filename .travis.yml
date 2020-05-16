@@ -6,11 +6,13 @@ notifications:
   email: false
 cache:
   directories:
-  - "~/.npm"
-  - "~/.cache"
+    - "~/.npm"
+    - "~/.cache"
 node_js:
-- 8.11.1
+  - 8.11.1
 install:
-- npm install
+  - npm install
 script:
-- npm run ci
+  - npm run ci
+after_success:
+  - codecov

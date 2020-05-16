@@ -1,0 +1,26 @@
+codecov:
+  require_ci_to_pass: yes
+  ci:
+    - "travis.org"
+
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"
+  branches:
+    - master
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+  javascript:
+    enable_partials: yes
+
+comment:
+  layout: "reach,diff,flags,tree"
+  behavior: default
+  require_changes: no
