@@ -27,7 +27,6 @@ module.exports = {
     '!**/node_modules/**'
   ],
   coverageReporters: ['html', 'text-summary'],
-  coverageDirectory: './coverage',
   verbose: true,
   globals: {
     NODE_ENV: 'test',
