@@ -59,7 +59,14 @@ const nuxtConfig: Configuration = {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt/typescript
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    // Doc: https://github.com/nuxt-community/analytics-module
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-166921741-1'
+      }
+    ]
   ],
   /*
    ** Nuxt.js modules
