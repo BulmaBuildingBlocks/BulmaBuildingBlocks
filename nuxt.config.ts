@@ -1,4 +1,5 @@
 import { Configuration } from '@nuxt/types';
+import menu from './docs/data/menu.json';
 
 const port = process.env.PORT || '3000';
 const host = process.env.HOST || 'localhost';
@@ -20,7 +21,7 @@ const nuxtConfig: Configuration = {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Bulma Building Blocks',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -66,7 +67,20 @@ const nuxtConfig: Configuration = {
       {
         id: 'UA-166921741-1'
       }
-    ]
+    ],
+    // Doc: https://github.com/nuxt-community/robots-module
+    [
+      '@nuxtjs/robots',
+      {
+        robots: {
+          UserAgent: '*',
+          Allow: '/',
+          Sitemap: 'https://www.bulmabuildingblocks.com/sitemap.xml'
+        }
+      }
+    ],
+    // Doc: https://github.com/nuxt-community/sitemap-module
+    '@nuxtjs/sitemap'
   ],
   /*
    ** Nuxt.js modules
@@ -110,6 +124,20 @@ const nuxtConfig: Configuration = {
         });
       }
     }
+  },
+
+  pwa: {
+    meta: {
+      /* meta options */
+      name: 'Bulma Building Blocks'
+    }
+  },
+
+  sitemap: {
+    hostname: 'https://www.bulmabuildingblocks.com',
+    gzip: true,
+    exclude: ['/html-blocks/all'],
+    routes: [...menu]
   },
 
   serverMiddleware: ['redirect-ssl']
