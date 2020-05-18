@@ -98,10 +98,12 @@ export default class Example extends Vue {
   @Watch('block', { deep: true, immediate: true })
   updateRefs(): void {
     this.$nextTick(() => {
-      this.code = prettier.format(
-        this.$refs.componenthtml.$el.outerHTML,
-        prettierConf
-      );
+      if (this.$refs.componenthtml) {
+        this.code = prettier.format(
+          this.$refs.componenthtml.$el.outerHTML,
+          prettierConf
+        );
+      }
     });
   }
 

@@ -7,14 +7,14 @@
     <div class="container">
       <div class="buttons has-addons is-toggle">
         <nuxt-link
-          v-for="(item, key) in blocks"
-          :key="key"
+          v-for="item in menu"
+          :key="routes.get(item).path"
           tag="button"
-          :to="`/html-blocks/${key}`"
+          :to="routes.get(item).path"
           class="button is-white is-small"
           active-class="is-primary is-inverted is-outlined"
         >
-          {{ key | capitalize }}
+          {{ routes.get(item).title | capitalize }}
         </nuxt-link>
       </div>
     </div>
@@ -23,10 +23,12 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import Blocks from '~/html-blocks';
+import menu from '~/data/menu.json';
+import routes from '~/data/routes';
 
 @Component
 export default class BlockMenu extends Vue {
-  blocks = Blocks;
+  menu = menu;
+  routes = routes;
 }
 </script>

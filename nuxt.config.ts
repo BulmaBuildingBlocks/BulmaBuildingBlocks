@@ -69,16 +69,7 @@ const nuxtConfig: Configuration = {
       }
     ],
     // Doc: https://github.com/nuxt-community/robots-module
-    [
-      '@nuxtjs/robots',
-      {
-        robots: {
-          UserAgent: '*',
-          Allow: '/',
-          Sitemap: 'https://www.bulmabuildingblocks.com/sitemap.xml'
-        }
-      }
-    ],
+    '@nuxtjs/robots',
     // Doc: https://github.com/nuxt-community/sitemap-module
     '@nuxtjs/sitemap'
   ],
@@ -133,11 +124,21 @@ const nuxtConfig: Configuration = {
     }
   },
 
+  robots: {
+    UserAgent: '*',
+    Allow: '/',
+    Sitemap: 'https://www.bulmabuildingblocks.com/sitemap.xml'
+  },
+
   sitemap: {
-    hostname: 'https://www.bulmabuildingblocks.com',
     gzip: true,
     exclude: ['/html-blocks/all'],
-    routes: [...menu]
+    routes: menu.map((route) => ({
+      url: route,
+      changefreq: 'weekly',
+      priority: 1,
+      lastmodISO: new Date().toISOString().split('T')[0]
+    }))
   },
 
   serverMiddleware: ['redirect-ssl']
