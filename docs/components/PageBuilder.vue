@@ -62,8 +62,8 @@ import draggable from 'vuedraggable';
 import { Vue, Component, Watch } from 'nuxt-property-decorator';
 import { blocks } from '~/html-blocks';
 import PageBuilderStore from '~/store/pageBuilder';
-import { Block } from '~/types/Block';
 import ColorPicker from '~/components/ColorPicker.vue';
+import { Block } from '~/html-blocks/types';
 
 @Component({
   components: {

@@ -12,7 +12,6 @@ import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
 import { store } from '~/store/index';
-import { Block } from '~/types/Block';
 import { prettierConf } from '~/shared/config';
 import { getRegexMatches } from '~/shared/utils';
 
@@ -20,6 +19,7 @@ import { getRegexMatches } from '~/shared/utils';
 // @ts-ignore
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import BulmaBuildingBlockCss from '!!raw-loader!~/static/bulmabuildingblocks.min.css';
+import { Block } from '~/html-blocks/types';
 
 @Module({
   name: 'PageBuilderStore',

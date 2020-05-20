@@ -1,7 +1,16 @@
 import { VueConstructor } from 'vue';
 
+export enum ContentTypes {
+  Headers = 'headers',
+  Features = 'features',
+  CallToActions = 'calltoactions',
+  Contents = 'contents',
+  Footers = 'footers'
+}
+
 export interface Block {
   title: string;
+  type?: ContentTypes;
   component: VueConstructor;
   content?: any;
   color?: string;

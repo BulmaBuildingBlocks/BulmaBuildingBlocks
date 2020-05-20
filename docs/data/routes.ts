@@ -39,6 +39,14 @@ const routes = new Map([
     }
   ],
   [
+    'html-blocks/calltoactions',
+    {
+      title: 'Call to Action',
+      subtitle: 'Selection of Call to Action Blocks',
+      path: '/html-blocks/calltoactions'
+    }
+  ],
+  [
     'html-blocks/features',
     {
       title: 'Features',

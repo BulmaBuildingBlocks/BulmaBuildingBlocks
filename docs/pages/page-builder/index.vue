@@ -25,17 +25,23 @@
       <div class="page-builder__container">
         <div class="page-builder__blocks">
           <div class="page-builder__blocks__filters">
-            <div class="field has-addons is-fullwidth is-marginless">
-              <div v-for="(item, key) in allBlocks" :key="key" class="control">
-                <button
-                  class="button is-small"
-                  :class="{ 'is-primary': shownBlocks === key }"
-                  @click="shownBlocks = key"
+            <b-field>
+              <b-select
+                v-model="shownBlocks"
+                size="is-small"
+                expanded
+                placeholder="Select a name"
+                required
+              >
+                <option
+                  v-for="(item, key) in allBlocks"
+                  :key="key"
+                  :value="key"
                 >
-                  {{ key | capitalize }}
-                </button>
-              </div>
-            </div>
+                  {{ routes.get('html-blocks/' + key).title | capitalize }}
+                </option>
+              </b-select>
+            </b-field>
           </div>
           <div class="page-builder__blocks__selector">
             <draggable
@@ -55,7 +61,10 @@
                 class="is-fullwidth page-builder__item"
                 @click="addComponentToPreview(component)"
               >
-                <img :src="componentImageUrl(component.title)" />
+                <img
+                  :src="componentImageUrl(component)"
+                  :alt="component.title"
+                />
               </div>
             </draggable>
           </div>
@@ -137,8 +146,9 @@ import allBlocks from '~/html-blocks';
 
 import DeviceViewer from '~/components/DeviceViewer.vue';
 import PageBuilderStore from '~/store/pageBuilder';
-import { Block } from '~/types/Block';
 import HandleBack from '~/mixins/HandleBack';
+import routes from '~/data/routes';
+import { Block, ContentTypes } from '~/html-blocks/types';
 
 @Component({
   components: {
@@ -148,16 +158,19 @@ import HandleBack from '~/mixins/HandleBack';
 })
 export default class PageBuilderPage extends mixins(HandleBack) {
   allBlocks = allBlocks;
-  shownBlocks = 'headers';
+  shownBlocks = ContentTypes.Headers;
   deviceSize = 'desktop';
   deviceFrame = true;
+  routes = routes;
 
   get layout() {
     return 'empty';
   }
 
-  componentImageUrl(title: string): string {
-    return require(`~/assets/component-images/${slugifyString(title)}.png`);
+  componentImageUrl(block: Block): string {
+    return require(`~/assets/component-images/${slugifyString(
+      `${block.title} - ${block.type}`
+    )}.png`);
   }
 
   addComponentToPreview(component: Block): void {

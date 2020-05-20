@@ -1,19 +1,31 @@
 import headerBlocks from '~/html-blocks/headers';
 import featureBlocks from '~/html-blocks/features';
+import calltoactionBlocks from '~/html-blocks/calltoaction';
 import contentBlocks from '~/html-blocks/content';
 import footerBlocks from '~/html-blocks/footers';
-import { Block, BlockListObject } from '~/types/Block';
+import { Block, BlockListObject, ContentTypes } from '~/html-blocks/types';
 
 // Manifest all blocks into one array
 const allHtmlBlocks: { [x: string]: Block[] } = {
-  headers: headerBlocks,
-  features: featureBlocks,
-  contents: contentBlocks,
-  footers: footerBlocks
+  [ContentTypes.Headers]: headerBlocks,
+  [ContentTypes.Features]: featureBlocks,
+  [ContentTypes.CallToActions]: calltoactionBlocks,
+  [ContentTypes.Contents]: contentBlocks,
+  [ContentTypes.Footers]: footerBlocks
 };
 
+function AllHtmlBlocksSetup() {
+  for (const type in allHtmlBlocks) {
+    for (const item of allHtmlBlocks[type]) {
+      item.type = type as ContentTypes;
+    }
+  }
+}
+
+AllHtmlBlocksSetup();
+
 // Creates Object of Blocks used for importing directly as blocks in vue templates
-const blocksExtract = (): BlockListObject => {
+function blocksExtract(): BlockListObject {
   const blocks: BlockListObject = {};
 
   for (const index in allHtmlBlocks) {
@@ -25,7 +37,7 @@ const blocksExtract = (): BlockListObject => {
   }
 
   return blocks;
-};
+}
 
 export const blocks = blocksExtract();
 

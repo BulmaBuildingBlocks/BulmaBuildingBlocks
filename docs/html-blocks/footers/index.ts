@@ -1,7 +1,7 @@
 import FooterSimple from './footer-simple';
 import FooterSimpleMenu from './footer-simple-menu';
 import FooterMenu from './footer-menu';
-import { Block } from '~/types/Block';
+import { Block } from '~/html-blocks/types';
 
 const blocks: Block[] = [FooterSimple, FooterSimpleMenu, FooterMenu];
 

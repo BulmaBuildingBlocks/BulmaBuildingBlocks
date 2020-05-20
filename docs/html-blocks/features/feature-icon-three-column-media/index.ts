@@ -1,6 +1,6 @@
 import FeatureIconThreeColumnsMedia from './html.vue';
 import Model from './model';
-import { Block } from '~/types/Block';
+import { Block } from '~/html-blocks/types';
 
 const component: Block = {
   title: 'Three Icons Media Feature',

@@ -2,7 +2,7 @@ import { Component, Vue, PropSync, Prop } from 'nuxt-property-decorator';
 import EditableContent from '~/components/editor/content/Content.vue';
 import EditableImage from '~/components/editor/image/Image.vue';
 import EditableLink from '~/components/editor/link/Link.vue';
-import { Block } from '~/types/Block';
+import { Block } from '~/html-blocks/types';
 
 @Component({
   components: {

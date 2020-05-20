@@ -6,7 +6,7 @@ import ContentSubtitleLeft from './content-simple-subtitle-left';
 import ContentSubtitleRight from './content-simple-subtitle-right';
 import ContentTitleTwoColumn from './content-simple-title-two-column';
 import ContentSingleImage from './content-simple-single-image';
-import { Block } from '~/types/Block';
+import { Block } from '~/html-blocks/types';
 
 const blocks: Block[] = [
   ContentSingleImage,

@@ -8,7 +8,7 @@ import FeatureIconThreeColumnsMedia from './feature-icon-three-column-media';
 import FeatureIconSixColumnsMedia from './feature-icon-six-column-media';
 import FeatureBigImageLeft from './feature-big-image-left';
 import FeatureBigImageRight from './feature-big-image-right';
-import { Block } from '~/types/Block';
+import { Block } from '~/html-blocks/types';
 
 const blocks: Block[] = [
   FeatureBigImageLeft,

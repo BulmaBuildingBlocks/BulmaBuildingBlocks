@@ -1,12 +1,12 @@
 <template>
-  <section class="example-section">
+  <section class="example-section" :data-id="`${block.title} - ${block.type}`">
     <div class="container">
       <div class="example-section__info section">
         <div class="level">
           <div class="level-left">
-            <p :id="`${slugifiedTitle}`" class="subtitle">
+            <p :id="`${slugifiedTitle}`" class="subtitle is-4">
               <nuxt-link v-if="block.title" :to="`#${slugifiedTitle}`">
-                # {{ block.title }}
+                # {{ block.title | capitalize }}
               </nuxt-link>
             </p>
           </div>
@@ -74,9 +74,9 @@ import prettier from 'prettier/standalone';
 import clipboard from 'copy-to-clipboard';
 import CodeView from './CodeView.vue';
 import { prettierConf } from '~/shared/config';
-import { Block } from '~/types/Block';
 import slugifyString from '~/shared/slugifyString';
 import ColorPicker from '~/components/ColorPicker.vue';
+import { Block } from '~/html-blocks/types';
 
 @Component({
   components: {

@@ -4,10 +4,6 @@ $menubar-width: 31.1em;
 .editor {
   position: relative;
 
-  &.content {
-    margin: 0 !important;
-  }
-
   &.is-text .menubar {
     @include tablet {
       width: $menubar-width;
