@@ -60,18 +60,7 @@ const nuxtConfig: Configuration = {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt/typescript
-    '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/analytics-module
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: 'UA-166921741-1'
-      }
-    ],
-    // Doc: https://github.com/nuxt-community/robots-module
-    '@nuxtjs/robots',
-    // Doc: https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap'
+    '@nuxt/typescript-build'
   ],
   /*
    ** Nuxt.js modules
@@ -80,7 +69,18 @@ const nuxtConfig: Configuration = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots',
+    // Doc: https://github.com/nuxt-community/sitemap-module
+    '@nuxtjs/sitemap',
+    // Doc: https://github.com/nuxt-community/analytics-module
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-166921741-1'
+      }
+    ]
   ],
   /*
    ** Axios module configuration
