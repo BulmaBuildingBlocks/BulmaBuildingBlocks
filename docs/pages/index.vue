@@ -39,10 +39,7 @@
           </div>
           <div class="column">
             <h3 class="subtitle has-text-white-invert">
-              <p>
-                View the documentation to get started using Bulma Building
-                Blocks
-              </p>
+              View the documentation to get started using Bulma Building Blocks
             </h3>
             <div class="buttons">
               <nuxt-link
@@ -60,11 +57,13 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column">
-            <h2 class="title has-text-white-invert"><p>HTML Snippets</p></h2>
+            <h2 class="title has-text-white-invert">
+              HTML Snippets
+            </h2>
             <div class="content has-text-white-invert">
               <p>
                 Bulma Building Blocks is a selection html snippets that can be
-                copied into you existing Bulma projects with minor changes to
+                copied into your existing Bulma projects with minor changes to
                 the current Bulma implementation.
               </p>
             </div>
@@ -104,13 +103,16 @@
             </span>
           </div>
           <div class="column">
-            <h2 class="title has-text-white-invert"><p>Page Builder</p></h2>
+            <h2 class="title has-text-white-invert">
+              Page Builder
+            </h2>
             <div class="content has-text-white-invert">
               <p>
                 Bulma Building Blocks provides an easy to use page builder that
-                can be downloaded as a static ready to be used website. You can
-                live edit the design changing text, images, button styles and
-                more.
+                can be downloaded as a static website. You can live edit the
+                design changing text, images, button styles and more. Providing
+                an easy page building website to create stylish and responsive
+                websites.
               </p>
             </div>
             <div class="buttons">
