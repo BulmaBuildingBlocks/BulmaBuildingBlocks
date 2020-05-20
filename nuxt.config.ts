@@ -28,7 +28,9 @@ const nuxtConfig: Configuration = {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content:
+          'Bulma Building Blocks allows you to generate websites using snippets based on the Bulma CSS Frameworks. ' +
+          'A tool for creating beautiful websites or improving an existing website by copying styled snippets directing into your code.'
       }
     ],
     link: [
