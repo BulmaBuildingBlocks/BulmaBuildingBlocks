@@ -42,7 +42,7 @@
               </ul>
               <h4>Installation</h4>
               <div class="content">
-                <p>Just download or use these as CDN:</p>
+                <p>Just download or use the CDN:</p>
                 <pre class="npm"><a
                   href="https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css"
                   target="_blank"
@@ -66,7 +66,7 @@
               <pre class="npm">npm install bulmabuildingblocks</pre>
 
               <p>
-                Look at the below example of how to import using npm
+                Look at the below example of how to import using npm and Sass:
               </p>
 
               <pre v-highlightjs="importExample"><code class="scss"/></pre>
@@ -74,7 +74,7 @@
               <p>
                 Look at the below example of how to import into an existing
                 Bulma project using npm, you can leave out the variable file if
-                you don't want the same configuration as Bulma Building Blocks
+                you don't want the same configuration as Bulma Building Blocks:
               </p>
 
               <pre

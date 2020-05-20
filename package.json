@@ -26,7 +26,8 @@
     "vue-bulma",
     "components",
     "html",
-    "html-snippets"
+    "html-snippets",
+    "page-builder"
   ],
   "peerDependencies": {
     "vue": "^2.6.11"

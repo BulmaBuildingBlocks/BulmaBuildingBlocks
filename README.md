@@ -38,9 +38,63 @@ The documentation is in the docs directory, it serves as the demo as well.
 
 Browse [online documentation here](https://www.bulmabuildingblocks.com/).
 
+## Getting Started
+
+### Use the Builder
+https://www.bulmabuildingblocks.com/page-builder
+
+### Standalone
+Using CDN or downloading files to serve local
+
+* The css file comes with Bulma and Bulma Building Blocks.
+
+**Installation**
+
+Just download or use the CDN:
+
+https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css
+
+### Using npm
+Install the npm package
+
+    npm install bulmabuildingblocks
+
+Look at the below example of how to import using npm
+
+    // Bulma Building Block
+    @import 'bulmabuildingblocks';
+
+Look at the below example of how to import into an existing Bulma project using npm, you can leave out the variable file if you don't want the same configuration as Bulma Building Blocks
+
+    // Bulma Building Block variables
+    @import 'bulmabuildingblocks/src/initial-variables';
+
+    // Bulma
+    @import 'bulma/bulma';
+    
+    // Bulma Building Block
+    @import 'bulmabuildingblocks/src/main';
+    
+### Use the skeleton
+Use the template below as a starting point, copy the html snippets into the recommended area.
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bulma Building Block</title>
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@0.5.6/dist/bulmabuildingblocks.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+      </head>
+      <body>
+         <!-- Insert the html blocks here. -->
+      </body>
+    </html>
+
 ## Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/JosephAnson/BulmaBuildingBlocks/issues).
 
 ## Copyright and license
-Code copyright 2020 Joseph Anson. Code released under the MIT license.
+Code Copyright 2020 Joseph Anson. Code released under the MIT license.
