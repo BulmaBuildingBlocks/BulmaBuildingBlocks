@@ -14,9 +14,19 @@
         <div class="level-item">
           <button
             class="button is-small is-primary copy-code"
+            :disabled="downloadDisabled"
+            @click="copyCode"
+          >
+            Copy HTML
+          </button>
+        </div>
+        <div class="level-item">
+          <button
+            class="button is-small is-primary copy-code"
+            :disabled="downloadDisabled"
             @click="downloadCode"
           >
-            Download
+            Download Website
           </button>
         </div>
       </div>
@@ -167,6 +177,10 @@ export default class PageBuilderPage extends mixins(HandleBack) {
     return 'empty';
   }
 
+  get downloadDisabled() {
+    return PageBuilderStore.blocks.length <= 0;
+  }
+
   componentImageUrl(block: Block): string {
     return require(`~/assets/component-images/${slugifyString(
       `${block.title} - ${block.type}`
@@ -182,8 +196,12 @@ export default class PageBuilderPage extends mixins(HandleBack) {
     PageBuilderStore.toggleEditable(editable);
   }
 
+  copyCode(): void {
+    PageBuilderStore.setExportCode({ copying: true, download: false });
+  }
+
   downloadCode(): void {
-    PageBuilderStore.setDownloadingCode();
+    PageBuilderStore.setExportCode({ copying: true, download: true });
   }
 }
 </script>

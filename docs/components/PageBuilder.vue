@@ -85,8 +85,8 @@ export default class PageBuilder extends Vue {
     return PageBuilderStore.editable;
   }
 
-  get copyingCode(): boolean {
-    return PageBuilderStore.downloadingCode;
+  get exportCode(): boolean {
+    return PageBuilderStore.exportCode;
   }
 
   deleteBlockItem(block: Block): void {
@@ -97,14 +97,14 @@ export default class PageBuilder extends Vue {
     PageBuilderStore.moveBlock({ block, direction });
   }
 
-  @Watch('copyingCode', { deep: true })
+  @Watch('exportCode', { deep: true })
   async updateCode(): Promise<void> {
     /***
-     * Only run if copyingCode is externally changed to true
-     * Only way i could get the value of the ref elements
+     * Only run if PageBuilderStore.exportCode is changed to true
+     * Only way to get the value of the current ref elements
      */
 
-    if (PageBuilderStore.downloadingCode && PageBuilderStore.blocks.length) {
+    if (PageBuilderStore.exportCode && PageBuilderStore.blocks.length) {
       await PageBuilderStore.toggleEditable(false);
 
       await this.$nextTick();
@@ -120,11 +120,15 @@ export default class PageBuilder extends Vue {
 
       await this.$nextTick();
 
-      await PageBuilderStore.downloadCode();
+      if (PageBuilderStore.download) {
+        await PageBuilderStore.downloadCode();
+      } else {
+        await PageBuilderStore.copyCode();
+      }
     }
 
     await PageBuilderStore.toggleEditable(true);
-    await PageBuilderStore.setDownloadingCode(false);
+    await PageBuilderStore.setExportCode({ copying: false });
   }
 }
 </script>

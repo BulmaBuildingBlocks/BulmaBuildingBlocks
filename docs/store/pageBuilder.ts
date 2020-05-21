@@ -11,7 +11,8 @@ import { ToastProgrammatic as Toast } from 'buefy';
 import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
-import { store } from '~/store/index';
+import clipboard from 'copy-to-clipboard';
+import { store } from './index';
 import { prettierConf } from '~/shared/config';
 import { getRegexMatches } from '~/shared/utils';
 
@@ -20,6 +21,11 @@ import { getRegexMatches } from '~/shared/utils';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import BulmaBuildingBlockCss from '!!raw-loader!~/static/bulmabuildingblocks.min.css';
 import { Block } from '~/html-blocks/types';
+
+interface ExportCodeProps {
+  copying: boolean;
+  download?: boolean;
+}
 
 @Module({
   name: 'PageBuilderStore',
@@ -30,32 +36,27 @@ export class PageBuilderStore extends VuexModule {
   blocks: Block[] = [];
   code = '';
   editable = true;
-  downloadingCode = false;
+  download = false;
+  exportCode = false;
 
   @Mutation
   async setCode(code: string): Promise<void> {
-    const header = `<!DOCTYPE html>
-                        <html>
-                          <head>
-                            <meta charset="utf-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1">
-                            <title>Bulma Building Block</title>
-                            <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@0.5.0/dist/bulmabuildingblocks.min.css">
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-                            <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-                          </head>
-                          <body>
-                          `;
-
-    const footer = `</body>
-                  </html>`;
-
-    this.code = await prettier.format(header + code + footer, prettierConf);
+    this.code = await prettier.format(code, prettierConf);
   }
 
   @Mutation
-  setDownloadingCode(copying = true): void {
-    this.downloadingCode = copying;
+  setExportCode({ copying = true, download }: ExportCodeProps): void {
+    /***
+     * Look at PageBuilder.vue in that folder there's a watcher that checks for when
+     * exportCode changes. It performs the copying of the code as it needs access to
+     * the current $refs
+     */
+
+    if (download) {
+      this.download = download;
+    }
+
+    this.exportCode = copying;
   }
 
   @Mutation
@@ -96,7 +97,20 @@ export class PageBuilderStore extends VuexModule {
   }
 
   @Action
-  downloadCode(): void {
+  async copyCode(): Promise<void> {
+    try {
+      await clipboard(this.code);
+      Toast.open('Copied to clipboard!');
+    } catch (e) {
+      Toast.open({
+        message: 'Error while copying, try again',
+        type: 'is-danger'
+      });
+    }
+  }
+
+  @Action
+  async downloadCode(): Promise<void> {
     function getFilename(src: string): string {
       return src.split('/').pop() || '';
     }
@@ -115,7 +129,26 @@ export class PageBuilderStore extends VuexModule {
 
     try {
       const imagesSrcRegex = /<img.*?src="([^http].*?)"/g;
-      let code = this.code;
+      const header = `<!DOCTYPE html>
+                        <html>
+                          <head>
+                            <meta charset="utf-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1">
+                            <title>Bulma Building Block</title>
+                            <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulmabuildingblocks@0.5.0/dist/bulmabuildingblocks.min.css">
+                            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+                            <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+                          </head>
+                          <body>
+                          `;
+
+      const footer = `</body>
+                  </html>`;
+
+      let code = await prettier.format(
+        header + this.code + footer,
+        prettierConf
+      );
       const imagesSources = getRegexMatches(code, imagesSrcRegex, 1);
 
       // Convert img sources to match output folder structure

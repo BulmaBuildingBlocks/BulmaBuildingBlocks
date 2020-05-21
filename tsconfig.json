@@ -24,6 +24,7 @@
       "@types/lodash",
       "@nuxt/types",
       "@types/jest",
+      "@types/jquery",
       "cypress"
     ]
   },
