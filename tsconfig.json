@@ -19,7 +19,14 @@
       "~~/*": ["./docs/*"],
       "@@/*": ["./*"]
     },
-    "types": ["@types/node", "@types/jest", "@types/lodash", "@nuxt/types"]
+    "types": [
+      "@types/node",
+      "@types/lodash",
+      "@nuxt/types",
+      "@types/jest",
+      "cypress"
+    ]
   },
+  "include": ["*.ts"],
   "exclude": ["node_modules"]
 }
