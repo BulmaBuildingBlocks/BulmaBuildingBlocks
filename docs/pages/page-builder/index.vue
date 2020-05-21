@@ -17,7 +17,7 @@
         <div class="level-item">
           <button
             class="button is-small is-primary copy-code"
-            :disabled="downloadDisabled"
+            :disabled="!componentsAdded"
             @click="copyCode"
           >
             Copy HTML
@@ -26,7 +26,7 @@
         <div class="level-item">
           <button
             class="button is-small is-primary copy-code"
-            :disabled="downloadDisabled"
+            :disabled="!componentsAdded"
             @click="downloadCode"
           >
             Download Website
@@ -85,7 +85,41 @@
         </div>
 
         <div class="page-builder__viewer" :class="`is-${deviceSize}`">
-          <div class="page-builder__options is-fullwidth">
+          <div v-if="!componentsAdded" class="instructions">
+            <div class="section">
+              <div class="container">
+                <div class="columns">
+                  <div class="column">
+                    <article class="message is-primary">
+                      <div class="message-body">
+                        <div class="media">
+                          <div class="media-left">
+                            <div class="icon is-extra-large">
+                              <i class="fas fa-hand-point-left fa-4x"></i>
+                            </div>
+                          </div>
+                          <div class="media-content content">
+                            <p class="title is-3">
+                              Click to start building
+                            </p>
+                            <p>
+                              The html blocks can be edited directly, you can
+                              copy or download your creations to use for free.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-if="componentsAdded"
+            class="page-builder__options is-fullwidth"
+          >
             <div class="level">
               <div class="level-left">
                 <div class="level-item">
@@ -129,7 +163,7 @@
               </div>
             </div>
           </div>
-          <div class="page-builder__viewer-frame">
+          <div v-if="componentsAdded" class="page-builder__viewer-frame">
             <div class="page-builder__viewer-frame__iframe">
               <div
                 class="page-builder__iframe"
@@ -181,8 +215,8 @@ export default class PageBuilderPage extends mixins(HandleBack) {
     return 'empty';
   }
 
-  get downloadDisabled() {
-    return PageBuilderStore.blocks.length <= 0;
+  get componentsAdded() {
+    return PageBuilderStore.blocks.length > 0;
   }
 
   componentImageUrl(block: Block): string {

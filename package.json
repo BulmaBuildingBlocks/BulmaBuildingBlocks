@@ -39,7 +39,8 @@
     "clean": "rimraf ./coverage .nuxt",
     "dev": "nuxt-ts",
     "e2e": "percy exec -- cypress open --browser chrome",
-    "e2e:headless": "percy exec -- cypress run",
+    "e2e:headless": "cypress run",
+    "e2e:headless:visual": "percy exec -- cypress run",
     "format": "concurrently \"yarn run format:scripts\" \"yarn run format:scss\"",
     "format:scripts": "prettier --check **/*.{vue,ts,scss,json} --ignore-path .gitignore --write",
     "format:scss": "npx stylelint ./docs/assets/styles/**/*.scss ./src/scss/**/*.scss --fix",
@@ -54,7 +55,7 @@
     "release:minor": "npm run build:scss && changelog -m && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version minor",
     "release:patch": "npm run build:scss && changelog -p && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version patch",
     "start": "nuxt-ts start",
-    "test": "cross-env NODE_ENV=test concurrently \"yarn run lint\" \"yarn run unit\" \"yarn run e2e:headless\"",
+    "test": "cross-env NODE_ENV=test concurrently \"yarn run lint\" \"yarn run unit\"",
     "unit": "cross-env NODE_ENV=test jest",
     "unit:update": "cross-env NODE_ENV=test jest --u",
     "unit:watch": "jest --watchAll --coverage=false"

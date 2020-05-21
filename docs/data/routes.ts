@@ -23,6 +23,14 @@ const routes = new Map([
     }
   ],
   [
+    'html-blocks/all',
+    {
+      title: 'All',
+      subtitle: 'All the block',
+      path: '/html-blocks/all'
+    }
+  ],
+  [
     'html-blocks/headers',
     {
       title: 'Headers',
@@ -41,7 +49,7 @@ const routes = new Map([
   [
     'html-blocks/calltoactions',
     {
-      title: 'Call to Action',
+      title: 'Call to Actions',
       subtitle: 'Selection of Call to Action Blocks',
       path: '/html-blocks/calltoactions'
     }
