@@ -4,7 +4,10 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <div class="image is-128x128 block">
-            <img src="~static/icon-white.png" />
+            <img
+              src="~static/icon-white.png"
+              alt="Bulma Building Blocks Logo"
+            />
           </div>
           <h1 class="title has-text-white">
             Bulma Building Blocks
@@ -81,7 +84,7 @@
               <!---->
               <img
                 src="~assets/images/Scene Wireframe Background.svg"
-                alt=""
+                alt="HTML Snippets shown on multiple devices"
                 draggable="false"
               />
             </span>
@@ -97,7 +100,7 @@
               <!---->
               <img
                 src="~assets/images/Scene Whiteboard.svg"
-                alt=""
+                alt="Team creating ideas for a new website"
                 draggable="false"
               />
             </span>

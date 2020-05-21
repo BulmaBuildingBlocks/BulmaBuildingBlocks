@@ -9,7 +9,7 @@
           active-class=""
         >
           <div class="image is-32x32 is-contained">
-            <img src="~static/icon.png" />
+            <img src="~static/icon.png" alt="Bulma Building Blocks Logo" />
           </div>
         </nuxt-link>
 
