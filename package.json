@@ -48,7 +48,7 @@
     "lint": "eslint --ext .vue,.ts --ignore-path .gitignore . --fix",
     "lint-watch": "esw --ext .vue,.ts --ignore-path .gitignore . --fix --watch",
     "postci": "codecov",
-    "precommit": "concurrently \"yarn run lint\"",
+    "precommit": "concurrently \"yarn run lint\" \"yarn run format\"",
     "predev": "yarn run clean",
     "release:major": "npm run build:scss && changelog -M && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version major",
     "release:minor": "npm run build:scss && changelog -m && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version minor",
