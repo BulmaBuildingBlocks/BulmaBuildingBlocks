@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import menu from '~/data/menu.json';
+import menu from '~/data/blocks-menu.json';
 import routes from '~/data/routes';
 
 @Component

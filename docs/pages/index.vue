@@ -36,14 +36,14 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <h2 class="title is-spaced has-text-white-invert">
+            <h3 class="title is-spaced has-text-white-invert">
               Getting started
-            </h2>
+            </h3>
           </div>
           <div class="column">
-            <h3 class="subtitle has-text-white-invert">
+            <p class="subtitle has-text-white-invert">
               View the documentation to get started using Bulma Building Blocks
-            </h3>
+            </p>
             <div class="buttons">
               <nuxt-link
                 class="button is-medium is-primary"
@@ -60,9 +60,9 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column">
-            <h2 class="title has-text-white-invert">
+            <h3 class="title has-text-white-invert">
               HTML Snippets
-            </h2>
+            </h3>
             <div class="content has-text-white-invert">
               <p>
                 Bulma Building Blocks is a selection html snippets that can be
@@ -106,9 +106,9 @@
             </span>
           </div>
           <div class="column">
-            <h2 class="title has-text-white-invert">
+            <h3 class="title has-text-white-invert">
               Page Builder
-            </h2>
+            </h3>
             <div class="content has-text-white-invert">
               <p>
                 Bulma Building Blocks provides an easy to use page builder that

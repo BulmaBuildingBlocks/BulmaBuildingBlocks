@@ -9,6 +9,9 @@
             >Back</a
           >
         </div>
+        <div class="level-item">
+          <h1 class="title is-4 has-text-weight-bold">Page Builder</h1>
+        </div>
       </div>
       <div class="level-right">
         <div class="level-item">
@@ -35,8 +38,9 @@
       <div class="page-builder__container">
         <div class="page-builder__blocks">
           <div class="page-builder__blocks__filters">
-            <b-field>
+            <b-field label="Html Blocks" label-for="html-blocks-selector">
               <b-select
+                id="html-blocks-selector"
                 v-model="shownBlocks"
                 size="is-small"
                 expanded

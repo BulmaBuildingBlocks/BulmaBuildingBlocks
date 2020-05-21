@@ -14,10 +14,11 @@
             <div class="level-item">
               <b-field
                 label="Container Applied"
+                label-for="container-toggle"
                 custom-class="is-small"
                 horizontal
               >
-                <b-switch v-model="block.container" />
+                <b-switch v-model="block.container" name="container-toggle" />
               </b-field>
             </div>
             <div class="level-item">

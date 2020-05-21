@@ -17,6 +17,7 @@
           class="navbar-item"
           href="https://github.com/JosephAnson/BulmaDesignBlocks"
           target="_blank"
+          rel="noopener noreferrer nofollow"
           title="Github"
         >
           <b-icon icon="github-circle" />

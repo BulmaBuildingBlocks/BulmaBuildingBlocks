@@ -3,16 +3,23 @@ const percyHealthCheck = require('@percy/cypress/task');
 module.exports = (on) => {
   on('task', percyHealthCheck);
 
-  on('before:browser:launch', (browser = {}, args) => {
+  on('before:browser:launch', (browser = {}, launchOptions) => {
     if (browser.name === 'chrome') {
-      args.push('--window-size=1920,1080');
-      return args;
-    }
-    if (browser.name === 'electron') {
-      return {
-        width: 1920,
-        height: 1080
-      };
+      launchOptions.args.push('--window-size=1920,1080');
+      return launchOptions;
     }
   });
+
+  on('task', {
+    log(message) {
+      console.log(message)
+
+      return null
+    },
+    table(message) {
+      console.table(message)
+
+      return null
+    }
+  })
 };

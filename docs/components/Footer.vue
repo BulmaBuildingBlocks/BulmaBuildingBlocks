@@ -19,6 +19,7 @@
                 <a
                   href="http://opensource.org/licenses/mit-license.php"
                   target="_blank"
+                  rel="noopener noreferrer nofollow"
                   >MIT</a
                 >.
               </small>

@@ -14,7 +14,7 @@
         <div class="content">
           <div class="columns">
             <div class="column is-3">
-              <h3>Use the Builder</h3>
+              <h2 class="title is-3">Use the Builder</h2>
             </div>
             <div class="column">
               <div class="buttons">
@@ -29,7 +29,7 @@
 
           <div class="columns">
             <div class="column is-3">
-              <h3>Standalone</h3>
+              <h2 class="title is-3">Standalone</h2>
             </div>
             <div class="column">
               <p>
@@ -40,12 +40,13 @@
                   The css file comes with Bulma and Bulma Building Blocks.
                 </li>
               </ul>
-              <h4>Installation</h4>
+              <h3 class="title is-4">Installation</h3>
               <div class="content">
                 <p>Just download or use the CDN:</p>
                 <pre class="npm"><a
                   href="https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css"
                   target="_blank"
+                  rel="noopener noreferrer nofollow"
                 >https://unpkg.com/bulmabuildingblocks/dist/bulmabuildingblocks.min.css</a
                 ></pre>
               </div>
@@ -56,7 +57,7 @@
 
           <div class="columns">
             <div class="column is-3">
-              <h3>Using npm</h3>
+              <h2 class="title is-3">Using npm</h2>
             </div>
             <div class="column">
               <p>
@@ -87,7 +88,7 @@
 
           <div class="columns">
             <div class="column is-3">
-              <h3>Use the skeleton</h3>
+              <h2 class="title is-3">Use the skeleton</h2>
             </div>
             <div class="column">
               <p>
