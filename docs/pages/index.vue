@@ -10,7 +10,7 @@
             Bulma Building Blocks
           </h1>
           <h2 class="subtitle has-text-white">
-            Html Building Blocks using the Bulma css framework
+            Free Html Building Blocks using the Bulma css framework
           </h2>
           <div class="buttons is-centered">
             <nuxt-link

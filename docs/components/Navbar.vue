@@ -86,6 +86,17 @@
               <span>Tweet</span>
             </a>
           </div>
+          <div class="navbar-item">
+            <a
+              class="button is-primary is-outlined"
+              href="https://github.com/JosephAnson/BulmaDesignBlocks"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              <b-icon pack="fab" icon="github" />
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
