@@ -52,7 +52,7 @@
                   :key="key"
                   :value="key"
                 >
-                  {{ routes.get('html-blocks/' + key).title | capitalize }}
+                  {{ routes.get('/html-blocks/' + key).title | capitalize }}
                 </option>
               </b-select>
             </b-field>

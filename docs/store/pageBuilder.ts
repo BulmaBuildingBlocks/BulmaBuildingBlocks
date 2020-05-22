@@ -162,7 +162,7 @@ export class PageBuilderStore extends VuexModule {
       const img = zip.folder('images');
 
       for (const imagesSource of imagesSources) {
-        // converts the image src into a name
+        // converts the image src into a title
         const modifiedSrc = getFilename(imagesSource);
 
         img.file(modifiedSrc, urlToPromise(imagesSource), { binary: true });

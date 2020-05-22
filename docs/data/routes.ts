@@ -1,72 +1,90 @@
 interface Route {
   title: string;
-  subtitle: string;
+  description: string;
   path: string;
 }
 
-const routes = new Map([
+const routes: Map<string, Route> = new Map([
   [
     '/',
     {
-      title: 'Bulma Building Blocks: lightweight UI components for Bulma',
-      subtitle:
-        'Bulma Building Blocks is a lightweight library of responsive UI components based on Bulma framework.',
+      title: 'Home',
+      description:
+        'Bulma Building Blocks is a lightweight library of responsive HTML components based on Bulma framework.',
       path: '/'
     }
   ],
   [
-    'notfound',
+    '/notfound',
     {
       title: 'Page not found',
-      subtitle: 'Sorry, we couldn’t find the page you were looking for',
+      description: 'Sorry, we couldn’t find the page you were looking for',
       path: '/notfound'
     }
   ],
   [
-    'html-blocks/all',
+    '/documentation',
     {
-      title: 'All',
-      subtitle: 'All the block',
+      title: 'Documentation',
+      description:
+        'Get started the Bulma Building Blocks tools to create your next stylish website.',
       path: '/html-blocks/all'
     }
   ],
   [
-    'html-blocks/headers',
+    '/page-builder',
+    {
+      title: 'Page Builder',
+      description:
+        "Use the page builder to create, edit and use the html snippets we provide, they're free and ready to be used in your next project.",
+      path: '/html-blocks/all'
+    }
+  ],
+  [
+    '/html-blocks/all',
+    {
+      title: 'All',
+      description: 'All the block',
+      path: '/html-blocks/all'
+    }
+  ],
+  [
+    '/html-blocks/headers',
     {
       title: 'Headers',
-      subtitle: 'Selection of all Header',
+      description: 'Selection of all Header',
       path: '/html-blocks/headers'
     }
   ],
   [
-    'html-blocks/contents',
+    '/html-blocks/contents',
     {
       title: 'Contents',
-      subtitle: 'Selection of all Content Blocks',
+      description: 'Selection of all Content Blocks',
       path: '/html-blocks/contents'
     }
   ],
   [
-    'html-blocks/calltoactions',
+    '/html-blocks/calltoactions',
     {
       title: 'Call to Actions',
-      subtitle: 'Selection of Call to Action Blocks',
+      description: 'Selection of Call to Action Blocks',
       path: '/html-blocks/calltoactions'
     }
   ],
   [
-    'html-blocks/features',
+    '/html-blocks/features',
     {
       title: 'Features',
-      subtitle: 'Selection of all Feature Blocks',
+      description: 'Selection of all Feature Blocks',
       path: '/html-blocks/features'
     }
   ],
   [
-    'html-blocks/footers',
+    '/html-blocks/footers',
     {
       title: 'Footers',
-      subtitle: 'Selection of all Footer Blocks',
+      description: 'Selection of all Footer Blocks',
       path: '/html-blocks/footers'
     }
   ]

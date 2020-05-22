@@ -26,7 +26,7 @@ export default class Default extends Vue {
   routes = routes;
 
   get pageTitle() {
-    const routeItem = this.routes.get('html-blocks/' + this.$route.params.id);
+    const routeItem = this.routes.get(this.$route.fullPath);
 
     if (routeItem) {
       return routeItem.title;

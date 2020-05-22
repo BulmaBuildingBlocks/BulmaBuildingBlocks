@@ -2,9 +2,9 @@
   <main>
     <v-navbar />
 
-    <section class="documentation">
+    <div class="documentation">
       <nuxt />
-    </section>
+    </div>
 
     <v-footer />
   </main>
@@ -14,6 +14,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import VNavbar from '~/components/Navbar.vue';
 import VFooter from '~/components/Footer.vue';
+import routes from '~/data/routes';
 
 @Component({
   components: {
@@ -21,5 +22,26 @@ import VFooter from '~/components/Footer.vue';
     VFooter
   }
 })
-export default class Default extends Vue {}
+export default class Default extends Vue {
+  routes = routes;
+
+  head() {
+    const routePath = this.$route.fullPath;
+    const routeItem = this.routes.get(routePath);
+    if (routeItem) {
+      return {
+        title: routeItem.title,
+        titleTemplate: '%s | Bulma Building Blocks',
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'description',
+            content: routeItem.description
+          }
+        ]
+      };
+    }
+  }
+}
 </script>
