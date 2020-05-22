@@ -15,20 +15,19 @@ export default class Empty extends Vue {
   head() {
     const routePath = this.$route.fullPath;
     const routeItem = this.routes.get(routePath);
-    if (routeItem) {
-      return {
-        title: routeItem.title,
-        titleTemplate: '%s | Bulma Building Blocks',
-        meta: [
-          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-          {
-            hid: 'description',
-            name: 'description',
-            content: routeItem.description
-          }
-        ]
-      };
-    }
+
+    return {
+      title: routeItem.title,
+      titleTemplate: '%s | Bulma Building Blocks',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: routeItem.description
+        }
+      ]
+    };
   }
 }
 </script>

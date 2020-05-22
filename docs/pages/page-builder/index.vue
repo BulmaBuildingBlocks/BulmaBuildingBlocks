@@ -1,6 +1,6 @@
 <template>
   <section id="page-builder" class="page-builder">
-    <div class="page-builder__header level is-marginless">
+    <div class="page-builder__header level is-marginless is-mobile">
       <div class="level-left">
         <div class="level-item">
           <a
@@ -10,7 +10,9 @@
           >
         </div>
         <div class="level-item">
-          <h1 class="title is-4 has-text-weight-bold">Page Builder</h1>
+          <h1 class="title is-4 has-text-weight-bold is-hidden-mobile">
+            Page Builder
+          </h1>
         </div>
       </div>
       <div class="level-right">
@@ -20,7 +22,7 @@
             :disabled="!componentsAdded"
             @click="copyCode"
           >
-            Copy HTML
+            Copy <span class="is-hidden-mobile">&nbsp;HTML</span>
           </button>
         </div>
         <div class="level-item">
@@ -29,7 +31,7 @@
             :disabled="!componentsAdded"
             @click="downloadCode"
           >
-            Download Website
+            Download <span class="is-hidden-mobile">&nbsp;Website</span>
           </button>
         </div>
       </div>

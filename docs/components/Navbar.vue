@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar-main is-spaced navbar">
+  <nav class="navbar-main is-spaced navbar is-fixed-top">
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link
@@ -34,7 +34,10 @@
         </span>
       </div>
 
-      <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
+      <div
+        class="navbar-menu is-shadowless"
+        :class="{ 'is-active': isMenuActive }"
+      >
         <div class="navbar-end">
           <nuxt-link to="/" exact class="navbar-item">
             Home
@@ -57,7 +60,7 @@
 
             <div class="navbar-dropdown">
               <strong class="navbar-item is-version">
-                <div class="tags has-addons">
+                <div class="tags has-addons is-fullwidth">
                   <span class="tag">Version</span>
                   <span class="tag is-primary">{{ version }}</span>
                 </div>
@@ -82,14 +85,14 @@
           </div>
 
           <div class="navbar-item">
-            <a class="button is-outlined" @click="tweet">
+            <a class="button is-outlined is-fullwidth-mobile" @click="tweet">
               <b-icon pack="fab" icon="twitter" />
               <span>Tweet</span>
             </a>
           </div>
           <div class="navbar-item">
             <a
-              class="button is-primary is-outlined"
+              class="button is-primary is-outlined is-fullwidth-mobile"
               href="https://github.com/JosephAnson/BulmaDesignBlocks"
               target="_blank"
               rel="noopener noreferrer nofollow"
@@ -108,13 +111,13 @@
 import bulmaPackage from 'bulma/package.json';
 import { Component, Vue } from 'vue-property-decorator';
 import packageJson from '@@/package.json';
+import { config } from '../shared/config';
 
 @Component
 export default class Navbar extends Vue {
   isMenuActive = false;
-  // bulmaVersion = '0.8.0';
   version = packageJson.version;
-  bulmaVersion = bulmaPackage.version || '0.8.0';
+  bulmaVersion = bulmaPackage.version;
 
   tweet(): void {
     const width = 575;

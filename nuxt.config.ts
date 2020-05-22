@@ -1,6 +1,5 @@
 import { Configuration } from '@nuxt/types';
 import menu from './docs/data/blocks-menu.json';
-import routes from './docs/data/routes';
 
 const port = process.env.PORT || '3000';
 const host = process.env.HOST || 'localhost';
@@ -22,6 +21,9 @@ const nuxtConfig: Configuration = {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      class: 'has-navbar-fixed-top'
+    },
     title: 'Bulma Building Blocks',
     meta: [
       { charset: 'utf-8' },

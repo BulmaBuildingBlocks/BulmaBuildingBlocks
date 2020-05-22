@@ -15,5 +15,7 @@
 
 html.has-navbar-fixed-top,
 body.has-navbar-fixed-top {
-  padding-top: 3.8rem;
+  @include until($navbar-breakpoint) {
+    padding-top: 2.8125em;
+  }
 }

@@ -32,6 +32,32 @@ $example-border-color: rgba($dark, 0.1);
       vertical-align: top;
     }
   }
+
+  .example-section__options {
+    align-items: flex-start;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    .level-item {
+      @include mobile {
+        justify-content: flex-start;
+      }
+
+      .field {
+        @include mobile {
+          display: flex;
+        }
+      }
+
+      .field-label {
+        @include mobile {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+  }
 }
 
 .example {

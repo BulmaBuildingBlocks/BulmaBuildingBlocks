@@ -12,36 +12,43 @@
           </div>
           <div class="level-right">
             <div class="level-item">
-              <b-field
-                label="Container Applied"
-                label-for="container-toggle"
-                custom-class="is-small"
-                horizontal
-              >
-                <b-switch v-model="block.container" name="container-toggle" />
-              </b-field>
-            </div>
-            <div class="level-item">
-              <b-field
-                label="Background Color"
-                custom-class="is-small"
-                horizontal
-              >
-                <color-picker
-                  append-to-body
-                  size="is-small"
-                  :color="block.color"
-                  @color="block.color = $event"
-                />
-              </b-field>
-            </div>
-            <div class="level-item">
-              <button
-                class="button is-small is-primary copy-code"
-                @click="copyCode"
-              >
-                Copy
-              </button>
+              <div class="level example-section__options">
+                <div class="level-item">
+                  <b-field
+                    label="Container"
+                    label-for="container-toggle"
+                    custom-class="is-small"
+                    horizontal
+                  >
+                    <b-switch
+                      v-model="block.container"
+                      name="container-toggle"
+                    />
+                  </b-field>
+                </div>
+                <div class="level-item">
+                  <b-field
+                    label="Background Color"
+                    custom-class="is-small"
+                    horizontal
+                  >
+                    <color-picker
+                      append-to-body
+                      size="is-small"
+                      :color="block.color"
+                      @color="block.color = $event"
+                    />
+                  </b-field>
+                </div>
+                <div class="level-item">
+                  <button
+                    class="button is-small is-primary copy-code"
+                    @click="copyCode"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

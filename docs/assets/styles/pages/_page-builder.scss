@@ -16,6 +16,12 @@
   display: flex;
   width: 100%;
   height: 100%;
+
+  @include portrait {
+    @include touch {
+      flex-direction: column;
+    }
+  }
 }
 
 .page-builder__editor {
@@ -26,10 +32,22 @@
 .page-builder__blocks {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 100%;
+  height: 300px;
   background: $light;
-  width: 500px;
   flex-shrink: 0;
+
+  @include landscape {
+    @include touch {
+      width: 300px;
+      height: 100%;
+    }
+  }
+
+  @include desktop {
+    width: 500px;
+    height: 100%;
+  }
 
   .page-builder__blocks__filters {
     padding: 1rem;
@@ -73,9 +91,17 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: 100%;
+  height: 300px;
   overflow: hidden;
   background: $grey-lighter;
+
+  @include landscape {
+    height: 100%;
+  }
+
+  @include desktop {
+    height: 100%;
+  }
 
   .page-builder__options {
     padding: 1rem 1rem 0;
@@ -100,12 +126,27 @@
   top: 50%;
   left: 50%;
   transform-origin: top left;
-  transform: scale(0.3) translate(-50%, -50%);
+  transform: scale(0.2) translate(-50%, -50%);
   width: 1920px;
-  height: 180%;
+  height: 500%;
+
+  @include portrait {
+    @include tablet {
+      transform: scale(0.39) translate(-50%, -50%);
+      height: 250%;
+    }
+  }
+
+  @include landscape {
+    @include tablet {
+      transform: scale(0.35) translate(-50%, -50%);
+      height: 250%;
+    }
+  }
 
   @include from(1400px) {
     transform: scale(0.45) translate(-50%, -50%);
+    height: 200%;
   }
 
   @include from(1800px) {

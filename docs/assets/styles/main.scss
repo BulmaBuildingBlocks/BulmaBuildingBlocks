@@ -23,6 +23,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
+@import 'utilities/manifest';
 @import 'base/manifest';
 @import 'elements/manifest';
 @import 'components/manifest';

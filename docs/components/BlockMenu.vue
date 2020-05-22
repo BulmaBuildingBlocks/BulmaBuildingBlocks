@@ -1,6 +1,6 @@
 <template>
   <nav class="block-menu" role="navigation" aria-label="main navigation">
-    <div class="buttons has-addons is-toggle">
+    <div class="buttons is-toggle">
       <nuxt-link
         v-for="item in menu"
         :key="routes.get(item).path"
