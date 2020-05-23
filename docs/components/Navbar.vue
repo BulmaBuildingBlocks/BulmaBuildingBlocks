@@ -125,7 +125,7 @@ export default class Navbar extends Vue {
     const top = (window.screen.height - height) / 2;
     const url = `https://twitter.com/share?url=${encodeURIComponent(
       document.location.protocol + '//' + document.location.host
-    )}&text=Bulma Building Blocks: html building blocks based on Bulma&hashtags=bulmabuildingblock&via=JosephLeeAnson, @JosephLeeAnson`;
+    )}&text=Bulma Building Blocks: Html Building Blocks based on the Bulma Framework&hashtags=BulmaBuildingBlocks&via=JosephLeeAnson`;
     const opts = `status=1,width=${width},height=${height},top=${top},left=${left}`;
 
     window.open(url, '', opts);
