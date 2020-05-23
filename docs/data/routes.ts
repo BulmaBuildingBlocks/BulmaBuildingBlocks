@@ -10,7 +10,7 @@ const routes: Map<string, Route> = new Map([
     {
       title: 'Home',
       description:
-        'Bulma Building Blocks is a lightweight library of responsive HTML components based on Bulma framework.',
+        'Bulma Building Blocks is a lightweight library of responsive HTML components based on the Bulma framework.',
       path: '/'
     }
   ],
