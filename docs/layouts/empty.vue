@@ -8,10 +8,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import routes from '~/data/routes';
 
-@Component
-export default class Empty extends Vue {
-  routes = routes;
-
+@Component({
   head() {
     const routePath = this.$route.fullPath;
     const routeItem = this.routes.get(routePath);
@@ -29,5 +26,8 @@ export default class Empty extends Vue {
       ]
     };
   }
+})
+export default class Empty extends Vue {
+  routes = routes;
 }
 </script>

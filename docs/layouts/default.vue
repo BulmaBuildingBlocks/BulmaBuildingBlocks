@@ -20,11 +20,7 @@ import routes from '~/data/routes';
   components: {
     VNavbar,
     VFooter
-  }
-})
-export default class Default extends Vue {
-  routes = routes;
-
+  },
   head() {
     const routePath = this.$route.fullPath;
     const routeItem = this.routes.get(routePath);
@@ -42,5 +38,8 @@ export default class Default extends Vue {
       ]
     };
   }
+})
+export default class Default extends Vue {
+  routes = routes;
 }
 </script>
