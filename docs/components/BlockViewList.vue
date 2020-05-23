@@ -4,6 +4,9 @@
       ref="pageHtml"
       class="block-viewer-list"
       :group="{ name: 'content', put: editable, sort: editable }"
+      :disabled="editable"
+      delay="10"
+      delay-on-touch-only="true"
       :list="blocks"
     >
       <div
@@ -72,7 +75,7 @@ import { Block } from '~/html-blocks/types';
     ColorPicker
   }
 })
-export default class PageBuilder extends Vue {
+export default class BlockViewerList extends Vue {
   $refs!: {
     myTextEditorHtml: Vue[];
   };

@@ -4,7 +4,7 @@ import $ from 'jquery';
 import { Component } from 'nuxt-property-decorator';
 import packageJson from '@@/package.json';
 import { store } from '~/store';
-import PageBuilder from '~/components/PageBuilder.vue';
+import BlockViewList from '~/components/BlockViewList.vue';
 
 @Component
 export default class DeviceViewer extends Vue {
@@ -12,7 +12,7 @@ export default class DeviceViewer extends Vue {
   iApp?: Vue = undefined;
 
   render(h: CreateElement): VNode {
-    const renderComponent = PageBuilder;
+    const renderComponent = BlockViewList;
     const attrs = this.$attrs;
 
     return h('iframe', {

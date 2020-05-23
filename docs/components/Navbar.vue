@@ -111,7 +111,6 @@
 import bulmaPackage from 'bulma/package.json';
 import { Component, Vue } from 'vue-property-decorator';
 import packageJson from '@@/package.json';
-import { config } from '../shared/config';
 
 @Component
 export default class Navbar extends Vue {

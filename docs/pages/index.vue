@@ -85,7 +85,6 @@
               <img
                 src="~assets/images/Scene Wireframe Background.svg"
                 alt="HTML Snippets shown on multiple devices"
-                draggable="false"
               />
             </span>
           </div>
@@ -101,7 +100,6 @@
               <img
                 src="~assets/images/Scene Whiteboard.svg"
                 alt="Team creating ideas for a new website"
-                draggable="false"
               />
             </span>
           </div>

@@ -47,7 +47,7 @@ export class PageBuilderStore extends VuexModule {
   @Mutation
   setExportCode({ copying = true, download }: ExportCodeProps): void {
     /***
-     * Look at PageBuilder.vue in that folder there's a watcher that checks for when
+     * Look at BlockViewList.vue in that file there's a watcher that checks for when
      * exportCode changes. It performs the copying of the code as it needs access to
      * the current $refs
      */

@@ -68,6 +68,9 @@
                 put: false,
                 sort: false
               }"
+              delay="10"
+              delay-on-touch-only="true"
+              :disabled="editable"
               :sort="false"
               :list="allBlocks[shownBlocks]"
             >
@@ -219,6 +222,10 @@ export default class PageBuilderPage extends mixins(HandleBack) {
 
   get componentsAdded() {
     return PageBuilderStore.blocks.length > 0;
+  }
+
+  get editable(): boolean {
+    return PageBuilderStore.editable;
   }
 
   componentImageUrl(block: Block): string {
