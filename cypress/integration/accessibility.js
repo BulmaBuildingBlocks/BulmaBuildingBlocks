@@ -2,7 +2,13 @@
 /// <reference types="cypress" />
 import menu from '../../docs/data/blocks-menu.json';
 
-const listOfAllPages = ['/', '/documentation', '/page-builder', ...menu];
+const listOfAllPages = [
+  '/',
+  '/?standalone=true', // Check loading url with parameter for PWA App
+  '/documentation',
+  '/page-builder',
+  ...menu
+];
 
 describe('Check accessibility', () => {
   listOfAllPages.forEach((page) => {
