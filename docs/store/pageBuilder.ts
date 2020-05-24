@@ -12,6 +12,7 @@ import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
 import clipboard from 'copy-to-clipboard';
+import { getCookie } from '../shared/storage';
 import { store } from './index';
 import { prettierConf } from '~/shared/config';
 import { getRegexMatches } from '~/shared/utils';
@@ -23,7 +24,7 @@ import BulmaBuildingBlockCss from '!!raw-loader!~/static/bulmabuildingblocks.min
 import { Block } from '~/html-blocks/types';
 
 interface ExportCodeProps {
-  copying: boolean;
+  exporting: boolean;
   download?: boolean;
 }
 
@@ -33,7 +34,7 @@ interface ExportCodeProps {
   store
 })
 export class PageBuilderStore extends VuexModule {
-  blocks: Block[] = [];
+  blocks: Block[] = getCookie('blocks') || [];
   code = '';
   editable = true;
   download = false;
@@ -45,10 +46,10 @@ export class PageBuilderStore extends VuexModule {
   }
 
   @Mutation
-  setExportCode({ copying = true, download }: ExportCodeProps): void {
+  setExportCode({ exporting = true, download }: ExportCodeProps): void {
     /***
      * Look at BlockViewList.vue in that file there's a watcher that checks for when
-     * exportCode changes. It performs the copying of the code as it needs access to
+     * exportCode changes. It performs the exporting of the code as it needs access to
      * the current $refs
      */
 
@@ -56,7 +57,7 @@ export class PageBuilderStore extends VuexModule {
       this.download = download;
     }
 
-    this.exportCode = copying;
+    this.exportCode = exporting;
   }
 
   @Mutation
@@ -68,13 +69,22 @@ export class PageBuilderStore extends VuexModule {
   }
 
   @Mutation
+  setBlocks(blocks: Block[]): void {
+    this.blocks = blocks;
+  }
+
+  @Mutation
   addBlock(block: Block): void {
     this.blocks.push(cloneDeep(block));
+
+    console.log('ADDED', this.blocks);
   }
 
   @Mutation
   removeBlock(block: Block): void {
     this.blocks.splice(this.blocks.indexOf(block), 1);
+
+    console.log('REMOVED', this.blocks);
   }
 
   @Mutation
@@ -103,7 +113,7 @@ export class PageBuilderStore extends VuexModule {
       Toast.open('Copied to clipboard!');
     } catch (e) {
       Toast.open({
-        message: 'Error while copying, try again',
+        message: 'Error while exporting, try again',
         type: 'is-danger'
       });
     }
@@ -115,7 +125,7 @@ export class PageBuilderStore extends VuexModule {
       return src.split('/').pop() || '';
     }
 
-    function urlToPromise(url: string) {
+    function urlToPromise(url: string): Promise<string> {
       return new Promise(function (resolve, reject) {
         JSZipUtils.getBinaryContent(url, function (err: any, data: any) {
           if (err) {
@@ -179,13 +189,13 @@ export class PageBuilderStore extends VuexModule {
 
       // when everything has been downloaded, we can trigger the dl
       zip.generateAsync({ type: 'blob' }).then(
-        function callback(content: string) {
+        (content: Blob) => {
           // see FileSaver.js
           saveAs(content, 'BulmaBuildingBlocks.zip');
 
           Toast.open('Download Finished');
         },
-        function () {
+        () => {
           Toast.open('Download Failed');
         }
       );

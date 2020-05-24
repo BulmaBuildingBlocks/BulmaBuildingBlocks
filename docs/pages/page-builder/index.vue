@@ -70,7 +70,7 @@
               }"
               delay="10"
               delay-on-touch-only="true"
-              :disabled="editable"
+              :disabled="!editable"
               :sort="false"
               :list="allBlocks[shownBlocks]"
             >
@@ -90,99 +90,99 @@
         </div>
 
         <div class="page-builder__viewer" :class="`is-${deviceSize}`">
-          <div v-if="!componentsAdded" class="instructions">
-            <div class="section">
-              <div class="container">
-                <div class="columns">
-                  <div class="column">
-                    <article class="message is-primary">
-                      <div class="message-body">
-                        <div class="media">
-                          <div class="media-left">
-                            <div class="icon is-extra-large">
-                              <i class="fas fa-hand-point-left fa-4x"></i>
+          <client-only>
+            <div v-if="!componentsAdded" class="instructions">
+              <div class="section">
+                <div class="container">
+                  <div class="columns">
+                    <div class="column">
+                      <article class="message is-primary">
+                        <div class="message-body">
+                          <div class="media">
+                            <div class="media-left">
+                              <div class="icon is-extra-large">
+                                <i class="fas fa-hand-point-left fa-4x"></i>
+                              </div>
+                            </div>
+                            <div class="media-content content">
+                              <p class="title is-3">
+                                Click on a html block to start building
+                              </p>
+                              <p>
+                                The html blocks can be edited directly, you can
+                                copy or download your creations to use for free.
+                              </p>
                             </div>
                           </div>
-                          <div class="media-content content">
-                            <p class="title is-3">
-                              Click on a html block to start building
-                            </p>
-                            <p>
-                              The html blocks can be edited directly, you can
-                              copy or download your creations to use for free.
-                            </p>
-                          </div>
                         </div>
-                      </div>
-                    </article>
+                      </article>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div
-            v-if="componentsAdded"
-            class="page-builder__options is-fullwidth"
-          >
-            <div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <b-field>
-                    <b-radio-button
-                      v-model="deviceSize"
-                      native-value="mobile"
-                      size="is-small"
-                    >
-                      Mobile
-                    </b-radio-button>
-
-                    <b-radio-button
-                      v-model="deviceSize"
-                      native-value="tablet"
-                      size="is-small"
-                    >
-                      Tablet
-                    </b-radio-button>
-
-                    <b-radio-button
-                      v-model="deviceSize"
-                      native-value="desktop"
-                      size="is-small"
-                    >
-                      Desktop
-                    </b-radio-button>
-                  </b-field>
-                </div>
-              </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <b-field>
-                    <b-switch v-model="deviceFrame">
-                      <span class="label is-small is-nowrap"
-                        >Show Device Frame</span
+            <div
+              v-if="componentsAdded"
+              class="page-builder__options is-fullwidth"
+            >
+              <div class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <b-field>
+                      <b-radio-button
+                        v-model="deviceSize"
+                        native-value="mobile"
+                        size="is-small"
                       >
-                    </b-switch>
-                  </b-field>
+                        Mobile
+                      </b-radio-button>
+
+                      <b-radio-button
+                        v-model="deviceSize"
+                        native-value="tablet"
+                        size="is-small"
+                      >
+                        Tablet
+                      </b-radio-button>
+
+                      <b-radio-button
+                        v-model="deviceSize"
+                        native-value="desktop"
+                        size="is-small"
+                      >
+                        Desktop
+                      </b-radio-button>
+                    </b-field>
+                  </div>
+                </div>
+                <div class="level-right">
+                  <div class="level-item">
+                    <b-field>
+                      <b-switch v-model="deviceFrame">
+                        <span class="label is-small is-nowrap"
+                          >Show Device Frame</span
+                        >
+                      </b-switch>
+                    </b-field>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div v-if="componentsAdded" class="page-builder__viewer-frame">
-            <div class="page-builder__viewer-frame__iframe">
-              <div
-                class="page-builder__iframe"
-                :class="[
-                  `is-${deviceSize}`,
-                  { 'has-device-frame': deviceFrame }
-                ]"
-              >
-                <client-only>
+            <div v-if="componentsAdded" class="page-builder__viewer-frame">
+              <div class="page-builder__viewer-frame__iframe">
+                <div
+                  class="page-builder__iframe"
+                  :class="[
+                    `is-${deviceSize}`,
+                    { 'has-device-frame': deviceFrame }
+                  ]"
+                >
                   <device-viewer />
-                </client-only>
+                </div>
               </div>
             </div>
-          </div>
+          </client-only>
         </div>
       </div>
     </div>
@@ -244,11 +244,11 @@ export default class PageBuilderPage extends mixins(HandleBack) {
   }
 
   copyCode(): void {
-    PageBuilderStore.setExportCode({ copying: true, download: false });
+    PageBuilderStore.setExportCode({ exporting: true, download: false });
   }
 
   downloadCode(): void {
-    PageBuilderStore.setExportCode({ copying: true, download: true });
+    PageBuilderStore.setExportCode({ exporting: true, download: true });
   }
 }
 </script>

@@ -4,7 +4,7 @@
       ref="pageHtml"
       class="block-viewer-list"
       :group="{ name: 'content', put: editable, sort: editable }"
-      :disabled="editable"
+      :disabled="!editable"
       delay="10"
       delay-on-touch-only="true"
       :list="blocks"
@@ -50,7 +50,7 @@
           </b-field>
         </div>
         <component
-          :is="block.component"
+          :is="blockComponent(block.componentName)"
           ref="myTextEditorHtml"
           :block="block"
           :editable="editable"
@@ -79,6 +79,10 @@ export default class BlockViewerList extends Vue {
   $refs!: {
     myTextEditorHtml: Vue[];
   };
+
+  blockComponent(name: string) {
+    return blocks[name];
+  }
 
   get blocks(): Block[] {
     return PageBuilderStore.blocks;
@@ -131,7 +135,7 @@ export default class BlockViewerList extends Vue {
     }
 
     await PageBuilderStore.toggleEditable(true);
-    await PageBuilderStore.setExportCode({ copying: false });
+    await PageBuilderStore.setExportCode({ exporting: false });
   }
 }
 </script>

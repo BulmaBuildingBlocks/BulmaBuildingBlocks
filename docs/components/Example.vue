@@ -121,7 +121,7 @@ export default class Example extends Vue {
       this.$buefy.toast.open('Copied to clipboard!');
     } catch (e) {
       this.$buefy.toast.open({
-        message: 'Error while copying to clipboard :(',
+        message: 'Error while exporting to clipboard :(',
         type: 'is-danger'
       });
     }
