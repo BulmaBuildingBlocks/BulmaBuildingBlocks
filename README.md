@@ -96,5 +96,13 @@ Use the template below as a starting point, copy the html snippets into the reco
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/JosephAnson/BulmaBuildingBlocks/issues).
 
+## Core Team
+
+<table>
+  <tr>
+    <td align="center"><a href="https://twitter.com/josephleeanson"><img src="https://avatars2.githubusercontent.com/u/8811755?v=4" width="80px;" alt=""/><br /><sub><b>Joseph Anson</b></sub></a><br /></td>
+  </tr>
+</table>
+
 ## Copyright and license
 Code Copyright 2020 Joseph Anson. Code released under the MIT license.
