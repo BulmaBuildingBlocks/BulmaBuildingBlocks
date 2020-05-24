@@ -3,20 +3,20 @@
   "version": "0.5.6",
   "description": "Bulma Building Blocks allows you to generate websites using snippets based on the Bulma CSS Frameworks.",
   "main": "./src/with-variables.scss",
-  "homepage": "https://github.com/JosephAnson/BulmaBuildingBlocks",
+  "homepage": "https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks",
   "bugs": {
-    "url": "https://github.com/JosephAnson/BulmaBuildingBlocks/issues"
+    "url": "https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JosephAnson/BulmaBuildingBlocks.git"
+    "url": "https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks.git"
   },
   "engines": {
     "node": "12.16.3"
   },
-  "author": "Joseph Anson <me@josephanson.com>",
+  "author": "Joseph Anson <me@BulmaBuildingBlocks.com>",
   "maintainers": [
-    "Joseph Anson <me@josephanson.com>"
+    "Joseph Anson <me@BulmaBuildingBlocks.com>"
   ],
   "license": "MIT",
   "keywords": [

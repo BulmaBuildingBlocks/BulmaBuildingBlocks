@@ -1,26 +1,26 @@
 <p align="center">
   <a href="https://buefy.org">
-    <img src="https://raw.githubusercontent.com/JosephAnson/BulmaBuildingBlocks/master/docs/static/icon-black.png" />
+    <img src="https://raw.githubusercontent.com/BulmaBuildingBlocks/BulmaBuildingBlocks/master/docs/static/icon-black.png" />
   </a>
 </p>
 <p>
-  <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/CHANGELOG.md">
-    <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/josephanson/bulmabuildingblocks">
+  <a href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/blob/master/CHANGELOG.md">
+    <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/BulmaBuildingBlocks/bulmabuildingblocks">
   </a>
   <a href="https://www.npmjs.com/package/bulmabuildingblocks">
     <img src="https://img.shields.io/npm/dt/bulmabuildingblocks.svg" />
   </a>
 
-  <a href="https://github.com/JosephAnson/BulmaBuildingBlocks#readme" target="_blank">
+  <a href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-   <a href="https://codecov.io/gh/JosephAnson/BulmaBuildingBlocks">
-    <img src="https://codecov.io/gh/JosephAnson/BulmaBuildingBlocks/branch/master/graph/badge.svg" />
+   <a href="https://codecov.io/gh/BulmaBuildingBlocks/BulmaBuildingBlocks">
+    <img src="https://codecov.io/gh/BulmaBuildingBlocks/BulmaBuildingBlocks/branch/master/graph/badge.svg" />
   </a>  
-  <a href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/LICENSE">
+  <a href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/blob/master/LICENSE">
     <img src="https://img.shields.io/npm/l/bulmabuildingblocks.svg" />
   </a>
 </p>
@@ -94,7 +94,7 @@ Use the template below as a starting point, copy the html snippets into the reco
 
 ## Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/JosephAnson/BulmaBuildingBlocks/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/issues).
 
 ## Copyright and license
 Code Copyright 2020 Joseph Anson. Code released under the MIT license.

@@ -26,7 +26,7 @@
         <div class="buttons">
           <a
             class="button"
-            href="https://github.com/JosephAnson/BulmaDesignBlocks"
+            href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks"
             target="_blank"
             rel="noopener noreferrer nofollow"
           >

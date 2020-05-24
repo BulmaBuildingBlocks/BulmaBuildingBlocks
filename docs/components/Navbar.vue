@@ -15,7 +15,7 @@
 
         <a
           class="navbar-item"
-          href="https://github.com/JosephAnson/BulmaDesignBlocks"
+          href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks"
           target="_blank"
           rel="noopener noreferrer nofollow"
           title="Github"
@@ -75,7 +75,7 @@
               <hr class="navbar-divider" />
               <a
                 class="navbar-item"
-                href="https://github.com/JosephAnson/BulmaBuildingBlocks/blob/master/CHANGELOG.md"
+                href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/blob/master/CHANGELOG.md"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
               >
@@ -93,7 +93,7 @@
           <div class="navbar-item">
             <a
               class="button is-primary is-outlined is-fullwidth-mobile"
-              href="https://github.com/JosephAnson/BulmaDesignBlocks"
+              href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks"
               target="_blank"
               rel="noopener noreferrer nofollow"
             >

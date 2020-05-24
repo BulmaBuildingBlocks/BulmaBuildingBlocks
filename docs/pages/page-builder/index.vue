@@ -105,7 +105,7 @@
                           </div>
                           <div class="media-content content">
                             <p class="title is-3">
-                              Click to start building
+                              Click on a html block to start building
                             </p>
                             <p>
                               The html blocks can be edited directly, you can
