@@ -30,14 +30,12 @@ export const store = new Vuex.Store<RootState>({
 store.watch(
   // When the returned result changes...
   function (state) {
-    console.log('STATE', state);
     if (state.PageBuilderStore) {
       return state.PageBuilderStore.blocks;
     }
   },
   // Run this callback
   function (data) {
-    console.log('CHANGED', data);
     if (process.client) {
       setCookie('blocks', JSON.stringify(data));
     }

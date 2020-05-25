@@ -17,7 +17,7 @@ const allHtmlBlocks: { [x: string]: Block[] } = {
 function AllHtmlBlocksSetup() {
   for (const type in allHtmlBlocks) {
     for (const item of allHtmlBlocks[type]) {
-      item.componentName = item.component.name;
+      item.id = item.component.name;
       item.type = type as ContentTypes;
     }
   }

@@ -50,7 +50,7 @@
           </b-field>
         </div>
         <component
-          :is="blockComponent(block.componentName)"
+          :is="blockComponent(block.id)"
           ref="myTextEditorHtml"
           :block="block"
           :editable="editable"

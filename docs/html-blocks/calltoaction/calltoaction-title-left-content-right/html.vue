@@ -44,5 +44,7 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlBlockMixin from '~/mixins/HtmlBlockMixin';
 
 @Component
-export default class ContentTitleWithContent extends mixins(HtmlBlockMixin) {}
+export default class CallToActionTitleLeftContent extends mixins(
+  HtmlBlockMixin
+) {}
 </script>

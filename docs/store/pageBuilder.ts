@@ -76,15 +76,11 @@ export class PageBuilderStore extends VuexModule {
   @Mutation
   addBlock(block: Block): void {
     this.blocks.push(cloneDeep(block));
-
-    console.log('ADDED', this.blocks);
   }
 
   @Mutation
   removeBlock(block: Block): void {
     this.blocks.splice(this.blocks.indexOf(block), 1);
-
-    console.log('REMOVED', this.blocks);
   }
 
   @Mutation

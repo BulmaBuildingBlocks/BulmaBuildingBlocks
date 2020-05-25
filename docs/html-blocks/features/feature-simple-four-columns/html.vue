@@ -51,5 +51,5 @@ import { Component, mixins } from 'nuxt-property-decorator';
 import HtmlBlockMixin from '~/mixins/HtmlBlockMixin';
 
 @Component
-export default class FeatureSimpleSixColumns extends mixins(HtmlBlockMixin) {}
+export default class FeatureSimpleFourColumn extends mixins(HtmlBlockMixin) {}
 </script>

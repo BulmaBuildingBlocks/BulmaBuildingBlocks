@@ -11,7 +11,7 @@ export enum ContentTypes {
 export interface Block {
   title: string;
   type?: ContentTypes;
-  componentName: string;
+  id: string;
   component: VueConstructor;
   content?: any;
   color?: string;
