@@ -1,6 +1,6 @@
 {
   "name": "bulmabuildingblocks",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "Bulma Building Blocks allows you to generate websites using snippets based on the Bulma CSS Frameworks.",
   "main": "src/with-variables.scss",
   "homepage": "https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks",
