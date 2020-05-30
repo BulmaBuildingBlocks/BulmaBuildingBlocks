@@ -17,9 +17,6 @@
   <a href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-   <a href="https://codecov.io/gh/BulmaBuildingBlocks/BulmaBuildingBlocks">
-    <img src="https://codecov.io/gh/BulmaBuildingBlocks/BulmaBuildingBlocks/branch/master/graph/badge.svg" />
-  </a>  
   <a href="https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/blob/master/LICENSE">
     <img src="https://img.shields.io/npm/l/bulmabuildingblocks.svg" />
   </a>

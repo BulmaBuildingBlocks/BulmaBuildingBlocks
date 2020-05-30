@@ -1,4 +1,4 @@
-/*! Bulma Building Blocks v0.5.5 | MIT License | https://github.com/JosephAnson/BulmaBuildingBlocks */
+/*! Bulma Building Blocks v0.5.6 | MIT License | https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks */
 /*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -10718,18 +10718,18 @@ label.panel-block:hover {
 }
 
 .hero.is-small .hero-body {
-  padding: 1.5rem;
+  padding: 1.5rem 0;
 }
 
 @media screen and (min-width: 768px), print {
   .hero.is-medium .hero-body {
-    padding: 9rem 1.5rem;
+    padding: 9rem 0;
   }
 }
 
 @media screen and (min-width: 768px), print {
   .hero.is-large .hero-body {
-    padding: 18rem 1.5rem;
+    padding: 18rem 0;
   }
 }
 
@@ -10806,7 +10806,7 @@ label.panel-block:hover {
 .hero-body {
   flex-grow: 1;
   flex-shrink: 0;
-  padding: 3rem 1.5rem;
+  padding: 3rem 0;
 }
 
 .section {
@@ -10824,7 +10824,7 @@ label.panel-block:hover {
 
 .footer {
   background-color: #fafafa;
-  padding: 3rem 1.5rem 6rem;
+  padding: 3rem 0 6rem;
 }
 
 .is-fullwidth {
