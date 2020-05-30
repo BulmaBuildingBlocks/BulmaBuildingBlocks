@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://buefy.org">
-    <img src="https://raw.githubusercontent.com/BulmaBuildingBlocks/BulmaBuildingBlocks/master/docs/static/icon-black.png" />
+  <a href="https://www.bulmabuildingblocks.com/">
+    <img src="https://raw.githubusercontent.com/BulmaBuildingBlocks/BulmaBuildingBlocks/master/icon-black.png" />
   </a>
 </p>
 <p>
