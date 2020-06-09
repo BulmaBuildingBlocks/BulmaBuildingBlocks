@@ -11,9 +11,6 @@
     "type": "git",
     "url": "https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks.git"
   },
-  "engines": {
-    "node": "12.16.3"
-  },
   "author": "Joseph Anson <me@josephanson.com>",
   "maintainers": [
     "Joseph Anson <me@BulmaBuildingBlocks.com>"
@@ -24,7 +21,7 @@
   ],
   "scripts": {
     "format": "concurrently \"yarn run format:scss\"",
-    "format:scss": "npx stylelint ./docs/assets/styles/**/*.scss ./src/scss/**/*.scss --fix"
+    "format:scss": "npx stylelint ./src/assets/styles/**/*.scss ./src/scss/**/*.scss --fix"
   },
   "dependencies": {
     "bulma": "^0.8.2"
