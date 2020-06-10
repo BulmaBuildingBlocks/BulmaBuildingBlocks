@@ -1,3 +1,15 @@
+#### 0.5.7 (2020-06-10)
+
+##### Chores
+
+*  add new npm scripts ([f6ae48a8](https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/commit/f6ae48a80ef9ad9a8347cb34e7758b8331869a3b))
+*  update readme ([f5149083](https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/commit/f5149083fe9af3898f9279c7306ef02314440a48))
+*  update version ([3a8c4277](https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/commit/3a8c42771acc8a70f2c28baebb648cdad4600c5e))
+
+##### Documentation Changes
+
+*  icon changed ([cdd98d1c](https://github.com/BulmaBuildingBlocks/BulmaBuildingBlocks/commit/cdd98d1cf41746924a9029bd2b4cf955225c04e8))
+
 #### 0.5.6 (2020-05-16)
 
 ##### Build System / Dependencies
