@@ -20,13 +20,34 @@
     "bulma"
   ],
   "scripts": {
+    "prebuild": "yarn run clean",
+    "clean": "rimraf dist",
+    "precommit": "concurrently \"yarn run format\"",
+    "build:scss": "mkdir dist && node-sass --importer node_modules/node-sass-package-importer/dist/cli.js --output-style expanded src/with-variables.scss | node ./build/banner.js > dist/bulmabuildingblocks.css && cleancss -o dist/bulmabuildingblocks.min.css dist/bulmabuildingblocks.css",
+    "release:major": "npm run build:scss && changelog -M && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version major",
+    "release:minor": "npm run build:scss && changelog -m && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version minor",
+    "release:patch": "npm run build:scss && changelog -p && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && npm version patch",
     "format": "concurrently \"yarn run format:scss\"",
-    "format:scss": "npx stylelint ./src/assets/styles/**/*.scss ./src/scss/**/*.scss --fix"
+    "format:scss": "npx stylelint ./src/**/*.scss --fix"
   },
   "dependencies": {
     "bulma": "^0.8.2"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn run precommit"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "generate-changelog": "^1.8.0",
+    "concurrently": "5.2.0",
+    "clean-css-cli": "^4.3.0",
+    "husky": "^4.2.5",
+    "node-sass": "^4.14.1",
+    "node-sass-package-importer": "^5.3.2",
     "stylelint": "^13.3.3",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-scss": "^3.17.2"
