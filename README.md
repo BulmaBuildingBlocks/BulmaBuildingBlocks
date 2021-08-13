@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.bulmabuildingblocks.com/">
+  <a href="https://bulmabuildingblocks.herokuapp.com/">
     <img src="https://raw.githubusercontent.com/BulmaBuildingBlocks/BulmaBuildingBlocks/master/icon-black.png" />
   </a>
 </p>
@@ -31,12 +31,12 @@
 
 ## Documentation
 
-Browse [online documentation here](https://www.bulmabuildingblocks.com/).
+Browse [online documentation here](https://bulmabuildingblocks.herokuapp.com/).
 
 ## Getting Started
 
 ### Use the Builder
-https://www.bulmabuildingblocks.com/page-builder
+https://bulmabuildingblocks.herokuapp.com/page-builder
 
 ### Standalone
 Using CDN or downloading files to serve local
@@ -100,4 +100,4 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 </table>
 
 ## Copyright and license
-Code Copyright 2020 Joseph Anson. Code released under the MIT license.
+Code Copyright 2021 Joseph Anson. Code released under the MIT license.
